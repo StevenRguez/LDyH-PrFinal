@@ -15,55 +15,55 @@ import java.util.stream.Stream;
 
 /**
  * @class GameAppService
- * @brief Application service that acts as an intermediary between the game domain and the presentation layer.
+ * @brief Servicio de aplicación que actúa como intermediario entre el dominio del juego y la capa de presentación.
  *
- * This service provides various methods to interact with and manipulate a game session,
- * including player actions, game state information, and logging.
+ * Este servicio proporciona diversos métodos para interactuar y manipular una sesión de juego,
+ * incluyendo acciones de jugadores, información del estado del juego y registro de eventos.
  */
 public class GameAppService implements IGameAppService {
     /**
-     * @brief Logger for logging game-related events and debug information.
+     * @brief Logger para registrar eventos relacionados con el juego y para fines de depuración.
      */
     private static final Logger logger = LogManager.getLogger("GameAppService");
 
     /**
-     * @brief The core game instance being managed by the application service.
+     * @brief Instancia principal del juego que está siendo gestionada por el servicio de aplicación.
      */
     private final Game game;
 
     /**
-     * @brief Constructs a new GameAppService and initializes a new game with default players.
+     * @brief Construye un nuevo GameAppService e inicializa un juego con jugadores predeterminados.
      */
     public GameAppService() {
         game = new GameBuilder()
-            .withPlayer("Player 1")
-            .withPlayer("Player 2")
+            .withPlayer("Jugador 1")
+            .withPlayer("Jugador 2")
             .build();
 
         logGameInfo();
     }
 
     /**
-     * @brief Logs initial game information, including players and their hand cards.
+     * @brief Registra información inicial del juego, incluyendo los jugadores y sus cartas en mano.
      *
-     * This method is used internally to provide detailed information about the game
-     * state when it is first created.
+     * Este método se utiliza internamente para proporcionar información detallada sobre el estado del juego
+     * al momento de su creación.
      */
     private void logGameInfo() {
-        logger.info("Game created successfully");
+        logger.info("Juego creado exitosamente");
         game.getPlayers().forEach(p -> {
             var joinedCardValues = p.getHandCards()
                 .map(Object::toString)
                 .collect(Collectors.joining(","));
 
-            logger.debug(String.format("Player %s with %s cards => [%s]", p.getName(), p.getTotalCards(), joinedCardValues));
+            logger.debug(String.format("Jugador %s con %s cartas => [%s]", p.getName(), p.getTotalCards(), joinedCardValues));
         });
     }
 
     /**
-     * @brief Retrieves a list of PlayerInfoDTO objects representing each player's basic information.
+     * @brief Recupera una lista de objetos PlayerInfoDTO que representan la información básica de cada jugador.
      *
-     * @return List of PlayerInfoDTO objects containing player IDs and names.
+     * @return Lista de objetos PlayerInfoDTO con los IDs y nombres de los jugadores.
      */
     @Override
     public List<PlayerInfoDTO> getPlayerInfos() {
@@ -73,9 +73,9 @@ public class GameAppService implements IGameAppService {
     }
 
     /**
-     * @brief Retrieves the current player's information.
+     * @brief Recupera la información del jugador actual.
      *
-     * @return PlayerInfoDTO representing the current player's ID and name.
+     * @return Objeto PlayerInfoDTO que contiene el ID y el nombre del jugador actual.
      */
     @Override
     public PlayerInfoDTO getCurrentPlayer() {
@@ -84,10 +84,10 @@ public class GameAppService implements IGameAppService {
     }
 
     /**
-     * @brief Retrieves the hand cards of a specific player by their UUID.
+     * @brief Recupera las cartas en mano de un jugador específico a partir de su UUID.
      *
-     * @param playerId UUID of the player whose hand cards are to be retrieved.
-     * @return Stream of Card objects representing the player's hand cards.
+     * @param playerId UUID del jugador cuyas cartas en mano se van a recuperar.
+     * @return Stream de objetos Card que representan las cartas en mano del jugador.
      */
     @Override
     public Stream<Card> getHandCards(UUID playerId) {
@@ -95,35 +95,35 @@ public class GameAppService implements IGameAppService {
     }
 
     /**
-     * @brief Allows a player to play a card, with the option to declare "UNO."
+     * @brief Permite a un jugador jugar una carta, con la opción de declarar "UNO".
      *
-     * @param playerId UUID of the player playing the card.
-     * @param card Card object to be played.
-     * @param hasSaidUno Boolean indicating if the player has declared "UNO."
+     * @param playerId UUID del jugador que juega la carta.
+     * @param card Objeto Card que representa la carta a jugar.
+     * @param hasSaidUno Booleano que indica si el jugador ha declarado "UNO".
      */
     @Override
     public void playCard(UUID playerId, Card card, boolean hasSaidUno) {
-        var message = String.format("Player %s plays %s %s", playerId, card, hasSaidUno ? "and said UNO!!!" : "");
+        var message = String.format("El jugador %s juega %s %s", playerId, card, hasSaidUno ? "y dijo UNO!!!" : "");
         logger.info(message);
         game.playCard(playerId, card, hasSaidUno);
     }
 
     /**
-     * @brief Allows a player to draw a card from the deck.
+     * @brief Permite a un jugador robar una carta del mazo.
      *
-     * @param playerId UUID of the player drawing a card.
+     * @param playerId UUID del jugador que roba la carta.
      */
     @Override
     public void drawCard(UUID playerId) {
-        var message = String.format("Player %s draws a card", playerId);
+        var message = String.format("El jugador %s roba una carta", playerId);
         logger.info(message);
         game.drawCard(playerId);
     }
 
     /**
-     * @brief Retrieves the top card of the discard pile without removing it.
+     * @brief Recupera la carta superior de la pila de descarte sin retirarla.
      *
-     * @return Card object representing the top card of the discard pile.
+     * @return Objeto Card que representa la carta superior de la pila de descarte.
      */
     @Override
     public Card peekTopCard() {
@@ -131,9 +131,9 @@ public class GameAppService implements IGameAppService {
     }
 
     /**
-     * @brief Checks if the game has ended.
+     * @brief Verifica si el juego ha finalizado.
      *
-     * @return Boolean value indicating if the game is over.
+     * @return Valor booleano que indica si el juego ha terminado.
      */
     @Override
     public boolean isGameOver() {
@@ -141,9 +141,9 @@ public class GameAppService implements IGameAppService {
     }
 
     /**
-     * @brief Retrieves the winning player, if the game has ended.
+     * @brief Recupera el jugador ganador, si el juego ha finalizado.
      *
-     * @return ImmutablePlayer object representing the winner, or null if the game is not over.
+     * @return Objeto ImmutablePlayer que representa al ganador, o null si el juego no ha finalizado.
      */
     @Override
     public ImmutablePlayer getWinner() {

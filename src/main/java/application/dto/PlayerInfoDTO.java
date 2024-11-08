@@ -5,29 +5,29 @@ import java.util.UUID;
 
 /**
  * @class PlayerInfoDTO
- * @brief Data Transfer Object (DTO) that holds player information for data transfer between layers.
+ * @brief Objeto de Transferencia de Datos (DTO) que contiene la información del jugador para la transferencia de datos entre capas.
  *
- * This class represents the essential information of a player, encapsulating
- * their unique identifier (UUID) and name.
- * Implements Serializable to allow object serialization for data transfer.
+ * Esta clase representa la información esencial de un jugador, encapsulando
+ * su identificador único (UUID) y su nombre.
+ * Implementa Serializable para permitir la serialización del objeto para la transferencia de datos.
  */
 public class PlayerInfoDTO implements Serializable {
 
     /**
-     * @brief Unique identifier for the player.
+     * @brief Identificador único del jugador.
      */
     private final UUID id;
 
     /**
-     * @brief Name of the player.
+     * @brief Nombre del jugador.
      */
     private final String name;
 
     /**
-     * @brief Constructor that initializes the PlayerInfoDTO with a specified id and name.
+     * @brief Constructor que inicializa el PlayerInfoDTO con un id y un nombre especificados.
      *
-     * @param id Unique identifier (UUID) for the player.
-     * @param name Name of the player.
+     * @param id Identificador único (UUID) del jugador.
+     * @param name Nombre del jugador.
      */
     public PlayerInfoDTO(UUID id, String name) {
         this.id = id;
@@ -35,18 +35,18 @@ public class PlayerInfoDTO implements Serializable {
     }
 
     /**
-     * @brief Retrieves the unique identifier (UUID) of the player.
+     * @brief Obtiene el identificador único (UUID) del jugador.
      *
-     * @return UUID of the player.
+     * @return UUID del jugador.
      */
     public UUID getId() {
         return id;
     }
 
     /**
-     * @brief Retrieves the name of the player.
+     * @brief Obtiene el nombre del jugador.
      *
-     * @return Name of the player.
+     * @return Nombre del jugador.
      */
     public String getName() {
         return name;

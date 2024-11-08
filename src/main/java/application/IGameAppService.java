@@ -11,69 +11,69 @@ import java.util.stream.Stream;
 
 /**
  * @interface IGameAppService
- * @brief Interface that defines the application service for interacting with a game session.
+ * @brief Interfaz que define el servicio de aplicación para interactuar con una sesión de juego.
  *
- * Provides methods to retrieve player information, manage player actions, and query game status.
- * This service is designed to separate the application layer from the domain layer.
+ * Proporciona métodos para recuperar información de los jugadores, gestionar acciones de los mismos y consultar el estado del juego.
+ * Este servicio está diseñado para separar la capa de aplicación de la capa de dominio.
  */
 public interface IGameAppService extends Serializable {
 
     /**
-     * @brief Retrieves a list of PlayerInfoDTO objects containing basic information of each player.
+     * @brief Recupera una lista de objetos PlayerInfoDTO que contiene información básica de cada jugador.
      *
-     * @return List of PlayerInfoDTO objects with player IDs and names.
+     * @return Lista de objetos PlayerInfoDTO con los IDs y nombres de los jugadores.
      */
     List<PlayerInfoDTO> getPlayerInfos();
 
     /**
-     * @brief Retrieves the current player's information.
+     * @brief Recupera la información del jugador actual.
      *
-     * @return PlayerInfoDTO containing the current player's ID and name.
+     * @return Objeto PlayerInfoDTO que contiene el ID y el nombre del jugador actual.
      */
     PlayerInfoDTO getCurrentPlayer();
 
     /**
-     * @brief Retrieves the hand cards of a specific player.
+     * @brief Recupera las cartas en mano de un jugador específico.
      *
-     * @param playerId UUID of the player whose hand cards are to be retrieved.
-     * @return Stream of Card objects representing the player's hand cards.
+     * @param playerId UUID del jugador cuyas cartas en mano se van a recuperar.
+     * @return Stream de objetos Card que representan las cartas en mano del jugador.
      */
     Stream<Card> getHandCards(UUID playerId);
 
     /**
-     * @brief Allows a player to play a card, with the option to declare "UNO."
+     * @brief Permite a un jugador jugar una carta, con la opción de declarar "UNO".
      *
-     * @param playerId UUID of the player playing the card.
-     * @param card Card object to be played.
-     * @param hasSaidUno Boolean indicating if the player has declared "UNO."
+     * @param playerId UUID del jugador que juega la carta.
+     * @param card Objeto Card que representa la carta a jugar.
+     * @param hasSaidUno Booleano que indica si el jugador ha declarado "UNO".
      */
     void playCard(UUID playerId, Card card, boolean hasSaidUno);
 
     /**
-     * @brief Allows a player to draw a card from the deck.
+     * @brief Permite a un jugador robar una carta del mazo.
      *
-     * @param playerId UUID of the player drawing a card.
+     * @param playerId UUID del jugador que roba la carta.
      */
     void drawCard(UUID playerId);
 
     /**
-     * @brief Retrieves the top card from the discard pile without removing it.
+     * @brief Recupera la carta superior de la pila de descarte sin retirarla.
      *
-     * @return Card object representing the top card of the discard pile.
+     * @return Objeto Card que representa la carta superior de la pila de descarte.
      */
     Card peekTopCard();
 
     /**
-     * @brief Checks if the game has ended.
+     * @brief Verifica si el juego ha terminado.
      *
-     * @return Boolean value indicating if the game is over.
+     * @return Valor booleano que indica si el juego ha finalizado.
      */
     boolean isGameOver();
 
     /**
-     * @brief Retrieves the winning player, if the game has ended.
+     * @brief Recupera el jugador ganador, si el juego ha terminado.
      *
-     * @return ImmutablePlayer object representing the winner, or null if the game is not over.
+     * @return Objeto ImmutablePlayer que representa al ganador, o null si el juego no ha finalizado.
      */
     ImmutablePlayer getWinner();
 }
