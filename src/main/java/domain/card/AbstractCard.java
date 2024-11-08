@@ -14,6 +14,7 @@ public abstract class AbstractCard implements Card {
         this.color = color;
     }
 
+    // Métodos de la interfaz Card
     /**
      * Devuelve el tipo de la carta.
      * @return tipo de la carta.
@@ -32,6 +33,7 @@ public abstract class AbstractCard implements Card {
         return color;
     }
 
+    // Métodos de Object
     /**
      * Comprueba si dos cartas son iguales.
      * @param o objeto a comparar.
