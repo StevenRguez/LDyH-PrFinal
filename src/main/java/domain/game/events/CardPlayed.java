@@ -5,6 +5,9 @@ import domain.common.DomainEvent;
 
 import java.util.UUID;
 
+/**
+ * Evento que representa que un jugador ha jugado una carta.
+ */
 public class CardPlayed extends DomainEvent {
     private final UUID playerId;
     private final Card playedCard;
@@ -14,10 +17,18 @@ public class CardPlayed extends DomainEvent {
         this.playedCard = playedCard;
     }
 
+    /**
+     * Devuelve el identificador del jugador que ha jugado la carta.
+     * @return identificador del jugador que ha jugado la carta.
+     */
     public UUID getPlayerId() {
         return playerId;
     }
 
+    /**
+     * Devuelve la carta jugada.
+     * @return carta jugada.
+     */
     public Card getPlayedCard() {
         return playedCard;
     }
