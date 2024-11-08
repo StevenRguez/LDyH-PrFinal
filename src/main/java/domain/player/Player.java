@@ -53,11 +53,11 @@ public class Player extends Entity {
 
     /**
      * Elimina una carta de la mano del jugador.
+     *
      * @param card Carta a eliminar.
-     * @return el mazo de cartas del jugador sin la carta eliminada.
      */
-    public boolean removePlayedCard(Card card) {
-        return handCards.removeCard(card);
+    public void removePlayedCard(Card card) {
+        handCards.removeCard(card);
     }
 
     /**
