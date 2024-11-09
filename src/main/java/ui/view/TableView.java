@@ -11,10 +11,28 @@ import ui.common.StyleUtil;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Representa la vista de la mesa de juego en la interfaz de usuario.
+ * Esta clase se encarga de mostrar la carta superior de la pila de descarte y
+ * proporciona información sobre el estado actual del juego.
+ * **Diseño:**
+ * La clase utiliza un `GridBagLayout` para organizar los componentes de la vista.
+ * El panel `table` contiene la carta superior, mientras que `GameStatusView` muestra
+ * información adicional sobre el juego.
+ * **Interacciones:**
+ * La clase se suscribe a eventos de tipo `CardPlayed` para actualizar la vista
+ * cada vez que se juega una carta.
+ */
 public class TableView extends JPanel implements DomainEventSubscriber {
+    /// Panel que representa la mesa
     private final JPanel table;
+    /// Esta variable almacena una referencia al servicio de aplicación del juego.
     private final IGameAppService appService;
 
+    /**
+     * Constructor de la clase
+     * @param appService servicio
+     */
     public TableView(IGameAppService appService){
         this.appService = appService;
 
@@ -28,7 +46,12 @@ public class TableView extends JPanel implements DomainEventSubscriber {
 
         DomainEventPublisher.subscribe(this);
     }
-
+    /**
+     * Inicializa el panel de la mesa con la carta superior de la pila de descarte.
+     * **Precondición:** El servicio de aplicación del juego debe estar inicializado.
+     * **Postcondición:** El panel `table` contiene una instancia de `CardView` que muestra
+     * la carta superior.
+     */
     private void initTable(){
         table.removeAll();
 
