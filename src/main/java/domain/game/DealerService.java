@@ -3,9 +3,9 @@ package domain.game;
 import domain.card.Card;
 import domain.player.HandCardList;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class DealerService {
     public static final int TOTAL_INITIAL_HAND_CARDS = 7;
@@ -22,11 +22,11 @@ public class DealerService {
      */
     public static List<Card> shuffle(List<Card> cards) {
         var shuffledCards = new ArrayList<>(cards);
-        var rand = new Random();
+        var rand = new SecureRandom(); // Cambiado a SecureRandom para mayor seguridad
 
         for (int current = 0; current < shuffledCards.size() - 1; current++) {
             // get a random index for remaining positions, i.e. [i, CARDS_SIZE - 1)
-            var randomIndex = current + rand.nextInt(cards.size() - current);
+            var randomIndex = current + rand.nextInt(shuffledCards.size() - current);
 
             swapCard(shuffledCards, current, randomIndex);
         }
