@@ -1,5 +1,8 @@
 package domain.card;
 
+/**
+ * Enumerado que representa los tipos de las cartas.
+ */
 public enum CardType {
     NUMBER,
     SKIP,
