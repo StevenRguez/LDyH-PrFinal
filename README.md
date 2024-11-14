@@ -1,2 +1,2 @@
 # LDyH-PrFinal
-Repositorio del proyecto final de Laboratorio de Desarrollo y Herramientas
+Repositorio del proyecto final de Laboratorio de Desarrollo y Herramientas.
