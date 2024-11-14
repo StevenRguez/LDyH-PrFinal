@@ -18,19 +18,38 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.stream.Collectors;
 
+/**
+ * Vista del jugador que gestiona la interfaz de usuario para mostrar las cartas en mano,
+ * los controles del jugador y manejar los eventos relacionados con el juego.
+ * Esta clase es responsable de mostrar las cartas en mano del jugador, así como de proporcionar
+ * botones para que el jugador pueda dibujar una carta o decir "UNO" cuando corresponda.
+ * También maneja los eventos del dominio relacionados con el juego, como el juego terminado,
+ * el turno del jugador y la acción de jugar una carta.
+ */
 public class PlayerView extends JPanel implements DomainEventSubscriber {
+    /// Panel donde se visualizan las cartas en mano del jugador.
     private JLayeredPane handCardsView;
+    /// Panel de controles del jugador, que incluye botones y el nombre.
     private Box controlPanel;
-
+    /// Etiqueta que muestra el nombre del jugador.
     private JLabel nameLabel;
+    /// Botón que permite al jugador dibujar una carta.
     private JButton drawButton;
+    /// Botón que permite al jugador decir "UNO".
     private JButton sayUnoButton;
+    /// Indica si el jugador ha dicho "UNO".
     private boolean hasSaidUno = false;
 
     private final PlayerInfoDTO player;
 
     private final IGameAppService appService;
 
+    /**
+     * Constructor de la vista del jugador.
+     *
+     * @param player Información del jugador.
+     * @param appService Servicio que gestiona la lógica del juego.
+     */
     public PlayerView(PlayerInfoDTO player, IGameAppService appService) {
         this.player = player;
         this.appService = appService;
@@ -39,6 +58,10 @@ public class PlayerView extends JPanel implements DomainEventSubscriber {
         DomainEventPublisher.subscribe(this);
     }
 
+    /**
+     * Inicializa la vista del jugador, incluyendo las cartas en mano y los controles.
+     * Configura el diseño de los componentes y los agrega al panel.
+     */
     private void initView() {
         Box layout = Box.createHorizontalBox();
 
@@ -55,12 +78,19 @@ public class PlayerView extends JPanel implements DomainEventSubscriber {
         refresh();
     }
 
+    /**
+     * Inicializa el panel donde se muestran las cartas en mano del jugador.
+     */
     private void initHandCardsView() {
         handCardsView = new JLayeredPane();
         handCardsView.setPreferredSize(new Dimension(600, 175));
         handCardsView.setOpaque(false);
     }
 
+    /**
+     * Renderiza las cartas en mano en el panel correspondiente.
+     * Ajusta la posición y el desplazamiento de las cartas según el número de cartas en mano.
+     */
     private void renderHandCardsView() {
         handCardsView.removeAll();
 
@@ -84,6 +114,12 @@ public class PlayerView extends JPanel implements DomainEventSubscriber {
         handCardsView.revalidate();
     }
 
+    /**
+     * Obtiene la posición inicial de la primera carta según el número total de cartas.
+     *
+     * @param totalCards El número total de cartas en mano.
+     * @return La posición de la primera carta.
+     */
     private Point getFirstCardPoint(int totalCards) {
         Point p = new Point(0, 20);
         if (totalCards < DealerService.TOTAL_INITIAL_HAND_CARDS) {
@@ -95,6 +131,14 @@ public class PlayerView extends JPanel implements DomainEventSubscriber {
         return p;
     }
 
+    /**
+     * Calcula el desplazamiento entre las cartas en función del número total de cartas
+     * y el ancho disponible para mostrar las cartas.
+     *
+     * @param width El ancho disponible para las cartas.
+     * @param totalCards El número total de cartas en mano.
+     * @return El desplazamiento calculado entre las cartas.
+     */
     private int calculateOffset(int width, int totalCards) {
         if (totalCards <= DealerService.TOTAL_INITIAL_HAND_CARDS) {
             return 71;
@@ -103,6 +147,10 @@ public class PlayerView extends JPanel implements DomainEventSubscriber {
         }
     }
 
+    /**
+     * Inicializa el panel de controles del jugador, incluyendo el botón para dibujar
+     * una carta, el botón para decir "UNO" y la etiqueta con el nombre del jugador.
+     */
     private void initControlPanel() {
         initDrawButton();
         initSayNoButton();
@@ -115,6 +163,10 @@ public class PlayerView extends JPanel implements DomainEventSubscriber {
         controlPanel.add(sayUnoButton);
     }
 
+    /**
+     * Muestra u oculta el panel de controles en función de si es el turno del jugador
+     * y si el juego ha terminado.
+     */
     private void toggleControlPanel() {
         var isMyTurn = appService.getCurrentPlayer().getId().equals(player.getId());
 
@@ -128,12 +180,18 @@ public class PlayerView extends JPanel implements DomainEventSubscriber {
         controlPanel.revalidate();
     }
 
+    /**
+     * Inicializa la etiqueta que muestra el nombre del jugador.
+     */
     private void initNameLabel() {
         nameLabel = new JLabel(player.getName());
         nameLabel.setForeground(Color.WHITE);
         nameLabel.setFont(new Font(StyleUtil.DEFAULT_FONT, Font.BOLD, 15));
     }
 
+    /**
+     * Inicializa el botón para decir "UNO".
+     */
     private void initSayNoButton() {
         sayUnoButton = new JButton("Say UNO");
         sayUnoButton.setBackground(new Color(149, 55, 53));
@@ -143,6 +201,9 @@ public class PlayerView extends JPanel implements DomainEventSubscriber {
         sayUnoButton.addActionListener(e -> hasSaidUno = true);
     }
 
+    /**
+     * Inicializa el botón para dibujar una carta.
+     */
     private void initDrawButton() {
         drawButton = new JButton("Draw");
 
@@ -153,6 +214,12 @@ public class PlayerView extends JPanel implements DomainEventSubscriber {
         drawButton.addActionListener(e -> appService.drawCard(player.getId()));
     }
 
+    /**
+     * Metodo que permite jugar una carta seleccionada por el jugador.
+     * Si la carta es una carta comodín, permite elegir un color antes de jugarla.
+     *
+     * @param selectedCard La carta seleccionada por el jugador.
+     */
     private void playCard(Card selectedCard) {
         Card cardToPlay = selectedCard;
 
@@ -165,6 +232,9 @@ public class PlayerView extends JPanel implements DomainEventSubscriber {
         hasSaidUno = false;
     }
 
+    /**
+     * Refresca la vista actualizando las cartas en mano y el estado de los controles.
+     */
     private void refresh() {
         renderHandCardsView();
         toggleControlPanel();
@@ -172,6 +242,12 @@ public class PlayerView extends JPanel implements DomainEventSubscriber {
         repaint();
     }
 
+    /**
+     * Maneja los eventos del dominio relacionados con el juego, como cuando se juega
+     * una carta, se roba una carta o se termina el juego.
+     *
+     * @param event El evento del dominio que se ha producido.
+     */
     @Override
     public void handleEvent(DomainEvent event) {
         if (event instanceof CardPlayed
