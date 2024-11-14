@@ -7,8 +7,7 @@ import javax.swing.*;
 
 public class UnoApp {
     // Usamos la clase actual para nombrar el logger
-    private static 
-    fhinal Logger logger = LogManager.getLogger(UnoApp.class);
+    private static final Logger logger = LogManager.getLogger(UnoApp.class);
 
     public static void main(String[] args) {
         var appService = new GameAppService();
