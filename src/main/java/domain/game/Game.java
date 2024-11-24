@@ -10,10 +10,9 @@ import domain.player.ImmutablePlayer;
 import domain.player.Player;
 import domain.player.PlayerRoundIterator;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
-import java.util.UUID;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class Game extends Entity {
@@ -24,11 +23,18 @@ public class Game extends Entity {
 
     private ImmutablePlayer winner = null;
 
+    private int moveCount; // Contador de movimientos
+    private Instant startTime; // Tiempo de inicio
+    private Instant endTime; // Tiempo de finalización
+    private Map<UUID, Integer> playerMoves = new HashMap<>(); // Mapa de movimientos por jugador
+
+
     public Game(DrawPile drawPile, PlayerRoundIterator players) {
         super();
         this.drawPile = drawPile;
         this.players = players;
-
+        this.moveCount = 0; // Inicializamos el contador
+        this.startTime = Instant.now(); // Registramos el inicio de la partida
         startDiscardPile();
     }
 
@@ -46,6 +52,24 @@ public class Game extends Entity {
 
     public Card peekTopCard() {
         return discardPile.peek();
+    }
+
+    public int getMoveCount() {
+        return moveCount;
+    }
+
+    public Instant getStartTime() {
+        return startTime;
+    }
+
+    public String getGameDuration() {
+        if (endTime == null) {
+            return "La partida no ha terminado.";
+        }
+        Duration duration = Duration.between(startTime, endTime);
+        long minutes = duration.toMinutes();
+        long seconds = duration.getSeconds() % 60;
+        return String.format("%d minutos y %d segundos", minutes, seconds);
     }
 
     private void startDiscardPile() {
@@ -82,8 +106,12 @@ public class Game extends Entity {
         if (isOver()) {
             throw new IllegalStateException("Game is over");
         }
-
+        moveCount++; // Incrementamos el contador de movimientos
         validatePlayedCard(playerId, playedCard);
+
+        // Contamos los movimientos por jugador
+        playerMoves.put(playerId, playerMoves.getOrDefault(playerId, 0) + 1);
+        System.out.println("Jugador " + getCurrentPlayer().getName() + " ha realizado " + playerMoves.get(playerId) + " movimientos.");
 
         switch (playedCard.getType()) {
             case NUMBER -> {
@@ -133,12 +161,17 @@ public class Game extends Entity {
         DomainEventPublisher.publish(new CardPlayed(playerId, playedCard));
 
         if (isOver()) {
+            endTime = Instant.now(); // Registramos el tiempo de finalización
+            System.out.println("La partida ha terminado.");
+            System.out.println("Ganador: " + winner.getName());
+            System.out.println("Duración de la partida: " + getGameDuration());
             DomainEventPublisher.publish(new GameOver(winner));
         }
     }
 
     public void drawCard(UUID playerId) {
         if (getCurrentPlayer().getId().equals(playerId)) {
+            moveCount++; // Incrementamos el contador de movimientos
             var drawnCards = drawCards(players.getCurrentPlayer(), 1);
 
             tryToPlayDrawnCard(playerId, drawnCards.get(0));
@@ -156,8 +189,8 @@ public class Game extends Entity {
     private void tryToPlayDrawnCard(UUID playerId, Card drawnCard) {
         try {
             var cardToPlay = CardUtil.isWildCard(drawnCard)
-                ? new WildCard(drawnCard.getType(), peekTopCard().getColor())
-                : drawnCard;
+                    ? new WildCard(drawnCard.getType(), peekTopCard().getColor())
+                    : drawnCard;
 
             playCard(playerId, cardToPlay);
         } catch (Exception ex) {
@@ -267,6 +300,6 @@ public class Game extends Entity {
 
     private void rejectPlayedCard(Card playedCard) {
         throw new IllegalArgumentException(
-            String.format("Played card %s is not valid for %s", playedCard, peekTopCard()));
+                String.format("Played card %s is not valid for %s", playedCard, peekTopCard()));
     }
 }
