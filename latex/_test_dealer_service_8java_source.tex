@@ -1,0 +1,110 @@
+\doxysection{Test\+Dealer\+Service.\+java}
+\label{_test_dealer_service_8java_source}\index{src/test/java/domain/game/TestDealerService.java@{src/test/java/domain/game/TestDealerService.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.game;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.*;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.player.HandCardList;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }TestDealerService\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ @Test}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenShuffled\_ShouldHaveDifferentOrder()\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ var\ originalList\ =\ \textcolor{keyword}{new}\ CardDeck().getImmutableCards();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ var\ shuffledList\ =\ DealerService.shuffle(originalList);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalEquals\ =\ 0;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ originalList.size();\ i++)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (originalList.get(i).equals(shuffledList.get(i)))\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalEquals++;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ assertNotEquals(originalList.size(),\ totalEquals);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ assertTrue(totalEquals\ <\ (originalList.size()\ *\ 0.2),\ \textcolor{stringliteral}{"{}Shuffled\ cards\ should\ have\ less\ than\ 20\%\ equal\ order\ (heuristically)"{}});}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ @Test}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenShuffled\_ShouldHaveAllNumberCards()\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ var\ shuffledList\ =\ getShuffledCards();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertNumberCards(shuffledList);}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ @Test}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenShuffled\_ShouldHaveAllSkipCards()\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ var\ shuffledList\ =\ getShuffledCards();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertSkipCards(shuffledList);}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ @Test}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenShuffled\_ShouldHaveAllReverseCards()\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ var\ shuffledList\ =\ getShuffledCards();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertReverseCards(shuffledList);}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ @Test}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenShuffled\_ShouldHaveAllDrawTwoCards()\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ var\ shuffledList\ =\ getShuffledCards();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertDrawTwoCards(shuffledList);}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ @Test}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenShuffled\_ShouldHaveAllWildCards()\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ var\ shuffledList\ =\ getShuffledCards();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertWildCards(shuffledList);}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{private}\ List<Card>\ getShuffledCards()\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ var\ originalList\ =\ \textcolor{keyword}{new}\ CardDeck().getImmutableCards();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DealerService.shuffle(originalList);}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ @Test}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenDealt\_ShouldHave7CardsPerEachPlayer()\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ var\ fixedCards\ =\ \textcolor{keyword}{new}\ ArrayList<Card>();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 7;\ i++)\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ fixedCards.add(\textcolor{keyword}{new}\ NumberCard(1,\ CardColor.RED));}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ fixedCards.add(\textcolor{keyword}{new}\ NumberCard(2,\ CardColor.GREEN));}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ fixedCards.add(\textcolor{keyword}{new}\ NumberCard(3,\ CardColor.BLUE));}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ var\ drawPile\ =\ \textcolor{keyword}{new}\ DrawPile(fixedCards);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ var\ handCardLists\ =\ DealerService.dealInitialHandCards(drawPile,\ 3);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ assertTrue(hasAllSameValues(handCardLists[0],\ 3,\ CardColor.BLUE));}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ assertTrue(hasAllSameValues(handCardLists[1],\ 2,\ CardColor.GREEN));}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ assertTrue(hasAllSameValues(handCardLists[2],\ 1,\ CardColor.RED));}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ assertEquals(0,\ drawPile.getSize());}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ hasAllSameValues(HandCardList\ handCardList,\ \textcolor{keywordtype}{int}\ number,\ CardColor\ color)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (handCardList.size()\ !=\ 7)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ handCardList}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ .getCardStream()}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ .map(c\ -\/>\ (NumberCard)\ c)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ .allMatch(c\ -\/>\ c.getValue()\ ==\ number\ \&\&\ c.getColor()\ ==\ color);}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \}}
+
+\end{DoxyCode}

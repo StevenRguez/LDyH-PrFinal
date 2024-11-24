@@ -1,0 +1,30 @@
+\doxysection{Card\+Played.\+java}
+\label{_card_played_8java_source}\index{src/main/java/domain/game/events/CardPlayed.java@{src/main/java/domain/game/events/CardPlayed.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.game.events;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.Card;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.common.DomainEvent;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CardPlayed\ \textcolor{keyword}{extends}\ DomainEvent\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ UUID\ playerId;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Card\ playedCard;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}\ CardPlayed(UUID\ playerId,\ Card\ playedCard)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ this.playerId\ =\ playerId;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ this.playedCard\ =\ playedCard;}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{public}\ UUID\ getPlayerId()\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ playerId;}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}\ Card\ getPlayedCard()\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ playedCard;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}

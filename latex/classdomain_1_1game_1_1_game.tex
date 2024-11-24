@@ -1,0 +1,345 @@
+\doxysection{Referencia de la clase domain.\+game.\+Game}
+\label{classdomain_1_1game_1_1_game}\index{domain.game.Game@{domain.game.Game}}
+
+
+Representa una partida del juego, gestionando jugadores, cartas y reglas.  
+
+
+
+
+Diagrama de herencia de domain.\+game.\+Game
+% FIG 0
+
+
+Diagrama de colaboración de domain.\+game.\+Game\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game} (\textbf{ Draw\+Pile} draw\+Pile, \textbf{ Player\+Round\+Iterator} players)
+\begin{DoxyCompactList}\small\item\em Constructor de la partida. \end{DoxyCompactList}\item 
+Stream$<$ \textbf{ Immutable\+Player} $>$ \textbf{ get\+Players} ()
+\begin{DoxyCompactList}\small\item\em Devuelve un flujo de los jugadores en su estado inmutable. \end{DoxyCompactList}\item 
+\textbf{ Immutable\+Player} \textbf{ get\+Current\+Player} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el jugador actual. \end{DoxyCompactList}\item 
+Stream$<$ \textbf{ Card} $>$ \textbf{ get\+Hand\+Cards} (UUID player\+Id)
+\begin{DoxyCompactList}\small\item\em Obtiene las cartas en mano de un jugador. \end{DoxyCompactList}\item 
+\textbf{ Card} \textbf{ peek\+Top\+Card} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la carta superior de la pila de descarte. \end{DoxyCompactList}\item 
+int \textbf{ get\+Move\+Count} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el número total de movimientos realizados en la partida. \end{DoxyCompactList}\item 
+Instant \textbf{ get\+Start\+Time} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el tiempo de inicio de la partida. \end{DoxyCompactList}\item 
+String \textbf{ get\+Game\+Duration} ()
+\begin{DoxyCompactList}\small\item\em Calcula la duración de la partida. \end{DoxyCompactList}\item 
+void \textbf{ play\+Card} (UUID player\+Id, \textbf{ Card} played\+Card)
+\begin{DoxyCompactList}\small\item\em Juega una carta para el jugador actual. \end{DoxyCompactList}\item 
+void \textbf{ play\+Card} (UUID player\+Id, \textbf{ Card} played\+Card, boolean has\+Said\+Uno)
+\begin{DoxyCompactList}\small\item\em Juega una carta para el jugador actual, validando si dijo "{}\+Uno"{}. \end{DoxyCompactList}\item 
+void \textbf{ draw\+Card} (UUID player\+Id)
+\begin{DoxyCompactList}\small\item\em Permite al jugador actual robar una carta del mazo. \end{DoxyCompactList}\item 
+boolean \textbf{ is\+Over} ()
+\begin{DoxyCompactList}\small\item\em Verifica si el juego ha terminado. \end{DoxyCompactList}\item 
+\textbf{ Immutable\+Player} \textbf{ get\+Winner} ()
+\begin{DoxyCompactList}\small\item\em Obtiene al jugador ganador de la partida. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \textbf{ domain.\+common.\+Entity}}
+\begin{DoxyCompactItemize}
+\item 
+UUID \textbf{ get\+Id} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el identificador único de la entidad. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Otros miembros heredados}
+\doxysubsection*{Métodos protegidos heredados de \textbf{ domain.\+common.\+Entity}}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Entity} ()
+\begin{DoxyCompactList}\small\item\em Constructor protegido que inicializa la entidad con un UUID aleatorio. \end{DoxyCompactList}\item 
+\textbf{ Entity} (UUID id)
+\begin{DoxyCompactList}\small\item\em Constructor protegido que permite asignar un UUID específico a la entidad. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa una partida del juego, gestionando jugadores, cartas y reglas. 
+
+Definición en la línea \textbf{ 22} del archivo \textbf{ Game.\+java}.
+
+
+
+\doxysubsection{Documentación de constructores y destructores}
+\index{domain.game.Game@{domain.game.Game}!Game@{Game}}
+\index{Game@{Game}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{Game()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_aa5f4e3eab0d1d555bba091218537c4f5} 
+domain.\+game.\+Game.\+Game (\begin{DoxyParamCaption}\item[{\textbf{ Draw\+Pile}}]{draw\+Pile}{, }\item[{\textbf{ Player\+Round\+Iterator}}]{players}{}\end{DoxyParamCaption})}
+
+
+
+Constructor de la partida. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em draw\+Pile} & Mazo inicial de cartas. \\
+\hline
+{\em players} & Iterador que gestiona a los jugadores. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 70} del archivo \textbf{ Game.\+java}.
+
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{domain.game.Game@{domain.game.Game}!drawCard@{drawCard}}
+\index{drawCard@{drawCard}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{drawCard()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_a0b9311b6306912fb96812183262531da} 
+void domain.\+game.\+Game.\+draw\+Card (\begin{DoxyParamCaption}\item[{UUID}]{player\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Permite al jugador actual robar una carta del mazo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em player\+Id} & Identificador del jugador. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 220} del archivo \textbf{ Game.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+Gráfico de llamadas a esta función\+:
+% FIG 3
+\index{domain.game.Game@{domain.game.Game}!getCurrentPlayer@{getCurrentPlayer}}
+\index{getCurrentPlayer@{getCurrentPlayer}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{getCurrentPlayer()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_a2e746d8b75db101e2d634cc64b3aac95} 
+\textbf{ Immutable\+Player} domain.\+game.\+Game.\+get\+Current\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve el jugador actual. 
+
+\begin{DoxyReturn}{Devuelve}
+Jugador actual en estado inmutable. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 91} del archivo \textbf{ Game.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 4
+Gráfico de llamadas a esta función\+:
+% FIG 5
+\index{domain.game.Game@{domain.game.Game}!getGameDuration@{getGameDuration}}
+\index{getGameDuration@{getGameDuration}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{getGameDuration()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_aa14a169032a1312f213685edb747877b} 
+String domain.\+game.\+Game.\+get\+Game\+Duration (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Calcula la duración de la partida. 
+
+\begin{DoxyReturn}{Devuelve}
+Duración de la partida como cadena de texto. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 133} del archivo \textbf{ Game.\+java}.
+
+\index{domain.game.Game@{domain.game.Game}!getHandCards@{getHandCards}}
+\index{getHandCards@{getHandCards}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{getHandCards()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_a74d046132b8bd2c266644eb1e1b09a44} 
+Stream$<$ \textbf{ Card} $>$ domain.\+game.\+Game.\+get\+Hand\+Cards (\begin{DoxyParamCaption}\item[{UUID}]{player\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene las cartas en mano de un jugador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em player\+Id} & Identificador del jugador. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Stream de cartas en la mano del jugador. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 101} del archivo \textbf{ Game.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 6
+Gráfico de llamadas a esta función\+:
+% FIG 7
+\index{domain.game.Game@{domain.game.Game}!getMoveCount@{getMoveCount}}
+\index{getMoveCount@{getMoveCount}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{getMoveCount()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_a54f2cb3d3f55f2a4ad33330c2ce81d60} 
+int domain.\+game.\+Game.\+get\+Move\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve el número total de movimientos realizados en la partida. 
+
+\begin{DoxyReturn}{Devuelve}
+Número de movimientos. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 117} del archivo \textbf{ Game.\+java}.
+
+\index{domain.game.Game@{domain.game.Game}!getPlayers@{getPlayers}}
+\index{getPlayers@{getPlayers}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{getPlayers()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_a8ef02b63db5e4ce1c13302458327de07} 
+Stream$<$ \textbf{ Immutable\+Player} $>$ domain.\+game.\+Game.\+get\+Players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve un flujo de los jugadores en su estado inmutable. 
+
+\begin{DoxyReturn}{Devuelve}
+Stream de jugadores inmutables. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 83} del archivo \textbf{ Game.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 8
+Gráfico de llamadas a esta función\+:
+% FIG 9
+\index{domain.game.Game@{domain.game.Game}!getStartTime@{getStartTime}}
+\index{getStartTime@{getStartTime}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{getStartTime()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_a18e9adf4336e42565542963a35feb8b4} 
+Instant domain.\+game.\+Game.\+get\+Start\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Devuelve el tiempo de inicio de la partida. 
+
+\begin{DoxyReturn}{Devuelve}
+Instante de inicio de la partida. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 125} del archivo \textbf{ Game.\+java}.
+
+\index{domain.game.Game@{domain.game.Game}!getWinner@{getWinner}}
+\index{getWinner@{getWinner}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{getWinner()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_a569f3fcef7c8dd9a2026dc970a705fef} 
+\textbf{ Immutable\+Player} domain.\+game.\+Game.\+get\+Winner (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene al jugador ganador de la partida. 
+
+\begin{DoxyReturn}{Devuelve}
+Jugador ganador en estado inmutable. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 242} del archivo \textbf{ Game.\+java}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 10
+\index{domain.game.Game@{domain.game.Game}!isOver@{isOver}}
+\index{isOver@{isOver}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{isOver()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_ae54bdd128c692df9cb96f5a390a601f5} 
+boolean domain.\+game.\+Game.\+is\+Over (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Verifica si el juego ha terminado. 
+
+\begin{DoxyReturn}{Devuelve}
+true si el juego ha terminado, false en caso contrario. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 233} del archivo \textbf{ Game.\+java}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 11
+\index{domain.game.Game@{domain.game.Game}!peekTopCard@{peekTopCard}}
+\index{peekTopCard@{peekTopCard}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{peekTopCard()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_aeb2092f6ec706480301ed20c1dff9912} 
+\textbf{ Card} domain.\+game.\+Game.\+peek\+Top\+Card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene la carta superior de la pila de descarte. 
+
+\begin{DoxyReturn}{Devuelve}
+Carta en la cima de la pila de descarte. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 109} del archivo \textbf{ Game.\+java}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 12
+\index{domain.game.Game@{domain.game.Game}!playCard@{playCard}}
+\index{playCard@{playCard}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{playCard()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_a3782e391b270083eddad87bceaaa1578} 
+void domain.\+game.\+Game.\+play\+Card (\begin{DoxyParamCaption}\item[{UUID}]{player\+Id}{, }\item[{\textbf{ Card}}]{played\+Card}{}\end{DoxyParamCaption})}
+
+
+
+Juega una carta para el jugador actual. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em player\+Id} & Identificador del jugador. \\
+\hline
+{\em played\+Card} & Carta jugada. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 177} del archivo \textbf{ Game.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 13
+Gráfico de llamadas a esta función\+:
+% FIG 14
+\index{domain.game.Game@{domain.game.Game}!playCard@{playCard}}
+\index{playCard@{playCard}!domain.game.Game@{domain.game.Game}}
+\doxysubsubsection{playCard()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_game_a8c9262b9c67e2f308b323de12d843a28} 
+void domain.\+game.\+Game.\+play\+Card (\begin{DoxyParamCaption}\item[{UUID}]{player\+Id}{, }\item[{\textbf{ Card}}]{played\+Card}{, }\item[{boolean}]{has\+Said\+Uno}{}\end{DoxyParamCaption})}
+
+
+
+Juega una carta para el jugador actual, validando si dijo "{}\+Uno"{}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em player\+Id} & Identificador del jugador. \\
+\hline
+{\em played\+Card} & Carta jugada. \\
+\hline
+{\em has\+Said\+Uno} & Indica si el jugador dijo "{}\+Uno"{}. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 188} del archivo \textbf{ Game.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 15
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/domain/game/\textbf{ Game.\+java}\end{DoxyCompactItemize}

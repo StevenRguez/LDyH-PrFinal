@@ -1,0 +1,98 @@
+\doxysection{Game\+Status\+View.\+java}
+\label{_game_status_view_8java_source}\index{src/main/java/ui/view/GameStatusView.java@{src/main/java/ui/view/GameStatusView.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }ui.view;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ application.IGameAppService;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.common.DomainEvent;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.common.DomainEventPublisher;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.common.DomainEventSubscriber;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ domain.game.events.CardDrawn;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ domain.game.events.CardPlayed;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ domain.game.events.GameOver;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ javax.swing.*;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{import}\ java.awt.*;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }GameStatusView\ \textcolor{keyword}{extends}\ JPanel\ implements\ DomainEventSubscriber\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{private}\ String\ error;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{private}\ String\ text;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ panelCenter;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ IGameAppService\ appService;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}\ GameStatusView(IGameAppService\ appService)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ this.appService\ =\ appService;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ setPreferredSize(\textcolor{keyword}{new}\ Dimension(275,\ 200));}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ setOpaque(\textcolor{keyword}{false});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ error\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ updateStatus();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(\textcolor{keyword}{this});}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ @Override}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ paintComponent(Graphics\ g)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ super.paintComponent(g);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ panelCenter\ =\ getWidth()\ /\ 2;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ printMessage(g);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ printError(g);}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ printError(Graphics\ g)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!error.isEmpty())\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ Font\ adjustedFont\ =\ \textcolor{keyword}{new}\ Font(\textcolor{stringliteral}{"{}Calibri"{}},\ Font.PLAIN,\ 25);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ the\ width\ of\ the\ word\ to\ position}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ FontMetrics\ fm\ =\ this.getFontMetrics(adjustedFont);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xPos\ =\ panelCenter\ -\/\ fm.stringWidth(error)\ /\ 2;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ g.setFont(adjustedFont);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ g.setColor(Color.red);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ g.drawString(error,\ xPos,\ 35);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ error\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ printMessage(Graphics\ g)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ Font\ adjustedFont\ =\ \textcolor{keyword}{new}\ Font(\textcolor{stringliteral}{"{}Calibri"{}},\ Font.BOLD,\ 25);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Determine\ the\ width\ of\ the\ word\ to\ position}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ FontMetrics\ fm\ =\ this.getFontMetrics(adjustedFont);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xPos\ =\ panelCenter\ -\/\ fm.stringWidth(text)\ /\ 2;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ g.setFont(adjustedFont);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ g.setColor(\textcolor{keyword}{new}\ Color(228,\ 108,\ 10));}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ g.drawString(text,\ xPos,\ 75);}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ updateStatus()\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (appService.isGameOver())\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ text\ =\ String.format(\textcolor{stringliteral}{"{}\%s\ won"{}},\ appService.getWinner().getName());}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ text\ =\ String.format(\textcolor{stringliteral}{"{}\%s's\ turn"{}},\ appService.getCurrentPlayer().getName());}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ repaint();}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ setError(String\ errorMgs)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ error\ =\ errorMgs;}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00128\ \ \ \ \ @Override}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ handleEvent(DomainEvent\ event)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (event\ instanceof\ CardPlayed}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ event\ instanceof\ CardDrawn}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ event\ instanceof\ GameOver)\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ updateStatus();}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \}}
+
+\end{DoxyCode}

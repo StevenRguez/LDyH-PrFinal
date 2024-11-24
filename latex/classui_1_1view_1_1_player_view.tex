@@ -1,0 +1,78 @@
+\doxysection{Referencia de la clase ui.\+view.\+Player\+View}
+\label{classui_1_1view_1_1_player_view}\index{ui.view.PlayerView@{ui.view.PlayerView}}
+
+
+Diagrama de herencia de ui.\+view.\+Player\+View
+% FIG 0
+
+
+Diagrama de colaboración de ui.\+view.\+Player\+View\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Player\+View} (\textbf{ Player\+Info\+DTO} player, \textbf{ IGame\+App\+Service} app\+Service)
+\item 
+void \textbf{ handle\+Event} (\textbf{ Domain\+Event} event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \textbf{ domain.\+common.\+Domain\+Event\+Subscriber}}
+
+
+\doxysubsection{Descripción detallada}
+Vista del jugador que gestiona la interfaz de usuario para mostrar las cartas en mano, los controles del jugador y manejar los eventos relacionados con el juego. Esta clase es responsable de mostrar las cartas en mano del jugador, así como de proporcionar botones para que el jugador pueda dibujar una carta o decir "{}\+UNO"{} cuando corresponda. También maneja los eventos del dominio relacionados con el juego, como el juego terminado, el turno del jugador y la acción de jugar una carta. 
+
+Definición en la línea \textbf{ 29} del archivo \textbf{ Player\+View.\+java}.
+
+
+
+\doxysubsection{Documentación de constructores y destructores}
+\index{ui.view.PlayerView@{ui.view.PlayerView}!PlayerView@{PlayerView}}
+\index{PlayerView@{PlayerView}!ui.view.PlayerView@{ui.view.PlayerView}}
+\doxysubsubsection{PlayerView()}
+{\footnotesize\ttfamily \label{classui_1_1view_1_1_player_view_ad68fd3cafe42c24f1eda93cbdc3b6da4} 
+ui.\+view.\+Player\+View.\+Player\+View (\begin{DoxyParamCaption}\item[{\textbf{ Player\+Info\+DTO}}]{player}{, }\item[{\textbf{ IGame\+App\+Service}}]{app\+Service}{}\end{DoxyParamCaption})}
+
+Constructor de la vista del jugador.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em player} & Información del jugador. \\
+\hline
+{\em app\+Service} & Servicio que gestiona la lógica del juego. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 53} del archivo \textbf{ Player\+View.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{ui.view.PlayerView@{ui.view.PlayerView}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!ui.view.PlayerView@{ui.view.PlayerView}}
+\doxysubsubsection{handleEvent()}
+{\footnotesize\ttfamily \label{classui_1_1view_1_1_player_view_af34ffa92abd917af054850d27e68e81e} 
+void ui.\+view.\+Player\+View.\+handle\+Event (\begin{DoxyParamCaption}\item[{\textbf{ Domain\+Event}}]{event}{}\end{DoxyParamCaption})}
+
+Maneja los eventos del dominio relacionados con el juego, como cuando se juega una carta, se roba una carta o se termina el juego.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em event} & El evento del dominio que se ha producido. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ domain.\+common.\+Domain\+Event\+Subscriber} \doxyref{}{pág.}{interfacedomain_1_1common_1_1_domain_event_subscriber_aeb0ff351727baa38e3830e89ab21acb7}.
+
+
+
+Definición en la línea \textbf{ 252} del archivo \textbf{ Player\+View.\+java}.
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/ui/view/\textbf{ Player\+View.\+java}\end{DoxyCompactItemize}

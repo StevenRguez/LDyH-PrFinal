@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TizonTools: Archivo de código fuente src/main/java/domain/player/ImmutablePlayer.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TizonTools
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_d89dd4b49a1568deadad29da47c05b8d.html">domain</a></li><li class="navelem"><a class="el" href="dir_65c31c2d14568c534c753b246906179c.html">player</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">ImmutablePlayer.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_immutable_player_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>domain.player;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1card.html">card</a>.<a class="code hl_interface" href="interfacedomain_1_1card_1_1_card.html">Card</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> java.io.Serializable;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> java.util.UUID;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> java.util.stream.Stream;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classdomain_1_1player_1_1_immutable_player.html">   15</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classdomain_1_1player_1_1_immutable_player.html">ImmutablePlayer</a> <span class="keyword">implements</span> Serializable {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">private</span> <span class="keyword">final</span> <a class="code hl_class" href="classdomain_1_1player_1_1_player.html">Player</a> player;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classdomain_1_1player_1_1_immutable_player.html#a97858fbb8f937095909d1d2d69002699">   25</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classdomain_1_1player_1_1_immutable_player.html#a97858fbb8f937095909d1d2d69002699">ImmutablePlayer</a>(<a class="code hl_class" href="classdomain_1_1player_1_1_player.html">Player</a> player) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        this.player = player;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classdomain_1_1player_1_1_immutable_player.html#afc18cea111b87eb236723069b1d43366">   33</a></span>    <span class="keyword">public</span> UUID <a class="code hl_function" href="classdomain_1_1player_1_1_immutable_player.html#afc18cea111b87eb236723069b1d43366">getId</a>() {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> player.<a class="code hl_function" href="classdomain_1_1common_1_1_entity.html#a1ef91685cfea92710db0e9acdd57312f">getId</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classdomain_1_1player_1_1_immutable_player.html#af440c7b383c89a60c4934ef2836fa3c2">   41</a></span>    <span class="keyword">public</span> String <a class="code hl_function" href="classdomain_1_1player_1_1_immutable_player.html#af440c7b383c89a60c4934ef2836fa3c2">getName</a>() {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">return</span> player.<a class="code hl_function" href="classdomain_1_1player_1_1_player.html#a2c102b9c325615ef82546dde979d712f">getName</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classdomain_1_1player_1_1_immutable_player.html#a31d3e5dc9b070b7450a438ba1b82b0a2">   49</a></span>    <span class="keyword">public</span> Stream&lt;Card&gt; <a class="code hl_function" href="classdomain_1_1player_1_1_immutable_player.html#a31d3e5dc9b070b7450a438ba1b82b0a2">getHandCards</a>() {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span> this.player.<a class="code hl_function" href="classdomain_1_1player_1_1_player.html#a541dcd07f326c98a7f3f635e193fc892">getHandCards</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classdomain_1_1player_1_1_immutable_player.html#a5479e6ac16014343281f0bf14f5bfddd">   57</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classdomain_1_1player_1_1_immutable_player.html#a5479e6ac16014343281f0bf14f5bfddd">getTotalCards</a>() {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">return</span> (<span class="keywordtype">int</span>) <a class="code hl_function" href="classdomain_1_1player_1_1_immutable_player.html#a31d3e5dc9b070b7450a438ba1b82b0a2">getHandCards</a>().count();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+</div>
+<div class="ttc" id="aclassdomain_1_1common_1_1_entity_html_a1ef91685cfea92710db0e9acdd57312f"><div class="ttname"><a href="classdomain_1_1common_1_1_entity.html#a1ef91685cfea92710db0e9acdd57312f">domain.common.Entity.getId</a></div><div class="ttdeci">UUID getId()</div><div class="ttdoc">Obtiene el identificador único de la entidad.</div><div class="ttdef"><b>Definition</b> <a href="_entity_8java_source.html#l00039">Entity.java:39</a></div></div>
+<div class="ttc" id="aclassdomain_1_1player_1_1_immutable_player_html"><div class="ttname"><a href="classdomain_1_1player_1_1_immutable_player.html">domain.player.ImmutablePlayer</a></div><div class="ttdef"><b>Definition</b> <a href="#l00015">ImmutablePlayer.java:15</a></div></div>
+<div class="ttc" id="aclassdomain_1_1player_1_1_immutable_player_html_a31d3e5dc9b070b7450a438ba1b82b0a2"><div class="ttname"><a href="classdomain_1_1player_1_1_immutable_player.html#a31d3e5dc9b070b7450a438ba1b82b0a2">domain.player.ImmutablePlayer.getHandCards</a></div><div class="ttdeci">Stream&lt; Card &gt; getHandCards()</div><div class="ttdef"><b>Definition</b> <a href="#l00049">ImmutablePlayer.java:49</a></div></div>
+<div class="ttc" id="aclassdomain_1_1player_1_1_immutable_player_html_a5479e6ac16014343281f0bf14f5bfddd"><div class="ttname"><a href="classdomain_1_1player_1_1_immutable_player.html#a5479e6ac16014343281f0bf14f5bfddd">domain.player.ImmutablePlayer.getTotalCards</a></div><div class="ttdeci">int getTotalCards()</div><div class="ttdef"><b>Definition</b> <a href="#l00057">ImmutablePlayer.java:57</a></div></div>
+<div class="ttc" id="aclassdomain_1_1player_1_1_immutable_player_html_a97858fbb8f937095909d1d2d69002699"><div class="ttname"><a href="classdomain_1_1player_1_1_immutable_player.html#a97858fbb8f937095909d1d2d69002699">domain.player.ImmutablePlayer.ImmutablePlayer</a></div><div class="ttdeci">ImmutablePlayer(Player player)</div><div class="ttdef"><b>Definition</b> <a href="#l00025">ImmutablePlayer.java:25</a></div></div>
+<div class="ttc" id="aclassdomain_1_1player_1_1_immutable_player_html_af440c7b383c89a60c4934ef2836fa3c2"><div class="ttname"><a href="classdomain_1_1player_1_1_immutable_player.html#af440c7b383c89a60c4934ef2836fa3c2">domain.player.ImmutablePlayer.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition</b> <a href="#l00041">ImmutablePlayer.java:41</a></div></div>
+<div class="ttc" id="aclassdomain_1_1player_1_1_immutable_player_html_afc18cea111b87eb236723069b1d43366"><div class="ttname"><a href="classdomain_1_1player_1_1_immutable_player.html#afc18cea111b87eb236723069b1d43366">domain.player.ImmutablePlayer.getId</a></div><div class="ttdeci">UUID getId()</div><div class="ttdef"><b>Definition</b> <a href="#l00033">ImmutablePlayer.java:33</a></div></div>
+<div class="ttc" id="aclassdomain_1_1player_1_1_player_html"><div class="ttname"><a href="classdomain_1_1player_1_1_player.html">domain.player.Player</a></div><div class="ttdef"><b>Definition</b> <a href="_player_8java_source.html#l00013">Player.java:13</a></div></div>
+<div class="ttc" id="aclassdomain_1_1player_1_1_player_html_a2c102b9c325615ef82546dde979d712f"><div class="ttname"><a href="classdomain_1_1player_1_1_player.html#a2c102b9c325615ef82546dde979d712f">domain.player.Player.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition</b> <a href="_player_8java_source.html#l00034">Player.java:34</a></div></div>
+<div class="ttc" id="aclassdomain_1_1player_1_1_player_html_a541dcd07f326c98a7f3f635e193fc892"><div class="ttname"><a href="classdomain_1_1player_1_1_player.html#a541dcd07f326c98a7f3f635e193fc892">domain.player.Player.getHandCards</a></div><div class="ttdeci">Stream&lt; Card &gt; getHandCards()</div><div class="ttdef"><b>Definition</b> <a href="_player_8java_source.html#l00042">Player.java:42</a></div></div>
+<div class="ttc" id="ainterfacedomain_1_1card_1_1_card_html"><div class="ttname"><a href="interfacedomain_1_1card_1_1_card.html">domain.card.Card</a></div><div class="ttdef"><b>Definition</b> <a href="_card_8java_source.html#l00008">Card.java:8</a></div></div>
+<div class="ttc" id="anamespacedomain_1_1card_html"><div class="ttname"><a href="namespacedomain_1_1card.html">domain.card</a></div><div class="ttdef"><b>Definition</b> <a href="_abstract_card_8java_source.html#l00001">AbstractCard.java:1</a></div></div>
+<div class="ttc" id="anamespacedomain_html"><div class="ttname"><a href="namespacedomain.html">domain</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

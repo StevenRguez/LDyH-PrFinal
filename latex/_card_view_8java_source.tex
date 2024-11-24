@@ -1,0 +1,140 @@
+\doxysection{Card\+View.\+java}
+\label{_card_view_8java_source}\index{src/main/java/ui/view/CardView.java@{src/main/java/ui/view/CardView.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }ui.view;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.Card;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ ui.common.StyleUtil;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ javax.swing.*;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ javax.swing.border.Border;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ java.awt.*;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ java.awt.event.MouseAdapter;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{import}\ java.awt.event.MouseEvent;}
+\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ java.util.function.Consumer;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CardView\ \textcolor{keyword}{extends}\ JPanel\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Card\ card;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ String\ value;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \textcolor{keywordtype}{int}\ cardWidth\ =\ 100;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \textcolor{keywordtype}{int}\ cardHeight\ =\ 150;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ \textcolor{keywordtype}{int}\ margin\ =\ 5;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Dimension\ dimension\ =\ \textcolor{keyword}{new}\ Dimension(cardWidth,\ cardHeight);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Border\ defaultBorder\ =\ BorderFactory.createEtchedBorder(WHEN\_FOCUSED,\ Color.white,\ Color.gray);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Border\ focusedBorder\ =\ BorderFactory.createEtchedBorder(WHEN\_FOCUSED,\ Color.black,\ Color.gray);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Consumer<Card>\ handleCardClick;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{public}\ CardView(Card\ card)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}(card,\ \textcolor{keyword}{null});}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{public}\ CardView(Card\ card,\ Consumer<Card>\ onCardClick)\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ this.card\ =\ card;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ this.handleCardClick\ =\ onCardClick;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ this.value\ =\ StyleUtil.getValueToDisplay(card);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ initView();}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{public}\ Dimension\ getDimension()\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dimension;}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initView()\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ setPreferredSize(dimension);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ setBorder(defaultBorder);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ addMouseListener(\textcolor{keyword}{new}\ MouseAdapter()\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ mouseEntered(MouseEvent\ e)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ super.mouseEntered(e);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ showHoverEffect();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ mouseExited(MouseEvent\ e)\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ super.mouseExited(e);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ removeHoverEffect();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ mousePressed(MouseEvent\ e)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(handleCardClick\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handleCardClick.accept(card);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00116\ \ \ \ \ @Override}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ paintComponent(Graphics\ g)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ super.paintComponent(g);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ Graphics2D\ g2\ =\ (Graphics2D)\ g;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ var\ cardColor\ =\ StyleUtil.convertCardColor(card.getColor());}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ fillBackground(g2,\ cardColor);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ drawWhiteOvalInCenter(g2);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ drawValueInCenter(g2,\ cardColor);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ drawValueInCorner(g2);}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ fillBackground(Graphics2D\ g2,\ Color\ cardColor)\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ g2.setColor(Color.WHITE);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ g2.fillRect(0,\ 0,\ cardWidth,\ cardHeight);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ g2.setColor(cardColor);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ g2.fillRect(margin,\ margin,\ cardWidth\ -\/\ 2\ *\ margin,\ cardHeight\ -\/\ 2\ *\ margin);}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ drawWhiteOvalInCenter(Graphics2D\ g2)\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ var\ transformer\ =\ g2.getTransform();}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ g2.setColor(Color.white);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ g2.rotate(45,\ (\textcolor{keywordtype}{double})\ cardWidth\ *\ 3\ /\ 4,\ (\textcolor{keywordtype}{double})\ cardHeight\ *\ 3\ /\ 4);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ g2.fillOval(0,\ cardHeight\ /\ 4,\ cardWidth\ *\ 3\ /\ 5,\ cardHeight);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ g2.setTransform(transformer);}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ drawValueInCenter(Graphics2D\ g2,\ Color\ cardColor)\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ var\ defaultFont\ =\ \textcolor{keyword}{new}\ Font(StyleUtil.DEFAULT\_FONT,\ Font.BOLD,\ cardWidth\ /\ 2\ +\ 5);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ var\ fontMetrics\ =\ this.getFontMetrics(defaultFont);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ stringWidth\ =\ fontMetrics.stringWidth(value)\ /\ 2;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fontHeight\ =\ defaultFont.getSize()\ /\ 3;}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ g2.setColor(cardColor);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ g2.setFont(defaultFont);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ g2.drawString(value,\ cardWidth\ /\ 2\ -\/\ stringWidth,\ cardHeight\ /\ 2\ +\ fontHeight);}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ drawValueInCorner(Graphics2D\ g2)\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ var\ defaultFont\ =\ \textcolor{keyword}{new}\ Font(StyleUtil.DEFAULT\_FONT,\ Font.ITALIC,\ cardWidth\ /\ 5);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ g2.setColor(Color.white);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ g2.setFont(defaultFont);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ g2.drawString(value,\ margin,\ 5\ *\ margin);}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ showHoverEffect()\{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ setBorder(focusedBorder);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ Point\ p\ =\ getLocation();}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ p.y\ -\/=\ 20;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ setLocation(p);}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ removeHoverEffect()\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ setBorder(defaultBorder);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ Point\ p\ =\ getLocation();}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ p.y\ +=\ 20;}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ setLocation(p);}
+\DoxyCodeLine{00203\ \ \ \ \ \}}
+\DoxyCodeLine{00204\ \}}
+
+\end{DoxyCode}

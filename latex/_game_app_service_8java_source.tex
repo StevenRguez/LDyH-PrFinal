@@ -1,0 +1,93 @@
+\doxysection{Game\+App\+Service.\+java}
+\label{_game_app_service_8java_source}\index{src/main/java/application/GameAppService.java@{src/main/java/application/GameAppService.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }application;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ application.dto.PlayerInfoDTO;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.card.Card;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.game.Game;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.game.GameBuilder;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ domain.player.ImmutablePlayer;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ org.apache.logging.log4j.LogManager;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ org.apache.logging.log4j.Logger;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{import}\ java.util.stream.Collectors;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }GameAppService\ \textcolor{keyword}{implements}\ IGameAppService\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Logger\ logger\ =\ LogManager.getLogger(\textcolor{stringliteral}{"{}GameAppService"{}});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Game\ game;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}\ GameAppService()\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ game\ =\ \textcolor{keyword}{new}\ GameBuilder()}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Jugador\ 1"{}})}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Jugador\ 2"{}})}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ .build();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ logGameInfo();}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ logGameInfo()\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ logger.info(\textcolor{stringliteral}{"{}Juego\ creado\ exitosamente"{}});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ game.getPlayers().forEach(p\ -\/>\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ var\ joinedCardValues\ =\ p.getHandCards()}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .map(Object::toString)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .collect(Collectors.joining(\textcolor{stringliteral}{"{},"{}}));}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ logger.debug(String.format(\textcolor{stringliteral}{"{}Jugador\ \%s\ con\ \%s\ cartas\ =>\ [\%s]"{}},\ p.getName(),\ p.getTotalCards(),\ joinedCardValues));}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \ \ \ \ @Override}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{public}\ List<PlayerInfoDTO>\ getPlayerInfos()\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.getPlayers()}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ .map(p\ -\/>\ \textcolor{keyword}{new}\ PlayerInfoDTO(p.getId(),\ p.getName()))}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ .collect(Collectors.toList());}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ @Override}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{public}\ PlayerInfoDTO\ getCurrentPlayer()\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ var\ currentPlayer\ =\ game.getCurrentPlayer();}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ PlayerInfoDTO(currentPlayer.getId(),\ currentPlayer.getName());}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00092\ \ \ \ \ @Override}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Card>\ getHandCards(UUID\ playerId)\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.getHandCards(playerId);}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00104\ \ \ \ \ @Override}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ playCard(UUID\ playerId,\ Card\ card,\ \textcolor{keywordtype}{boolean}\ hasSaidUno)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ var\ message\ =\ String.format(\textcolor{stringliteral}{"{}El\ jugador\ \%s\ juega\ \%s\ \%s"{}},\ playerId,\ card,\ hasSaidUno\ ?\ \textcolor{stringliteral}{"{}y\ dijo\ UNO!!!"{}}\ :\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ logger.info(message);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ game.playCard(playerId,\ card,\ hasSaidUno);}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00116\ \ \ \ \ @Override}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ drawCard(UUID\ playerId)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ var\ message\ =\ String.format(\textcolor{stringliteral}{"{}El\ jugador\ \%s\ roba\ una\ carta"{}},\ playerId);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ logger.info(message);}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ game.drawCard(playerId);}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00128\ \ \ \ \ @Override}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{public}\ Card\ peekTopCard()\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.peekTopCard();}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00138\ \ \ \ \ @Override}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ isGameOver()\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.isOver();}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00148\ \ \ \ \ @Override}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{public}\ ImmutablePlayer\ getWinner()\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.getWinner();}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \}}
+
+\end{DoxyCode}

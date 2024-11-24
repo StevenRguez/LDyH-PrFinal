@@ -1,0 +1,26 @@
+\doxysection{Uno\+App.\+java}
+\label{_uno_app_8java_source}\index{src/main/java/UnoApp.java@{src/main/java/UnoApp.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{import}\ application.GameAppService;}
+\DoxyCodeLine{00002\ \textcolor{keyword}{import}\ org.apache.logging.log4j.LogManager;}
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ org.apache.logging.log4j.Logger;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ ui.AppFrame;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ javax.swing.*;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }UnoApp\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Usamos\ la\ clase\ actual\ para\ nombrar\ el\ logger}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Logger\ logger\ =\ LogManager.getLogger(UnoApp.class);}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ main(String[]\ args)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ var\ appService\ =\ \textcolor{keyword}{new}\ GameAppService();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ SwingUtilities.invokeLater(()\ -\/>\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ AppFrame(appService);}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ logger.info(\textcolor{stringliteral}{"{}UNO\ app\ is\ launched"{}});}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \}}
+
+\end{DoxyCode}

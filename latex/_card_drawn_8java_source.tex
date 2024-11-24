@@ -1,0 +1,23 @@
+\doxysection{Card\+Drawn.\+java}
+\label{_card_drawn_8java_source}\index{src/main/java/domain/game/events/CardDrawn.java@{src/main/java/domain/game/events/CardDrawn.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.game.events;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.common.DomainEvent;}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CardDrawn\ \textcolor{keyword}{extends}\ DomainEvent\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ UUID\ playerId;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}\ CardDrawn(UUID\ playerId)\{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ this.playerId\ =\ playerId;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}\ UUID\ getPlayerId()\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ playerId;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}

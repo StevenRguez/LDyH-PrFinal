@@ -1,0 +1,109 @@
+\doxysection{Referencia de la clase ui.\+view.\+Game\+Status\+View}
+\label{classui_1_1view_1_1_game_status_view}\index{ui.view.GameStatusView@{ui.view.GameStatusView}}
+
+
+Diagrama de herencia de ui.\+view.\+Game\+Status\+View
+% FIG 0
+
+
+Diagrama de colaboración de ui.\+view.\+Game\+Status\+View\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Status\+View} (\textbf{ IGame\+App\+Service} app\+Service)
+\item 
+void \textbf{ set\+Error} (String error\+Mgs)
+\item 
+void \textbf{ handle\+Event} (\textbf{ Domain\+Event} event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \textbf{ domain.\+common.\+Domain\+Event\+Subscriber}}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ paint\+Component} (Graphics g)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que representa la vista del estado del juego en la interfaz gráfica. Se define la impresión de mensajes en la interfaz gráfica. Esta clase es necesaria para mostrar el estado. 
+
+Definición en la línea \textbf{ 19} del archivo \textbf{ Game\+Status\+View.\+java}.
+
+
+
+\doxysubsection{Documentación de constructores y destructores}
+\index{ui.view.GameStatusView@{ui.view.GameStatusView}!GameStatusView@{GameStatusView}}
+\index{GameStatusView@{GameStatusView}!ui.view.GameStatusView@{ui.view.GameStatusView}}
+\doxysubsubsection{GameStatusView()}
+{\footnotesize\ttfamily \label{classui_1_1view_1_1_game_status_view_afe421237b8a7bf22d21a4aab1a27bd97} 
+ui.\+view.\+Game\+Status\+View.\+Game\+Status\+View (\begin{DoxyParamCaption}\item[{\textbf{ IGame\+App\+Service}}]{app\+Service}{}\end{DoxyParamCaption})}
+
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em app\+Service} & Servicio de la aplicación del juego. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 34} del archivo \textbf{ Game\+Status\+View.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{ui.view.GameStatusView@{ui.view.GameStatusView}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!ui.view.GameStatusView@{ui.view.GameStatusView}}
+\doxysubsubsection{handleEvent()}
+{\footnotesize\ttfamily \label{classui_1_1view_1_1_game_status_view_a63827e5beae9baa8782fe1e69cbf2df1} 
+void ui.\+view.\+Game\+Status\+View.\+handle\+Event (\begin{DoxyParamCaption}\item[{\textbf{ Domain\+Event}}]{event}{}\end{DoxyParamCaption})}
+
+Maneja los eventos del dominio y actualiza el estado si es necesario. Este metodo recibe un evento y, si el evento es una instancia de {\ttfamily Card\+Played}, {\ttfamily Card\+Drawn} o {\ttfamily Game\+Over}, se actualiza el estado llamando al metodo {\ttfamily update\+Status()}. 
+\begin{DoxyParams}{Parámetros}
+{\em event} & El evento del dominio que se va a manejar. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ domain.\+common.\+Domain\+Event\+Subscriber} \doxyref{}{pág.}{interfacedomain_1_1common_1_1_domain_event_subscriber_aeb0ff351727baa38e3830e89ab21acb7}.
+
+
+
+Definición en la línea \textbf{ 129} del archivo \textbf{ Game\+Status\+View.\+java}.
+
+\index{ui.view.GameStatusView@{ui.view.GameStatusView}!paintComponent@{paintComponent}}
+\index{paintComponent@{paintComponent}!ui.view.GameStatusView@{ui.view.GameStatusView}}
+\doxysubsubsection{paintComponent()}
+{\footnotesize\ttfamily \label{classui_1_1view_1_1_game_status_view_ab6d54170c662c22af5517ebff958645e} 
+void ui.\+view.\+Game\+Status\+View.\+paint\+Component (\begin{DoxyParamCaption}\item[{Graphics}]{g}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Metodo que pinta el componente para que se vea mejor de cara al usuario. 
+\begin{DoxyParams}{Parámetros}
+{\em g} & Graficos. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 51} del archivo \textbf{ Game\+Status\+View.\+java}.
+
+\index{ui.view.GameStatusView@{ui.view.GameStatusView}!setError@{setError}}
+\index{setError@{setError}!ui.view.GameStatusView@{ui.view.GameStatusView}}
+\doxysubsubsection{setError()}
+{\footnotesize\ttfamily \label{classui_1_1view_1_1_game_status_view_a539505a6146b4a26bacb587cb1399959} 
+void ui.\+view.\+Game\+Status\+View.\+set\+Error (\begin{DoxyParamCaption}\item[{String}]{error\+Mgs}{}\end{DoxyParamCaption})}
+
+Establece un mensaje de error. Este método recibe un mensaje de error como parámetro y lo asigna a la variable {\ttfamily error}, que puede ser utilizada posteriormente para mostrar el mensaje de error en la interfaz de usuario o en otro lugar dentro de la aplicación. 
+\begin{DoxyParams}{Parámetros}
+{\em error\+Mgs} & El mensaje de error que se va a establecer. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 118} del archivo \textbf{ Game\+Status\+View.\+java}.
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/ui/view/\textbf{ Game\+Status\+View.\+java}\end{DoxyCompactItemize}

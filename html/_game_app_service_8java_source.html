@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TizonTools: Archivo de código fuente src/main/java/application/GameAppService.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TizonTools
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_e1ca92bb52bd01398beea8c806d25157.html">application</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">GameAppService.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_game_app_service_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>application;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> <a class="code hl_package" href="namespaceapplication.html">application</a>.<a class="code hl_package" href="namespaceapplication_1_1dto.html">dto</a>.<a class="code hl_class" href="classapplication_1_1dto_1_1_player_info_d_t_o.html">PlayerInfoDTO</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1card.html">card</a>.<a class="code hl_interface" href="interfacedomain_1_1card_1_1_card.html">Card</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1game.html">game</a>.<a class="code hl_class" href="classdomain_1_1game_1_1_game.html">Game</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1game.html">game</a>.<a class="code hl_class" href="classdomain_1_1game_1_1_game_builder.html">GameBuilder</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1player.html">player</a>.<a class="code hl_class" href="classdomain_1_1player_1_1_immutable_player.html">ImmutablePlayer</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> org.apache.logging.log4j.LogManager;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> org.apache.logging.log4j.Logger;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.util.UUID;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> java.util.stream.Collectors;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> java.util.stream.Stream;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classapplication_1_1_game_app_service.html">   23</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classapplication_1_1_game_app_service.html">GameAppService</a> <span class="keyword">implements</span> <a class="code hl_interface" href="interfaceapplication_1_1_i_game_app_service.html">IGameAppService</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LogManager.getLogger(<span class="stringliteral">&quot;GameAppService&quot;</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">private</span> <span class="keyword">final</span> <a class="code hl_class" href="classdomain_1_1game_1_1_game.html">Game</a> game;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classapplication_1_1_game_app_service.html#a5182f4403db57416b140a09082286704">   37</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classapplication_1_1_game_app_service.html#a5182f4403db57416b140a09082286704">GameAppService</a>() {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        game = <span class="keyword">new</span> <a class="code hl_class" href="classdomain_1_1game_1_1_game_builder.html">GameBuilder</a>()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            .<a class="code hl_function" href="classdomain_1_1game_1_1_game_builder.html#a0c6c1b220751be687495911f668b2956">withPlayer</a>(<span class="stringliteral">&quot;Jugador 1&quot;</span>)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            .<a class="code hl_function" href="classdomain_1_1game_1_1_game_builder.html#a0c6c1b220751be687495911f668b2956">withPlayer</a>(<span class="stringliteral">&quot;Jugador 2&quot;</span>)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            .<a class="code hl_function" href="classdomain_1_1game_1_1_game_builder.html#aefa110217a8656c9d805614ff4ed6f33">build</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        logGameInfo();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> logGameInfo() {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        logger.info(<span class="stringliteral">&quot;Juego creado exitosamente&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        game.<a class="code hl_function" href="classdomain_1_1game_1_1_game.html#a8ef02b63db5e4ce1c13302458327de07">getPlayers</a>().forEach(p -&gt; {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            var joinedCardValues = p.getHandCards()</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                .map(Object::toString)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                .collect(Collectors.joining(<span class="stringliteral">&quot;,&quot;</span>));</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            logger.debug(String.format(<span class="stringliteral">&quot;Jugador %s con %s cartas =&gt; [%s]&quot;</span>, p.getName(), p.getTotalCards(), joinedCardValues));</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        });</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    @Override</div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classapplication_1_1_game_app_service.html#a47e4aa5e2a9ec317fce96c68dc2f0b2f">   69</a></span>    <span class="keyword">public</span> List&lt;PlayerInfoDTO&gt; <a class="code hl_function" href="classapplication_1_1_game_app_service.html#a47e4aa5e2a9ec317fce96c68dc2f0b2f">getPlayerInfos</a>() {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">return</span> game.<a class="code hl_function" href="classdomain_1_1game_1_1_game.html#a8ef02b63db5e4ce1c13302458327de07">getPlayers</a>()</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            .map(p -&gt; <span class="keyword">new</span> <a class="code hl_class" href="classapplication_1_1dto_1_1_player_info_d_t_o.html">PlayerInfoDTO</a>(p.getId(), p.getName()))</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            .collect(Collectors.toList());</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    @Override</div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classapplication_1_1_game_app_service.html#a95308d358c22a877687ccaab77cedb09">   81</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classapplication_1_1dto_1_1_player_info_d_t_o.html">PlayerInfoDTO</a> <a class="code hl_function" href="classapplication_1_1_game_app_service.html#a95308d358c22a877687ccaab77cedb09">getCurrentPlayer</a>() {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        var currentPlayer = game.<a class="code hl_function" href="classdomain_1_1game_1_1_game.html#a2e746d8b75db101e2d634cc64b3aac95">getCurrentPlayer</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classapplication_1_1dto_1_1_player_info_d_t_o.html">PlayerInfoDTO</a>(currentPlayer.getId(), currentPlayer.getName());</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    @Override</div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classapplication_1_1_game_app_service.html#aae193f174f11553e87d0bbfca59dab39">   93</a></span>    <span class="keyword">public</span> Stream&lt;Card&gt; <a class="code hl_function" href="classapplication_1_1_game_app_service.html#aae193f174f11553e87d0bbfca59dab39">getHandCards</a>(UUID playerId) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">return</span> game.<a class="code hl_function" href="classdomain_1_1game_1_1_game.html#a74d046132b8bd2c266644eb1e1b09a44">getHandCards</a>(playerId);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    @Override</div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classapplication_1_1_game_app_service.html#ae6cde6636bf9c91431f2f917e1df234d">  105</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classapplication_1_1_game_app_service.html#ae6cde6636bf9c91431f2f917e1df234d">playCard</a>(UUID playerId, <a class="code hl_interface" href="interfacedomain_1_1card_1_1_card.html">Card</a> card, <span class="keywordtype">boolean</span> hasSaidUno) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        var message = String.format(<span class="stringliteral">&quot;El jugador %s juega %s %s&quot;</span>, playerId, card, hasSaidUno ? <span class="stringliteral">&quot;y dijo UNO!!!&quot;</span> : <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        logger.info(message);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        game.<a class="code hl_function" href="classdomain_1_1game_1_1_game.html#a3782e391b270083eddad87bceaaa1578">playCard</a>(playerId, card, hasSaidUno);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    @Override</div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classapplication_1_1_game_app_service.html#ab1324c8c32bdde5917f640be138c38b5">  117</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classapplication_1_1_game_app_service.html#ab1324c8c32bdde5917f640be138c38b5">drawCard</a>(UUID playerId) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        var message = String.format(<span class="stringliteral">&quot;El jugador %s roba una carta&quot;</span>, playerId);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        logger.info(message);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        game.<a class="code hl_function" href="classdomain_1_1game_1_1_game.html#a0b9311b6306912fb96812183262531da">drawCard</a>(playerId);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    @Override</div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classapplication_1_1_game_app_service.html#aa3b2f00d6c4056e0aec2d02bd8b6dc7b">  129</a></span>    <span class="keyword">public</span> <a class="code hl_interface" href="interfacedomain_1_1card_1_1_card.html">Card</a> <a class="code hl_function" href="classapplication_1_1_game_app_service.html#aa3b2f00d6c4056e0aec2d02bd8b6dc7b">peekTopCard</a>() {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">return</span> game.<a class="code hl_function" href="classdomain_1_1game_1_1_game.html#aeb2092f6ec706480301ed20c1dff9912">peekTopCard</a>();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
+</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    @Override</div>
+<div class="foldopen" id="foldopen00139" data-start="{" data-end="}">
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classapplication_1_1_game_app_service.html#a9f54e75b7d73e62a1f4fe3a79c3b0058">  139</a></span>    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classapplication_1_1_game_app_service.html#a9f54e75b7d73e62a1f4fe3a79c3b0058">isGameOver</a>() {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">return</span> game.<a class="code hl_function" href="classdomain_1_1game_1_1_game.html#ae54bdd128c692df9cb96f5a390a601f5">isOver</a>();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
+</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    @Override</div>
+<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classapplication_1_1_game_app_service.html#a2e6a60dd832ae2472563bcaab70a1309">  149</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classdomain_1_1player_1_1_immutable_player.html">ImmutablePlayer</a> <a class="code hl_function" href="classapplication_1_1_game_app_service.html#a2e6a60dd832ae2472563bcaab70a1309">getWinner</a>() {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">return</span> game.<a class="code hl_function" href="classdomain_1_1game_1_1_game.html#a569f3fcef7c8dd9a2026dc970a705fef">getWinner</a>();</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+</div>
+<div class="ttc" id="aclassapplication_1_1_game_app_service_html"><div class="ttname"><a href="classapplication_1_1_game_app_service.html">application.GameAppService</a></div><div class="ttdoc">Servicio de aplicación que actúa como intermediario entre el dominio del juego y la capa de presentac...</div><div class="ttdef"><b>Definition</b> <a href="#l00023">GameAppService.java:23</a></div></div>
+<div class="ttc" id="aclassapplication_1_1_game_app_service_html_a2e6a60dd832ae2472563bcaab70a1309"><div class="ttname"><a href="classapplication_1_1_game_app_service.html#a2e6a60dd832ae2472563bcaab70a1309">application.GameAppService.getWinner</a></div><div class="ttdeci">ImmutablePlayer getWinner()</div><div class="ttdoc">Recupera el jugador ganador, si el juego ha finalizado.</div><div class="ttdef"><b>Definition</b> <a href="#l00149">GameAppService.java:149</a></div></div>
+<div class="ttc" id="aclassapplication_1_1_game_app_service_html_a47e4aa5e2a9ec317fce96c68dc2f0b2f"><div class="ttname"><a href="classapplication_1_1_game_app_service.html#a47e4aa5e2a9ec317fce96c68dc2f0b2f">application.GameAppService.getPlayerInfos</a></div><div class="ttdeci">List&lt; PlayerInfoDTO &gt; getPlayerInfos()</div><div class="ttdoc">Recupera una lista de objetos PlayerInfoDTO que representan la información básica de cada jugador.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">GameAppService.java:69</a></div></div>
+<div class="ttc" id="aclassapplication_1_1_game_app_service_html_a5182f4403db57416b140a09082286704"><div class="ttname"><a href="classapplication_1_1_game_app_service.html#a5182f4403db57416b140a09082286704">application.GameAppService.GameAppService</a></div><div class="ttdeci">GameAppService()</div><div class="ttdoc">Construye un nuevo GameAppService e inicializa un juego con jugadores predeterminados.</div><div class="ttdef"><b>Definition</b> <a href="#l00037">GameAppService.java:37</a></div></div>
+<div class="ttc" id="aclassapplication_1_1_game_app_service_html_a95308d358c22a877687ccaab77cedb09"><div class="ttname"><a href="classapplication_1_1_game_app_service.html#a95308d358c22a877687ccaab77cedb09">application.GameAppService.getCurrentPlayer</a></div><div class="ttdeci">PlayerInfoDTO getCurrentPlayer()</div><div class="ttdoc">Recupera la información del jugador actual.</div><div class="ttdef"><b>Definition</b> <a href="#l00081">GameAppService.java:81</a></div></div>
+<div class="ttc" id="aclassapplication_1_1_game_app_service_html_a9f54e75b7d73e62a1f4fe3a79c3b0058"><div class="ttname"><a href="classapplication_1_1_game_app_service.html#a9f54e75b7d73e62a1f4fe3a79c3b0058">application.GameAppService.isGameOver</a></div><div class="ttdeci">boolean isGameOver()</div><div class="ttdoc">Verifica si el juego ha finalizado.</div><div class="ttdef"><b>Definition</b> <a href="#l00139">GameAppService.java:139</a></div></div>
+<div class="ttc" id="aclassapplication_1_1_game_app_service_html_aa3b2f00d6c4056e0aec2d02bd8b6dc7b"><div class="ttname"><a href="classapplication_1_1_game_app_service.html#aa3b2f00d6c4056e0aec2d02bd8b6dc7b">application.GameAppService.peekTopCard</a></div><div class="ttdeci">Card peekTopCard()</div><div class="ttdoc">Recupera la carta superior de la pila de descarte sin retirarla.</div><div class="ttdef"><b>Definition</b> <a href="#l00129">GameAppService.java:129</a></div></div>
+<div class="ttc" id="aclassapplication_1_1_game_app_service_html_aae193f174f11553e87d0bbfca59dab39"><div class="ttname"><a href="classapplication_1_1_game_app_service.html#aae193f174f11553e87d0bbfca59dab39">application.GameAppService.getHandCards</a></div><div class="ttdeci">Stream&lt; Card &gt; getHandCards(UUID playerId)</div><div class="ttdoc">Recupera las cartas en mano de un jugador específico a partir de su UUID.</div><div class="ttdef"><b>Definition</b> <a href="#l00093">GameAppService.java:93</a></div></div>
+<div class="ttc" id="aclassapplication_1_1_game_app_service_html_ab1324c8c32bdde5917f640be138c38b5"><div class="ttname"><a href="classapplication_1_1_game_app_service.html#ab1324c8c32bdde5917f640be138c38b5">application.GameAppService.drawCard</a></div><div class="ttdeci">void drawCard(UUID playerId)</div><div class="ttdoc">Permite a un jugador robar una carta del mazo.</div><div class="ttdef"><b>Definition</b> <a href="#l00117">GameAppService.java:117</a></div></div>
+<div class="ttc" id="aclassapplication_1_1_game_app_service_html_ae6cde6636bf9c91431f2f917e1df234d"><div class="ttname"><a href="classapplication_1_1_game_app_service.html#ae6cde6636bf9c91431f2f917e1df234d">application.GameAppService.playCard</a></div><div class="ttdeci">void playCard(UUID playerId, Card card, boolean hasSaidUno)</div><div class="ttdoc">Permite a un jugador jugar una carta, con la opción de declarar &quot;UNO&quot;.</div><div class="ttdef"><b>Definition</b> <a href="#l00105">GameAppService.java:105</a></div></div>
+<div class="ttc" id="aclassapplication_1_1dto_1_1_player_info_d_t_o_html"><div class="ttname"><a href="classapplication_1_1dto_1_1_player_info_d_t_o.html">application.dto.PlayerInfoDTO</a></div><div class="ttdoc">Objeto de Transferencia de Datos (DTO) que contiene la información del jugador para la transferencia ...</div><div class="ttdef"><b>Definition</b> <a href="_player_info_d_t_o_8java_source.html#l00014">PlayerInfoDTO.java:14</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_builder_html"><div class="ttname"><a href="classdomain_1_1game_1_1_game_builder.html">domain.game.GameBuilder</a></div><div class="ttdoc">Clase utilizada para construir una instancia de un juego configurado con jugadores y un mazo de carta...</div><div class="ttdef"><b>Definition</b> <a href="_game_builder_8java_source.html#l00014">GameBuilder.java:14</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_builder_html_a0c6c1b220751be687495911f668b2956"><div class="ttname"><a href="classdomain_1_1game_1_1_game_builder.html#a0c6c1b220751be687495911f668b2956">domain.game.GameBuilder.withPlayer</a></div><div class="ttdeci">GameBuilder withPlayer(String name)</div><div class="ttdoc">Añade un jugador al juego en construcción.</div><div class="ttdef"><b>Definition</b> <a href="_game_builder_8java_source.html#l00023">GameBuilder.java:23</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_builder_html_aefa110217a8656c9d805614ff4ed6f33"><div class="ttname"><a href="classdomain_1_1game_1_1_game_builder.html#aefa110217a8656c9d805614ff4ed6f33">domain.game.GameBuilder.build</a></div><div class="ttdeci">Game build()</div><div class="ttdoc">Construye una instancia del juego con los jugadores y mazo configurados.</div><div class="ttdef"><b>Definition</b> <a href="_game_builder_8java_source.html#l00033">GameBuilder.java:33</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_html"><div class="ttname"><a href="classdomain_1_1game_1_1_game.html">domain.game.Game</a></div><div class="ttdoc">Representa una partida del juego, gestionando jugadores, cartas y reglas.</div><div class="ttdef"><b>Definition</b> <a href="_game_8java_source.html#l00022">Game.java:22</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_html_a0b9311b6306912fb96812183262531da"><div class="ttname"><a href="classdomain_1_1game_1_1_game.html#a0b9311b6306912fb96812183262531da">domain.game.Game.drawCard</a></div><div class="ttdeci">void drawCard(UUID playerId)</div><div class="ttdoc">Permite al jugador actual robar una carta del mazo.</div><div class="ttdef"><b>Definition</b> <a href="_game_8java_source.html#l00220">Game.java:220</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_html_a2e746d8b75db101e2d634cc64b3aac95"><div class="ttname"><a href="classdomain_1_1game_1_1_game.html#a2e746d8b75db101e2d634cc64b3aac95">domain.game.Game.getCurrentPlayer</a></div><div class="ttdeci">ImmutablePlayer getCurrentPlayer()</div><div class="ttdoc">Devuelve el jugador actual.</div><div class="ttdef"><b>Definition</b> <a href="_game_8java_source.html#l00091">Game.java:91</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_html_a3782e391b270083eddad87bceaaa1578"><div class="ttname"><a href="classdomain_1_1game_1_1_game.html#a3782e391b270083eddad87bceaaa1578">domain.game.Game.playCard</a></div><div class="ttdeci">void playCard(UUID playerId, Card playedCard)</div><div class="ttdoc">Juega una carta para el jugador actual.</div><div class="ttdef"><b>Definition</b> <a href="_game_8java_source.html#l00177">Game.java:177</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_html_a569f3fcef7c8dd9a2026dc970a705fef"><div class="ttname"><a href="classdomain_1_1game_1_1_game.html#a569f3fcef7c8dd9a2026dc970a705fef">domain.game.Game.getWinner</a></div><div class="ttdeci">ImmutablePlayer getWinner()</div><div class="ttdoc">Obtiene al jugador ganador de la partida.</div><div class="ttdef"><b>Definition</b> <a href="_game_8java_source.html#l00242">Game.java:242</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_html_a74d046132b8bd2c266644eb1e1b09a44"><div class="ttname"><a href="classdomain_1_1game_1_1_game.html#a74d046132b8bd2c266644eb1e1b09a44">domain.game.Game.getHandCards</a></div><div class="ttdeci">Stream&lt; Card &gt; getHandCards(UUID playerId)</div><div class="ttdoc">Obtiene las cartas en mano de un jugador.</div><div class="ttdef"><b>Definition</b> <a href="_game_8java_source.html#l00101">Game.java:101</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_html_a8ef02b63db5e4ce1c13302458327de07"><div class="ttname"><a href="classdomain_1_1game_1_1_game.html#a8ef02b63db5e4ce1c13302458327de07">domain.game.Game.getPlayers</a></div><div class="ttdeci">Stream&lt; ImmutablePlayer &gt; getPlayers()</div><div class="ttdoc">Devuelve un flujo de los jugadores en su estado inmutable.</div><div class="ttdef"><b>Definition</b> <a href="_game_8java_source.html#l00083">Game.java:83</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_html_ae54bdd128c692df9cb96f5a390a601f5"><div class="ttname"><a href="classdomain_1_1game_1_1_game.html#ae54bdd128c692df9cb96f5a390a601f5">domain.game.Game.isOver</a></div><div class="ttdeci">boolean isOver()</div><div class="ttdoc">Verifica si el juego ha terminado.</div><div class="ttdef"><b>Definition</b> <a href="_game_8java_source.html#l00233">Game.java:233</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_html_aeb2092f6ec706480301ed20c1dff9912"><div class="ttname"><a href="classdomain_1_1game_1_1_game.html#aeb2092f6ec706480301ed20c1dff9912">domain.game.Game.peekTopCard</a></div><div class="ttdeci">Card peekTopCard()</div><div class="ttdoc">Obtiene la carta superior de la pila de descarte.</div><div class="ttdef"><b>Definition</b> <a href="_game_8java_source.html#l00109">Game.java:109</a></div></div>
+<div class="ttc" id="aclassdomain_1_1player_1_1_immutable_player_html"><div class="ttname"><a href="classdomain_1_1player_1_1_immutable_player.html">domain.player.ImmutablePlayer</a></div><div class="ttdef"><b>Definition</b> <a href="_immutable_player_8java_source.html#l00015">ImmutablePlayer.java:15</a></div></div>
+<div class="ttc" id="ainterfaceapplication_1_1_i_game_app_service_html"><div class="ttname"><a href="interfaceapplication_1_1_i_game_app_service.html">application.IGameAppService</a></div><div class="ttdoc">Interfaz que define el servicio de aplicación para interactuar con una sesión de juego.</div><div class="ttdef"><b>Definition</b> <a href="_i_game_app_service_8java_source.html#l00019">IGameAppService.java:19</a></div></div>
+<div class="ttc" id="ainterfacedomain_1_1card_1_1_card_html"><div class="ttname"><a href="interfacedomain_1_1card_1_1_card.html">domain.card.Card</a></div><div class="ttdef"><b>Definition</b> <a href="_card_8java_source.html#l00008">Card.java:8</a></div></div>
+<div class="ttc" id="anamespaceapplication_1_1dto_html"><div class="ttname"><a href="namespaceapplication_1_1dto.html">application.dto</a></div><div class="ttdef"><b>Definition</b> <a href="_player_info_d_t_o_8java_source.html#l00001">PlayerInfoDTO.java:1</a></div></div>
+<div class="ttc" id="anamespaceapplication_html"><div class="ttname"><a href="namespaceapplication.html">application</a></div></div>
+<div class="ttc" id="anamespacedomain_1_1card_html"><div class="ttname"><a href="namespacedomain_1_1card.html">domain.card</a></div><div class="ttdef"><b>Definition</b> <a href="_abstract_card_8java_source.html#l00001">AbstractCard.java:1</a></div></div>
+<div class="ttc" id="anamespacedomain_1_1game_html"><div class="ttname"><a href="namespacedomain_1_1game.html">domain.game</a></div><div class="ttdef"><b>Definition</b> <a href="_card_rules_8java_source.html#l00001">CardRules.java:1</a></div></div>
+<div class="ttc" id="anamespacedomain_1_1player_html"><div class="ttname"><a href="namespacedomain_1_1player.html">domain.player</a></div><div class="ttdef"><b>Definition</b> <a href="_direction_8java_source.html#l00001">Direction.java:1</a></div></div>
+<div class="ttc" id="anamespacedomain_html"><div class="ttname"><a href="namespacedomain.html">domain</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

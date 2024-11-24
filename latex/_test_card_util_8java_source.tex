@@ -1,0 +1,36 @@
+\doxysection{Test\+Card\+Util.\+java}
+\label{_test_card_util_8java_source}\index{src/test/java/domain/card/TestCardUtil.java@{src/test/java/domain/card/TestCardUtil.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.card;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.testhelper.CardTestFactory;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertFalse;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertTrue;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }TestCardUtil\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ @Test}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenWildColorCard\_ShouldBeWildCard()\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ var\ result\ =\ CardUtil.isWildCard(CardTestFactory.createWildColorCard());}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ assertTrue(result);}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ @Test}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenWildDrawFourCard\_ShouldBeWildCard()\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ var\ result\ =\ CardUtil.isWildCard(CardTestFactory.createWildDrawFourCard());}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ assertTrue(result);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ @Test}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenNumberCard\_ShouldNotBeWildCard()\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ var\ result\ =\ CardUtil.isWildCard(CardTestFactory.createNumberCard());}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ assertFalse(result);}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,52 @@
+\doxysection{Player\+Round\+Iterator.\+java}
+\label{_player_round_iterator_8java_source}\index{src/main/java/domain/player/PlayerRoundIterator.java@{src/main/java/domain/player/PlayerRoundIterator.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.player;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ java.util.Arrays;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }PlayerRoundIterator\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Player[]\ players;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ current\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}\ Direction\ direction\ =\ Direction.CLOCKWISE;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}\ PlayerRoundIterator(Player[]\ players)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ this.players\ =\ players;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Player>\ stream()\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Arrays.stream(players);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}\ Player\ getCurrentPlayer()\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players[current];}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{public}\ Player\ getPlayerById(UUID\ playerId)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ player\ :\ players)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (player.getId().equals(playerId))\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ player;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ reverseDirection()\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ direction\ =\ Direction.COUNTER\_CLOCK\_WISE;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{public}\ Player\ next()\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ current\ =\ getNextIndex();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ getCurrentPlayer();}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ getNextIndex()\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ var\ increment\ =\ direction\ ==\ Direction.CLOCKWISE\ ?\ 1\ :\ -\/1;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (players.length\ +\ current\ +\ increment)\ \%\ players.length;}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}

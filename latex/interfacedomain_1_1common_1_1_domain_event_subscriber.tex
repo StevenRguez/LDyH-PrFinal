@@ -1,0 +1,54 @@
+\doxysection{Referencia de la interface domain.\+common.\+Domain\+Event\+Subscriber}
+\label{interfacedomain_1_1common_1_1_domain_event_subscriber}\index{domain.common.DomainEventSubscriber@{domain.common.DomainEventSubscriber}}
+
+
+Interfaz para suscriptores de eventos de dominio.  
+
+
+
+
+Diagrama de herencia de domain.\+common.\+Domain\+Event\+Subscriber
+% FIG 0
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ handle\+Event} (\textbf{ Domain\+Event} event)
+\begin{DoxyCompactList}\small\item\em Maneja un evento de dominio específico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Interfaz para suscriptores de eventos de dominio. 
+
+Define el contrato que debe implementar cualquier clase que desee suscribirse y responder a eventos de dominio publicados por el {\ttfamily \doxyref{Domain\+Event\+Publisher}{pág.}{classdomain_1_1common_1_1_domain_event_publisher}}. 
+
+Definición en la línea \textbf{ 10} del archivo \textbf{ Domain\+Event\+Subscriber.\+java}.
+
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{domain.common.DomainEventSubscriber@{domain.common.DomainEventSubscriber}!handleEvent@{handleEvent}}
+\index{handleEvent@{handleEvent}!domain.common.DomainEventSubscriber@{domain.common.DomainEventSubscriber}}
+\doxysubsubsection{handleEvent()}
+{\footnotesize\ttfamily \label{interfacedomain_1_1common_1_1_domain_event_subscriber_aeb0ff351727baa38e3830e89ab21acb7} 
+void domain.\+common.\+Domain\+Event\+Subscriber.\+handle\+Event (\begin{DoxyParamCaption}\item[{\textbf{ Domain\+Event}}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Maneja un evento de dominio específico. 
+
+Este método es invocado cuando un evento de dominio es publicado y debe ser implementado por la clase suscriptora para definir cómo responder al evento.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em event} & Objeto \doxyref{Domain\+Event}{pág.}{classdomain_1_1common_1_1_domain_event} que representa el evento de dominio recibido. \\
+\hline
+\end{DoxyParams}
+
+
+Implementado en \textbf{ ui.\+view.\+Game\+Status\+View} \doxyref{}{pág.}{classui_1_1view_1_1_game_status_view_a63827e5beae9baa8782fe1e69cbf2df1}, \textbf{ ui.\+view.\+Player\+View} \doxyref{}{pág.}{classui_1_1view_1_1_player_view_af34ffa92abd917af054850d27e68e81e} y \textbf{ ui.\+view.\+Table\+View} \doxyref{}{pág.}{classui_1_1view_1_1_table_view_a6ef7fa6e4057646fa9e406180f07cc71}.
+
+
+
+La documentación de esta interface está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/domain/common/\textbf{ Domain\+Event\+Subscriber.\+java}\end{DoxyCompactItemize}

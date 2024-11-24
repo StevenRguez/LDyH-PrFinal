@@ -1,0 +1,35 @@
+\doxysection{IGame\+App\+Service.\+java}
+\label{_i_game_app_service_8java_source}\index{src/main/java/application/IGameAppService.java@{src/main/java/application/IGameAppService.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }application;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ application.dto.PlayerInfoDTO;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.card.Card;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.player.ImmutablePlayer;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ java.io.Serializable;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }IGameAppService\ \textcolor{keyword}{extends}\ Serializable\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \ \ \ \ List<PlayerInfoDTO>\ getPlayerInfos();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \ \ \ \ PlayerInfoDTO\ getCurrentPlayer();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00041\ \ \ \ \ Stream<Card>\ getHandCards(UUID\ playerId);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ playCard(UUID\ playerId,\ Card\ card,\ \textcolor{keywordtype}{boolean}\ hasSaidUno);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ drawCard(UUID\ playerId);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ Card\ peekTopCard();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{boolean}\ isGameOver();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ ImmutablePlayer\ getWinner();}
+\DoxyCodeLine{00079\ \}}
+
+\end{DoxyCode}

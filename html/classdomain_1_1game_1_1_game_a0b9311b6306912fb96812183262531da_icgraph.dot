@@ -1,0 +1,11 @@
+digraph "domain.game.Game.drawCard"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="domain.game.Game.drawCard",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Permite al jugador actual robar una carta del mazo."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="application.GameAppService.drawCard",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classapplication_1_1_game_app_service.html#ab1324c8c32bdde5917f640be138c38b5",tooltip="Permite a un jugador robar una carta del mazo."];
+}

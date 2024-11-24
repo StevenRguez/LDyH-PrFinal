@@ -1,0 +1,23 @@
+digraph "domain.card.AbstractCard.getType"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="domain.card.AbstractCard.getType",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge8_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="domain.card.ActionCard.equals",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1card_1_1_action_card.html#a8fe085234348d5b1f448b3c84fa25835",tooltip=" "];
+  Node1 -> Node3 [id="edge9_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="domain.card.WildCard.equals",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1card_1_1_wild_card.html#ae72ca9cda4632fc33e69772dc1b0b2b9",tooltip=" "];
+  Node1 -> Node4 [id="edge10_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="domain.card.ActionCard.hashCode",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1card_1_1_action_card.html#a44bbb19ccdf782a75c931e0bfdac7d9b",tooltip=" "];
+  Node1 -> Node5 [id="edge11_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="domain.card.WildCard.hashCode",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1card_1_1_wild_card.html#af3c0f8bb82b840bda732444575367955",tooltip=" "];
+  Node1 -> Node6 [id="edge12_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="domain.game.CardRules.is\lValidActionCard",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1game_1_1_card_rules.html#a2ed0bf7892d81ebe70d1e32a929dfd11",tooltip="Valida si una carta de acción puede ser jugada sobre otra carta."];
+  Node1 -> Node7 [id="edge13_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="domain.card.ActionCard.to\lString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1card_1_1_action_card.html#a5d5c564cd89e51fa3096c814ee4e0212",tooltip=" "];
+  Node1 -> Node8 [id="edge14_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="domain.card.WildCard.toString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1card_1_1_wild_card.html#a453350bfe9d9e9763d2fd48e4f477332",tooltip=" "];
+}

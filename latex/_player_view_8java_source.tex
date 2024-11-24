@@ -1,0 +1,188 @@
+\doxysection{Player\+View.\+java}
+\label{_player_view_8java_source}\index{src/main/java/ui/view/PlayerView.java@{src/main/java/ui/view/PlayerView.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }ui.view;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ application.IGameAppService;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ application.dto.PlayerInfoDTO;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.card.Card;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.card.CardType;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ domain.card.WildCard;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ domain.common.DomainEvent;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ domain.common.DomainEventPublisher;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{import}\ domain.common.DomainEventSubscriber;}
+\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ domain.game.DealerService;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{import}\ domain.game.events.CardDrawn;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{import}\ domain.game.events.CardPlayed;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{import}\ domain.game.events.GameOver;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{import}\ ui.common.StyleUtil;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{import}\ javax.swing.*;}
+\DoxyCodeLine{00018\ \textcolor{keyword}{import}\ java.awt.*;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{import}\ java.util.stream.Collectors;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }PlayerView\ \textcolor{keyword}{extends}\ JPanel\ implements\ DomainEventSubscriber\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}\ JLayeredPane\ handCardsView;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{private}\ Box\ controlPanel;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}\ JLabel\ nameLabel;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{private}\ JButton\ drawButton;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{private}\ JButton\ sayUnoButton;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ hasSaidUno\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ PlayerInfoDTO\ player;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ IGameAppService\ appService;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{public}\ PlayerView(PlayerInfoDTO\ player,\ IGameAppService\ appService)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ this.player\ =\ player;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ this.appService\ =\ appService;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ initView();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(\textcolor{keyword}{this});}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initView()\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Box\ layout\ =\ Box.createHorizontalBox();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ initHandCardsView();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ initControlPanel();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ layout.add(handCardsView);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ layout.add(Box.createHorizontalStrut(20));}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ layout.add(controlPanel);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ add(layout);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ setOpaque(\textcolor{keyword}{false});}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ refresh();}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initHandCardsView()\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ handCardsView\ =\ \textcolor{keyword}{new}\ JLayeredPane();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ handCardsView.setPreferredSize(\textcolor{keyword}{new}\ Dimension(600,\ 175));}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ handCardsView.setOpaque(\textcolor{keyword}{false});}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ renderHandCardsView()\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ handCardsView.removeAll();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ var\ handCards\ =\ appService.getHandCards(player.getId()).collect(Collectors.toList());}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ Point\ originPoint\ =\ getFirstCardPoint(handCards.size());}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ offset\ =\ calculateOffset(handCardsView.getWidth(),\ handCards.size());}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ card\ :\ handCards)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ var\ cardView\ =\ \textcolor{keyword}{new}\ CardView(card,\ this::playCard);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ cardView.setBounds(originPoint.x,\ originPoint.y,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cardView.getDimension().width,\ cardView.getDimension().height);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ handCardsView.add(cardView,\ i++);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ handCardsView.moveToFront(cardView);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ originPoint.x\ +=\ offset;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ handCardsView.revalidate();}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{private}\ Point\ getFirstCardPoint(\textcolor{keywordtype}{int}\ totalCards)\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ Point\ p\ =\ \textcolor{keyword}{new}\ Point(0,\ 20);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (totalCards\ <\ DealerService.TOTAL\_INITIAL\_HAND\_CARDS)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ var\ width\ =\ handCardsView.getWidth()\ ==\ 0\ ?\ handCardsView.getPreferredSize().width\ :\ handCardsView.getWidth();}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ var\ offset\ =\ calculateOffset(width,\ totalCards);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ p.x\ =\ (width\ -\/\ offset\ *\ totalCards)\ /\ 2;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p;}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ calculateOffset(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ totalCards)\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (totalCards\ <=\ DealerService.TOTAL\_INITIAL\_HAND\_CARDS)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 71;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (width\ -\/\ 100)\ /\ (totalCards\ -\/\ 1);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initControlPanel()\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ initDrawButton();}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ initSayNoButton();}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ initNameLabel();}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ controlPanel\ =\ Box.createVerticalBox();}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ controlPanel.add(nameLabel);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ controlPanel.add(drawButton);}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ controlPanel.add(Box.createVerticalStrut(15));}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ controlPanel.add(sayUnoButton);}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ toggleControlPanel()\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ var\ isMyTurn\ =\ appService.getCurrentPlayer().getId().equals(player.getId());}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (appService.isGameOver())\ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ isMyTurn\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ drawButton.setVisible(isMyTurn);}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ sayUnoButton.setVisible(isMyTurn);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ controlPanel.revalidate();}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initNameLabel()\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ nameLabel\ =\ \textcolor{keyword}{new}\ JLabel(player.getName());}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ nameLabel.setForeground(Color.WHITE);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ nameLabel.setFont(\textcolor{keyword}{new}\ Font(StyleUtil.DEFAULT\_FONT,\ Font.BOLD,\ 15));}
+\DoxyCodeLine{00190\ \ \ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initSayNoButton()\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ sayUnoButton\ =\ \textcolor{keyword}{new}\ JButton(\textcolor{stringliteral}{"{}Say\ UNO"{}});}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ sayUnoButton.setBackground(\textcolor{keyword}{new}\ Color(149,\ 55,\ 53));}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ sayUnoButton.setFont(\textcolor{keyword}{new}\ Font(StyleUtil.DEFAULT\_FONT,\ Font.BOLD,\ 20));}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ sayUnoButton.setFocusable(\textcolor{keyword}{false});}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ sayUnoButton.addActionListener(e\ -\/>\ hasSaidUno\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initDrawButton()\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ drawButton\ =\ \textcolor{keyword}{new}\ JButton(\textcolor{stringliteral}{"{}Draw"{}});}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ drawButton.setBackground(\textcolor{keyword}{new}\ Color(79,\ 129,\ 189));}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ drawButton.setFont(\textcolor{keyword}{new}\ Font(StyleUtil.DEFAULT\_FONT,\ Font.BOLD,\ 20));}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ drawButton.setFocusable(\textcolor{keyword}{false});}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ drawButton.addActionListener(e\ -\/>\ appService.drawCard(player.getId()));}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ playCard(Card\ selectedCard)\ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ Card\ cardToPlay\ =\ selectedCard;}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedCard.getType()\ ==\ CardType.WILD\_COLOR\ ||\ selectedCard.getType()\ ==\ CardType.WILD\_DRAW\_FOUR)\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ var\ chosenColor\ =\ ColorPicker.getInstance().show();}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ cardToPlay\ =\ \textcolor{keyword}{new}\ WildCard(selectedCard.getType(),\ chosenColor);}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ appService.playCard(player.getId(),\ cardToPlay,\ hasSaidUno);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ hasSaidUno\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00233\ \ \ \ \ \}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ refresh()\ \{}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ renderHandCardsView();}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ toggleControlPanel();}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ repaint();}
+\DoxyCodeLine{00243\ \ \ \ \ \}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00251\ \ \ \ \ @Override}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ handleEvent(DomainEvent\ event)\ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (event\ instanceof\ CardPlayed}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ event\ instanceof\ CardDrawn}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ event\ instanceof\ GameOver)\ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ refresh();}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+\DoxyCodeLine{00259\ \}}
+
+\end{DoxyCode}

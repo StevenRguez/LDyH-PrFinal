@@ -1,0 +1,29 @@
+\doxysection{Draw\+Pile.\+java}
+\label{_draw_pile_8java_source}\index{src/main/java/domain/game/DrawPile.java@{src/main/java/domain/game/DrawPile.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.game;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.Card;}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ java.util.Stack;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }DrawPile\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Stack<Card>\ cards\ =\ \textcolor{keyword}{new}\ Stack<>();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}\ DrawPile(List<Card>\ shuffledCards)\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ cards.addAll(shuffledCards);}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}\ Card\ drawCard()\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cards.pop();}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ getSize()\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cards.size();}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}

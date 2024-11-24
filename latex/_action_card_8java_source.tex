@@ -1,0 +1,37 @@
+\doxysection{Action\+Card.\+java}
+\label{_action_card_8java_source}\index{src/main/java/domain/card/ActionCard.java@{src/main/java/domain/card/ActionCard.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.card;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ java.util.Objects;}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }ActionCard\ \textcolor{keyword}{extends}\ AbstractCard\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}\ ActionCard(CardType\ type,\ CardColor\ color)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ super(type,\ color);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ CardUtil.validateActionType(type);}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ CardUtil.validateColor(color);}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \ \ \ \ @Override}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ equals(Object\ o)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ o)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ ==\ \textcolor{keyword}{null}\ ||\ getClass()\ !=\ o.getClass())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ ActionCard\ that\ =\ (ActionCard)\ o;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ getType()\ ==\ that.getType()\ \&\&\ getColor()\ ==\ that.getColor();}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ @Override}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ hashCode()\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Objects.hash(getType(),\ getColor());}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ @Override}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{public}\ String\ toString()\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ActionCard\{"{}}\ +}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ getType()\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ getColor()\ +}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{charliteral}{'\}'};}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}

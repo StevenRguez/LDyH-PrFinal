@@ -1,0 +1,82 @@
+\doxysection{Test\+Players\+Iterator.\+java}
+\label{_test_players_iterator_8java_source}\index{src/test/java/domain/player/TestPlayersIterator.java@{src/test/java/domain/player/TestPlayersIterator.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.player;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.testhelper.PlayerTestFactory;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ org.junit.jupiter.api.BeforeEach;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }TestPlayersIterator\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Player[]\ players\ =\ PlayerTestFactory.createPlayers(4);}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{private}\ PlayerRoundIterator\ playerIterator;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ @BeforeEach}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ setUp()\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ playerIterator\ =\ \textcolor{keyword}{new}\ PlayerRoundIterator(players);}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ @Test}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenInitialized\_FirstPlayerShouldBeCurrent()\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ var\ current\ =\ playerIterator.getCurrentPlayer();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ @Test}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenClockwise\_ShouldHaveAscendingOrder()\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ var\ current\ =\ playerIterator.next();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}3"{}});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}4"{}});}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ @Test}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenReversed\_ShouldHaveDescendingOrder()\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ playerIterator.reverseDirection();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ var\ current\ =\ playerIterator.getCurrentPlayer();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}4"{}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}3"{}});}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ @Test}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenValidPlayerId\_ShouldFind()\{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ var\ playerToFind\ =\ players[2];}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ var\ foundPlayer\ =\ playerIterator.getPlayerById(playerToFind.getId());}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ assertEquals(playerToFind.getName(),\ foundPlayer.getName());}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ @Test}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenInvalidPlayerId\_ShouldNotFind()\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ var\ foundPlayer\ =\ playerIterator.getPlayerById(UUID.randomUUID());}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ assertNull(foundPlayer);}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ assertPlayer(Player\ player,\ String\ expectedName)\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ assertEquals(expectedName,\ player.getName());}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \}}
+
+\end{DoxyCode}

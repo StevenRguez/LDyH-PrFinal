@@ -1,0 +1,47 @@
+\doxysection{Player.\+java}
+\label{_player_8java_source}\index{src/main/java/domain/player/Player.java@{src/main/java/domain/player/Player.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.player;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.Card;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.common.Entity;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }Player\ \textcolor{keyword}{extends}\ Entity\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ String\ name;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ HandCardList\ handCards;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}\ Player(String\ name,\ HandCardList\ handCards)\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ super();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ this.handCards\ =\ handCards;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}\ String\ getName()\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Card>\ getHandCards()\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.handCards.getCardStream();}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ addToHandCards(Card\ card)\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ handCards.addCard(card);}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ removePlayedCard(Card\ card)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ handCards.removeCard(card);}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ hasHandCard(Card\ card)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.handCards.hasCard(card);}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{public}\ ImmutablePlayer\ toImmutable()\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ ImmutablePlayer(\textcolor{keyword}{this});}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \}}
+
+\end{DoxyCode}

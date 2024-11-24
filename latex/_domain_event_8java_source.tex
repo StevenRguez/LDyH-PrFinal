@@ -1,0 +1,22 @@
+\doxysection{Domain\+Event.\+java}
+\label{_domain_event_8java_source}\index{src/main/java/domain/common/DomainEvent.java@{src/main/java/domain/common/DomainEvent.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.common;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ java.time.LocalDate;}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }DomainEvent\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ LocalDate\ occurredDate;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{protected}\ DomainEvent()\{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ occurredDate\ =\ LocalDate.now();}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}\ LocalDate\ getOccurredDate()\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ occurredDate;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}

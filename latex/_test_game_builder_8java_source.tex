@@ -1,0 +1,39 @@
+\doxysection{Test\+Game\+Builder.\+java}
+\label{_test_game_builder_8java_source}\index{src/test/java/domain/game/TestGameBuilder.java@{src/test/java/domain/game/TestGameBuilder.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.game;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.player.ImmutablePlayer;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.player.Player;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertEquals;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertThrows;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }TestGameBuilder\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ @Test}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenCreatedWithOnePlayer\_ShouldThrowError()\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ var\ gameBuilder\ =\ \textcolor{keyword}{new}\ GameBuilder()}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Player\ 1"{}});}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ assertThrows(IllegalStateException.class,\ gameBuilder::build);}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ @Test}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenHavingThreePlayers\_ShouldBuildGame()\{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ var\ game\ =\ \textcolor{keyword}{new}\ GameBuilder()}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Player\ 1"{}})}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Player\ 2"{}})}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Player\ 3"{}})}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ .build();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ var\ players\ =\ game.getPlayers().toArray(ImmutablePlayer[]::new);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ assertEquals(3,\ players.length);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Player\ 1"{}},\ players[0].getName());}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}

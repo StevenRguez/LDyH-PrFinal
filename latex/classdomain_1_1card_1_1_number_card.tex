@@ -1,0 +1,146 @@
+\doxysection{Referencia de la clase domain.\+card.\+Number\+Card}
+\label{classdomain_1_1card_1_1_number_card}\index{domain.card.NumberCard@{domain.card.NumberCard}}
+
+
+Diagrama de herencia de domain.\+card.\+Number\+Card
+% FIG 0
+
+
+Diagrama de colaboración de domain.\+card.\+Number\+Card\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Number\+Card} (int value, \textbf{ Card\+Color} color)
+\item 
+int \textbf{ get\+Value} ()
+\item 
+boolean \textbf{ equals} (Object o)
+\item 
+int \textbf{ hash\+Code} ()
+\item 
+String \textbf{ to\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \textbf{ domain.\+card.\+Abstract\+Card}}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Card\+Type} \textbf{ get\+Type} ()
+\item 
+\textbf{ Card\+Color} \textbf{ get\+Color} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \textbf{ domain.\+card.\+Card}}
+\doxysubsubsection*{Otros miembros heredados}
+\doxysubsection*{Métodos protegidos heredados de \textbf{ domain.\+card.\+Abstract\+Card}}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Abstract\+Card} (\textbf{ Card\+Type} type, \textbf{ Card\+Color} color)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que representa una carta de número. Implementa la interfaz \doxyref{Card}{pág.}{interfacedomain_1_1card_1_1_card}. 
+
+Definición en la línea \textbf{ 9} del archivo \textbf{ Number\+Card.\+java}.
+
+
+
+\doxysubsection{Documentación de constructores y destructores}
+\index{domain.card.NumberCard@{domain.card.NumberCard}!NumberCard@{NumberCard}}
+\index{NumberCard@{NumberCard}!domain.card.NumberCard@{domain.card.NumberCard}}
+\doxysubsubsection{NumberCard()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_number_card_ab1aa23682100c3d13ba309bad7c6dfe3} 
+domain.\+card.\+Number\+Card.\+Number\+Card (\begin{DoxyParamCaption}\item[{int}]{value}{, }\item[{\textbf{ Card\+Color}}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \textbf{ 12} del archivo \textbf{ Number\+Card.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+Gráfico de llamadas a esta función\+:
+% FIG 3
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{domain.card.NumberCard@{domain.card.NumberCard}!equals@{equals}}
+\index{equals@{equals}!domain.card.NumberCard@{domain.card.NumberCard}}
+\doxysubsubsection{equals()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_number_card_adabcd67095c5c9083f6b0b7f99ad18c2} 
+boolean domain.\+card.\+Number\+Card.\+equals (\begin{DoxyParamCaption}\item[{Object}]{o}{}\end{DoxyParamCaption})}
+
+Comprueba si dos cartas de número son iguales. 
+\begin{DoxyParams}{Parámetros}
+{\em o} & objeto a comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si las cartas son iguales, false en caso contrario. 
+\end{DoxyReturn}
+
+
+Reimplementado de \textbf{ domain.\+card.\+Abstract\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_abstract_card_a0d1237a4f47560a6168135eed8dbc1c8}.
+
+
+
+Definición en la línea \textbf{ 36} del archivo \textbf{ Number\+Card.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 4
+\index{domain.card.NumberCard@{domain.card.NumberCard}!getValue@{getValue}}
+\index{getValue@{getValue}!domain.card.NumberCard@{domain.card.NumberCard}}
+\doxysubsubsection{getValue()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_number_card_a2c15b8828fcf3240877e76d7c75a9cf4} 
+int domain.\+card.\+Number\+Card.\+get\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve el valor de la carta. \begin{DoxyReturn}{Devuelve}
+valor de la carta. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 26} del archivo \textbf{ Number\+Card.\+java}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 5
+\index{domain.card.NumberCard@{domain.card.NumberCard}!hashCode@{hashCode}}
+\index{hashCode@{hashCode}!domain.card.NumberCard@{domain.card.NumberCard}}
+\doxysubsubsection{hashCode()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_number_card_aab49ee3a2f00e0549f65e892b99445e7} 
+int domain.\+card.\+Number\+Card.\+hash\+Code (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve el hash code de la carta de número. \begin{DoxyReturn}{Devuelve}
+hash code de la carta de número. 
+\end{DoxyReturn}
+
+
+Reimplementado de \textbf{ domain.\+card.\+Abstract\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_abstract_card_acaf771564b651852af398fb83db1d0d2}.
+
+
+
+Definición en la línea \textbf{ 48} del archivo \textbf{ Number\+Card.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 6
+\index{domain.card.NumberCard@{domain.card.NumberCard}!toString@{toString}}
+\index{toString@{toString}!domain.card.NumberCard@{domain.card.NumberCard}}
+\doxysubsubsection{toString()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_number_card_af9ab2a106a8e3466eadeaccdafc4d3bd} 
+String domain.\+card.\+Number\+Card.\+to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve la representación en cadena de la carta de número. \begin{DoxyReturn}{Devuelve}
+representación en cadena de la carta de número. 
+\end{DoxyReturn}
+
+
+Reimplementado de \textbf{ domain.\+card.\+Abstract\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_abstract_card_ad52a9593167f4a3f79f232b2ee96719d}.
+
+
+
+Definición en la línea \textbf{ 57} del archivo \textbf{ Number\+Card.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 7
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/domain/card/\textbf{ Number\+Card.\+java}\end{DoxyCompactItemize}

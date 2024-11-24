@@ -1,0 +1,51 @@
+\doxysection{Hand\+Card\+List.\+java}
+\label{_hand_card_list_8java_source}\index{src/main/java/domain/player/HandCardList.java@{src/main/java/domain/player/HandCardList.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.player;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.Card;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.card.CardType;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.card.CardUtil;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }HandCardList\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ List<Card>\ handCards\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ addCard(Card\ newCard)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ handCards.add(newCard);}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ removeCard(Card\ card)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ var\ cardToRemove\ =\ CardUtil.isWildCard(card)\ ?\ findCardOfType(card.getType())\ :\ card;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ handCards.remove(cardToRemove);}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{private}\ Card\ findCardOfType(CardType\ type)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ card\ :\ handCards)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (card.getType()\ ==\ type)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ card;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Card>\ getCardStream()\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ handCards.stream();}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ hasCard(Card\ card)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ CardUtil.isWildCard(card)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ getCardStream().anyMatch(c\ -\/>\ c.getType()\ ==\ card.getType())}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ :\ getCardStream().anyMatch(c\ -\/>\ c.equals(card));}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ size()\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ handCards.size();}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \}}
+
+\end{DoxyCode}

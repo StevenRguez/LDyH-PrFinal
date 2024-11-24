@@ -1,0 +1,148 @@
+\doxysection{Referencia de la clase domain.\+card.\+Wild\+Card}
+\label{classdomain_1_1card_1_1_wild_card}\index{domain.card.WildCard@{domain.card.WildCard}}
+
+
+Diagrama de herencia de domain.\+card.\+Wild\+Card
+% FIG 0
+
+
+Diagrama de colaboración de domain.\+card.\+Wild\+Card\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Wild\+Card} (\textbf{ Card\+Type} type)
+\item 
+\textbf{ Wild\+Card} (\textbf{ Card\+Type} type, \textbf{ Card\+Color} color)
+\item 
+boolean \textbf{ equals} (Object o)
+\item 
+int \textbf{ hash\+Code} ()
+\item 
+String \textbf{ to\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \textbf{ domain.\+card.\+Abstract\+Card}}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Card\+Type} \textbf{ get\+Type} ()
+\item 
+\textbf{ Card\+Color} \textbf{ get\+Color} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \textbf{ domain.\+card.\+Card}}
+\doxysubsubsection*{Otros miembros heredados}
+\doxysubsection*{Métodos protegidos heredados de \textbf{ domain.\+card.\+Abstract\+Card}}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Abstract\+Card} (\textbf{ Card\+Type} type, \textbf{ Card\+Color} color)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que representa una carta comodín. Implementa la interfaz \doxyref{Card}{pág.}{interfacedomain_1_1card_1_1_card}. 
+
+Definición en la línea \textbf{ 9} del archivo \textbf{ Wild\+Card.\+java}.
+
+
+
+\doxysubsection{Documentación de constructores y destructores}
+\index{domain.card.WildCard@{domain.card.WildCard}!WildCard@{WildCard}}
+\index{WildCard@{WildCard}!domain.card.WildCard@{domain.card.WildCard}}
+\doxysubsubsection{WildCard()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_wild_card_ad08da4b2449b9b3ec252e52141e34f8f} 
+domain.\+card.\+Wild\+Card.\+Wild\+Card (\begin{DoxyParamCaption}\item[{\textbf{ Card\+Type}}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Definición en la línea \textbf{ 10} del archivo \textbf{ Wild\+Card.\+java}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\index{domain.card.WildCard@{domain.card.WildCard}!WildCard@{WildCard}}
+\index{WildCard@{WildCard}!domain.card.WildCard@{domain.card.WildCard}}
+\doxysubsubsection{WildCard()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_wild_card_ad70faef089efdc328e941e3a4172f20e} 
+domain.\+card.\+Wild\+Card.\+Wild\+Card (\begin{DoxyParamCaption}\item[{\textbf{ Card\+Type}}]{type}{, }\item[{\textbf{ Card\+Color}}]{color}{}\end{DoxyParamCaption})}
+
+Crea una carta comodín. 
+\begin{DoxyParams}{Parámetros}
+{\em type} & tipo de carta. \\
+\hline
+{\em color} & color de la carta. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 19} del archivo \textbf{ Wild\+Card.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 3
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{domain.card.WildCard@{domain.card.WildCard}!equals@{equals}}
+\index{equals@{equals}!domain.card.WildCard@{domain.card.WildCard}}
+\doxysubsubsection{equals()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_wild_card_ae72ca9cda4632fc33e69772dc1b0b2b9} 
+boolean domain.\+card.\+Wild\+Card.\+equals (\begin{DoxyParamCaption}\item[{Object}]{o}{}\end{DoxyParamCaption})}
+
+Comprueba si dos cartas comodín son iguales. 
+\begin{DoxyParams}{Parámetros}
+{\em o} & objeto a comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si las cartas son iguales, false en caso contrario. 
+\end{DoxyReturn}
+
+
+Reimplementado de \textbf{ domain.\+card.\+Abstract\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_abstract_card_a0d1237a4f47560a6168135eed8dbc1c8}.
+
+
+
+Definición en la línea \textbf{ 30} del archivo \textbf{ Wild\+Card.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 4
+\index{domain.card.WildCard@{domain.card.WildCard}!hashCode@{hashCode}}
+\index{hashCode@{hashCode}!domain.card.WildCard@{domain.card.WildCard}}
+\doxysubsubsection{hashCode()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_wild_card_af3c0f8bb82b840bda732444575367955} 
+int domain.\+card.\+Wild\+Card.\+hash\+Code (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve el hash code de la carta comodín. \begin{DoxyReturn}{Devuelve}
+hash code de la carta comodín. 
+\end{DoxyReturn}
+
+
+Reimplementado de \textbf{ domain.\+card.\+Abstract\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_abstract_card_acaf771564b651852af398fb83db1d0d2}.
+
+
+
+Definición en la línea \textbf{ 42} del archivo \textbf{ Wild\+Card.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 5
+\index{domain.card.WildCard@{domain.card.WildCard}!toString@{toString}}
+\index{toString@{toString}!domain.card.WildCard@{domain.card.WildCard}}
+\doxysubsubsection{toString()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_wild_card_a453350bfe9d9e9763d2fd48e4f477332} 
+String domain.\+card.\+Wild\+Card.\+to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve la representación en cadena de la carta comodín. \begin{DoxyReturn}{Devuelve}
+representación en cadena de la carta comodín. 
+\end{DoxyReturn}
+
+
+Reimplementado de \textbf{ domain.\+card.\+Abstract\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_abstract_card_ad52a9593167f4a3f79f232b2ee96719d}.
+
+
+
+Definición en la línea \textbf{ 51} del archivo \textbf{ Wild\+Card.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 6
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/domain/card/\textbf{ Wild\+Card.\+java}\end{DoxyCompactItemize}

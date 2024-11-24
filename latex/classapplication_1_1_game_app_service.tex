@@ -1,0 +1,270 @@
+\doxysection{Referencia de la clase application.\+Game\+App\+Service}
+\label{classapplication_1_1_game_app_service}\index{application.GameAppService@{application.GameAppService}}
+
+
+Servicio de aplicación que actúa como intermediario entre el dominio del juego y la capa de presentación.  
+
+
+
+
+Diagrama de herencia de application.\+Game\+App\+Service
+% FIG 0
+
+
+Diagrama de colaboración de application.\+Game\+App\+Service\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+App\+Service} ()
+\begin{DoxyCompactList}\small\item\em Construye un nuevo \doxyref{Game\+App\+Service}{pág.}{classapplication_1_1_game_app_service} e inicializa un juego con jugadores predeterminados. \end{DoxyCompactList}\item 
+List$<$ \textbf{ Player\+Info\+DTO} $>$ \textbf{ get\+Player\+Infos} ()
+\begin{DoxyCompactList}\small\item\em Recupera una lista de objetos Player\+Info\+DTO que representan la información básica de cada jugador. \end{DoxyCompactList}\item 
+\textbf{ Player\+Info\+DTO} \textbf{ get\+Current\+Player} ()
+\begin{DoxyCompactList}\small\item\em Recupera la información del jugador actual. \end{DoxyCompactList}\item 
+Stream$<$ \textbf{ Card} $>$ \textbf{ get\+Hand\+Cards} (UUID player\+Id)
+\begin{DoxyCompactList}\small\item\em Recupera las cartas en mano de un jugador específico a partir de su UUID. \end{DoxyCompactList}\item 
+void \textbf{ play\+Card} (UUID player\+Id, \textbf{ Card} card, boolean has\+Said\+Uno)
+\begin{DoxyCompactList}\small\item\em Permite a un jugador jugar una carta, con la opción de declarar "{}\+UNO"{}. \end{DoxyCompactList}\item 
+void \textbf{ draw\+Card} (UUID player\+Id)
+\begin{DoxyCompactList}\small\item\em Permite a un jugador robar una carta del mazo. \end{DoxyCompactList}\item 
+\textbf{ Card} \textbf{ peek\+Top\+Card} ()
+\begin{DoxyCompactList}\small\item\em Recupera la carta superior de la pila de descarte sin retirarla. \end{DoxyCompactList}\item 
+boolean \textbf{ is\+Game\+Over} ()
+\begin{DoxyCompactList}\small\item\em Verifica si el juego ha finalizado. \end{DoxyCompactList}\item 
+\textbf{ Immutable\+Player} \textbf{ get\+Winner} ()
+\begin{DoxyCompactList}\small\item\em Recupera el jugador ganador, si el juego ha finalizado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \textbf{ application.\+IGame\+App\+Service}}
+
+
+\doxysubsection{Descripción detallada}
+Servicio de aplicación que actúa como intermediario entre el dominio del juego y la capa de presentación. 
+
+Este servicio proporciona diversos métodos para interactuar y manipular una sesión de juego, incluyendo acciones de jugadores, información del estado del juego y registro de eventos. 
+
+Definición en la línea \textbf{ 23} del archivo \textbf{ Game\+App\+Service.\+java}.
+
+
+
+\doxysubsection{Documentación de constructores y destructores}
+\index{application.GameAppService@{application.GameAppService}!GameAppService@{GameAppService}}
+\index{GameAppService@{GameAppService}!application.GameAppService@{application.GameAppService}}
+\doxysubsubsection{GameAppService()}
+{\footnotesize\ttfamily \label{classapplication_1_1_game_app_service_a5182f4403db57416b140a09082286704} 
+application.\+Game\+App\+Service.\+Game\+App\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construye un nuevo \doxyref{Game\+App\+Service}{pág.}{classapplication_1_1_game_app_service} e inicializa un juego con jugadores predeterminados. 
+
+
+
+Definición en la línea \textbf{ 37} del archivo \textbf{ Game\+App\+Service.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{application.GameAppService@{application.GameAppService}!drawCard@{drawCard}}
+\index{drawCard@{drawCard}!application.GameAppService@{application.GameAppService}}
+\doxysubsubsection{drawCard()}
+{\footnotesize\ttfamily \label{classapplication_1_1_game_app_service_ab1324c8c32bdde5917f640be138c38b5} 
+void application.\+Game\+App\+Service.\+draw\+Card (\begin{DoxyParamCaption}\item[{UUID}]{player\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Permite a un jugador robar una carta del mazo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em player\+Id} & UUID del jugador que roba la carta. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ application.\+IGame\+App\+Service} \doxyref{}{pág.}{interfaceapplication_1_1_i_game_app_service_aea4e8274520bb8dfb8d099df301d8e5d}.
+
+
+
+Definición en la línea \textbf{ 117} del archivo \textbf{ Game\+App\+Service.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 3
+\index{application.GameAppService@{application.GameAppService}!getCurrentPlayer@{getCurrentPlayer}}
+\index{getCurrentPlayer@{getCurrentPlayer}!application.GameAppService@{application.GameAppService}}
+\doxysubsubsection{getCurrentPlayer()}
+{\footnotesize\ttfamily \label{classapplication_1_1_game_app_service_a95308d358c22a877687ccaab77cedb09} 
+\textbf{ Player\+Info\+DTO} application.\+Game\+App\+Service.\+get\+Current\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Recupera la información del jugador actual. 
+
+\begin{DoxyReturn}{Devuelve}
+Objeto Player\+Info\+DTO que contiene el ID y el nombre del jugador actual. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ application.\+IGame\+App\+Service} \doxyref{}{pág.}{interfaceapplication_1_1_i_game_app_service_ab150c7007ad30a88434fb9e19addf082}.
+
+
+
+Definición en la línea \textbf{ 81} del archivo \textbf{ Game\+App\+Service.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 4
+\index{application.GameAppService@{application.GameAppService}!getHandCards@{getHandCards}}
+\index{getHandCards@{getHandCards}!application.GameAppService@{application.GameAppService}}
+\doxysubsubsection{getHandCards()}
+{\footnotesize\ttfamily \label{classapplication_1_1_game_app_service_aae193f174f11553e87d0bbfca59dab39} 
+Stream$<$ \textbf{ Card} $>$ application.\+Game\+App\+Service.\+get\+Hand\+Cards (\begin{DoxyParamCaption}\item[{UUID}]{player\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Recupera las cartas en mano de un jugador específico a partir de su UUID. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em player\+Id} & UUID del jugador cuyas cartas en mano se van a recuperar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Stream de objetos Card que representan las cartas en mano del jugador. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ application.\+IGame\+App\+Service} \doxyref{}{pág.}{interfaceapplication_1_1_i_game_app_service_aa02f7eba42f32439db2eedf2ad1aa626}.
+
+
+
+Definición en la línea \textbf{ 93} del archivo \textbf{ Game\+App\+Service.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 5
+\index{application.GameAppService@{application.GameAppService}!getPlayerInfos@{getPlayerInfos}}
+\index{getPlayerInfos@{getPlayerInfos}!application.GameAppService@{application.GameAppService}}
+\doxysubsubsection{getPlayerInfos()}
+{\footnotesize\ttfamily \label{classapplication_1_1_game_app_service_a47e4aa5e2a9ec317fce96c68dc2f0b2f} 
+List$<$ \textbf{ Player\+Info\+DTO} $>$ application.\+Game\+App\+Service.\+get\+Player\+Infos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Recupera una lista de objetos Player\+Info\+DTO que representan la información básica de cada jugador. 
+
+\begin{DoxyReturn}{Devuelve}
+Lista de objetos Player\+Info\+DTO con los IDs y nombres de los jugadores. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ application.\+IGame\+App\+Service} \doxyref{}{pág.}{interfaceapplication_1_1_i_game_app_service_a45508b3b6c7645777db451fa7017792d}.
+
+
+
+Definición en la línea \textbf{ 69} del archivo \textbf{ Game\+App\+Service.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 6
+\index{application.GameAppService@{application.GameAppService}!getWinner@{getWinner}}
+\index{getWinner@{getWinner}!application.GameAppService@{application.GameAppService}}
+\doxysubsubsection{getWinner()}
+{\footnotesize\ttfamily \label{classapplication_1_1_game_app_service_a2e6a60dd832ae2472563bcaab70a1309} 
+\textbf{ Immutable\+Player} application.\+Game\+App\+Service.\+get\+Winner (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Recupera el jugador ganador, si el juego ha finalizado. 
+
+\begin{DoxyReturn}{Devuelve}
+Objeto Immutable\+Player que representa al ganador, o null si el juego no ha finalizado. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ application.\+IGame\+App\+Service} \doxyref{}{pág.}{interfaceapplication_1_1_i_game_app_service_ac7259cd1076e50d9e379ce381dee0938}.
+
+
+
+Definición en la línea \textbf{ 149} del archivo \textbf{ Game\+App\+Service.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 7
+\index{application.GameAppService@{application.GameAppService}!isGameOver@{isGameOver}}
+\index{isGameOver@{isGameOver}!application.GameAppService@{application.GameAppService}}
+\doxysubsubsection{isGameOver()}
+{\footnotesize\ttfamily \label{classapplication_1_1_game_app_service_a9f54e75b7d73e62a1f4fe3a79c3b0058} 
+boolean application.\+Game\+App\+Service.\+is\+Game\+Over (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Verifica si el juego ha finalizado. 
+
+\begin{DoxyReturn}{Devuelve}
+Valor booleano que indica si el juego ha terminado. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ application.\+IGame\+App\+Service} \doxyref{}{pág.}{interfaceapplication_1_1_i_game_app_service_a71ad24066758708ff1cd45b5c0695d24}.
+
+
+
+Definición en la línea \textbf{ 139} del archivo \textbf{ Game\+App\+Service.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 8
+\index{application.GameAppService@{application.GameAppService}!peekTopCard@{peekTopCard}}
+\index{peekTopCard@{peekTopCard}!application.GameAppService@{application.GameAppService}}
+\doxysubsubsection{peekTopCard()}
+{\footnotesize\ttfamily \label{classapplication_1_1_game_app_service_aa3b2f00d6c4056e0aec2d02bd8b6dc7b} 
+\textbf{ Card} application.\+Game\+App\+Service.\+peek\+Top\+Card (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Recupera la carta superior de la pila de descarte sin retirarla. 
+
+\begin{DoxyReturn}{Devuelve}
+Objeto Card que representa la carta superior de la pila de descarte. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ application.\+IGame\+App\+Service} \doxyref{}{pág.}{interfaceapplication_1_1_i_game_app_service_a7b82fbccec479da182416d35ca7fce44}.
+
+
+
+Definición en la línea \textbf{ 129} del archivo \textbf{ Game\+App\+Service.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 9
+\index{application.GameAppService@{application.GameAppService}!playCard@{playCard}}
+\index{playCard@{playCard}!application.GameAppService@{application.GameAppService}}
+\doxysubsubsection{playCard()}
+{\footnotesize\ttfamily \label{classapplication_1_1_game_app_service_ae6cde6636bf9c91431f2f917e1df234d} 
+void application.\+Game\+App\+Service.\+play\+Card (\begin{DoxyParamCaption}\item[{UUID}]{player\+Id}{, }\item[{\textbf{ Card}}]{card}{, }\item[{boolean}]{has\+Said\+Uno}{}\end{DoxyParamCaption})}
+
+
+
+Permite a un jugador jugar una carta, con la opción de declarar "{}\+UNO"{}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em player\+Id} & UUID del jugador que juega la carta. \\
+\hline
+{\em card} & Objeto Card que representa la carta a jugar. \\
+\hline
+{\em has\+Said\+Uno} & Booleano que indica si el jugador ha declarado "{}\+UNO"{}. \\
+\hline
+\end{DoxyParams}
+
+
+Implementa \textbf{ application.\+IGame\+App\+Service} \doxyref{}{pág.}{interfaceapplication_1_1_i_game_app_service_a86dfaeadb93af52f3694a33eeb7eb132}.
+
+
+
+Definición en la línea \textbf{ 105} del archivo \textbf{ Game\+App\+Service.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 10
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/application/\textbf{ Game\+App\+Service.\+java}\end{DoxyCompactItemize}

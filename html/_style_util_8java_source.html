@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TizonTools: Archivo de código fuente src/main/java/ui/common/StyleUtil.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TizonTools
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_282895ff3779564730d23e8f6e02b2a0.html">ui</a></li><li class="navelem"><a class="el" href="dir_cb4d7e91850196334c233580b1981419.html">common</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">StyleUtil.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_style_util_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceui_1_1common.html">    1</a></span><span class="keyword">package </span>ui.common;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1card.html">card</a>.<a class="code hl_interface" href="interfacedomain_1_1card_1_1_card.html">Card</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1card.html">card</a>.<a class="code hl_class" href="enumdomain_1_1card_1_1_card_color.html">CardColor</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1card.html">card</a>.<a class="code hl_class" href="classdomain_1_1card_1_1_number_card.html">NumberCard</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> java.awt.*;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classui_1_1common_1_1_style_util.html">   16</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classui_1_1common_1_1_style_util.html">StyleUtil</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">private</span> <a class="code hl_class" href="classui_1_1common_1_1_style_util.html">StyleUtil</a>() {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classui_1_1common_1_1_style_util.html#a1e0a1552bcd07a5402bf508cb795751e">   24</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Color <a class="code hl_variable" href="classui_1_1common_1_1_style_util.html#a1e0a1552bcd07a5402bf508cb795751e">redColor</a> = <span class="keyword">new</span> Color(192, 80, 77);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classui_1_1common_1_1_style_util.html#a4e963d9296d625db24eff83e52dac4c8">   25</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Color <a class="code hl_variable" href="classui_1_1common_1_1_style_util.html#a4e963d9296d625db24eff83e52dac4c8">blueColor</a> = <span class="keyword">new</span> Color(31, 73, 125);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classui_1_1common_1_1_style_util.html#a8c853abb1ed72f28bd14addaf5c5794b">   26</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Color <a class="code hl_variable" href="classui_1_1common_1_1_style_util.html#a8c853abb1ed72f28bd14addaf5c5794b">greenColor</a> = <span class="keyword">new</span> Color(0, 153, 0);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classui_1_1common_1_1_style_util.html#a8146706a68a92f3bc78b3262cb911d16">   27</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Color <a class="code hl_variable" href="classui_1_1common_1_1_style_util.html#a8146706a68a92f3bc78b3262cb911d16">yellowColor</a> = <span class="keyword">new</span> Color(255, 204, 0);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classui_1_1common_1_1_style_util.html#a0074a20cf86e7d9a9b0b61088197af31">   28</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Color <a class="code hl_variable" href="classui_1_1common_1_1_style_util.html#a0074a20cf86e7d9a9b0b61088197af31">blackColor</a> = <span class="keyword">new</span> Color(0, 0, 0);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classui_1_1common_1_1_style_util.html#a4533dcb7b4d11d4f18e3b86dc7d8c0f7">   31</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String <a class="code hl_variable" href="classui_1_1common_1_1_style_util.html#a4533dcb7b4d11d4f18e3b86dc7d8c0f7">DEFAULT_FONT</a> = <span class="stringliteral">&quot;Helvetica&quot;</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Character REVERSE_CHAR = (char) 8634;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Character SKIP_CHAR = (char) Integer.parseInt(<span class="stringliteral">&quot;2718&quot;</span>, 16);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classui_1_1common_1_1_style_util.html#ae711765c84849568fe851a8668a3aabd">   42</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> Color <a class="code hl_function" href="classui_1_1common_1_1_style_util.html#ae711765c84849568fe851a8668a3aabd">convertCardColor</a>(<a class="code hl_class" href="enumdomain_1_1card_1_1_card_color.html">CardColor</a> color) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> (color == <span class="keyword">null</span>) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classui_1_1common_1_1_style_util.html#a0074a20cf86e7d9a9b0b61088197af31">blackColor</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">switch</span> (color) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordflow">case</span> RED -&gt; {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classui_1_1common_1_1_style_util.html#a1e0a1552bcd07a5402bf508cb795751e">redColor</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">case</span> GREEN -&gt; {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classui_1_1common_1_1_style_util.html#a8c853abb1ed72f28bd14addaf5c5794b">greenColor</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">case</span> BLUE -&gt; {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classui_1_1common_1_1_style_util.html#a4e963d9296d625db24eff83e52dac4c8">blueColor</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">case</span> YELLOW -&gt; {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="classui_1_1common_1_1_style_util.html#a8146706a68a92f3bc78b3262cb911d16">yellowColor</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">default</span> -&gt; {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Unsupported card color &quot;</span> + color);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classui_1_1common_1_1_style_util.html#a46d0bf44cfee2ad91dd89e2679ec39b4">   71</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> String <a class="code hl_function" href="classui_1_1common_1_1_style_util.html#a46d0bf44cfee2ad91dd89e2679ec39b4">getValueToDisplay</a>(<a class="code hl_interface" href="interfacedomain_1_1card_1_1_card.html">Card</a> card) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">switch</span> (card.<a class="code hl_function" href="interfacedomain_1_1card_1_1_card.html#a13fbe446e7b4a468de148cab2c4939f7">getType</a>()) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">case</span> NUMBER -&gt; {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordflow">return</span> Integer.toString(((<a class="code hl_class" href="classdomain_1_1card_1_1_number_card.html">NumberCard</a>) card).getValue());</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">case</span> SKIP -&gt; {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                <span class="keywordflow">return</span> SKIP_CHAR.toString();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">case</span> REVERSE -&gt; {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <span class="keywordflow">return</span> REVERSE_CHAR.toString();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordflow">case</span> DRAW_TWO -&gt; {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;2+&quot;</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordflow">case</span> WILD_COLOR -&gt; {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;W&quot;</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordflow">case</span> WILD_DRAW_FOUR -&gt; {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                <span class="keywordflow">return</span> <span class="stringliteral">&quot;4+&quot;</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <span class="keywordflow">default</span> -&gt; <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="stringliteral">&quot;Unsupported card type &quot;</span> + card.<a class="code hl_function" href="interfacedomain_1_1card_1_1_card.html#a13fbe446e7b4a468de148cab2c4939f7">getType</a>());</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+</div>
+<div class="ttc" id="aclassdomain_1_1card_1_1_number_card_html"><div class="ttname"><a href="classdomain_1_1card_1_1_number_card.html">domain.card.NumberCard</a></div><div class="ttdef"><b>Definition</b> <a href="_number_card_8java_source.html#l00009">NumberCard.java:9</a></div></div>
+<div class="ttc" id="aclassui_1_1common_1_1_style_util_html"><div class="ttname"><a href="classui_1_1common_1_1_style_util.html">ui.common.StyleUtil</a></div><div class="ttdef"><b>Definition</b> <a href="#l00016">StyleUtil.java:16</a></div></div>
+<div class="ttc" id="aclassui_1_1common_1_1_style_util_html_a0074a20cf86e7d9a9b0b61088197af31"><div class="ttname"><a href="classui_1_1common_1_1_style_util.html#a0074a20cf86e7d9a9b0b61088197af31">ui.common.StyleUtil.blackColor</a></div><div class="ttdeci">static final Color blackColor</div><div class="ttdef"><b>Definition</b> <a href="#l00028">StyleUtil.java:28</a></div></div>
+<div class="ttc" id="aclassui_1_1common_1_1_style_util_html_a1e0a1552bcd07a5402bf508cb795751e"><div class="ttname"><a href="classui_1_1common_1_1_style_util.html#a1e0a1552bcd07a5402bf508cb795751e">ui.common.StyleUtil.redColor</a></div><div class="ttdeci">static final Color redColor</div><div class="ttdoc">Colores comunes a lo largo de la aplicación del juego UNO.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">StyleUtil.java:24</a></div></div>
+<div class="ttc" id="aclassui_1_1common_1_1_style_util_html_a4533dcb7b4d11d4f18e3b86dc7d8c0f7"><div class="ttname"><a href="classui_1_1common_1_1_style_util.html#a4533dcb7b4d11d4f18e3b86dc7d8c0f7">ui.common.StyleUtil.DEFAULT_FONT</a></div><div class="ttdeci">static final String DEFAULT_FONT</div><div class="ttdoc">Fuentes comunes a lo largo de la aplicación del juego UNO.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">StyleUtil.java:31</a></div></div>
+<div class="ttc" id="aclassui_1_1common_1_1_style_util_html_a46d0bf44cfee2ad91dd89e2679ec39b4"><div class="ttname"><a href="classui_1_1common_1_1_style_util.html#a46d0bf44cfee2ad91dd89e2679ec39b4">ui.common.StyleUtil.getValueToDisplay</a></div><div class="ttdeci">static String getValueToDisplay(Card card)</div><div class="ttdef"><b>Definition</b> <a href="#l00071">StyleUtil.java:71</a></div></div>
+<div class="ttc" id="aclassui_1_1common_1_1_style_util_html_a4e963d9296d625db24eff83e52dac4c8"><div class="ttname"><a href="classui_1_1common_1_1_style_util.html#a4e963d9296d625db24eff83e52dac4c8">ui.common.StyleUtil.blueColor</a></div><div class="ttdeci">static final Color blueColor</div><div class="ttdef"><b>Definition</b> <a href="#l00025">StyleUtil.java:25</a></div></div>
+<div class="ttc" id="aclassui_1_1common_1_1_style_util_html_a8146706a68a92f3bc78b3262cb911d16"><div class="ttname"><a href="classui_1_1common_1_1_style_util.html#a8146706a68a92f3bc78b3262cb911d16">ui.common.StyleUtil.yellowColor</a></div><div class="ttdeci">static final Color yellowColor</div><div class="ttdef"><b>Definition</b> <a href="#l00027">StyleUtil.java:27</a></div></div>
+<div class="ttc" id="aclassui_1_1common_1_1_style_util_html_a8c853abb1ed72f28bd14addaf5c5794b"><div class="ttname"><a href="classui_1_1common_1_1_style_util.html#a8c853abb1ed72f28bd14addaf5c5794b">ui.common.StyleUtil.greenColor</a></div><div class="ttdeci">static final Color greenColor</div><div class="ttdef"><b>Definition</b> <a href="#l00026">StyleUtil.java:26</a></div></div>
+<div class="ttc" id="aclassui_1_1common_1_1_style_util_html_ae711765c84849568fe851a8668a3aabd"><div class="ttname"><a href="classui_1_1common_1_1_style_util.html#ae711765c84849568fe851a8668a3aabd">ui.common.StyleUtil.convertCardColor</a></div><div class="ttdeci">static Color convertCardColor(CardColor color)</div><div class="ttdef"><b>Definition</b> <a href="#l00042">StyleUtil.java:42</a></div></div>
+<div class="ttc" id="aenumdomain_1_1card_1_1_card_color_html"><div class="ttname"><a href="enumdomain_1_1card_1_1_card_color.html">domain.card.CardColor</a></div><div class="ttdef"><b>Definition</b> <a href="_card_color_8java_source.html#l00006">CardColor.java:6</a></div></div>
+<div class="ttc" id="ainterfacedomain_1_1card_1_1_card_html"><div class="ttname"><a href="interfacedomain_1_1card_1_1_card.html">domain.card.Card</a></div><div class="ttdef"><b>Definition</b> <a href="_card_8java_source.html#l00008">Card.java:8</a></div></div>
+<div class="ttc" id="ainterfacedomain_1_1card_1_1_card_html_a13fbe446e7b4a468de148cab2c4939f7"><div class="ttname"><a href="interfacedomain_1_1card_1_1_card.html#a13fbe446e7b4a468de148cab2c4939f7">domain.card.Card.getType</a></div><div class="ttdeci">CardType getType()</div></div>
+<div class="ttc" id="anamespacedomain_1_1card_html"><div class="ttname"><a href="namespacedomain_1_1card.html">domain.card</a></div><div class="ttdef"><b>Definition</b> <a href="_abstract_card_8java_source.html#l00001">AbstractCard.java:1</a></div></div>
+<div class="ttc" id="anamespacedomain_html"><div class="ttname"><a href="namespacedomain.html">domain</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

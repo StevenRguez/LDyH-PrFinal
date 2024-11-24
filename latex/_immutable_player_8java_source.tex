@@ -1,0 +1,37 @@
+\doxysection{Immutable\+Player.\+java}
+\label{_immutable_player_8java_source}\index{src/main/java/domain/player/ImmutablePlayer.java@{src/main/java/domain/player/ImmutablePlayer.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.player;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.Card;}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ java.io.Serializable;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }ImmutablePlayer\ \textcolor{keyword}{implements}\ Serializable\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Player\ player;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}\ ImmutablePlayer(Player\ player)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ this.player\ =\ player;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{public}\ UUID\ getId()\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ player.getId();}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}\ String\ getName()\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ player.getName();}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Card>\ getHandCards()\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.player.getHandCards();}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ getTotalCards()\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{int})\ getHandCards().count();}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,74 @@
+\doxysection{Referencia de la clase domain.\+game.\+events.\+Game\+Over}
+\label{classdomain_1_1game_1_1events_1_1_game_over}\index{domain.game.events.GameOver@{domain.game.events.GameOver}}
+
+
+Diagrama de herencia de domain.\+game.\+events.\+Game\+Over
+% FIG 0
+
+
+Diagrama de colaboración de domain.\+game.\+events.\+Game\+Over\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Over} (\textbf{ Immutable\+Player} winner)
+\item 
+\textbf{ Immutable\+Player} \textbf{ get\+Winner} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \textbf{ domain.\+common.\+Domain\+Event}}
+\begin{DoxyCompactItemize}
+\item 
+Local\+Date \textbf{ get\+Occurred\+Date} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la fecha en la que ocurrió el evento. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Otros miembros heredados}
+\doxysubsection*{Métodos protegidos heredados de \textbf{ domain.\+common.\+Domain\+Event}}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Domain\+Event} ()
+\begin{DoxyCompactList}\small\item\em Constructor protegido que inicializa occurred\+Date con la fecha actual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Evento que representa el final de la partida. 
+
+Definición en la línea \textbf{ 9} del archivo \textbf{ Game\+Over.\+java}.
+
+
+
+\doxysubsection{Documentación de constructores y destructores}
+\index{domain.game.events.GameOver@{domain.game.events.GameOver}!GameOver@{GameOver}}
+\index{GameOver@{GameOver}!domain.game.events.GameOver@{domain.game.events.GameOver}}
+\doxysubsubsection{GameOver()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1events_1_1_game_over_a0062b3c3e452d24db276fa79285caaa3} 
+domain.\+game.\+events.\+Game\+Over.\+Game\+Over (\begin{DoxyParamCaption}\item[{\textbf{ Immutable\+Player}}]{winner}{}\end{DoxyParamCaption})}
+
+Crea una instancia del evento. 
+\begin{DoxyParams}{Parámetros}
+{\em winner} & jugador ganador. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 16} del archivo \textbf{ Game\+Over.\+java}.
+
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{domain.game.events.GameOver@{domain.game.events.GameOver}!getWinner@{getWinner}}
+\index{getWinner@{getWinner}!domain.game.events.GameOver@{domain.game.events.GameOver}}
+\doxysubsubsection{getWinner()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1events_1_1_game_over_acf2ba9ff447063055273a2adad4c737a} 
+\textbf{ Immutable\+Player} domain.\+game.\+events.\+Game\+Over.\+get\+Winner (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve el jugador ganador. \begin{DoxyReturn}{Devuelve}
+jugador ganador. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 24} del archivo \textbf{ Game\+Over.\+java}.
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/domain/game/events/\textbf{ Game\+Over.\+java}\end{DoxyCompactItemize}

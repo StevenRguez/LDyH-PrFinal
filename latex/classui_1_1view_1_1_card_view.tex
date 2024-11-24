@@ -1,0 +1,106 @@
+\doxysection{Referencia de la clase ui.\+view.\+Card\+View}
+\label{classui_1_1view_1_1_card_view}\index{ui.view.CardView@{ui.view.CardView}}
+
+
+Diagrama de herencia de ui.\+view.\+Card\+View
+% FIG 0
+
+
+Diagrama de colaboración de ui.\+view.\+Card\+View\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Card\+View} (\textbf{ Card} card)
+\item 
+\textbf{ Card\+View} (\textbf{ Card} card, Consumer$<$ \textbf{ Card} $>$ on\+Card\+Click)
+\item 
+Dimension \textbf{ get\+Dimension} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ paint\+Component} (Graphics g)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que representa la vista de una carta en la interfaz gráfica. Se define el tamaño de la carta y se dibuja la carta en la interfaz gráfica. Se define un efecto de hover para la carta. Se define un manejador de eventos para el click en la carta. Se define un manejador de eventos para el hover en la carta. La funcion extendida de esta clase es la de mostrar una carta en la interfaz gráfica. 
+
+Definición en la línea \textbf{ 21} del archivo \textbf{ Card\+View.\+java}.
+
+
+
+\doxysubsection{Documentación de constructores y destructores}
+\index{ui.view.CardView@{ui.view.CardView}!CardView@{CardView}}
+\index{CardView@{CardView}!ui.view.CardView@{ui.view.CardView}}
+\doxysubsubsection{CardView()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classui_1_1view_1_1_card_view_a013d79b98a1ecec69d736e75c4d08138} 
+ui.\+view.\+Card\+View.\+Card\+View (\begin{DoxyParamCaption}\item[{\textbf{ Card}}]{card}{}\end{DoxyParamCaption})}
+
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em card} & Carta que se va a mostrar en la vista. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 46} del archivo \textbf{ Card\+View.\+java}.
+
+\index{ui.view.CardView@{ui.view.CardView}!CardView@{CardView}}
+\index{CardView@{CardView}!ui.view.CardView@{ui.view.CardView}}
+\doxysubsubsection{CardView()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classui_1_1view_1_1_card_view_a7b3446f55b8e645ff812100481dea0bc} 
+ui.\+view.\+Card\+View.\+Card\+View (\begin{DoxyParamCaption}\item[{\textbf{ Card}}]{card}{, }\item[{Consumer$<$ \textbf{ Card} $>$}]{on\+Card\+Click}{}\end{DoxyParamCaption})}
+
+Constructor de la clase. 
+\begin{DoxyParams}{Parámetros}
+{\em card} & Carta que se va a mostrar en la vista. \\
+\hline
+{\em on\+Card\+Click} & Manejador de eventos para el click en la carta. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 55} del archivo \textbf{ Card\+View.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{ui.view.CardView@{ui.view.CardView}!getDimension@{getDimension}}
+\index{getDimension@{getDimension}!ui.view.CardView@{ui.view.CardView}}
+\doxysubsubsection{getDimension()}
+{\footnotesize\ttfamily \label{classui_1_1view_1_1_card_view_a49db64483b56039b84751e8dd11f5f61} 
+Dimension ui.\+view.\+Card\+View.\+get\+Dimension (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Metodo que devuelve las dimensiones de la carta. \begin{DoxyReturn}{Devuelve}
+Dimensiones de la carta. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 67} del archivo \textbf{ Card\+View.\+java}.
+
+\index{ui.view.CardView@{ui.view.CardView}!paintComponent@{paintComponent}}
+\index{paintComponent@{paintComponent}!ui.view.CardView@{ui.view.CardView}}
+\doxysubsubsection{paintComponent()}
+{\footnotesize\ttfamily \label{classui_1_1view_1_1_card_view_a44a7a1627045062ae25e3e1b44de159d} 
+void ui.\+view.\+Card\+View.\+paint\+Component (\begin{DoxyParamCaption}\item[{Graphics}]{g}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Metodo que dibuja la carta en la interfaz gráfica. 
+\begin{DoxyParams}{Parámetros}
+{\em g} & the {\ttfamily Graphics} object to protect \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 117} del archivo \textbf{ Card\+View.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 3
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/ui/view/\textbf{ Card\+View.\+java}\end{DoxyCompactItemize}

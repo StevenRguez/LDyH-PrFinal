@@ -1,0 +1,92 @@
+\doxysection{Test\+Game\+Start.\+java}
+\label{_test_game_start_8java_source}\index{src/test/java/domain/game/TestGameStart.java@{src/test/java/domain/game/TestGameStart.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.game;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.Card;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.card.CardType;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.player.Player;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.player.PlayerRoundIterator;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ domain.testhelper.CardTestFactory;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ domain.testhelper.PlayerTestFactory;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ java.util.Arrays;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertEquals;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertThrows;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }TestGameStart\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ PlayerRoundIterator\ players\ =\ \textcolor{keyword}{new}\ PlayerRoundIterator(PlayerTestFactory.createPlayers(3));}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ @Test}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenNumberCardPlayed\_ShouldHaveNoEffect()\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ var\ game\ =\ createGame(CardTestFactory.createNumberCard());}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ assertGameState(game,\ CardType.NUMBER,\ \textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ @Test}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenSkipCardPlayed\_CurrentPlayerShouldBeSkipped()\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ var\ game\ =\ createGame(CardTestFactory.createSkipCard());}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ assertGameState(game,\ CardType.SKIP,\ \textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ @Test}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenReverseCardPlayed\_DirectionShouldBeReversed()\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ var\ game\ =\ createGame(CardTestFactory.createReverseCard());}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ assertGameState(game,\ CardType.REVERSE,\ \textcolor{stringliteral}{"{}3"{}});}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ @Test}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenDrawTwoCardPlayed\_FirstPlayerShouldGetTwoCards()\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ var\ game\ =\ createGame(}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(),}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createSkipCard(),}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createDrawTwoCard());}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ var\ previousPlayer\ =\ players.stream().toArray(Player[]::new)[0];}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ assertGameState(game,\ CardType.DRAW\_TWO,\ \textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ assertEquals(2,\ previousPlayer.getHandCards().count());}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ @Test}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenWildColorCardPlayed\_ShouldHaveNoEffect()\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ var\ game\ =\ createGame(CardTestFactory.createWildColorCard());}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ assertGameState(game,\ CardType.WILD\_COLOR,\ \textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ @Test}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenOnlyOneCard\_WhenWildDrawFourCardPlayed\_ShouldThrowError()\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ assertThrows(IllegalStateException.class,\ ()\ -\/>\ createGame(CardTestFactory.createWildDrawFourCard()));}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ @Test}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenWildDrawFourCardPlayed\_ShouldShuffleUntilPlayableCardFound()\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ var\ game\ =\ createGame(CardTestFactory.createNumberCard(),\ CardTestFactory.createWildDrawFourCard());}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ assertGameState(game,\ CardType.NUMBER,\ \textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{private}\ Game\ createGame(Card...\ cards)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ var\ drawPile\ =\ createDrawPile(cards);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Game(drawPile,\ players);}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{private}\ DrawPile\ createDrawPile(Card...\ cards)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ DrawPile(Arrays.asList(cards));}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ assertGameState(Game\ game,\ CardType\ expectedPlayedCardType,\ String\ expectedCurrentPlayer)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ assertEquals(expectedPlayedCardType,\ game.peekTopCard().getType());}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ assertEquals(expectedCurrentPlayer,\ game.getCurrentPlayer().getName());}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}

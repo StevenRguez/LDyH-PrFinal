@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TizonTools: Archivo de código fuente src/main/java/ui/view/GameStatusView.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TizonTools
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_282895ff3779564730d23e8f6e02b2a0.html">ui</a></li><li class="navelem"><a class="el" href="dir_4d1e3ba86c04769299860781f43448fc.html">view</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">GameStatusView.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_game_status_view_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>ui.view;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> <a class="code hl_package" href="namespaceapplication.html">application</a>.<a class="code hl_interface" href="interfaceapplication_1_1_i_game_app_service.html">IGameAppService</a>;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1common.html">common</a>.<a class="code hl_class" href="classdomain_1_1common_1_1_domain_event.html">DomainEvent</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1common.html">common</a>.<a class="code hl_class" href="classdomain_1_1common_1_1_domain_event_publisher.html">DomainEventPublisher</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1common.html">common</a>.<a class="code hl_interface" href="interfacedomain_1_1common_1_1_domain_event_subscriber.html">DomainEventSubscriber</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1game.html">game</a>.<a class="code hl_package" href="namespacedomain_1_1game_1_1events.html">events</a>.<a class="code hl_class" href="classdomain_1_1game_1_1events_1_1_card_drawn.html">CardDrawn</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1game.html">game</a>.<a class="code hl_package" href="namespacedomain_1_1game_1_1events.html">events</a>.<a class="code hl_class" href="classdomain_1_1game_1_1events_1_1_card_played.html">CardPlayed</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1game.html">game</a>.<a class="code hl_package" href="namespacedomain_1_1game_1_1events.html">events</a>.<a class="code hl_class" href="classdomain_1_1game_1_1events_1_1_game_over.html">GameOver</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> javax.swing.*;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.awt.*;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classui_1_1view_1_1_game_status_view.html">   19</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classui_1_1view_1_1_game_status_view.html">GameStatusView</a> <span class="keyword">extends</span> JPanel implements <a class="code hl_interface" href="interfacedomain_1_1common_1_1_domain_event_subscriber.html">DomainEventSubscriber</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">private</span> String error;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">private</span> String text;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">private</span> <span class="keywordtype">int</span> panelCenter;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">private</span> <span class="keyword">final</span> <a class="code hl_interface" href="interfaceapplication_1_1_i_game_app_service.html">IGameAppService</a> appService;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classui_1_1view_1_1_game_status_view.html#afe421237b8a7bf22d21a4aab1a27bd97">   34</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classui_1_1view_1_1_game_status_view.html#afe421237b8a7bf22d21a4aab1a27bd97">GameStatusView</a>(<a class="code hl_interface" href="interfaceapplication_1_1_i_game_app_service.html">IGameAppService</a> appService) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        this.appService = appService;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        setPreferredSize(<span class="keyword">new</span> Dimension(275, 200));</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        setOpaque(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        error = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        updateStatus();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <a class="code hl_class" href="classdomain_1_1common_1_1_domain_event_publisher.html">DomainEventPublisher</a>.<a class="code hl_function" href="classdomain_1_1common_1_1_domain_event_publisher.html#a46375ebe23f967a56b9c66a9b0b7586e">subscribe</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    @Override</div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classui_1_1view_1_1_game_status_view.html#ab6d54170c662c22af5517ebff958645e">   51</a></span>    <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classui_1_1view_1_1_game_status_view.html#ab6d54170c662c22af5517ebff958645e">paintComponent</a>(Graphics g) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        super.paintComponent(g);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        panelCenter = getWidth() / 2;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        printMessage(g);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        printError(g);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> printError(Graphics g) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">if</span> (!error.isEmpty()) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            Font adjustedFont = <span class="keyword">new</span> Font(<span class="stringliteral">&quot;Calibri&quot;</span>, Font.PLAIN, 25);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="comment">// Determine the width of the word to position</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            FontMetrics fm = this.getFontMetrics(adjustedFont);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordtype">int</span> xPos = panelCenter - fm.stringWidth(error) / 2;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            g.setFont(adjustedFont);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            g.setColor(Color.red);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            g.drawString(error, xPos, 35);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            error = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> printMessage(Graphics g) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        Font adjustedFont = <span class="keyword">new</span> Font(<span class="stringliteral">&quot;Calibri&quot;</span>, Font.BOLD, 25);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="comment">//Determine the width of the word to position</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        FontMetrics fm = this.getFontMetrics(adjustedFont);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordtype">int</span> xPos = panelCenter - fm.stringWidth(text) / 2;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        g.setFont(adjustedFont);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        g.setColor(<span class="keyword">new</span> Color(228, 108, 10));</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        g.drawString(text, xPos, 75);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> updateStatus() {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">if</span> (appService.<a class="code hl_function" href="interfaceapplication_1_1_i_game_app_service.html#a71ad24066758708ff1cd45b5c0695d24">isGameOver</a>()) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            text = String.format(<span class="stringliteral">&quot;%s won&quot;</span>, appService.<a class="code hl_function" href="interfaceapplication_1_1_i_game_app_service.html#ac7259cd1076e50d9e379ce381dee0938">getWinner</a>().<a class="code hl_function" href="classdomain_1_1player_1_1_immutable_player.html#af440c7b383c89a60c4934ef2836fa3c2">getName</a>());</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            text = String.format(<span class="stringliteral">&quot;%s&#39;s turn&quot;</span>, appService.<a class="code hl_function" href="interfaceapplication_1_1_i_game_app_service.html#ab150c7007ad30a88434fb9e19addf082">getCurrentPlayer</a>().<a class="code hl_function" href="classapplication_1_1dto_1_1_player_info_d_t_o.html#a3c75fb1f3522571f6eb91723ef3b1b69">getName</a>());</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        repaint();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classui_1_1view_1_1_game_status_view.html#a539505a6146b4a26bacb587cb1399959">  118</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classui_1_1view_1_1_game_status_view.html#a539505a6146b4a26bacb587cb1399959">setError</a>(String errorMgs) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        error = errorMgs;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    @Override</div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classui_1_1view_1_1_game_status_view.html#a63827e5beae9baa8782fe1e69cbf2df1">  129</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classui_1_1view_1_1_game_status_view.html#a63827e5beae9baa8782fe1e69cbf2df1">handleEvent</a>(<a class="code hl_class" href="classdomain_1_1common_1_1_domain_event.html">DomainEvent</a> event) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">if</span> (event instanceof <a class="code hl_class" href="classdomain_1_1game_1_1events_1_1_card_played.html">CardPlayed</a></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            || event instanceof <a class="code hl_class" href="classdomain_1_1game_1_1events_1_1_card_drawn.html">CardDrawn</a></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            || event instanceof <a class="code hl_class" href="classdomain_1_1game_1_1events_1_1_game_over.html">GameOver</a>) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            updateStatus();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
+</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
+</div>
+<div class="ttc" id="aclassapplication_1_1dto_1_1_player_info_d_t_o_html_a3c75fb1f3522571f6eb91723ef3b1b69"><div class="ttname"><a href="classapplication_1_1dto_1_1_player_info_d_t_o.html#a3c75fb1f3522571f6eb91723ef3b1b69">application.dto.PlayerInfoDTO.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdoc">Obtiene el nombre del jugador.</div><div class="ttdef"><b>Definition</b> <a href="_player_info_d_t_o_8java_source.html#l00051">PlayerInfoDTO.java:51</a></div></div>
+<div class="ttc" id="aclassdomain_1_1common_1_1_domain_event_html"><div class="ttname"><a href="classdomain_1_1common_1_1_domain_event.html">domain.common.DomainEvent</a></div><div class="ttdoc">Clase abstracta base que representa un evento de dominio genérico en la aplicación.</div><div class="ttdef"><b>Definition</b> <a href="_domain_event_8java_source.html#l00013">DomainEvent.java:13</a></div></div>
+<div class="ttc" id="aclassdomain_1_1common_1_1_domain_event_publisher_html"><div class="ttname"><a href="classdomain_1_1common_1_1_domain_event_publisher.html">domain.common.DomainEventPublisher</a></div><div class="ttdoc">Publicador de eventos de dominio que gestiona suscriptores y la publicación de eventos de manera segu...</div><div class="ttdef"><b>Definition</b> <a href="_domain_event_publisher_8java_source.html#l00013">DomainEventPublisher.java:13</a></div></div>
+<div class="ttc" id="aclassdomain_1_1common_1_1_domain_event_publisher_html_a46375ebe23f967a56b9c66a9b0b7586e"><div class="ttname"><a href="classdomain_1_1common_1_1_domain_event_publisher.html#a46375ebe23f967a56b9c66a9b0b7586e">domain.common.DomainEventPublisher.subscribe</a></div><div class="ttdeci">static void subscribe(DomainEventSubscriber subscriber)</div><div class="ttdoc">Registra un suscriptor para recibir eventos de dominio.</div><div class="ttdef"><b>Definition</b> <a href="_domain_event_publisher_8java_source.html#l00037">DomainEventPublisher.java:37</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1events_1_1_card_drawn_html"><div class="ttname"><a href="classdomain_1_1game_1_1events_1_1_card_drawn.html">domain.game.events.CardDrawn</a></div><div class="ttdef"><b>Definition</b> <a href="_card_drawn_8java_source.html#l00010">CardDrawn.java:10</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1events_1_1_card_played_html"><div class="ttname"><a href="classdomain_1_1game_1_1events_1_1_card_played.html">domain.game.events.CardPlayed</a></div><div class="ttdef"><b>Definition</b> <a href="_card_played_8java_source.html#l00011">CardPlayed.java:11</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1events_1_1_game_over_html"><div class="ttname"><a href="classdomain_1_1game_1_1events_1_1_game_over.html">domain.game.events.GameOver</a></div><div class="ttdef"><b>Definition</b> <a href="_game_over_8java_source.html#l00009">GameOver.java:9</a></div></div>
+<div class="ttc" id="aclassdomain_1_1player_1_1_immutable_player_html_af440c7b383c89a60c4934ef2836fa3c2"><div class="ttname"><a href="classdomain_1_1player_1_1_immutable_player.html#af440c7b383c89a60c4934ef2836fa3c2">domain.player.ImmutablePlayer.getName</a></div><div class="ttdeci">String getName()</div><div class="ttdef"><b>Definition</b> <a href="_immutable_player_8java_source.html#l00041">ImmutablePlayer.java:41</a></div></div>
+<div class="ttc" id="aclassui_1_1view_1_1_game_status_view_html"><div class="ttname"><a href="classui_1_1view_1_1_game_status_view.html">ui.view.GameStatusView</a></div><div class="ttdef"><b>Definition</b> <a href="#l00019">GameStatusView.java:19</a></div></div>
+<div class="ttc" id="aclassui_1_1view_1_1_game_status_view_html_a539505a6146b4a26bacb587cb1399959"><div class="ttname"><a href="classui_1_1view_1_1_game_status_view.html#a539505a6146b4a26bacb587cb1399959">ui.view.GameStatusView.setError</a></div><div class="ttdeci">void setError(String errorMgs)</div><div class="ttdef"><b>Definition</b> <a href="#l00118">GameStatusView.java:118</a></div></div>
+<div class="ttc" id="aclassui_1_1view_1_1_game_status_view_html_a63827e5beae9baa8782fe1e69cbf2df1"><div class="ttname"><a href="classui_1_1view_1_1_game_status_view.html#a63827e5beae9baa8782fe1e69cbf2df1">ui.view.GameStatusView.handleEvent</a></div><div class="ttdeci">void handleEvent(DomainEvent event)</div><div class="ttdef"><b>Definition</b> <a href="#l00129">GameStatusView.java:129</a></div></div>
+<div class="ttc" id="aclassui_1_1view_1_1_game_status_view_html_ab6d54170c662c22af5517ebff958645e"><div class="ttname"><a href="classui_1_1view_1_1_game_status_view.html#ab6d54170c662c22af5517ebff958645e">ui.view.GameStatusView.paintComponent</a></div><div class="ttdeci">void paintComponent(Graphics g)</div><div class="ttdef"><b>Definition</b> <a href="#l00051">GameStatusView.java:51</a></div></div>
+<div class="ttc" id="aclassui_1_1view_1_1_game_status_view_html_afe421237b8a7bf22d21a4aab1a27bd97"><div class="ttname"><a href="classui_1_1view_1_1_game_status_view.html#afe421237b8a7bf22d21a4aab1a27bd97">ui.view.GameStatusView.GameStatusView</a></div><div class="ttdeci">GameStatusView(IGameAppService appService)</div><div class="ttdef"><b>Definition</b> <a href="#l00034">GameStatusView.java:34</a></div></div>
+<div class="ttc" id="ainterfaceapplication_1_1_i_game_app_service_html"><div class="ttname"><a href="interfaceapplication_1_1_i_game_app_service.html">application.IGameAppService</a></div><div class="ttdoc">Interfaz que define el servicio de aplicación para interactuar con una sesión de juego.</div><div class="ttdef"><b>Definition</b> <a href="_i_game_app_service_8java_source.html#l00019">IGameAppService.java:19</a></div></div>
+<div class="ttc" id="ainterfaceapplication_1_1_i_game_app_service_html_a71ad24066758708ff1cd45b5c0695d24"><div class="ttname"><a href="interfaceapplication_1_1_i_game_app_service.html#a71ad24066758708ff1cd45b5c0695d24">application.IGameAppService.isGameOver</a></div><div class="ttdeci">boolean isGameOver()</div><div class="ttdoc">Verifica si el juego ha terminado.</div></div>
+<div class="ttc" id="ainterfaceapplication_1_1_i_game_app_service_html_ab150c7007ad30a88434fb9e19addf082"><div class="ttname"><a href="interfaceapplication_1_1_i_game_app_service.html#ab150c7007ad30a88434fb9e19addf082">application.IGameAppService.getCurrentPlayer</a></div><div class="ttdeci">PlayerInfoDTO getCurrentPlayer()</div><div class="ttdoc">Recupera la información del jugador actual.</div></div>
+<div class="ttc" id="ainterfaceapplication_1_1_i_game_app_service_html_ac7259cd1076e50d9e379ce381dee0938"><div class="ttname"><a href="interfaceapplication_1_1_i_game_app_service.html#ac7259cd1076e50d9e379ce381dee0938">application.IGameAppService.getWinner</a></div><div class="ttdeci">ImmutablePlayer getWinner()</div><div class="ttdoc">Recupera el jugador ganador, si el juego ha terminado.</div></div>
+<div class="ttc" id="ainterfacedomain_1_1common_1_1_domain_event_subscriber_html"><div class="ttname"><a href="interfacedomain_1_1common_1_1_domain_event_subscriber.html">domain.common.DomainEventSubscriber</a></div><div class="ttdoc">Interfaz para suscriptores de eventos de dominio.</div><div class="ttdef"><b>Definition</b> <a href="_domain_event_subscriber_8java_source.html#l00010">DomainEventSubscriber.java:10</a></div></div>
+<div class="ttc" id="anamespaceapplication_html"><div class="ttname"><a href="namespaceapplication.html">application</a></div></div>
+<div class="ttc" id="anamespacedomain_1_1common_html"><div class="ttname"><a href="namespacedomain_1_1common.html">domain.common</a></div><div class="ttdef"><b>Definition</b> <a href="_domain_event_8java_source.html#l00001">DomainEvent.java:1</a></div></div>
+<div class="ttc" id="anamespacedomain_1_1game_1_1events_html"><div class="ttname"><a href="namespacedomain_1_1game_1_1events.html">domain.game.events</a></div><div class="ttdef"><b>Definition</b> <a href="_card_drawn_8java_source.html#l00001">CardDrawn.java:1</a></div></div>
+<div class="ttc" id="anamespacedomain_1_1game_html"><div class="ttname"><a href="namespacedomain_1_1game.html">domain.game</a></div><div class="ttdef"><b>Definition</b> <a href="_card_rules_8java_source.html#l00001">CardRules.java:1</a></div></div>
+<div class="ttc" id="anamespacedomain_html"><div class="ttname"><a href="namespacedomain.html">domain</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

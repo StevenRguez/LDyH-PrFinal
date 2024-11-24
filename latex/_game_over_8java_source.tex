@@ -1,0 +1,22 @@
+\doxysection{Game\+Over.\+java}
+\label{_game_over_8java_source}\index{src/main/java/domain/game/events/GameOver.java@{src/main/java/domain/game/events/GameOver.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.game.events;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.common.DomainEvent;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.player.ImmutablePlayer;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }GameOver\ \textcolor{keyword}{extends}\ DomainEvent\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{private}\ ImmutablePlayer\ winner;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}\ GameOver(ImmutablePlayer\ winner)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ this.winner\ =\ winner;}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}\ ImmutablePlayer\ getWinner()\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ winner;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}

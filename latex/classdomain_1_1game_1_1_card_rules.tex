@@ -1,0 +1,107 @@
+\doxysection{Referencia de la clase domain.\+game.\+Card\+Rules}
+\label{classdomain_1_1game_1_1_card_rules}\index{domain.game.CardRules@{domain.game.CardRules}}
+
+
+Clase de utilidad que contiene las reglas para validar el juego de cartas en una partida.  
+
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static boolean \textbf{ is\+Valid\+Number\+Card} (\textbf{ Card} top\+Card, \textbf{ Number\+Card} played\+Card)
+\begin{DoxyCompactList}\small\item\em Valida si una carta de número puede ser jugada sobre otra carta. \end{DoxyCompactList}\item 
+static boolean \textbf{ is\+Valid\+Action\+Card} (\textbf{ Card} top\+Card, \textbf{ Action\+Card} played\+Card)
+\begin{DoxyCompactList}\small\item\em Valida si una carta de acción puede ser jugada sobre otra carta. \end{DoxyCompactList}\item 
+static boolean \textbf{ is\+Valid\+Wild\+Card} (\textbf{ Wild\+Card} played\+Card)
+\begin{DoxyCompactList}\small\item\em Valida si una carta comodín puede ser jugada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase de utilidad que contiene las reglas para validar el juego de cartas en una partida. 
+
+Definición en la línea \textbf{ 9} del archivo \textbf{ Card\+Rules.\+java}.
+
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{domain.game.CardRules@{domain.game.CardRules}!isValidActionCard@{isValidActionCard}}
+\index{isValidActionCard@{isValidActionCard}!domain.game.CardRules@{domain.game.CardRules}}
+\doxysubsubsection{isValidActionCard()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_card_rules_a2ed0bf7892d81ebe70d1e32a929dfd11} 
+static boolean domain.\+game.\+Card\+Rules.\+is\+Valid\+Action\+Card (\begin{DoxyParamCaption}\item[{\textbf{ Card}}]{top\+Card}{, }\item[{\textbf{ Action\+Card}}]{played\+Card}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Valida si una carta de acción puede ser jugada sobre otra carta. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em top\+Card} & La carta en la parte superior del mazo de descarte. \\
+\hline
+{\em played\+Card} & La carta de acción que se desea jugar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si la carta jugada tiene el mismo color que la carta superior o es del mismo tipo que la carta superior; false en caso contrario. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 45} del archivo \textbf{ Card\+Rules.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 0
+\index{domain.game.CardRules@{domain.game.CardRules}!isValidNumberCard@{isValidNumberCard}}
+\index{isValidNumberCard@{isValidNumberCard}!domain.game.CardRules@{domain.game.CardRules}}
+\doxysubsubsection{isValidNumberCard()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_card_rules_a5739cd37e0d3c1c194f42dd488819a6c} 
+static boolean domain.\+game.\+Card\+Rules.\+is\+Valid\+Number\+Card (\begin{DoxyParamCaption}\item[{\textbf{ Card}}]{top\+Card}{, }\item[{\textbf{ Number\+Card}}]{played\+Card}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Valida si una carta de número puede ser jugada sobre otra carta. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em top\+Card} & La carta en la parte superior del mazo de descarte. \\
+\hline
+{\em played\+Card} & La carta de número que se desea jugar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si la carta jugada tiene el mismo color que la carta superior o el mismo valor si la carta superior es también de número; false en caso contrario. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 26} del archivo \textbf{ Card\+Rules.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 1
+\index{domain.game.CardRules@{domain.game.CardRules}!isValidWildCard@{isValidWildCard}}
+\index{isValidWildCard@{isValidWildCard}!domain.game.CardRules@{domain.game.CardRules}}
+\doxysubsubsection{isValidWildCard()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_card_rules_a2a868d8752f7510dfd0165ac8fe5da3f} 
+static boolean domain.\+game.\+Card\+Rules.\+is\+Valid\+Wild\+Card (\begin{DoxyParamCaption}\item[{\textbf{ Wild\+Card}}]{played\+Card}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Valida si una carta comodín puede ser jugada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em played\+Card} & La carta comodín que se desea jugar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si la carta comodín tiene un color asignado; false en caso contrario. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 59} del archivo \textbf{ Card\+Rules.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/domain/game/\textbf{ Card\+Rules.\+java}\end{DoxyCompactItemize}

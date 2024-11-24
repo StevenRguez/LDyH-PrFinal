@@ -1,0 +1,70 @@
+\doxysection{Test\+Card\+Deck.\+java}
+\label{_test_card_deck_8java_source}\index{src/test/java/domain/card/TestCardDeck.java@{src/test/java/domain/card/TestCardDeck.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.card;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Assertions;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ org.junit.jupiter.api.BeforeEach;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertEquals;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }TestCardDeck\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{private}\ CardDeck\ testee;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ @BeforeEach}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ setup()\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ testee\ =\ \textcolor{keyword}{new}\ CardDeck();}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ @Test}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenInitialized\_ShouldBeImmutable()\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ var\ cards\ =\ testee.getImmutableCards();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Assertions.assertThrows(UnsupportedOperationException.class,\ ()\ -\/>\ cards.remove(0));}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ @Test}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenInitialized\_ShouldHave108Cards()\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ assertEquals(108,\ testee.getImmutableCards().size());}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ @Test}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenInitialized\_ShouldHave76NumberCards()\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ var\ cards\ =\ testee.getImmutableCards();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertNumberCards(cards);}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ @Test}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenInitialized\_ShouldHave8SkipCards()\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ var\ cards\ =\ testee.getImmutableCards();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertSkipCards(cards);}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ @Test}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenInitialized\_ShouldHave8ReverseCards()\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ var\ cards\ =\ testee.getImmutableCards();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertReverseCards(cards);}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ @Test}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenInitialized\_ShouldHave8DrawTwoCards()\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ var\ cards\ =\ testee.getImmutableCards();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertDrawTwoCards(cards);}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ @Test}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenInitialized\_ShouldHave8WildCards()\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ var\ cards\ =\ testee.getImmutableCards();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertWildCards(cards);}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}

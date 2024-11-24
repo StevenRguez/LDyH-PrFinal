@@ -1,0 +1,82 @@
+\doxysection{Table\+View.\+java}
+\label{_table_view_8java_source}\index{src/main/java/ui/view/TableView.java@{src/main/java/ui/view/TableView.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }ui.view;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ application.IGameAppService;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.card.Card;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.common.DomainEvent;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.common.DomainEventPublisher;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ domain.common.DomainEventSubscriber;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ domain.game.events.CardPlayed;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ ui.common.StyleUtil;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ javax.swing.*;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{import}\ java.awt.*;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }TableView\ \textcolor{keyword}{extends}\ JPanel\ implements\ DomainEventSubscriber\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ JPanel\ table;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ IGameAppService\ appService;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}\ TableView(IGameAppService\ appService)\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ this.appService\ =\ appService;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ setOpaque(\textcolor{keyword}{false});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ setLayout(\textcolor{keyword}{new}\ GridBagLayout());}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ table\ =\ \textcolor{keyword}{new}\ JPanel();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ table.setBackground(\textcolor{keyword}{new}\ Color(64,64,64));}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ initTable();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ initInfoView();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(\textcolor{keyword}{this});}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initTable()\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ table.removeAll();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ table.setPreferredSize(\textcolor{keyword}{new}\ Dimension(500,200));}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ table.setLayout(\textcolor{keyword}{new}\ GridBagLayout());}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ GridBagConstraints\ c\ =\ \textcolor{keyword}{new}\ GridBagConstraints();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ c.fill\ =\ GridBagConstraints.HORIZONTAL;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ c.gridx\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ c.gridy\ =\ 0;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Card\ topCard\ =\ appService.peekTopCard();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ Color\ background\ =\ StyleUtil.convertCardColor(topCard.getColor());}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ var\ cardView\ =\ \textcolor{keyword}{new}\ CardView(topCard);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ table.add(cardView,\ c);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ table.setBackground(background);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ table.revalidate();}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initInfoView()\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ GridBagConstraints\ c\ =\ \textcolor{keyword}{new}\ GridBagConstraints();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ c.fill\ =\ GridBagConstraints.HORIZONTAL;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ c.gridx\ =\ 0;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ c.gridy\ =\ 0;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ c.insets\ =\ \textcolor{keyword}{new}\ Insets(0,\ 130,\ 0,\ 45);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ add(table,c);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ c.fill\ =\ GridBagConstraints.HORIZONTAL;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ c.anchor\ =\ GridBagConstraints.LINE\_END;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ c.gridwidth\ =\ GridBagConstraints.REMAINDER;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ c.gridx\ =\ 1;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ c.gridy\ =\ 0;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ c.insets\ =\ \textcolor{keyword}{new}\ Insets(0,\ 1,\ 0,\ 1);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ add(\textcolor{keyword}{new}\ GameStatusView(appService),\ c);}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ @Override}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ handleEvent(DomainEvent\ event)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(event\ instanceof\ CardPlayed)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ initTable();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \}}
+
+\end{DoxyCode}

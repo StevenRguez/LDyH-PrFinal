@@ -1,0 +1,11 @@
+digraph "domain.common.DomainEventPublisher.publish"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="domain.common.DomainEvent\lPublisher.publish",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Publica un evento de dominio, notificando a todos los suscriptores registrados."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="domain.game.Game.playCard",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1game_1_1_game.html#a8c9262b9c67e2f308b323de12d843a28",tooltip="Juega una carta para el jugador actual, validando si dijo \"Uno\"."];
+}

@@ -1,0 +1,15 @@
+\doxysection{Referencia del archivo src/main/java/domain/card/\+Action\+Card.java}
+\label{_action_card_8java}\index{src/main/java/domain/card/ActionCard.java@{src/main/java/domain/card/ActionCard.java}}
+{\ttfamily import java.\+util.\+Objects;}\newline
+Gráfico de dependencias incluidas en Action\+Card.\+java\+:
+% FIG 0
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ domain.\+card.\+Action\+Card}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Paquetes}
+\begin{DoxyCompactItemize}
+\item 
+package \textbf{ domain.\+card}
+\end{DoxyCompactItemize}

@@ -1,0 +1,273 @@
+\doxysection{Game.\+java}
+\label{_game_8java_source}\index{src/main/java/domain/game/Game.java@{src/main/java/domain/game/Game.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.game;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.*;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.common.DomainEventPublisher;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.common.Entity;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.game.events.CardDrawn;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ domain.game.events.CardPlayed;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ domain.game.events.GameOver;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ domain.player.ImmutablePlayer;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{import}\ domain.player.Player;}
+\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ domain.player.PlayerRoundIterator;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{import}\ java.time.Duration;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{import}\ java.time.Instant;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{import}\ java.util.*;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }Game\ \textcolor{keyword}{extends}\ Entity\ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ PlayerRoundIterator\ players;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}\ DrawPile\ drawPile;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Stack<Card>\ discardPile\ =\ \textcolor{keyword}{new}\ Stack<>();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{private}\ ImmutablePlayer\ winner\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ moveCount;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{private}\ Instant\ startTime;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{private}\ Instant\ endTime;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{private}\ Map<UUID,\ Integer>\ playerMoves\ =\ \textcolor{keyword}{new}\ HashMap<>();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{public}\ Game(DrawPile\ drawPile,\ PlayerRoundIterator\ players)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ super();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ this.drawPile\ =\ drawPile;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ this.players\ =\ players;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ this.moveCount\ =\ 0;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ this.startTime\ =\ Instant.now();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ startDiscardPile();}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{public}\ Stream<ImmutablePlayer>\ getPlayers()\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players.stream().map(Player::toImmutable);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{public}\ ImmutablePlayer\ getCurrentPlayer()\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players.getCurrentPlayer().toImmutable();}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Card>\ getHandCards(UUID\ playerId)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players.getPlayerById(playerId).getHandCards();}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{public}\ Card\ peekTopCard()\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ discardPile.peek();}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ getMoveCount()\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ moveCount;}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{public}\ Instant\ getStartTime()\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ startTime;}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{public}\ String\ getGameDuration()\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (endTime\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}La\ partida\ no\ ha\ terminado."{}};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ Duration\ duration\ =\ Duration.between(startTime,\ endTime);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ minutes\ =\ duration.toMinutes();}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ seconds\ =\ duration.getSeconds()\ \%\ 60;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String.format(\textcolor{stringliteral}{"{}\%d\ minutos\ y\ \%d\ segundos"{}},\ minutes,\ seconds);}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ startDiscardPile()\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ var\ card\ =\ drawPile.drawCard();}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (card.getType())\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ NUMBER,\ WILD\_COLOR\ -\/>\ discard(card);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SKIP\ -\/>\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ discard(card);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.next();}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ REVERSE\ -\/>\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ discard(card);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reverse();}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ DRAW\_TWO\ -\/>\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ discard(card);}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ drawTwoCards(players.getCurrentPlayer());}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.next();}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ WILD\_DRAW\_FOUR\ -\/>\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ recreateDrawPile(card);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startDiscardPile();}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}\ -\/>\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ UnsupportedOperationException(\textcolor{stringliteral}{"{}Unsupported\ card\ type\ "{}}\ +\ card.getType());}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ playCard(UUID\ playerId,\ Card\ playedCard)\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ playCard(playerId,\ playedCard,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ playCard(UUID\ playerId,\ Card\ playedCard,\ \textcolor{keywordtype}{boolean}\ hasSaidUno)\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isOver())\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalStateException(\textcolor{stringliteral}{"{}Game\ is\ over"{}});}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ moveCount++;}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ validatePlayedCard(playerId,\ playedCard);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ playerMoves.put(playerId,\ playerMoves.getOrDefault(playerId,\ 0)\ +\ 1);}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lógica\ para\ diferentes\ tipos\ de\ cartas}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (playedCard.getType())\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ NUMBER\ -\/>\ \{\ \textcolor{comment}{/*\ Lógica\ para\ cartas\ numéricas\ */}\ \}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SKIP\ -\/>\ \{\ \textcolor{comment}{/*\ Lógica\ para\ cartas\ de\ "{}saltar"{}\ */}\ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ REVERSE\ -\/>\ \{\ \textcolor{comment}{/*\ Lógica\ para\ cartas\ de\ "{}reversa"{}\ */}\ \}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ DRAW\_TWO\ -\/>\ \{\ \textcolor{comment}{/*\ Lógica\ para\ cartas\ de\ "{}robar\ dos"{}\ */}\ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ WILD\_COLOR,\ WILD\_DRAW\_FOUR\ -\/>\ \{\ \textcolor{comment}{/*\ Lógica\ para\ cartas\ comodín\ */}\ \}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}\ -\/>\ rejectPlayedCard(playedCard);}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(playerId,\ playedCard));}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isOver())\ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ endTime\ =\ Instant.now();}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ GameOver(winner));}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ drawCard(UUID\ playerId)\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (getCurrentPlayer().getId().equals(playerId))\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ moveCount++;\ \textcolor{comment}{//\ Incrementa\ el\ contador\ de\ movimientos}}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ var\ drawnCards\ =\ drawCards(players.getCurrentPlayer(),\ 1);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ tryToPlayDrawnCard(playerId,\ drawnCards.get(0));}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ isOver()\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ winner\ !=\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00235\ \ \ \ \ \}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keyword}{public}\ ImmutablePlayer\ getWinner()\ \{}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ winner;}
+\DoxyCodeLine{00244\ \ \ \ \ \}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ tryToPlayDrawnCard(UUID\ playerId,\ Card\ drawnCard)\ \{}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ var\ cardToPlay\ =\ CardUtil.isWildCard(drawnCard)}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{new}\ WildCard(drawnCard.getType(),\ peekTopCard().getColor())}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ drawnCard;}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ playCard(playerId,\ cardToPlay);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ ex)\ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ no\ se\ puede\ jugar\ la\ carta,\ pasa\ el\ turno}}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ players.next();}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardDrawn(playerId));}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00264\ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ validatePlayedCard(UUID\ playerId,\ Card\ card)\ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ var\ currentPlayer\ =\ players.getCurrentPlayer();}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!currentPlayer.getId().equals(playerId))\ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(String.format(\textcolor{stringliteral}{"{}No\ es\ el\ turno\ del\ jugador\ con\ ID\ \%s"{}},\ playerId));}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!currentPlayer.hasHandCard(card))\ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(String.format(\textcolor{stringliteral}{"{}La\ carta\ \%s\ no\ está\ en\ la\ mano\ del\ jugador"{}},\ card));}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00281\ \ \ \ \ \}}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ checkNumberCardRule(Card\ playedCard)\ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ var\ topCard\ =\ peekTopCard();}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isFirstDiscardAWildCard()\ ||\ CardRules.isValidNumberCard(topCard,\ (NumberCard)\ playedCard))\ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ rejectPlayedCard(playedCard);}
+\DoxyCodeLine{00296\ \ \ \ \ \}}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ checkActionCardRule(Card\ playedCard)\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ var\ topCard\ =\ peekTopCard();}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isFirstDiscardAWildCard()\ ||\ CardRules.isValidActionCard(topCard,\ (ActionCard)\ playedCard))\ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ rejectPlayedCard(playedCard);}
+\DoxyCodeLine{00311\ \ \ \ \ \}}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ checkWildCardRule(Card\ playedCard)\ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!CardRules.isValidWildCard((WildCard)\ playedCard))\ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ rejectPlayedCard(playedCard);}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \ \ \ \ \}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ isFirstDiscardAWildCard()\ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ discardPile.size()\ ==\ 1\ \&\&\ peekTopCard().getType()\ ==\ CardType.WILD\_COLOR;}
+\DoxyCodeLine{00331\ \ \ \ \ \}}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ recreateDrawPile(Card\ card)\ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (drawPile.getSize()\ ==\ 0)\ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalStateException(\textcolor{stringliteral}{"{}No\ hay\ suficientes\ cartas\ para\ reorganizar\ el\ mazo"{}});}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ drawPile\ =\ DealerService.shuffle(drawPile,\ card);}
+\DoxyCodeLine{00344\ \ \ \ \ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ acceptPlayedCard(Card\ card,\ \textcolor{keywordtype}{boolean}\ hasSaidUno)\ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ players.getCurrentPlayer().removePlayedCard(card);}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ discard(card);}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ var\ remainingTotalCards\ =\ getCurrentPlayer().getTotalCards();}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ checkSaidUno(remainingTotalCards,\ hasSaidUno);}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingTotalCards\ ==\ 0)\ \{}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ winner\ =\ getCurrentPlayer();}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00362\ \ \ \ \ \}}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ checkSaidUno(\textcolor{keywordtype}{int}\ remainingTotalCards,\ \textcolor{keywordtype}{boolean}\ hasSaidUno)\ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingTotalCards\ ==\ 1\ \&\&\ !hasSaidUno)\ \{}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ drawCards(players.getCurrentPlayer(),\ 2);}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00374\ \ \ \ \ \}}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ discard(Card\ card)\ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ discardPile.add(card);}
+\DoxyCodeLine{00383\ \ \ \ \ \}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ reverse()\ \{}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ players.reverseDirection();}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ players.next();}
+\DoxyCodeLine{00391\ \ \ \ \ \}}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ drawTwoCards(Player\ player)\ \{}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ drawCards(player,\ 2);}
+\DoxyCodeLine{00400\ \ \ \ \ \}}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ drawFourCards(Player\ player)\ \{}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ drawCards(player,\ 4);}
+\DoxyCodeLine{00409\ \ \ \ \ \}}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keyword}{private}\ List<Card>\ drawCards(Player\ player,\ \textcolor{keywordtype}{int}\ total)\ \{}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ min\ =\ Math.min(total,\ drawPile.getSize());}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ var\ drawnCards\ =\ \textcolor{keyword}{new}\ ArrayList<Card>();}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ min;\ i++)\ \{}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ var\ drawnCard\ =\ drawPile.drawCard();}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ drawnCards.add(drawnCard);}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ player.addToHandCards(drawnCard);}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ drawnCards;}
+\DoxyCodeLine{00430\ \ \ \ \ \}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ rejectPlayedCard(Card\ playedCard)\ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String.format(\textcolor{stringliteral}{"{}La\ carta\ jugada\ \%s\ no\ es\ válida\ para\ \%s"{}},\ playedCard,\ peekTopCard()));}
+\DoxyCodeLine{00441\ \ \ \ \ \}}
+\DoxyCodeLine{00442\ \}}
+
+\end{DoxyCode}

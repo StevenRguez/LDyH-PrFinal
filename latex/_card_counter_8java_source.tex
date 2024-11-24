@@ -1,0 +1,81 @@
+\doxysection{Card\+Counter.\+java}
+\label{_card_counter_8java_source}\index{src/test/java/domain/card/CardCounter.java@{src/test/java/domain/card/CardCounter.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.card;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CardCounter\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ List<Card>\ cards;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{public}\ CardCounter(List<Card>\ cards)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ this.cards\ =\ cards;}
+\DoxyCodeLine{00011\ \ \ \ \ \}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}[]\ getNumberCounts()\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ var\ numberCounts\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[10];}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ getNumberStream()}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ .forEach(c\ -\/>\ numberCounts[c.getValue()]\ +=\ 1);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ numberCounts;}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}[]\ getNumberColorCounts()\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ var\ colorCounts\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[4];}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ getNumberStream()}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ .forEach(c\ -\/>\ colorCounts[c.getColor().ordinal()]\ +=\ 1);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ colorCounts;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}\ Stream<NumberCard>\ getNumberStream()\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cards.stream()}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ .filter(c\ -\/>\ c.getType()\ ==\ CardType.NUMBER)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ .map(c\ -\/>\ (NumberCard)\ c);}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}[]\ getSkipColorCounts()\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ var\ colorCounts\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[4];}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ cards.stream()}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ .filter(c\ -\/>\ c.getType()\ ==\ CardType.SKIP)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ .map(Card::getColor)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ .forEach(color\ -\/>\ colorCounts[color.ordinal()]\ +=\ 1);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ colorCounts;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}[]\ getReverseColorCounts()\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ var\ colorCounts\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[4];}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ cards.stream()}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ .filter(c\ -\/>\ c.getType()\ ==\ CardType.REVERSE)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ .map(Card::getColor)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ .forEach(color\ -\/>\ colorCounts[color.ordinal()]\ +=\ 1);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ colorCounts;}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}[]\ getDrawTwoColorCounts()\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ var\ colorCounts\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[4];}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ cards.stream()}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ .filter(c\ -\/>\ c.getType()\ ==\ CardType.DRAW\_TWO)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ .map(Card::getColor)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ .forEach(color\ -\/>\ colorCounts[color.ordinal()]\ +=\ 1);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ colorCounts;}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{long}\ getWildCardCounts(CardType\ type)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cards.stream()}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ .filter(c\ -\/>\ c.getType()\ ==\ type)}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ .count();}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \}}
+
+\end{DoxyCode}

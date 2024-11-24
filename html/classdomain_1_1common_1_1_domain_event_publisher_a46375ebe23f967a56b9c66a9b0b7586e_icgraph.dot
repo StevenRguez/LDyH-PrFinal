@@ -1,0 +1,15 @@
+digraph "domain.common.DomainEventPublisher.subscribe"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="domain.common.DomainEvent\lPublisher.subscribe",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Registra un suscriptor para recibir eventos de dominio."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="ui.view.GameStatusView.Game\lStatusView",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classui_1_1view_1_1_game_status_view.html#afe421237b8a7bf22d21a4aab1a27bd97",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="ui.view.PlayerView.PlayerView",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classui_1_1view_1_1_player_view.html#ad68fd3cafe42c24f1eda93cbdc3b6da4",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="ui.view.TableView.TableView",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classui_1_1view_1_1_table_view.html#a1ae9c2f9b4b34137034bcfd962a220d0",tooltip=" "];
+}

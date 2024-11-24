@@ -1,0 +1,136 @@
+\doxysection{Referencia de la clase domain.\+game.\+Dealer\+Service}
+\label{classdomain_1_1game_1_1_dealer_service}\index{domain.game.DealerService@{domain.game.DealerService}}
+
+
+Clase de utilidad que proporciona servicios relacionados con la baraja y distribución de cartas.  
+
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ \textbf{ Card} $>$ \textbf{ shuffle} (List$<$ \textbf{ Card} $>$ cards)
+\begin{DoxyCompactList}\small\item\em Baraja una lista de cartas utilizando el algoritmo moderno de Fisher-\/\+Yates. \end{DoxyCompactList}\item 
+static \textbf{ Draw\+Pile} \textbf{ shuffle} (\textbf{ Draw\+Pile} draw\+Pile, \textbf{ Card} last\+Played\+Card)
+\begin{DoxyCompactList}\small\item\em Baraja el mazo de robar y coloca una carta previamente jugada como primera. \end{DoxyCompactList}\item 
+static \textbf{ Hand\+Card\+List}[$\,$] \textbf{ deal\+Initial\+Hand\+Cards} (\textbf{ Draw\+Pile} draw\+Pile, int total\+Players)
+\begin{DoxyCompactList}\small\item\em Reparte cartas iniciales a los jugadores desde el mazo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static final int \textbf{ TOTAL\+\_\+\+INITIAL\+\_\+\+HAND\+\_\+\+CARDS} = 7
+\begin{DoxyCompactList}\small\item\em Número total de cartas iniciales que cada jugador recibe al inicio del juego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase de utilidad que proporciona servicios relacionados con la baraja y distribución de cartas. 
+
+Definición en la línea \textbf{ 14} del archivo \textbf{ Dealer\+Service.\+java}.
+
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{domain.game.DealerService@{domain.game.DealerService}!dealInitialHandCards@{dealInitialHandCards}}
+\index{dealInitialHandCards@{dealInitialHandCards}!domain.game.DealerService@{domain.game.DealerService}}
+\doxysubsubsection{dealInitialHandCards()}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_dealer_service_a280d1898ce0bc2f5c56c81d017d1b179} 
+static \textbf{ Hand\+Card\+List}[$\,$] domain.\+game.\+Dealer\+Service.\+deal\+Initial\+Hand\+Cards (\begin{DoxyParamCaption}\item[{\textbf{ Draw\+Pile}}]{draw\+Pile}{, }\item[{int}]{total\+Players}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reparte cartas iniciales a los jugadores desde el mazo. 
+
+Cada jugador recibe una mano inicial de 7 cartas (definido por {\ttfamily TOTAL\+\_\+\+INITIAL\+\_\+\+HAND\+\_\+\+CARDS}).
+
+
+\begin{DoxyParams}{Parámetros}
+{\em draw\+Pile} & Mazo de robar del cual se extraen las cartas. \\
+\hline
+{\em total\+Players} & Número total de jugadores en la partida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Un arreglo de {\ttfamily Hand\+Card\+List} que representa las manos iniciales de cada jugador. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 96} del archivo \textbf{ Dealer\+Service.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 0
+\index{domain.game.DealerService@{domain.game.DealerService}!shuffle@{shuffle}}
+\index{shuffle@{shuffle}!domain.game.DealerService@{domain.game.DealerService}}
+\doxysubsubsection{shuffle()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_dealer_service_af2fca55501c011a31b5bea654cbc9e7e} 
+static \textbf{ Draw\+Pile} domain.\+game.\+Dealer\+Service.\+shuffle (\begin{DoxyParamCaption}\item[{\textbf{ Draw\+Pile}}]{draw\+Pile}{, }\item[{\textbf{ Card}}]{last\+Played\+Card}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Baraja el mazo de robar y coloca una carta previamente jugada como primera. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em draw\+Pile} & Mazo de robar que será barajado. \\
+\hline
+{\em last\+Played\+Card} & Carta previamente jugada que se usará como referencia inicial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Un nuevo {\ttfamily \doxyref{Draw\+Pile}{pág.}{classdomain_1_1game_1_1_draw_pile}} con las cartas barajadas. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 58} del archivo \textbf{ Dealer\+Service.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 1
+\index{domain.game.DealerService@{domain.game.DealerService}!shuffle@{shuffle}}
+\index{shuffle@{shuffle}!domain.game.DealerService@{domain.game.DealerService}}
+\doxysubsubsection{shuffle()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_dealer_service_a3ec18e43620ad481f6005e7c0cebef77} 
+static List$<$ \textbf{ Card} $>$ domain.\+game.\+Dealer\+Service.\+shuffle (\begin{DoxyParamCaption}\item[{List$<$ \textbf{ Card} $>$}]{cards}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Baraja una lista de cartas utilizando el algoritmo moderno de Fisher-\/\+Yates. 
+
+El método crea una nueva lista de cartas barajadas sin modificar la lista original. Se utiliza {\ttfamily Secure\+Random} para generar índices aleatorios de forma segura.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cards} & Lista de cartas a barajar. No se modifica. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Una nueva lista de cartas barajadas. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{Ver también}
+{\texttt{ Fisher-\/\+Yates Shuffle}} 
+\end{DoxySeeAlso}
+
+
+Definición en la línea \textbf{ 37} del archivo \textbf{ Dealer\+Service.\+java}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 2
+
+
+\doxysubsection{Documentación de datos miembro}
+\index{domain.game.DealerService@{domain.game.DealerService}!TOTAL\_INITIAL\_HAND\_CARDS@{TOTAL\_INITIAL\_HAND\_CARDS}}
+\index{TOTAL\_INITIAL\_HAND\_CARDS@{TOTAL\_INITIAL\_HAND\_CARDS}!domain.game.DealerService@{domain.game.DealerService}}
+\doxysubsubsection{TOTAL\_INITIAL\_HAND\_CARDS}
+{\footnotesize\ttfamily \label{classdomain_1_1game_1_1_dealer_service_a0d0b142541dcb6284f2196cc55b6d9b9} 
+final int domain.\+game.\+Dealer\+Service.\+TOTAL\+\_\+\+INITIAL\+\_\+\+HAND\+\_\+\+CARDS = 7\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Número total de cartas iniciales que cada jugador recibe al inicio del juego. 
+
+
+
+Definición en la línea \textbf{ 19} del archivo \textbf{ Dealer\+Service.\+java}.
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/domain/game/\textbf{ Dealer\+Service.\+java}\end{DoxyCompactItemize}

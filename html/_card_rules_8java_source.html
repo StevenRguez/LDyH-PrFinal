@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TizonTools: Archivo de código fuente src/main/java/domain/game/CardRules.java</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">TizonTools
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5eb159725f84c66aafd839904a4acdd0.html">main</a></li><li class="navelem"><a class="el" href="dir_fd3f6763802dee1ad875f6c80eac0bda.html">java</a></li><li class="navelem"><a class="el" href="dir_d89dd4b49a1568deadad29da47c05b8d.html">domain</a></li><li class="navelem"><a class="el" href="dir_febb9d986d984a10f9342ea99799c2cf.html">game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">CardRules.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_card_rules_8java.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespacedomain_1_1game.html">    1</a></span><span class="keyword">package </span>domain.game;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> <a class="code hl_package" href="namespacedomain.html">domain</a>.<a class="code hl_package" href="namespacedomain_1_1card.html">card</a>.*;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classdomain_1_1game_1_1_card_rules.html">    9</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classdomain_1_1game_1_1_card_rules.html">CardRules</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">private</span> <a class="code hl_class" href="classdomain_1_1game_1_1_card_rules.html">CardRules</a>(){</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="stringliteral">&quot;Utility class&quot;</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classdomain_1_1game_1_1_card_rules.html#a5739cd37e0d3c1c194f42dd488819a6c">   26</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classdomain_1_1game_1_1_card_rules.html#a5739cd37e0d3c1c194f42dd488819a6c">isValidNumberCard</a>(<a class="code hl_interface" href="interfacedomain_1_1card_1_1_card.html">Card</a> topCard, <a class="code hl_class" href="classdomain_1_1card_1_1_number_card.html">NumberCard</a> playedCard) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">if</span>(isSameColor(topCard, playedCard)){</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">if</span> (topCard.<a class="code hl_function" href="interfacedomain_1_1card_1_1_card.html#a13fbe446e7b4a468de148cab2c4939f7">getType</a>() == <a class="code hl_class" href="enumdomain_1_1card_1_1_card_type.html">CardType</a>.<a class="code hl_variable" href="enumdomain_1_1card_1_1_card_type.html#a88c4edb36a412661145ce520093fbb5f">NUMBER</a>) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keywordflow">return</span> ((<a class="code hl_class" href="classdomain_1_1card_1_1_number_card.html">NumberCard</a>) topCard).getValue() == playedCard.<a class="code hl_function" href="classdomain_1_1card_1_1_number_card.html#a2c15b8828fcf3240877e76d7c75a9cf4">getValue</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classdomain_1_1game_1_1_card_rules.html#a2ed0bf7892d81ebe70d1e32a929dfd11">   45</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classdomain_1_1game_1_1_card_rules.html#a2ed0bf7892d81ebe70d1e32a929dfd11">isValidActionCard</a>(<a class="code hl_interface" href="interfacedomain_1_1card_1_1_card.html">Card</a> topCard, <a class="code hl_class" href="classdomain_1_1card_1_1_action_card.html">ActionCard</a> playedCard) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span>(isSameColor(topCard, playedCard)){</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span> topCard.<a class="code hl_function" href="interfacedomain_1_1card_1_1_card.html#a13fbe446e7b4a468de148cab2c4939f7">getType</a>() == playedCard.<a class="code hl_function" href="classdomain_1_1card_1_1_abstract_card.html#a03f0808dc490a2cf0e5c3c51f642fb0f">getType</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classdomain_1_1game_1_1_card_rules.html#a2a868d8752f7510dfd0165ac8fe5da3f">   59</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classdomain_1_1game_1_1_card_rules.html#a2a868d8752f7510dfd0165ac8fe5da3f">isValidWildCard</a>(<a class="code hl_class" href="classdomain_1_1card_1_1_wild_card.html">WildCard</a> playedCard) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span> playedCard.<a class="code hl_function" href="classdomain_1_1card_1_1_abstract_card.html#aba5333502be39184365292c98b7da318">getColor</a>() != <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">boolean</span> isSameColor(<a class="code hl_interface" href="interfacedomain_1_1card_1_1_card.html">Card</a> topCard, <a class="code hl_interface" href="interfacedomain_1_1card_1_1_card.html">Card</a> playedCard) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> topCard.<a class="code hl_function" href="interfacedomain_1_1card_1_1_card.html#a14ff76d95a998d9d6d4e9c5f3a72ffc0">getColor</a>() == playedCard.<a class="code hl_function" href="interfacedomain_1_1card_1_1_card.html#a14ff76d95a998d9d6d4e9c5f3a72ffc0">getColor</a>();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+</div>
+<div class="ttc" id="aclassdomain_1_1card_1_1_abstract_card_html_a03f0808dc490a2cf0e5c3c51f642fb0f"><div class="ttname"><a href="classdomain_1_1card_1_1_abstract_card.html#a03f0808dc490a2cf0e5c3c51f642fb0f">domain.card.AbstractCard.getType</a></div><div class="ttdeci">CardType getType()</div><div class="ttdef"><b>Definition</b> <a href="_abstract_card_8java_source.html#l00023">AbstractCard.java:23</a></div></div>
+<div class="ttc" id="aclassdomain_1_1card_1_1_abstract_card_html_aba5333502be39184365292c98b7da318"><div class="ttname"><a href="classdomain_1_1card_1_1_abstract_card.html#aba5333502be39184365292c98b7da318">domain.card.AbstractCard.getColor</a></div><div class="ttdeci">CardColor getColor()</div><div class="ttdef"><b>Definition</b> <a href="_abstract_card_8java_source.html#l00032">AbstractCard.java:32</a></div></div>
+<div class="ttc" id="aclassdomain_1_1card_1_1_action_card_html"><div class="ttname"><a href="classdomain_1_1card_1_1_action_card.html">domain.card.ActionCard</a></div><div class="ttdef"><b>Definition</b> <a href="_action_card_8java_source.html#l00009">ActionCard.java:9</a></div></div>
+<div class="ttc" id="aclassdomain_1_1card_1_1_number_card_html"><div class="ttname"><a href="classdomain_1_1card_1_1_number_card.html">domain.card.NumberCard</a></div><div class="ttdef"><b>Definition</b> <a href="_number_card_8java_source.html#l00009">NumberCard.java:9</a></div></div>
+<div class="ttc" id="aclassdomain_1_1card_1_1_number_card_html_a2c15b8828fcf3240877e76d7c75a9cf4"><div class="ttname"><a href="classdomain_1_1card_1_1_number_card.html#a2c15b8828fcf3240877e76d7c75a9cf4">domain.card.NumberCard.getValue</a></div><div class="ttdeci">int getValue()</div><div class="ttdef"><b>Definition</b> <a href="_number_card_8java_source.html#l00026">NumberCard.java:26</a></div></div>
+<div class="ttc" id="aclassdomain_1_1card_1_1_wild_card_html"><div class="ttname"><a href="classdomain_1_1card_1_1_wild_card.html">domain.card.WildCard</a></div><div class="ttdef"><b>Definition</b> <a href="_wild_card_8java_source.html#l00009">WildCard.java:9</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_card_rules_html"><div class="ttname"><a href="classdomain_1_1game_1_1_card_rules.html">domain.game.CardRules</a></div><div class="ttdoc">Clase de utilidad que contiene las reglas para validar el juego de cartas en una partida.</div><div class="ttdef"><b>Definition</b> <a href="#l00009">CardRules.java:9</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_card_rules_html_a2a868d8752f7510dfd0165ac8fe5da3f"><div class="ttname"><a href="classdomain_1_1game_1_1_card_rules.html#a2a868d8752f7510dfd0165ac8fe5da3f">domain.game.CardRules.isValidWildCard</a></div><div class="ttdeci">static boolean isValidWildCard(WildCard playedCard)</div><div class="ttdoc">Valida si una carta comodín puede ser jugada.</div><div class="ttdef"><b>Definition</b> <a href="#l00059">CardRules.java:59</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_card_rules_html_a2ed0bf7892d81ebe70d1e32a929dfd11"><div class="ttname"><a href="classdomain_1_1game_1_1_card_rules.html#a2ed0bf7892d81ebe70d1e32a929dfd11">domain.game.CardRules.isValidActionCard</a></div><div class="ttdeci">static boolean isValidActionCard(Card topCard, ActionCard playedCard)</div><div class="ttdoc">Valida si una carta de acción puede ser jugada sobre otra carta.</div><div class="ttdef"><b>Definition</b> <a href="#l00045">CardRules.java:45</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_card_rules_html_a5739cd37e0d3c1c194f42dd488819a6c"><div class="ttname"><a href="classdomain_1_1game_1_1_card_rules.html#a5739cd37e0d3c1c194f42dd488819a6c">domain.game.CardRules.isValidNumberCard</a></div><div class="ttdeci">static boolean isValidNumberCard(Card topCard, NumberCard playedCard)</div><div class="ttdoc">Valida si una carta de número puede ser jugada sobre otra carta.</div><div class="ttdef"><b>Definition</b> <a href="#l00026">CardRules.java:26</a></div></div>
+<div class="ttc" id="aenumdomain_1_1card_1_1_card_type_html"><div class="ttname"><a href="enumdomain_1_1card_1_1_card_type.html">domain.card.CardType</a></div><div class="ttdef"><b>Definition</b> <a href="_card_type_8java_source.html#l00006">CardType.java:6</a></div></div>
+<div class="ttc" id="aenumdomain_1_1card_1_1_card_type_html_a88c4edb36a412661145ce520093fbb5f"><div class="ttname"><a href="enumdomain_1_1card_1_1_card_type.html#a88c4edb36a412661145ce520093fbb5f">domain.card.CardType.NUMBER</a></div><div class="ttdeci">NUMBER</div><div class="ttdef"><b>Definition</b> <a href="_card_type_8java_source.html#l00007">CardType.java:7</a></div></div>
+<div class="ttc" id="ainterfacedomain_1_1card_1_1_card_html"><div class="ttname"><a href="interfacedomain_1_1card_1_1_card.html">domain.card.Card</a></div><div class="ttdef"><b>Definition</b> <a href="_card_8java_source.html#l00008">Card.java:8</a></div></div>
+<div class="ttc" id="ainterfacedomain_1_1card_1_1_card_html_a13fbe446e7b4a468de148cab2c4939f7"><div class="ttname"><a href="interfacedomain_1_1card_1_1_card.html#a13fbe446e7b4a468de148cab2c4939f7">domain.card.Card.getType</a></div><div class="ttdeci">CardType getType()</div></div>
+<div class="ttc" id="ainterfacedomain_1_1card_1_1_card_html_a14ff76d95a998d9d6d4e9c5f3a72ffc0"><div class="ttname"><a href="interfacedomain_1_1card_1_1_card.html#a14ff76d95a998d9d6d4e9c5f3a72ffc0">domain.card.Card.getColor</a></div><div class="ttdeci">CardColor getColor()</div></div>
+<div class="ttc" id="anamespacedomain_1_1card_html"><div class="ttname"><a href="namespacedomain_1_1card.html">domain.card</a></div><div class="ttdef"><b>Definition</b> <a href="_abstract_card_8java_source.html#l00001">AbstractCard.java:1</a></div></div>
+<div class="ttc" id="anamespacedomain_html"><div class="ttname"><a href="namespacedomain.html">domain</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

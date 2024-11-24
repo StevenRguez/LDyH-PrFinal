@@ -1,0 +1,139 @@
+\doxysection{Referencia de la clase domain.\+card.\+Abstract\+Card}
+\label{classdomain_1_1card_1_1_abstract_card}\index{domain.card.AbstractCard@{domain.card.AbstractCard}}
+
+
+Diagrama de herencia de domain.\+card.\+Abstract\+Card
+% FIG 0
+
+
+Diagrama de colaboración de domain.\+card.\+Abstract\+Card\+:
+% FIG 1
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Card\+Type} \textbf{ get\+Type} ()
+\item 
+\textbf{ Card\+Color} \textbf{ get\+Color} ()
+\item 
+abstract boolean \textbf{ equals} (Object o)
+\item 
+abstract int \textbf{ hash\+Code} ()
+\item 
+abstract String \textbf{ to\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \textbf{ domain.\+card.\+Card}}
+\doxysubsubsection*{Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Abstract\+Card} (\textbf{ Card\+Type} type, \textbf{ Card\+Color} color)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase abstracta que implementa la interfaz \doxyref{Card}{pág.}{interfacedomain_1_1card_1_1_card}. Define los métodos get\+Type y get\+Color. Implementa los métodos equals, hash\+Code y to\+String. 
+
+Definición en la línea \textbf{ 8} del archivo \textbf{ Abstract\+Card.\+java}.
+
+
+
+\doxysubsection{Documentación de constructores y destructores}
+\index{domain.card.AbstractCard@{domain.card.AbstractCard}!AbstractCard@{AbstractCard}}
+\index{AbstractCard@{AbstractCard}!domain.card.AbstractCard@{domain.card.AbstractCard}}
+\doxysubsubsection{AbstractCard()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_abstract_card_a095b0cf504f5f68d8755f9605b9b030c} 
+domain.\+card.\+Abstract\+Card.\+Abstract\+Card (\begin{DoxyParamCaption}\item[{\textbf{ Card\+Type}}]{type}{, }\item[{\textbf{ Card\+Color}}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definición en la línea \textbf{ 12} del archivo \textbf{ Abstract\+Card.\+java}.
+
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{domain.card.AbstractCard@{domain.card.AbstractCard}!equals@{equals}}
+\index{equals@{equals}!domain.card.AbstractCard@{domain.card.AbstractCard}}
+\doxysubsubsection{equals()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_abstract_card_a0d1237a4f47560a6168135eed8dbc1c8} 
+abstract boolean domain.\+card.\+Abstract\+Card.\+equals (\begin{DoxyParamCaption}\item[{Object}]{o}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+Comprueba si dos cartas son iguales. 
+\begin{DoxyParams}{Parámetros}
+{\em o} & objeto a comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+true si las cartas son iguales, false en caso contrario. 
+\end{DoxyReturn}
+
+
+Reimplementado en \textbf{ domain.\+card.\+Action\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_action_card_a8fe085234348d5b1f448b3c84fa25835}, \textbf{ domain.\+card.\+Number\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_number_card_adabcd67095c5c9083f6b0b7f99ad18c2} y \textbf{ domain.\+card.\+Wild\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_wild_card_ae72ca9cda4632fc33e69772dc1b0b2b9}.
+
+\index{domain.card.AbstractCard@{domain.card.AbstractCard}!getColor@{getColor}}
+\index{getColor@{getColor}!domain.card.AbstractCard@{domain.card.AbstractCard}}
+\doxysubsubsection{getColor()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_abstract_card_aba5333502be39184365292c98b7da318} 
+\textbf{ Card\+Color} domain.\+card.\+Abstract\+Card.\+get\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve el color de la carta. \begin{DoxyReturn}{Devuelve}
+color de la carta. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ domain.\+card.\+Card} \doxyref{}{pág.}{interfacedomain_1_1card_1_1_card_a14ff76d95a998d9d6d4e9c5f3a72ffc0}.
+
+
+
+Definición en la línea \textbf{ 32} del archivo \textbf{ Abstract\+Card.\+java}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 2
+\index{domain.card.AbstractCard@{domain.card.AbstractCard}!getType@{getType}}
+\index{getType@{getType}!domain.card.AbstractCard@{domain.card.AbstractCard}}
+\doxysubsubsection{getType()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_abstract_card_a03f0808dc490a2cf0e5c3c51f642fb0f} 
+\textbf{ Card\+Type} domain.\+card.\+Abstract\+Card.\+get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve el tipo de la carta. \begin{DoxyReturn}{Devuelve}
+tipo de la carta. 
+\end{DoxyReturn}
+
+
+Implementa \textbf{ domain.\+card.\+Card} \doxyref{}{pág.}{interfacedomain_1_1card_1_1_card_a13fbe446e7b4a468de148cab2c4939f7}.
+
+
+
+Definición en la línea \textbf{ 23} del archivo \textbf{ Abstract\+Card.\+java}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 3
+\index{domain.card.AbstractCard@{domain.card.AbstractCard}!hashCode@{hashCode}}
+\index{hashCode@{hashCode}!domain.card.AbstractCard@{domain.card.AbstractCard}}
+\doxysubsubsection{hashCode()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_abstract_card_acaf771564b651852af398fb83db1d0d2} 
+abstract int domain.\+card.\+Abstract\+Card.\+hash\+Code (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+Devuelve el hash code de la carta. \begin{DoxyReturn}{Devuelve}
+hash code de la carta. 
+\end{DoxyReturn}
+
+
+Reimplementado en \textbf{ domain.\+card.\+Action\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_action_card_a44bbb19ccdf782a75c931e0bfdac7d9b}, \textbf{ domain.\+card.\+Number\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_number_card_aab49ee3a2f00e0549f65e892b99445e7} y \textbf{ domain.\+card.\+Wild\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_wild_card_af3c0f8bb82b840bda732444575367955}.
+
+\index{domain.card.AbstractCard@{domain.card.AbstractCard}!toString@{toString}}
+\index{toString@{toString}!domain.card.AbstractCard@{domain.card.AbstractCard}}
+\doxysubsubsection{toString()}
+{\footnotesize\ttfamily \label{classdomain_1_1card_1_1_abstract_card_ad52a9593167f4a3f79f232b2ee96719d} 
+abstract String domain.\+card.\+Abstract\+Card.\+to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+Devuelve la representación en cadena de la carta. \begin{DoxyReturn}{Devuelve}
+representación en cadena de la carta. 
+\end{DoxyReturn}
+
+
+Reimplementado en \textbf{ domain.\+card.\+Action\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_action_card_a5d5c564cd89e51fa3096c814ee4e0212}, \textbf{ domain.\+card.\+Number\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_number_card_af9ab2a106a8e3466eadeaccdafc4d3bd} y \textbf{ domain.\+card.\+Wild\+Card} \doxyref{}{pág.}{classdomain_1_1card_1_1_wild_card_a453350bfe9d9e9763d2fd48e4f477332}.
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/domain/card/\textbf{ Abstract\+Card.\+java}\end{DoxyCompactItemize}

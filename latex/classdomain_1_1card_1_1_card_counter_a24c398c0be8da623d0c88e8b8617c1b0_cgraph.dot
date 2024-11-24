@@ -1,0 +1,11 @@
+digraph "domain.card.CardCounter.getSkipColorCounts"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="domain.card.CardCounter.get\lSkipColorCounts",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge2_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="domain.card.Card.getColor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$interfacedomain_1_1card_1_1_card.html#a14ff76d95a998d9d6d4e9c5f3a72ffc0",tooltip=" "];
+}

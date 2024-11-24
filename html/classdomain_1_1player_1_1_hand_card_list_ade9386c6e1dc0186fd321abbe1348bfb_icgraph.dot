@@ -1,0 +1,23 @@
+digraph "domain.player.HandCardList.getCardStream"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="domain.player.HandCardList.get\lCardStream",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="domain.player.Player.get\lHandCards",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1player_1_1_player.html#a541dcd07f326c98a7f3f635e193fc892",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="domain.game.Game.getHand\lCards",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1game_1_1_game.html#a74d046132b8bd2c266644eb1e1b09a44",tooltip="Obtiene las cartas en mano de un jugador."];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="application.GameAppService.get\lHandCards",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classapplication_1_1_game_app_service.html#aae193f174f11553e87d0bbfca59dab39",tooltip="Recupera las cartas en mano de un jugador específico a partir de su UUID."];
+  Node2 -> Node5 [id="edge4_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="domain.player.ImmutablePlayer.get\lHandCards",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1player_1_1_immutable_player.html#a31d3e5dc9b070b7450a438ba1b82b0a2",tooltip=" "];
+  Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="domain.player.ImmutablePlayer.get\lTotalCards",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1player_1_1_immutable_player.html#a5479e6ac16014343281f0bf14f5bfddd",tooltip=" "];
+  Node1 -> Node7 [id="edge6_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="domain.player.HandCardList.hasCard",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1player_1_1_hand_card_list.html#acade787f386af468618529d39a833b11",tooltip=" "];
+  Node7 -> Node8 [id="edge7_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="domain.player.Player.has\lHandCard",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classdomain_1_1player_1_1_player.html#a99209271043f5332e645e37af40fce51",tooltip=" "];
+}

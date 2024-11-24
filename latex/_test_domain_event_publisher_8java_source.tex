@@ -1,0 +1,63 @@
+\doxysection{Test\+Domain\+Event\+Publisher.\+java}
+\label{_test_domain_event_publisher_8java_source}\index{src/test/java/domain/common/TestDomainEventPublisher.java@{src/test/java/domain/common/TestDomainEventPublisher.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.common;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.Card;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.card.CardColor;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.game.events.CardPlayed;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.testhelper.CardTestFactory;}
+\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertEquals;}
+\DoxyCodeLine{00012\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertNull;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }TestDomainEventPublisher\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }TestSubscriber\ \textcolor{keyword}{implements}\ DomainEventSubscriber\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ timesInvoked\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Card\ playedCard\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ handleEvent(DomainEvent\ event)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ timesInvoked\ +=\ 1;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ playedCard\ =\ ((CardPlayed)\ event).getPlayedCard();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ @Test}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenEventPublished\_ShouldInvokeSubscriber()\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ var\ subscriber\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ act}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(subscriber);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(1,\ CardColor.RED)));}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ DomainEventPublisher.unsubscribe(subscriber);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ assert}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ assertEquals(1,\ subscriber.timesInvoked);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ assertEquals(CardTestFactory.createNumberCard(1,\ CardColor.RED),\ subscriber.playedCard);}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ @Test}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenUnsubscribed\_ShouldNotInvokeSubscriber()\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ var\ subscriber\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ act}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(subscriber);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ DomainEventPublisher.unsubscribe(subscriber);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(1,\ CardColor.RED)));}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ assert}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ assertEquals(0,\ subscriber.timesInvoked);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ assertNull(subscriber.playedCard);}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,47 @@
+\doxysection{Number\+Card.\+java}
+\label{_number_card_8java_source}\index{src/main/java/domain/card/NumberCard.java@{src/main/java/domain/card/NumberCard.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.card;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ java.util.Objects;}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }NumberCard\ \textcolor{keyword}{extends}\ AbstractCard\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \textcolor{keywordtype}{int}\ value;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}\ NumberCard(\textcolor{keywordtype}{int}\ value,\ CardColor\ color)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ super(CardType.NUMBER,\ color);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ CardUtil.validateColor(color);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ CardUtil.validateNumber(value);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ this.value\ =\ value;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ getValue()\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \ \ @Override}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ equals(Object\ o)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ o)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ ==\ \textcolor{keyword}{null}\ ||\ getClass()\ !=\ o.getClass())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ NumberCard\ that\ =\ (NumberCard)\ o;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\ ==\ that.value\ \&\&\ getColor()\ ==\ that.getColor();}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ @Override}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ hashCode()\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Objects.hash(value,\ getColor());}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ @Override}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{public}\ String\ toString()\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}NumberCard\{"{}}\ +}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ value\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ getColor()\ +}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{charliteral}{'\}'};}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \}}
+
+\end{DoxyCode}

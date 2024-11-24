@@ -1,0 +1,43 @@
+\doxysection{Test\+Hand\+Card\+List.\+java}
+\label{_test_hand_card_list_8java_source}\index{src/test/java/domain/TestHandCardList.java@{src/test/java/domain/TestHandCardList.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.CardColor;}
+\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.player.HandCardList;}
+\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.testhelper.CardTestFactory;}
+\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertFalse;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertTrue;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }TestHandCardList\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ @Test}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ GivenSameNumberCard\_ShouldExist()\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ var\ numberCard\ =\ CardTestFactory.createNumberCard(1,\ CardColor.YELLOW);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ var\ sameNumberCard\ =\ CardTestFactory.createNumberCard(1,\ CardColor.YELLOW);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.hasCard(sameNumberCard);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ assertTrue(result);}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ @Test}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ GivenDifferentNumberCard\_ShouldNotExist()\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ var\ numberCard\ =\ CardTestFactory.createNumberCard(1,\ CardColor.YELLOW);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ var\ anotherNumberCard\ =\ CardTestFactory.createNumberCard(2,\ CardColor.YELLOW);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.hasCard(anotherNumberCard);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ assertFalse(result);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,129 @@
+\doxysection{Referencia de la clase domain.\+player.\+Player\+Round\+Iterator}
+\label{classdomain_1_1player_1_1_player_round_iterator}\index{domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Player\+Round\+Iterator} (\textbf{ Player}[$\,$] players)
+\item 
+Stream$<$ \textbf{ Player} $>$ \textbf{ stream} ()
+\item 
+\textbf{ Player} \textbf{ get\+Current\+Player} ()
+\item 
+\textbf{ Player} \textbf{ get\+Player\+By\+Id} (UUID player\+Id)
+\item 
+void \textbf{ reverse\+Direction} ()
+\item 
+\textbf{ Player} \textbf{ next} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que representa un iterador de jugadores en una ronda. Permite recorrer los jugadores en sentido horario o antihorario. \begin{DoxyVersion}{Versión}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxySince}{Desde}
+04.\+05.\+2021 
+\end{DoxySince}
+\begin{DoxySeeAlso}{Ver también}
+\doxyref{domain.\+player.\+Player}{pág.}{classdomain_1_1player_1_1_player} 
+\end{DoxySeeAlso}
+
+
+Definición en la línea \textbf{ 14} del archivo \textbf{ Player\+Round\+Iterator.\+java}.
+
+
+
+\doxysubsection{Documentación de constructores y destructores}
+\index{domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}!PlayerRoundIterator@{PlayerRoundIterator}}
+\index{PlayerRoundIterator@{PlayerRoundIterator}!domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}}
+\doxysubsubsection{PlayerRoundIterator()}
+{\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_round_iterator_a0227e84026fef38fe7f1817b933f7ffc} 
+domain.\+player.\+Player\+Round\+Iterator.\+Player\+Round\+Iterator (\begin{DoxyParamCaption}\item[{\textbf{ Player}[$\,$]}]{players}{}\end{DoxyParamCaption})}
+
+Constructor de la clase \doxyref{Player\+Round\+Iterator}{pág.}{classdomain_1_1player_1_1_player_round_iterator} dado un listado de jugadores. 
+\begin{DoxyParams}{Parámetros}
+{\em players} & Listado de jugadores. \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea \textbf{ 26} del archivo \textbf{ Player\+Round\+Iterator.\+java}.
+
+
+
+\doxysubsection{Documentación de funciones miembro}
+\index{domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}!getCurrentPlayer@{getCurrentPlayer}}
+\index{getCurrentPlayer@{getCurrentPlayer}!domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}}
+\doxysubsubsection{getCurrentPlayer()}
+{\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_round_iterator_aa943e5e96c10ec3b2d5eccd968fad21c} 
+\textbf{ Player} domain.\+player.\+Player\+Round\+Iterator.\+get\+Current\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve el jugador actual. \begin{DoxyReturn}{Devuelve}
+Jugador actual. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 42} del archivo \textbf{ Player\+Round\+Iterator.\+java}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 0
+\index{domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}!getPlayerById@{getPlayerById}}
+\index{getPlayerById@{getPlayerById}!domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}}
+\doxysubsubsection{getPlayerById()}
+{\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_round_iterator_a65afe00de60f22bea5d03a72319c219e} 
+\textbf{ Player} domain.\+player.\+Player\+Round\+Iterator.\+get\+Player\+By\+Id (\begin{DoxyParamCaption}\item[{UUID}]{player\+Id}{}\end{DoxyParamCaption})}
+
+Devuelve el jugador siguiente dado su id. \begin{DoxyReturn}{Devuelve}
+Jugador siguiente. 
+\end{DoxyReturn}
+Para poder devolver el siguiente jugador es necesario recorrer la lista de jugadores e ir comparando identificadores hasta encontrar el esperado.
+
+Definición en la línea \textbf{ 50} del archivo \textbf{ Player\+Round\+Iterator.\+java}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 1
+\index{domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}!next@{next}}
+\index{next@{next}!domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}}
+\doxysubsubsection{next()}
+{\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64} 
+\textbf{ Player} domain.\+player.\+Player\+Round\+Iterator.\+next (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve el índice del jugador siguiente. \begin{DoxyReturn}{Devuelve}
+Índice del jugador siguiente. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 73} del archivo \textbf{ Player\+Round\+Iterator.\+java}.
+
+Gráfico de llamadas de esta función\+:
+% FIG 2
+\index{domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}!reverseDirection@{reverseDirection}}
+\index{reverseDirection@{reverseDirection}!domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}}
+\doxysubsubsection{reverseDirection()}
+{\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_round_iterator_a29bb55edeaf80a2e860916840d07f848} 
+void domain.\+player.\+Player\+Round\+Iterator.\+reverse\+Direction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Funcion que cambia el sentido del juego. Si el sentido actual es horario, lo cambia a antihorario y viceversa. Por defecto, el sentido es horario. 
+
+Definición en la línea \textbf{ 65} del archivo \textbf{ Player\+Round\+Iterator.\+java}.
+
+\index{domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}!stream@{stream}}
+\index{stream@{stream}!domain.player.PlayerRoundIterator@{domain.player.PlayerRoundIterator}}
+\doxysubsubsection{stream()}
+{\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_round_iterator_a37c7beac4dbbdc90d6fadaabb9274aea} 
+Stream$<$ \textbf{ Player} $>$ domain.\+player.\+Player\+Round\+Iterator.\+stream (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Devuelve un stream de los jugadores. \begin{DoxyReturn}{Devuelve}
+Stream de jugadores. 
+\end{DoxyReturn}
+
+
+Definición en la línea \textbf{ 34} del archivo \textbf{ Player\+Round\+Iterator.\+java}.
+
+Gráfico de llamadas a esta función\+:
+% FIG 3
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/domain/player/\textbf{ Player\+Round\+Iterator.\+java}\end{DoxyCompactItemize}

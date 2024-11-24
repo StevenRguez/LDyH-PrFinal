@@ -1,0 +1,40 @@
+\doxysection{Wild\+Card.\+java}
+\label{_wild_card_8java_source}\index{src/main/java/domain/card/WildCard.java@{src/main/java/domain/card/WildCard.java}}
+\textbf{ Ir a la documentación de este archivo.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.card;}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ java.util.Objects;}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }WildCard\ \textcolor{keyword}{extends}\ AbstractCard\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}\ WildCard(CardType\ type)\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ super(type,\ \textcolor{keyword}{null});}
+\DoxyCodeLine{00012\ \ \ \ \ \}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}\ WildCard(CardType\ type,\ CardColor\ color)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ super(type,\ color);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ CardUtil.validateColor(color);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \ \ \ \ @Override}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ equals(Object\ o)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ o)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ ==\ \textcolor{keyword}{null}\ ||\ getClass()\ !=\ o.getClass())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ WildCard\ wildCard\ =\ (WildCard)\ o;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ getType()\ ==\ wildCard.getType()\ \&\&\ getColor()\ ==\ wildCard.getColor();}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ @Override}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ hashCode()\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Objects.hash(getType(),\ getColor());}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ @Override}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{public}\ String\ toString()\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}WildCard\{"{}}\ +}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ getType()\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ getColor()\ +}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{charliteral}{'\}'};}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}
