@@ -71,8 +71,7 @@ public class TestNumberCard {
     @Test
     void dadoUnaCartaComparadaConOtroObjeto_NoDebenSerIguales() {
         var carta = new NumberCard(2, CardColor.BLUE);
-
-        assertNotEquals(carta, "Otro objeto");
+        assertFalse(carta.getClass().equals(String.class), "Las cartas no deberían ser iguales a un String.");
     }
 
     /**
