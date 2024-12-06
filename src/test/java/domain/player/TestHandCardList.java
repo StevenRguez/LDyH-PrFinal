@@ -8,6 +8,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TestHandCardList {
 
+    /**
+     * Test para comprobar que se añade una carta a la mano.
+     */
     @Test
     void WhenEmpty_ShouldNotRemove() {
         var handCards = new HandCardList();

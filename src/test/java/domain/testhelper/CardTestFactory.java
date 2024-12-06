@@ -58,4 +58,12 @@ public class CardTestFactory {
     public static WildCard createWildDrawFourCard(CardColor color) {
         return new WildCard(CardType.WILD_DRAW_FOUR, color);
     }
+
+    public static Card createCard(CardType cardType, CardColor cardColor, int i) {
+        if (cardType == CardType.NUMBER) {
+            return new NumberCard(i, cardColor);
+        } else {
+            return new ActionCard(cardType, cardColor);
+        }
+    }
 }
