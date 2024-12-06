@@ -1,7 +1,0 @@
-domain.game.Game#isFirstDiscardAWildCard()Z
-false
-de7769644098d0a1f5407282b7fcff55
-==
-getType domain.card.Card#getType()Ldomain/card/CardType;
-peekTopCard domain.game.Game#peekTopCard()Ldomain/card/Card;
-size java.util.Vector#size()I

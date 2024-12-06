@@ -1,5 +1,0 @@
-domain.player.Player#addToHandCards(Ldomain/card/Card;)V
-false
-fa6978a66d71d79c2860f3220c96330c
-==
-addCard domain.player.HandCardList#addCard(Ldomain/card/Card;)V

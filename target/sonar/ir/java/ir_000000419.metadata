@@ -1,7 +1,0 @@
-domain.card.ActionCard#<init>(Ldomain/card/CardType;Ldomain/card/CardColor;)V
-false
-25c9bdc13556a789b0ba665e6bdbdc33
-domain.card.CardUtil#validateActionType(Ldomain/card/CardType;)V
-domain.card.CardUtil#validateColor(Ldomain/card/CardColor;)V
-==
-<init> domain.card.AbstractCard#<init>(Ldomain/card/CardType;Ldomain/card/CardColor;)V

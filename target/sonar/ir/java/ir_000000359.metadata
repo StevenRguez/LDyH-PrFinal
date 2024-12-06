@@ -1,9 +1,0 @@
-ui.view.CardView#drawValueInCorner(Ljava/awt/Graphics2D;)V
-false
-565525585f314ab06acb9300de39ecb6
-java.awt.Font#<init>(Ljava/lang/String;II)V
-java.awt.Font#instance-init#
-==
-drawString java.awt.Graphics2D#drawString(Ljava/lang/String;II)V
-setColor java.awt.Graphics#setColor(Ljava/awt/Color;)V
-setFont java.awt.Graphics#setFont(Ljava/awt/Font;)V

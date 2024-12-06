@@ -1,5 +1,0 @@
-domain.game.Game#discard(Ldomain/card/Card;)V
-false
-08b93226ebe64a21137684d142e5d22b
-==
-add java.util.Vector#add(Ljava/lang/Object;)Z

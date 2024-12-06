@@ -1,8 +1,0 @@
-application.GameAppService#getPlayerInfos()Ljava/util/List;
-false
-2c506bd385da69d751e4b4ed300ed848
-java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
-==
-collect java.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
-getPlayers domain.game.Game#getPlayers()Ljava/util/stream/Stream;
-map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;

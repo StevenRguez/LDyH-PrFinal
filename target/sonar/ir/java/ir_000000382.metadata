@@ -1,7 +1,0 @@
-application.GameAppService#drawCard(Ljava/util/UUID;)V
-false
-645214b84bf35106b011b1d93b925a18
-java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-==
-drawCard domain.game.Game#drawCard(Ljava/util/UUID;)V
-info org.apache.logging.log4j.Logger#info(Ljava/lang/String;)V

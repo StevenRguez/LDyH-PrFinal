@@ -1,7 +1,0 @@
-ui.AppFrame#<init>(Lapplication/IGameAppService;)V
-false
-84e184af381cc56840171d0a634579e1
-javax.swing.JPanel#<init>()V
-javax.swing.JPanel#instance-init#
-ui.AppFrame#setupLayout()V
-ui.AppFrame#showFrame()V

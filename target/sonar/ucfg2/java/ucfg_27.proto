@@ -1,69 +1,0 @@
-
-1domain.player.PlayerRoundIterator#getNextIndex()I£
-˜/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/main/java/domain/player/PlayerRoundIterator.javaR R("4*Z
-2S@ S(AF
-D
-S? S(A	
-%3int"__id*'
-
-__unknown_file (
-	
-%5int*
-1*Z
-3S; S(<F
-D
-S; S(<	
-%3int"__id*'
-
-__unknown_file (
-	
-%4int*
-1*»
-4S S(!„
-
-S S(!
-%0domain.player.Direction"__id*P
-
-__unknown_file (4*2#
-!domain.player.PlayerRoundIterator"
-	directionU
-S
-S% S(8
-%1domain.player.Direction"__id*"
-
-__unknown_file (
-""Å
-Â
-S S(8
-%2boolean"	__compare*"
-
-__unknown_file (
-==*;
-
-__unknown_file (
-
-%0domain.player.Direction*;
-
-__unknown_file (
-
-%1domain.player.Direction*
-2
-3*§
-1S S(B€
-~
-T T(
-%6domain.player.Player[]"__id*N
-
-__unknown_file (2*0#
-!domain.player.PlayerRoundIterator"	
-players€
-~
-T8 T(?
-%7domain.player.Player[]"__id*N
-
-__unknown_file (2*0#
-!domain.player.PlayerRoundIterator"	
-players"
-T T(G
-""B%#
-!domain.player.PlayerRoundIteratorX

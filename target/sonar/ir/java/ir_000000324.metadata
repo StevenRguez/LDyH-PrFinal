@@ -1,5 +1,0 @@
-domain.game.Game#peekTopCard()Ldomain/card/Card;
-false
-8e60c24f8d55efe55047de80919eb4e3
-==
-peek java.util.Stack#peek()Ljava/lang/Object;

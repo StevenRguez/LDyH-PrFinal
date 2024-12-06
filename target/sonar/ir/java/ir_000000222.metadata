@@ -1,6 +1,0 @@
-UnoApp#main([Ljava/lang/String;)V
-false
-c55f428d54fbf7d0498320a0d153b563
-application.GameAppService#<init>()V
-application.GameAppService#instance-init#
-javax.swing.SwingUtilities#invokeLater(Ljava/lang/Runnable;)V

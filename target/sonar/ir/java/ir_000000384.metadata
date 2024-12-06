@@ -1,5 +1,0 @@
-application.GameAppService#isGameOver()Z
-false
-c4cd90aaed14769296e021758c1260d9
-==
-isOver domain.game.Game#isOver()Z

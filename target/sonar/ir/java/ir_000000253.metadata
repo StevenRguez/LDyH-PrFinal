@@ -1,5 +1,0 @@
-domain.card.CardUtil#validateNumber(I)V
-false
-615093cf118dba622db11446661c64c6
-java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)V
-java.lang.IllegalArgumentException#instance-init#

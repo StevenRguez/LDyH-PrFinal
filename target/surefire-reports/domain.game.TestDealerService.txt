@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: domain.game.TestDealerService
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.11 s - in domain.game.TestDealerService

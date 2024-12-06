@@ -1,5 +1,0 @@
-domain.player.Player#removePlayedCard(Ldomain/card/Card;)V
-false
-cc8f12c0cf86c73695495518dd30233e
-==
-removeCard domain.player.HandCardList#removeCard(Ldomain/card/Card;)Z

@@ -1,8 +1,0 @@
-domain.game.Game#checkNumberCardRule(Ldomain/card/Card;)V
-false
-b883248974ca7532e3c063c3165a0077
-domain.game.CardRules#isValidNumberCard(Ldomain/card/Card;Ldomain/card/NumberCard;)Z
-domain.game.Game#isFirstDiscardAWildCard()Z
-domain.game.Game#rejectPlayedCard(Ldomain/card/Card;)V
-==
-peekTopCard domain.game.Game#peekTopCard()Ldomain/card/Card;

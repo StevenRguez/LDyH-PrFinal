@@ -1,5 +1,0 @@
-domain.game.CardRules#<init>()V
-false
-8889c7bc901d0373270b3f9f9c0c2ba2
-java.lang.IllegalStateException#<init>(Ljava/lang/String;)V
-java.lang.IllegalStateException#instance-init#
