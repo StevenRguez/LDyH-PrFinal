@@ -1,0 +1,7 @@
+domain.game.Game#isFirstDiscardAWildCard()Z
+false
+dd6f1cd4d47db5d47931a0ed4ffe9fdb
+==
+getType domain.card.Card#getType()Ldomain/card/CardType;
+peekTopCard domain.game.Game#peekTopCard()Ldomain/card/Card;
+size java.util.Vector#size()I

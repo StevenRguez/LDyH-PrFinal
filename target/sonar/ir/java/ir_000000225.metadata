@@ -1,0 +1,9 @@
+ui.view.PlayerView#getFirstCardPoint(I)Ljava/awt/Point;
+false
+74ddcaf703d19349d7222e55d3767e96
+java.awt.Point#<init>(II)V
+java.awt.Point#instance-init#
+ui.view.PlayerView#calculateOffset(II)I
+==
+getPreferredSize javax.swing.JComponent#getPreferredSize()Ljava/awt/Dimension;
+getWidth javax.swing.JComponent#getWidth()I

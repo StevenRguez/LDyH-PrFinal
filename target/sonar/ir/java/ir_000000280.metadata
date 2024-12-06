@@ -1,0 +1,5 @@
+ui.view.CardView#<init>(Ldomain/card/Card;Ljava/util/function/Consumer;)V
+false
+2211d362d978e5e2f70eb28b9b11c41e
+ui.common.StyleUtil#getValueToDisplay(Ldomain/card/Card;)Ljava/lang/String;
+ui.view.CardView#initView()V

@@ -1,20 +1,22 @@
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\card\TestCardDeck.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\player\HandCardListTest.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\game\TestDrawPile.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\testhelper\CardTestFactory.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\game\TestGamePlay.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\card\CardCounterAssertionHelper.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\card\CardCounter.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\card\TestCard.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\card\TestActionCard.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\common\TestDomainEventPublisher.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\game\TestGameBuilder.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\player\TestHandCardList.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\card\TestCardUtil.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\game\TestCardRules.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\game\TestDealerService.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\game\TestGameStart.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\player\TestPlayersIterator.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\TestHandCardList.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\testhelper\PlayerTestFactory.java
-C:\LDyH\PracticaFinal\LDyH-PrFinal\src\test\java\domain\card\TestNumberCard.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/game/TestDealerService.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/game/TestCardRules.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/game/TestDrawPile.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/card/TestCardDeck.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/game/TestGamePlay.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/common/TestDomainEventPublisher.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/testhelper/PlayerTestFactory.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/player/TestPlayersIterator.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/card/TestActionCard.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/player/TestInmutablePlayer.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/card/CardCounter.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/card/CardCounterAssertionHelper.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/game/TestGameBuilder.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/player/TestPlayer.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/card/TestCard.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/card/TestNumberCard.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/TestHandCardList.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/testhelper/CardTestFactory.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/card/TestCardUtil.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/player/TestCompleteFileHandCardList.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/game/TestGameStart.java
+/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/test/java/domain/player/TestHandCardList.java

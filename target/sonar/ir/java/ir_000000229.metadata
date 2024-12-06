@@ -1,0 +1,11 @@
+ui.view.PlayerView#initNameLabel()V
+false
+957fa33482ec4339df53d4c3ad33de80
+java.awt.Font#<init>(Ljava/lang/String;II)V
+java.awt.Font#instance-init#
+javax.swing.JLabel#<init>(Ljava/lang/String;)V
+javax.swing.JLabel#instance-init#
+==
+getName application.dto.PlayerInfoDTO#getName()Ljava/lang/String;
+setFont javax.swing.JComponent#setFont(Ljava/awt/Font;)V
+setForeground javax.swing.JComponent#setForeground(Ljava/awt/Color;)V

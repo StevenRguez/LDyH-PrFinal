@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ImmutablePlayer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LABgrupal</a> &gt; <a href="index.source.html" class="el_package">domain.player</a> &gt; <span class="el_source">ImmutablePlayer.java</span></div><h1>ImmutablePlayer.java</h1><pre class="source lang-java linenums">package domain.player;
+
+import domain.card.Card;
+
+import java.io.Serializable;
+import java.util.UUID;
+import java.util.stream.Stream;
+
+/**
+ * Clase que representa un jugador inmutable, esto es, un jugador cuyos atributos no pueden ser modificados.
+ *        Implementa la interfaz Serializable para poder ser almacenado en un fichero.
+ *        Se utiliza para enviar información del jugador a los clientes.
+ * @version 1.0
+ */
+public class ImmutablePlayer implements Serializable {
+    /**
+     * Jugador al que representa.
+     */
+    private final Player player;
+
+    /**
+     * Constructor de la clase ImmutablePlayer dado un jugador.
+     * @param player Jugador al que representa.
+     */
+<span class="fc" id="L25">    public ImmutablePlayer(Player player) {</span>
+<span class="fc" id="L26">        this.player = player;</span>
+<span class="fc" id="L27">    }</span>
+
+    /**
+     * Devuelve el identificador del jugador.
+     * @return Identificador del jugador.
+     */
+    public UUID getId() {
+<span class="fc" id="L34">        return player.getId();</span>
+    }
+
+    /**
+     * Devuelve el nombre del jugador.
+     * @return Nombre del jugador.
+     */
+    public String getName() {
+<span class="fc" id="L42">        return player.getName();</span>
+    }
+
+    /**
+     * Devuelve el número de cartas en la mano del jugador.
+     * @return Número de cartas en la mano del jugador.
+     */
+    public Stream&lt;Card&gt; getHandCards() {
+<span class="fc" id="L50">        return this.player.getHandCards();</span>
+    }
+
+    /**
+     * Devuelve el número de cartas en la mano del jugador.
+     * @return Número de cartas en la mano del jugador.
+     */
+    public int getTotalCards() {
+<span class="fc" id="L58">        return (int) getHandCards().count();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

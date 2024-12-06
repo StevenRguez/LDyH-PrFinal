@@ -1,0 +1,5 @@
+domain.game.DrawPile#<init>(Ljava/util/List;)V
+false
+c709598b1f9683754ee40edbad0bce2e
+==
+addAll java.util.Vector#addAll(Ljava/util/Collection;)Z

@@ -1,0 +1,7 @@
+domain.card.NumberCard#<init>(ILdomain/card/CardColor;)V
+false
+6880fb5a6af0fa34c756a3d3e2f431f8
+domain.card.CardUtil#validateColor(Ldomain/card/CardColor;)V
+domain.card.CardUtil#validateNumber(I)V
+==
+<init> domain.card.AbstractCard#<init>(Ldomain/card/CardType;Ldomain/card/CardColor;)V

@@ -1,0 +1,6 @@
+domain.player.PlayerRoundIterator#getPlayerById(Ljava/util/UUID;)Ldomain/player/Player;
+false
+4842b2731ea64fde39c86ea0280af039
+java.util.UUID#equals(Ljava/lang/Object;)Z
+==
+getId domain.common.Entity#getId()Ljava/util/UUID;

@@ -17,6 +17,11 @@
     </resources>
     <plugins>
       <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>5.0.0.4389</version>
+      </plugin>
+      <plugin>
         <artifactId>maven-shade-plugin</artifactId>
         <version>3.2.4</version>
         <executions>
@@ -51,6 +56,23 @@
             </manifest>
           </archive>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.12</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+              <goal>report</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/jacoco-coverage</outputDirectory>
+              <append>false</append>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
@@ -158,8 +180,13 @@
   <properties>
     <maven.compiler.target>17</maven.compiler.target>
     <log4j2.version>2.17.2</log4j2.version>
+    <sonar.projectName>LABgrupal</sonar.projectName>
+    <sonar.projectKey>LABgrupal</sonar.projectKey>
     <maven.compiler.source>17</maven.compiler.source>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <junit.version>5.8.1</junit.version>
+    <sonar.organization>stevenrguez</sonar.organization>
+    <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco-coverage/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
   </properties>
 </project>

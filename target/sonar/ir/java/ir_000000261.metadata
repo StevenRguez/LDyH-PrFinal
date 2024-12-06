@@ -1,0 +1,11 @@
+domain.game.Game#drawCard(Ljava/util/UUID;)V
+false
+00a8696a9fa90114888b3942e5730f2a
+domain.game.Game#drawCards(Ldomain/player/Player;I)Ljava/util/List;
+domain.game.Game#tryToPlayDrawnCard(Ljava/util/UUID;Ldomain/card/Card;)V
+java.util.UUID#equals(Ljava/lang/Object;)Z
+==
+get java.util.List#get(I)Ljava/lang/Object;
+getCurrentPlayer domain.game.Game#getCurrentPlayer()Ldomain/player/ImmutablePlayer;
+getCurrentPlayer domain.player.PlayerRoundIterator#getCurrentPlayer()Ldomain/player/Player;
+getId domain.player.ImmutablePlayer#getId()Ljava/util/UUID;

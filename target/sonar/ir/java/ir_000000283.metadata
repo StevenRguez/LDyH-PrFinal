@@ -1,0 +1,11 @@
+ui.view.CardView#paintComponent(Ljava/awt/Graphics;)V
+false
+88ab8c1fef5c39c943af3beb2842126e
+ui.common.StyleUtil#convertCardColor(Ldomain/card/CardColor;)Ljava/awt/Color;
+ui.view.CardView#drawValueInCenter(Ljava/awt/Graphics2D;Ljava/awt/Color;)V
+ui.view.CardView#drawValueInCorner(Ljava/awt/Graphics2D;)V
+ui.view.CardView#drawWhiteOvalInCenter(Ljava/awt/Graphics2D;)V
+ui.view.CardView#fillBackground(Ljava/awt/Graphics2D;Ljava/awt/Color;)V
+==
+getColor domain.card.Card#getColor()Ldomain/card/CardColor;
+paintComponent javax.swing.JComponent#paintComponent(Ljava/awt/Graphics;)V

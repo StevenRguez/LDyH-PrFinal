@@ -1,0 +1,5 @@
+domain.card.WildCard#<init>(Ldomain/card/CardType;)V
+false
+a66424fa39a76772e78ad4163d4c3375
+==
+<init> domain.card.AbstractCard#<init>(Ldomain/card/CardType;Ldomain/card/CardColor;)V

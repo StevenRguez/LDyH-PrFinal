@@ -1,0 +1,53 @@
+
+;application.GameAppService#getPlayerInfos()Ljava/util/List;œ
+‘/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/main/java/application/GameAppService.javaE E(-"1*Ó	
+1F F(p
+n
+F F(
+%0domain.game.Game"__id*D
+
+__unknown_file ((*&
+application.GameAppService"
+game¨¥
+F F( 
+%1java.util.stream.Stream"6domain.game.Game#getPlayers()Ljava/util/stream/Stream;*4
+
+__unknown_file (
+
+%0domain.game.Game2getPlayers()
+
+G G(?!
+%2java.util.function.Function"__declareFunction*K
+
+__unknown_file (/-
++__sonar_lambda_3$application.GameAppService£ 
+F G(@
+%7java.util.stream.Stream"Sjava.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;*;
+
+__unknown_file (
+
+%1java.util.stream.Stream*?
+
+__unknown_file (#
+!
+%2java.util.function.Function2"map(Ljava/util/function/Function;)®
+«
+H H(( 
+%8java.util.stream.Collector"@java.util.stream.Collectors#toList()Ljava/util/stream/Collector;*;
+
+__unknown_file ("
+java.util.stream.Collectors˜•
+F H()
+%9java.util.List"Ojava.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;*;
+
+__unknown_file (
+
+%7java.util.stream.Stream*>
+
+__unknown_file ("
+ 
+%8java.util.stream.Collector2%collect(Ljava/util/stream/Collector;)""
+F H(*
+
+%9java.util.ListB
+application.GameAppServiceH

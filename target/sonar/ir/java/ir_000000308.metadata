@@ -1,0 +1,13 @@
+domain.game.GameBuilder#buildPlayers(Ldomain/game/DrawPile;)Ldomain/player/PlayerRoundIterator;
+false
+20f93ca445a274179445bfd658e2ff16
+domain.game.DealerService#dealInitialHandCards(Ldomain/game/DrawPile;I)[Ldomain/player/HandCardList;
+domain.player.Player#<init>(Ljava/lang/String;Ldomain/player/HandCardList;)V
+domain.player.Player#instance-init#
+domain.player.PlayerRoundIterator#<init>([Ldomain/player/Player;)V
+domain.player.PlayerRoundIterator#instance-init#
+java.lang.IllegalStateException#<init>(Ljava/lang/String;)V
+java.lang.IllegalStateException#instance-init#
+==
+get java.util.List#get(I)Ljava/lang/Object;
+size java.util.List#size()I

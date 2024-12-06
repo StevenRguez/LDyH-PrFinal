@@ -1,0 +1,5 @@
+domain.player.ImmutablePlayer#getName()Ljava/lang/String;
+false
+8db82eda0523fe84c41b67816bc26e95
+==
+getName domain.player.Player#getName()Ljava/lang/String;

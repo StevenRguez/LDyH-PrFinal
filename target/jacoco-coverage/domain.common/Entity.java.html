@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Entity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LABgrupal</a> &gt; <a href="index.source.html" class="el_package">domain.common</a> &gt; <span class="el_source">Entity.java</span></div><h1>Entity.java</h1><pre class="source lang-java linenums">package domain.common;
+
+import java.util.UUID;
+
+/**
+ * @class Entity
+ * @brief Clase abstracta base para todas las entidades del dominio.
+ *
+ * Proporciona una estructura común para las entidades, definiendo un identificador único (UUID)
+ * que permite la identificación de cada instancia dentro del sistema.
+ */
+public abstract class Entity {
+    /**
+     * @brief Identificador único de la entidad.
+     */
+    private final UUID id;
+
+    /**
+     * @brief Constructor protegido que inicializa la entidad con un UUID aleatorio.
+     */
+    protected Entity(){
+<span class="fc" id="L22">        this(UUID.randomUUID());</span>
+<span class="fc" id="L23">    }</span>
+
+    /**
+     * @brief Constructor protegido que permite asignar un UUID específico a la entidad.
+     *
+     * @param id Identificador UUID que se asignará a la entidad.
+     */
+<span class="fc" id="L30">    protected Entity(UUID id){</span>
+<span class="fc" id="L31">        this.id = id;</span>
+<span class="fc" id="L32">    }</span>
+
+    /**
+     * @brief Obtiene el identificador único de la entidad.
+     *
+     * @return UUID que representa el identificador único de la entidad.
+     */
+    public UUID getId() {
+<span class="fc" id="L40">        return id;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,33 @@
+
+Hdomain.game.Game#getHandCards(Ljava/util/UUID;)Ljava/util/stream/Stream;’
+‡/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/main/java/domain/game/Game.java* *($"1*”
+1+ +(z
+x
++ +('
+%0!domain.player.PlayerRoundIterator"__id*=
+
+__unknown_file (!*
+domain.game.Game"	
+players¤¡
++ +(.
+%1domain.player.Player"Wdomain.player.PlayerRoundIterator#getPlayerById(Ljava/util/UUID;)Ldomain/player/Player;*E
+
+__unknown_file ()
+'
+%0!domain.player.PlayerRoundIterator*8
+
+__unknown_file (
+
+playerIdjava.util.UUID2getPlayerById(Ljava/util/UUID;)´±
++ +(=
+%2java.util.stream.Stream"<domain.player.Player#getHandCards()Ljava/util/stream/Stream;*8
+
+__unknown_file (
+
+%1domain.player.Player2getHandCards()"+
++ +(>
+
+%2java.util.stream.Stream:&
+*% *(2
+playerIdjava.util.UUIDB
+domain.game.GameH

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GameStatusView.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LABgrupal</a> &gt; <a href="index.source.html" class="el_package">ui.view</a> &gt; <span class="el_source">GameStatusView.java</span></div><h1>GameStatusView.java</h1><pre class="source lang-java linenums">package ui.view;
+
+import application.IGameAppService;
+import domain.common.DomainEvent;
+import domain.common.DomainEventPublisher;
+import domain.common.DomainEventSubscriber;
+import domain.game.events.CardDrawn;
+import domain.game.events.CardPlayed;
+import domain.game.events.GameOver;
+
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ * Clase que representa la vista del estado del juego en la interfaz gráfica.
+ * Se define la impresión de mensajes en la interfaz gráfica.
+ * Esta clase es necesaria para mostrar el estado.
+ */
+public class GameStatusView extends JPanel implements DomainEventSubscriber {
+    /// Mensaje de error.
+    private String error;
+    /// Mensaje de estado del juego.
+    private String text;
+    /// Centro del panel.
+    private int panelCenter;
+
+    /// Servicio de la aplicación del juego.
+    private final IGameAppService appService;
+
+    /**
+     * Constructor de la clase.
+     * @param appService Servicio de la aplicación del juego.
+     */
+<span class="nc" id="L34">    public GameStatusView(IGameAppService appService) {</span>
+<span class="nc" id="L35">        this.appService = appService;</span>
+
+<span class="nc" id="L37">        setPreferredSize(new Dimension(275, 200));</span>
+<span class="nc" id="L38">        setOpaque(false);</span>
+<span class="nc" id="L39">        error = &quot;&quot;;</span>
+
+<span class="nc" id="L41">        updateStatus();</span>
+
+<span class="nc" id="L43">        DomainEventPublisher.subscribe(this);</span>
+<span class="nc" id="L44">    }</span>
+
+    /**
+     * Metodo que pinta el componente para que se vea mejor de cara al usuario.
+     * @param g Graficos.
+     */
+    @Override
+    protected void paintComponent(Graphics g) {
+<span class="nc" id="L52">        super.paintComponent(g);</span>
+<span class="nc" id="L53">        panelCenter = getWidth() / 2;</span>
+
+<span class="nc" id="L55">        printMessage(g);</span>
+<span class="nc" id="L56">        printError(g);</span>
+<span class="nc" id="L57">    }</span>
+
+    /**
+     * Imprime, en la configuracion indicada, el mensaje de error en caso de que se dé.
+     * @param g Graficos
+     */
+    private void printError(Graphics g) {
+<span class="nc bnc" id="L64" title="All 2 branches missed.">        if (!error.isEmpty()) {</span>
+<span class="nc" id="L65">            Font adjustedFont = new Font(&quot;Calibri&quot;, Font.PLAIN, 25);</span>
+
+            // Determine the width of the word to position
+<span class="nc" id="L68">            FontMetrics fm = this.getFontMetrics(adjustedFont);</span>
+<span class="nc" id="L69">            int xPos = panelCenter - fm.stringWidth(error) / 2;</span>
+
+<span class="nc" id="L71">            g.setFont(adjustedFont);</span>
+<span class="nc" id="L72">            g.setColor(Color.red);</span>
+<span class="nc" id="L73">            g.drawString(error, xPos, 35);</span>
+
+<span class="nc" id="L75">            error = &quot;&quot;;</span>
+        }
+<span class="nc" id="L77">    }</span>
+
+    /**
+     * Al igual que la funcion printError,se imprime un mensaje que sea necesario en el juego.
+     * @param g Graficos
+     */
+    private void printMessage(Graphics g) {
+<span class="nc" id="L84">        Font adjustedFont = new Font(&quot;Calibri&quot;, Font.BOLD, 25);</span>
+
+        //Determine the width of the word to position
+<span class="nc" id="L87">        FontMetrics fm = this.getFontMetrics(adjustedFont);</span>
+<span class="nc" id="L88">        int xPos = panelCenter - fm.stringWidth(text) / 2;</span>
+
+<span class="nc" id="L90">        g.setFont(adjustedFont);</span>
+<span class="nc" id="L91">        g.setColor(new Color(228, 108, 10));</span>
+<span class="nc" id="L92">        g.drawString(text, xPos, 75);</span>
+<span class="nc" id="L93">    }</span>
+
+    /**
+     * Actualiza el texto del estado para reflejar el estado actual del juego.
+     * Si el juego ha terminado, el estado mostrará el nombre del ganador.
+     * Si el juego sigue en curso, el estado indicará de quién es el turno.
+     * Luego, el estado se actualiza en la interfaz de usuario llamando a repaint().
+     */
+    private void updateStatus() {
+<span class="nc bnc" id="L102" title="All 2 branches missed.">        if (appService.isGameOver()) {</span>
+<span class="nc" id="L103">            text = String.format(&quot;%s won&quot;, appService.getWinner().getName());</span>
+        } else {
+<span class="nc" id="L105">            text = String.format(&quot;%s's turn&quot;, appService.getCurrentPlayer().getName());</span>
+        }
+
+<span class="nc" id="L108">        repaint();</span>
+<span class="nc" id="L109">    }</span>
+
+    /**
+     * Establece un mensaje de error.
+     * Este método recibe un mensaje de error como parámetro y lo asigna a la variable
+     * `error`, que puede ser utilizada posteriormente para mostrar el mensaje de error
+     * en la interfaz de usuario o en otro lugar dentro de la aplicación.
+     * @param errorMgs El mensaje de error que se va a establecer.
+     */
+    public void setError(String errorMgs) {
+<span class="nc" id="L119">        error = errorMgs;</span>
+<span class="nc" id="L120">    }</span>
+
+    /**
+     * Maneja los eventos del dominio y actualiza el estado si es necesario.
+     * Este metodo recibe un evento y, si el evento es una instancia de `CardPlayed`,
+     * `CardDrawn` o `GameOver`, se actualiza el estado llamando al metodo `updateStatus()`.
+     * @param event El evento del dominio que se va a manejar.
+     */
+    @Override
+    public void handleEvent(DomainEvent event) {
+<span class="nc bnc" id="L130" title="All 6 branches missed.">        if (event instanceof CardPlayed</span>
+            || event instanceof CardDrawn
+            || event instanceof GameOver) {
+<span class="nc" id="L133">            updateStatus();</span>
+        }
+<span class="nc" id="L135">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

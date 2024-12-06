@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AppFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LABgrupal</a> &gt; <a href="index.source.html" class="el_package">ui</a> &gt; <span class="el_source">AppFrame.java</span></div><h1>AppFrame.java</h1><pre class="source lang-java linenums">package ui;
+
+import application.IGameAppService;
+import ui.view.PlayerView;
+import ui.view.TableView;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class AppFrame extends JFrame {
+    private final JPanel mainLayout;
+    private final IGameAppService appService;
+
+<span class="nc" id="L14">    public AppFrame(IGameAppService appService){</span>
+<span class="nc" id="L15">        this.appService = appService;</span>
+
+<span class="nc" id="L17">        mainLayout = new JPanel();</span>
+<span class="nc" id="L18">        setupLayout();</span>
+
+<span class="nc" id="L20">        showFrame();</span>
+<span class="nc" id="L21">    }</span>
+
+    private void showFrame() {
+<span class="nc" id="L24">        setVisible(true);</span>
+<span class="nc" id="L25">        setResizable(false);</span>
+<span class="nc" id="L26">        setLocation(200, 100);</span>
+<span class="nc" id="L27">        pack();</span>
+<span class="nc" id="L28">        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L29">    }</span>
+
+    private void setupLayout() {
+<span class="nc" id="L32">        mainLayout.setPreferredSize(new Dimension(960,720));</span>
+<span class="nc" id="L33">        mainLayout.setBackground(new Color(30,36,40));</span>
+<span class="nc" id="L34">        mainLayout.setLayout(new BorderLayout());</span>
+
+        // This desktop app supports only dual game play
+<span class="nc" id="L37">        var players = appService.getPlayerInfos();</span>
+<span class="nc" id="L38">        var playerView1 = new PlayerView(players.get(0), appService);</span>
+<span class="nc" id="L39">        var playerView2 = new PlayerView(players.get(1), appService);</span>
+
+<span class="nc" id="L41">        var tableView = new TableView(appService);</span>
+
+<span class="nc" id="L43">        mainLayout.add(playerView1, BorderLayout.SOUTH);</span>
+<span class="nc" id="L44">        mainLayout.add(tableView, BorderLayout.CENTER);</span>
+<span class="nc" id="L45">        mainLayout.add(playerView2, BorderLayout.NORTH);</span>
+<span class="nc" id="L46">        add(mainLayout);</span>
+<span class="nc" id="L47">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

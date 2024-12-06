@@ -1,0 +1,10 @@
+domain.game.Game#acceptPlayedCard(Ldomain/card/Card;Z)V
+false
+9ec73134ccd7a0fbb57af6a89acd3db9
+domain.game.Game#checkSaidUno(IZ)V
+domain.game.Game#discard(Ldomain/card/Card;)V
+==
+getCurrentPlayer domain.game.Game#getCurrentPlayer()Ldomain/player/ImmutablePlayer;
+getCurrentPlayer domain.player.PlayerRoundIterator#getCurrentPlayer()Ldomain/player/Player;
+getTotalCards domain.player.ImmutablePlayer#getTotalCards()I
+removePlayedCard domain.player.Player#removePlayedCard(Ldomain/card/Card;)V

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ActionCard.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LABgrupal</a> &gt; <a href="index.source.html" class="el_package">domain.card</a> &gt; <span class="el_source">ActionCard.java</span></div><h1>ActionCard.java</h1><pre class="source lang-java linenums">package domain.card;
+
+import java.util.Objects;
+
+/**
+ * Clase que representa una carta de acción.
+ * Implementa la interfaz Card.
+ */
+public class ActionCard extends AbstractCard {
+    public ActionCard(CardType type, CardColor color) {
+<span class="fc" id="L11">        super(type, color);</span>
+<span class="fc" id="L12">        CardUtil.validateActionType(type);</span>
+<span class="fc" id="L13">        CardUtil.validateColor(color);</span>
+<span class="fc" id="L14">    }</span>
+
+    /**
+     * Comprueba si dos cartas de acción son iguales.
+     * @param o objeto a comparar.
+     * @return true si las cartas son iguales, false en caso contrario.
+     */
+    @Override
+    public boolean equals(Object o) {
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (this == o) return true;</span>
+<span class="fc bfc" id="L24" title="All 4 branches covered.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="fc" id="L25">        ActionCard that = (ActionCard) o;</span>
+<span class="fc bfc" id="L26" title="All 4 branches covered.">        return getType() == that.getType() &amp;&amp; getColor() == that.getColor();</span>
+    }
+
+    /**
+     * Devuelve el hash code de la carta de acción.
+     * @return hash code de la carta de acción.
+     */
+    @Override
+    public int hashCode() {
+<span class="fc" id="L35">        return Objects.hash(getType(), getColor());</span>
+    }
+
+    /**
+     * Devuelve la representación en cadena de la carta de acción.
+     * @return representación en cadena de la carta de acción.
+     */
+    @Override
+    public String toString() {
+<span class="fc" id="L44">        return &quot;ActionCard{&quot; +</span>
+<span class="fc" id="L45">            getType() + &quot;, &quot; + getColor() +</span>
+            '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

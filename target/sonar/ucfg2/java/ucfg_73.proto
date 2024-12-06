@@ -1,0 +1,39 @@
+
++__sonar_lambda_3$application.GameAppServiceœ
+‘/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/main/java/application/GameAppService.javaG G(?"1*ø
+1G( G()¥¢
+G( G(1
+%3java.util.UUID"5domain.player.ImmutablePlayer#getId()Ljava/util/UUID;*@
+
+__unknown_file ($
+"
+pdomain.player.ImmutablePlayer2getId()­ª
+G3 G(>
+%4java.lang.String"9domain.player.ImmutablePlayer#getName()Ljava/lang/String;*@
+
+__unknown_file ($
+"
+pdomain.player.ImmutablePlayer2	getName()PN
+G G('#
+%5application.dto.PlayerInfoDTO"application.dto.PlayerInfoDTO‹
+ˆ
+G G(?
+%6"Iapplication.dto.PlayerInfoDTO#<init>(Ljava/util/UUID;Ljava/lang/String;)V*A
+
+__unknown_file (%
+#
+%5application.dto.PlayerInfoDTO*2
+
+__unknown_file (
+
+%3java.util.UUID*4
+
+__unknown_file (
+
+%4java.lang.String"1
+G G(?%
+#
+%5application.dto.PlayerInfoDTO:.
+G G("
+pdomain.player.ImmutablePlayerB
+java.util.function.Function

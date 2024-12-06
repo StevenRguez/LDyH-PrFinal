@@ -1,0 +1,13 @@
+ui.view.GameStatusView#printMessage(Ljava/awt/Graphics;)V
+false
+f07b4e6607ffc102baadb17f55f03425
+java.awt.Color#<init>(III)V
+java.awt.Color#instance-init#
+java.awt.Font#<init>(Ljava/lang/String;II)V
+java.awt.Font#instance-init#
+==
+drawString java.awt.Graphics#drawString(Ljava/lang/String;II)V
+getFontMetrics javax.swing.JComponent#getFontMetrics(Ljava/awt/Font;)Ljava/awt/FontMetrics;
+setColor java.awt.Graphics#setColor(Ljava/awt/Color;)V
+setFont java.awt.Graphics#setFont(Ljava/awt/Font;)V
+stringWidth java.awt.FontMetrics#stringWidth(Ljava/lang/String;)I

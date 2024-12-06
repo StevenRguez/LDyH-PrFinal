@@ -1,0 +1,10 @@
+ui.common.StyleUtil#getValueToDisplay(Ldomain/card/Card;)Ljava/lang/String;
+false
+ed1fa3cd61c983d7b628f5e3d4795453
+java.lang.Character#toString()Ljava/lang/String;
+java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)V
+java.lang.IllegalArgumentException#instance-init#
+java.lang.Integer#toString(I)Ljava/lang/String;
+==
+getType domain.card.Card#getType()Ldomain/card/CardType;
+getValue domain.card.NumberCard#getValue()I

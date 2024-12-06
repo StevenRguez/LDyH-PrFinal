@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DomainEvent.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LABgrupal</a> &gt; <a href="index.source.html" class="el_package">domain.common</a> &gt; <span class="el_source">DomainEvent.java</span></div><h1>DomainEvent.java</h1><pre class="source lang-java linenums">package domain.common;
+
+import java.time.LocalDate;
+
+/**
+ * @class DomainEvent
+ * @brief Clase abstracta base que representa un evento de dominio genérico en la aplicación.
+ *
+ * Un evento de dominio captura una ocurrencia específica dentro del dominio, incluyendo
+ * una marca de tiempo de cuándo ocurrió. Las subclases deben heredar de DomainEvent
+ * para representar tipos específicos de eventos.
+ */
+public abstract class DomainEvent {
+
+    /**
+     * @brief Fecha en la que ocurrió el evento.
+     *
+     * Esta fecha se establece automáticamente a la fecha actual en el momento de la creación del evento.
+     */
+    private final LocalDate occurredDate;
+
+    /**
+     * @brief Constructor protegido que inicializa occurredDate con la fecha actual.
+     *
+     * Este constructor está destinado a ser llamado por las subclases para establecer
+     * automáticamente la fecha de ocurrencia del evento.
+     */
+<span class="fc" id="L28">    protected DomainEvent(){</span>
+<span class="fc" id="L29">        occurredDate = LocalDate.now();</span>
+<span class="fc" id="L30">    }</span>
+
+    /**
+     * @brief Obtiene la fecha en la que ocurrió el evento.
+     *
+     * @return LocalDate que representa la fecha de ocurrencia del evento.
+     */
+    public LocalDate getOccurredDate(){
+<span class="nc" id="L38">        return occurredDate;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

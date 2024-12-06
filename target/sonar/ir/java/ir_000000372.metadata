@@ -1,0 +1,5 @@
+domain.player.ImmutablePlayer#getHandCards()Ljava/util/stream/Stream;
+false
+aab89d81b5d6d222bbfb22e093f1a364
+==
+getHandCards domain.player.Player#getHandCards()Ljava/util/stream/Stream;

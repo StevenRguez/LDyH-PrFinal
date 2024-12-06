@@ -1,0 +1,9 @@
+ui.AppFrame#showFrame()V
+false
+240fa10c76d460ed8290fd76d5a99991
+==
+pack java.awt.Window#pack()V
+setDefaultCloseOperation javax.swing.JFrame#setDefaultCloseOperation(I)V
+setLocation java.awt.Window#setLocation(II)V
+setResizable java.awt.Frame#setResizable(Z)V
+setVisible java.awt.Window#setVisible(Z)V

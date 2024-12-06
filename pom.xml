@@ -16,6 +16,11 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <log4j2.version>2.17.2</log4j2.version>
     <junit.version>5.8.1</junit.version>
+    <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco-coverage/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.projectName>LABgrupal</sonar.projectName>
+    <sonar.projectKey>LABgrupal</sonar.projectKey>
+    <sonar.organization>stevenrguez</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
 
   <dependencies>
@@ -119,6 +124,11 @@
     </resources>
 
     <plugins>
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>5.0.0.4389</version>
+      </plugin>
       <!-- Plugin para compilar Java -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -163,6 +173,24 @@
             </manifest>
           </archive>
         </configuration>
+      </plugin>
+      <!-- Plugin de JaCoCo para la cobertura -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.12</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+              <goal>report</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/jacoco-coverage</outputDirectory>
+              <append>false</append>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
     </build>

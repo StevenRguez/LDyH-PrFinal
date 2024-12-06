@@ -1,0 +1,5 @@
+domain.game.Game#playCard(Ljava/util/UUID;Ldomain/card/Card;)V
+false
+ad5309d4cbc8d82b82ce62af4e372602
+==
+playCard domain.game.Game#playCard(Ljava/util/UUID;Ldomain/card/Card;Z)V

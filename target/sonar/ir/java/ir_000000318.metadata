@@ -1,0 +1,16 @@
+ui.view.TableView#<init>(Lapplication/IGameAppService;)V
+false
+4dc1705b4baa0fdcfbc0e1b4c1ddd144
+domain.common.DomainEventPublisher#subscribe(Ldomain/common/DomainEventSubscriber;)V
+java.awt.Color#<init>(III)V
+java.awt.Color#instance-init#
+java.awt.GridBagLayout#<init>()V
+java.awt.GridBagLayout#instance-init#
+javax.swing.JPanel#<init>()V
+javax.swing.JPanel#instance-init#
+ui.view.TableView#initInfoView()V
+ui.view.TableView#initTable()V
+==
+setBackground javax.swing.JComponent#setBackground(Ljava/awt/Color;)V
+setLayout java.awt.Container#setLayout(Ljava/awt/LayoutManager;)V
+setOpaque javax.swing.JComponent#setOpaque(Z)V

@@ -1,0 +1,9 @@
+ui.view.CardView#drawWhiteOvalInCenter(Ljava/awt/Graphics2D;)V
+false
+857ff8a50303b2a6f2aa69d681f77332
+==
+fillOval java.awt.Graphics#fillOval(IIII)V
+getTransform java.awt.Graphics2D#getTransform()Ljava/awt/geom/AffineTransform;
+rotate java.awt.Graphics2D#rotate(DDD)V
+setColor java.awt.Graphics#setColor(Ljava/awt/Color;)V
+setTransform java.awt.Graphics2D#setTransform(Ljava/awt/geom/AffineTransform;)V
