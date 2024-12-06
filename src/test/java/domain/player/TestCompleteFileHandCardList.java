@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @version 1.0
  * @see HandCardList
  */
-public class HandCardListTest {
+public class TestCompleteFileHandCardList {
     /// Test para comprobar la clase HandCardList
     @Test
     void testHandCardList() {
