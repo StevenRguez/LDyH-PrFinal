@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Pruebas unitarias para la clase ImmutablePlayer.
  */
-class ImmutablePlayerTest {
+class TestInmutablePlayer {
     // Test para la clase de Inmutable Player que se encarga de devolver el identificador del jugador.
     @Test
     void testGetId() {
