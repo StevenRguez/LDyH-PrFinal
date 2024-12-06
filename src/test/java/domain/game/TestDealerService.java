@@ -9,96 +9,136 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Clase que prueba los servicios de barajado y distribución de cartas.
+ */
 class TestDealerService {
+
+    /**
+     * Prueba que las cartas barajadas tengan un orden diferente al original.
+     */
     @Test
-    void WhenShuffled_ShouldHaveDifferentOrder() {
-        // Arrange
-        var originalList = new CardDeck().getImmutableCards();
+    void cuandoEsBarajado_DebeTenerOrdenDiferente() {
+        // Configuración
+        var listaOriginal = new CardDeck().getImmutableCards();
 
-        // Act
-        var shuffledList = DealerService.shuffle(originalList);
+        // Acción
+        var listaBarajada = DealerService.shuffle(listaOriginal);
 
-        // Assert
-        int totalEquals = 0;
-        for (int i = 0; i < originalList.size(); i++) {
-            if (originalList.get(i).equals(shuffledList.get(i))) {
-                totalEquals++;
+        // Verificación
+        int totalIguales = 0;
+        for (int i = 0; i < listaOriginal.size(); i++) {
+            if (listaOriginal.get(i).equals(listaBarajada.get(i))) {
+                totalIguales++;
             }
         }
-        assertNotEquals(originalList.size(), totalEquals);
-        assertTrue(totalEquals < (originalList.size() * 0.2), "Shuffled cards should have less than 20% equal order (heuristically)");
+        assertNotEquals(listaOriginal.size(), totalIguales);
+        assertTrue(totalIguales < (listaOriginal.size() * 0.2),
+            "Las cartas barajadas deberían tener menos del 20% de orden igual (heurísticamente)");
     }
 
+    /**
+     * Prueba que las cartas barajadas incluyan todas las cartas numéricas.
+     */
     @Test
-    void WhenShuffled_ShouldHaveAllNumberCards() {
-        var shuffledList = getShuffledCards();
+    void cuandoEsBarajado_DebeIncluirTodasLasCartasNumericas() {
+        var listaBarajada = obtenerCartasBarajadas();
 
-        CardCounterAssertionHelper.assertNumberCards(shuffledList);
+        CardCounterAssertionHelper.assertNumberCards(listaBarajada);
     }
 
+    /**
+     * Prueba que las cartas barajadas incluyan todas las cartas de tipo "Saltar".
+     */
     @Test
-    void WhenShuffled_ShouldHaveAllSkipCards() {
-        var shuffledList = getShuffledCards();
+    void cuandoEsBarajado_DebeIncluirTodasLasCartasDeSaltar() {
+        var listaBarajada = obtenerCartasBarajadas();
 
-        CardCounterAssertionHelper.assertSkipCards(shuffledList);
+        CardCounterAssertionHelper.assertSkipCards(listaBarajada);
     }
 
+    /**
+     * Prueba que las cartas barajadas incluyan todas las cartas de tipo "Reversa".
+     */
     @Test
-    void WhenShuffled_ShouldHaveAllReverseCards() {
-        var shuffledList = getShuffledCards();
+    void cuandoEsBarajado_DebeIncluirTodasLasCartasDeReversa() {
+        var listaBarajada = obtenerCartasBarajadas();
 
-        CardCounterAssertionHelper.assertReverseCards(shuffledList);
+        CardCounterAssertionHelper.assertReverseCards(listaBarajada);
     }
 
+    /**
+     * Prueba que las cartas barajadas incluyan todas las cartas de tipo "Roba dos".
+     */
     @Test
-    void WhenShuffled_ShouldHaveAllDrawTwoCards() {
-        var shuffledList = getShuffledCards();
+    void cuandoEsBarajado_DebeIncluirTodasLasCartasDeRobaDos() {
+        var listaBarajada = obtenerCartasBarajadas();
 
-        CardCounterAssertionHelper.assertDrawTwoCards(shuffledList);
+        CardCounterAssertionHelper.assertDrawTwoCards(listaBarajada);
     }
 
+    /**
+     * Prueba que las cartas barajadas incluyan todas las cartas comodín.
+     */
     @Test
-    void WhenShuffled_ShouldHaveAllWildCards() {
-        var shuffledList = getShuffledCards();
+    void cuandoEsBarajado_DebeIncluirTodasLasCartasComodin() {
+        var listaBarajada = obtenerCartasBarajadas();
 
-        CardCounterAssertionHelper.assertWildCards(shuffledList);
+        CardCounterAssertionHelper.assertWildCards(listaBarajada);
     }
 
-    private List<Card> getShuffledCards() {
-        var originalList = new CardDeck().getImmutableCards();
-        return DealerService.shuffle(originalList);
+    /**
+     * Obtiene una lista de cartas barajadas.
+     *
+     * @return Una lista de cartas después de ser barajadas.
+     */
+    private List<Card> obtenerCartasBarajadas() {
+        var listaOriginal = new CardDeck().getImmutableCards();
+        return DealerService.shuffle(listaOriginal);
     }
 
+    /**
+     * Prueba que las cartas distribuidas incluyan 7 cartas por jugador.
+     */
     @Test
-    void WhenDealt_ShouldHave7CardsPerEachPlayer() {
-        // Arrange
-        var fixedCards = new ArrayList<Card>();
+    void cuandoEsRepartido_DebeTener7CartasPorJugador() {
+        // Configuración
+        var cartasFijas = new ArrayList<Card>();
         for (int i = 0; i < 7; i++) {
-            fixedCards.add(new NumberCard(1, CardColor.RED));
-            fixedCards.add(new NumberCard(2, CardColor.GREEN));
-            fixedCards.add(new NumberCard(3, CardColor.BLUE));
+            cartasFijas.add(new NumberCard(1, CardColor.RED));
+            cartasFijas.add(new NumberCard(2, CardColor.GREEN));
+            cartasFijas.add(new NumberCard(3, CardColor.BLUE));
         }
-        var drawPile = new DrawPile(fixedCards);
+        var pilaDeRobo = new DrawPile(cartasFijas);
 
-        // Act
-        var handCardLists = DealerService.dealInitialHandCards(drawPile, 3);
+        // Acción
+        var listasDeCartasMano = DealerService.dealInitialHandCards(pilaDeRobo, 3);
 
-        // Assert
-        assertTrue(hasAllSameValues(handCardLists[0], 3, CardColor.BLUE));
-        assertTrue(hasAllSameValues(handCardLists[1], 2, CardColor.GREEN));
-        assertTrue(hasAllSameValues(handCardLists[2], 1, CardColor.RED));
+        // Verificación
+        assertTrue(verificarMismoValor(listasDeCartasMano[0], 3, CardColor.BLUE));
+        assertTrue(verificarMismoValor(listasDeCartasMano[1], 2, CardColor.GREEN));
+        assertTrue(verificarMismoValor(listasDeCartasMano[2], 1, CardColor.RED));
 
-        assertEquals(0, drawPile.getSize());
+        assertEquals(0, pilaDeRobo.getSize());
     }
 
-    private boolean hasAllSameValues(HandCardList handCardList, int number, CardColor color) {
-        if (handCardList.size() != 7) {
+    /**
+     * Verifica si todas las cartas en una lista tienen el mismo valor y color.
+     *
+     * @param listaCartasMano Lista de cartas de la mano.
+     * @param numero El número esperado en las cartas.
+     * @param color El color esperado en las cartas.
+     * @return Verdadero si todas las cartas tienen el mismo valor y color, falso de lo contrario.
+     */
+    private boolean verificarMismoValor(HandCardList listaCartasMano, int numero, CardColor color) {
+        if (listaCartasMano.size() != 7) {
             return false;
         }
 
-        return handCardList
+        return listaCartasMano
             .getCardStream()
             .map(c -> (NumberCard) c)
-            .allMatch(c -> c.getValue() == number && c.getColor() == color);
+            .allMatch(c -> c.getValue() == numero && c.getColor() == color);
     }
 }
+

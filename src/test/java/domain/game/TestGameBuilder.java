@@ -7,27 +7,40 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * Clase que prueba la funcionalidad del constructor del juego (GameBuilder).
+ */
 class TestGameBuilder {
 
+    /**
+     * Prueba que, al crear un juego con un solo jugador, se lance una excepción de estado ilegal.
+     */
     @Test
-    void WhenCreatedWithOnePlayer_ShouldThrowError() {
-        var gameBuilder = new GameBuilder()
-            .withPlayer("Player 1");
+    void cuandoEsCreadoConUnJugador_DebeLanzarError() {
+        // Configuración
+        var constructorJuego = new GameBuilder()
+            .withPlayer("Jugador 1");
 
-        assertThrows(IllegalStateException.class, gameBuilder::build);
+        // Verificación
+        assertThrows(IllegalStateException.class, constructorJuego::build);
     }
 
+    /**
+     * Prueba que, al tener tres jugadores, se pueda construir un juego correctamente.
+     */
     @Test
-    void WhenHavingThreePlayers_ShouldBuildGame(){
-        var game = new GameBuilder()
-            .withPlayer("Player 1")
-            .withPlayer("Player 2")
-            .withPlayer("Player 3")
+    void cuandoTieneTresJugadores_DebeConstruirJuego() {
+        // Acción
+        var juego = new GameBuilder()
+            .withPlayer("Jugador 1")
+            .withPlayer("Jugador 2")
+            .withPlayer("Jugador 3")
             .build();
 
-        var players = game.getPlayers().toArray(ImmutablePlayer[]::new);
+        // Verificación
+        var jugadores = juego.getPlayers().toArray(ImmutablePlayer[]::new);
 
-        assertEquals(3, players.length);
-        assertEquals("Player 1", players[0].getName());
+        assertEquals(3, jugadores.length);
+        assertEquals("Jugador 1", jugadores[0].getName());
     }
 }

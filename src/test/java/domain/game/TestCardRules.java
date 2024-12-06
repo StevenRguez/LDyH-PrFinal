@@ -16,19 +16,32 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Clase que prueba las reglas de validación de las cartas en el juego.
+ */
 class TestCardRules {
 
+    /**
+     * Prueba si jugar una carta numérica es válido según las reglas del juego.
+     *
+     * @param topCard La carta en la parte superior del mazo.
+     */
     @ParameterizedTest
-    @MethodSource("provideValidTopCardsForNumberCard")
-    void WhenNumberCardPlayed_ShouldBeValid(Card topCard) {
-        var cardToPlay = CardTestFactory.createNumberCard(5, CardColor.RED);
+    @MethodSource("proveerCartasSuperioresValidasParaCartaNumerica")
+    void cuandoCartaNumericaEsJugada_DeberiaSerValida(Card topCard) {
+        var cartaAJugar = CardTestFactory.createNumberCard(5, CardColor.RED);
 
-        var result = CardRules.isValidNumberCard(topCard, cardToPlay);
+        var resultado = CardRules.isValidNumberCard(topCard, cartaAJugar);
 
-        assertTrue(result, createTestMessage(topCard, cardToPlay));
+        assertTrue(resultado, crearMensajePrueba(topCard, cartaAJugar));
     }
 
-    private static Stream<Arguments> provideValidTopCardsForNumberCard() {
+    /**
+     * Proporciona una lista de cartas superiores válidas para probar cartas numéricas.
+     *
+     * @return Un Stream de argumentos con cartas superiores válidas.
+     */
+    private static Stream<Arguments> proveerCartasSuperioresValidasParaCartaNumerica() {
         return Stream.of(
             Arguments.of(CardTestFactory.createNumberCard(5, CardColor.RED)),
             Arguments.of(CardTestFactory.createNumberCard(4, CardColor.RED)),
@@ -41,17 +54,27 @@ class TestCardRules {
         );
     }
 
+    /**
+     * Prueba si jugar una carta numérica no coincidente es inválido según las reglas del juego.
+     *
+     * @param topCard La carta en la parte superior del mazo.
+     */
     @ParameterizedTest
-    @MethodSource("provideInvalidTopCardsForNumberCard")
-    void WhenMisMatchNumberCardPlayed_ShouldBeInvalid(Card topCard) {
-        var cardToPlay = CardTestFactory.createNumberCard(5, CardColor.RED);
+    @MethodSource("proveerCartasSuperioresInvalidasParaCartaNumerica")
+    void cuandoCartaNumericaNoCoincidenteEsJugada_DeberiaSerInvalida(Card topCard) {
+        var cartaAJugar = CardTestFactory.createNumberCard(5, CardColor.RED);
 
-        var result = CardRules.isValidNumberCard(topCard, cardToPlay);
+        var resultado = CardRules.isValidNumberCard(topCard, cartaAJugar);
 
-        assertFalse(result, createTestMessage(topCard, cardToPlay));
+        assertFalse(resultado, crearMensajePrueba(topCard, cartaAJugar));
     }
 
-    private static Stream<Arguments> provideInvalidTopCardsForNumberCard() {
+    /**
+     * Proporciona una lista de cartas superiores inválidas para probar cartas numéricas.
+     *
+     * @return Un Stream de argumentos con cartas superiores inválidas.
+     */
+    private static Stream<Arguments> proveerCartasSuperioresInvalidasParaCartaNumerica() {
         return Stream.of(
             Arguments.of(CardTestFactory.createNumberCard(4, CardColor.BLUE)),
             Arguments.of(CardTestFactory.createSkipCard(CardColor.BLUE)),
@@ -66,84 +89,119 @@ class TestCardRules {
         );
     }
 
+    /**
+     * Prueba si jugar una carta de acción es válido según las reglas del juego.
+     *
+     * @param cardToPlay La carta que se intenta jugar.
+     * @param topCard La carta en la parte superior del mazo.
+     */
     @ParameterizedTest
-    @MethodSource("provideValidTopCardsForActionCard")
-    void WhenActionCardPlayed_ShouldBeValid(Card cardToPlay, Card topCard) {
-        var result = CardRules.isValidActionCard(topCard, (ActionCard) cardToPlay);
+    @MethodSource("proveerCartasSuperioresValidasParaCartaAccion")
+    void cuandoCartaAccionEsJugada_DeberiaSerValida(Card cardToPlay, Card topCard) {
+        var resultado = CardRules.isValidActionCard(topCard, (ActionCard) cardToPlay);
 
-        assertTrue(result, createTestMessage(topCard, cardToPlay));
+        assertTrue(resultado, crearMensajePrueba(topCard, cardToPlay));
     }
 
-    private static Stream<Arguments> provideValidTopCardsForActionCard() {
-        var arguments = new ArrayList<Arguments>();
-        var actionTypes = new CardType[]{CardType.SKIP, CardType.REVERSE, CardType.DRAW_TWO};
+    /**
+     * Proporciona una lista de cartas superiores válidas para probar cartas de acción.
+     *
+     * @return Un Stream de argumentos con cartas superiores válidas.
+     */
+    private static Stream<Arguments> proveerCartasSuperioresValidasParaCartaAccion() {
+        var argumentos = new ArrayList<Arguments>();
+        var tiposAccion = new CardType[]{CardType.SKIP, CardType.REVERSE, CardType.DRAW_TWO};
 
-        for (var action : actionTypes) {
-            var cardToPlay = CardTestFactory.createActionCard(action, CardColor.YELLOW);
+        for (var accion : tiposAccion) {
+            var cartaAJugar = CardTestFactory.createActionCard(accion, CardColor.YELLOW);
 
-            arguments.add(Arguments.of(cardToPlay, CardTestFactory.createActionCard(action, CardColor.RED)));
-            arguments.add(Arguments.of(cardToPlay, CardTestFactory.createNumberCard(5, CardColor.YELLOW)));
-            arguments.add(Arguments.of(cardToPlay, CardTestFactory.createSkipCard(CardColor.YELLOW)));
-            arguments.add(Arguments.of(cardToPlay, CardTestFactory.createReverseCard(CardColor.YELLOW)));
-            arguments.add(Arguments.of(cardToPlay, CardTestFactory.createDrawTwoCard(CardColor.YELLOW)));
-            arguments.add(Arguments.of(cardToPlay, CardTestFactory.createWildColorCard(CardColor.YELLOW)));
-            arguments.add(Arguments.of(cardToPlay, CardTestFactory.createWildDrawFourCard(CardColor.YELLOW)));
+            argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createActionCard(accion, CardColor.RED)));
+            argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createNumberCard(5, CardColor.YELLOW)));
+            argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createSkipCard(CardColor.YELLOW)));
+            argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createReverseCard(CardColor.YELLOW)));
+            argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createDrawTwoCard(CardColor.YELLOW)));
+            argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createWildColorCard(CardColor.YELLOW)));
+            argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createWildDrawFourCard(CardColor.YELLOW)));
         }
 
-        return arguments.stream();
+        return argumentos.stream();
     }
 
+    /**
+     * Prueba si jugar una carta de acción no coincidente es inválido según las reglas del juego.
+     *
+     * @param cardToPlay La carta que se intenta jugar.
+     * @param topCard La carta en la parte superior del mazo.
+     */
     @ParameterizedTest
-    @MethodSource("provideInvalidTopCardsForActionCard")
-    void WhenMismatchActionCardPlayed_ShouldBeInvalid(Card cardToPlay, Card topCard) {
-        var result = CardRules.isValidActionCard(topCard, (ActionCard) cardToPlay);
+    @MethodSource("proveerCartasSuperioresInvalidasParaCartaAccion")
+    void cuandoCartaAccionNoCoincidenteEsJugada_DeberiaSerInvalida(Card cardToPlay, Card topCard) {
+        var resultado = CardRules.isValidActionCard(topCard, (ActionCard) cardToPlay);
 
-        assertFalse(result, createTestMessage(topCard, cardToPlay));
+        assertFalse(resultado, crearMensajePrueba(topCard, cardToPlay));
     }
 
-    private static Stream<Arguments> provideInvalidTopCardsForActionCard() {
-        var arguments = new ArrayList<Arguments>();
-        var actionTypes = new CardType[]{CardType.SKIP, CardType.REVERSE, CardType.DRAW_TWO};
+    /**
+     * Proporciona una lista de cartas superiores inválidas para probar cartas de acción.
+     *
+     * @return Un Stream de argumentos con cartas superiores inválidas.
+     */
+    private static Stream<Arguments> proveerCartasSuperioresInvalidasParaCartaAccion() {
+        var argumentos = new ArrayList<Arguments>();
+        var tiposAccion = new CardType[]{CardType.SKIP, CardType.REVERSE, CardType.DRAW_TWO};
 
-        for (var action : actionTypes) {
-            var cardToPlay = CardTestFactory.createActionCard(action, CardColor.YELLOW);
+        for (var accion : tiposAccion) {
+            var cartaAJugar = CardTestFactory.createActionCard(accion, CardColor.YELLOW);
 
-            arguments.add(Arguments.of(cardToPlay, CardTestFactory.createNumberCard(5, CardColor.BLUE)));
+            argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createNumberCard(5, CardColor.BLUE)));
 
-            for (var otherAction : actionTypes) {
-                if (otherAction != action) {
-                    arguments.add(Arguments.of(cardToPlay, CardTestFactory.createActionCard(otherAction, CardColor.BLUE)));
+            for (var otraAccion : tiposAccion) {
+                if (otraAccion != accion) {
+                    argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createActionCard(otraAccion, CardColor.BLUE)));
                 }
             }
 
-            arguments.add(Arguments.of(cardToPlay, CardTestFactory.createWildColorCard()));
-            arguments.add(Arguments.of(cardToPlay, CardTestFactory.createWildColorCard(CardColor.BLUE)));
-            arguments.add(Arguments.of(cardToPlay, CardTestFactory.createWildDrawFourCard()));
-            arguments.add(Arguments.of(cardToPlay, CardTestFactory.createWildDrawFourCard(CardColor.BLUE)));
+            argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createWildColorCard()));
+            argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createWildColorCard(CardColor.BLUE)));
+            argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createWildDrawFourCard()));
+            argumentos.add(Arguments.of(cartaAJugar, CardTestFactory.createWildDrawFourCard(CardColor.BLUE)));
         }
 
-        return arguments.stream();
+        return argumentos.stream();
     }
 
+    /**
+     * Prueba si una carta comodín con un color elegido es válida.
+     */
     @Test
-    void WhenWildCardWithChosenColor_ShouldBeValid() {
-        var wildCard = CardTestFactory.createWildColorCard(CardColor.RED);
+    void cuandoCartaComodinConColorElegido_DeberiaSerValida() {
+        var cartaComodin = CardTestFactory.createWildColorCard(CardColor.RED);
 
-        var result = CardRules.isValidWildCard(wildCard);
+        var resultado = CardRules.isValidWildCard(cartaComodin);
 
-        assertTrue(result, wildCard.toString());
+        assertTrue(resultado, cartaComodin.toString());
     }
 
+    /**
+     * Prueba si una carta comodín sin un color elegido es inválida.
+     */
     @Test
-    void WhenWildCardWithoutColor_ShouldBeInvalid() {
-        var wildCard = CardTestFactory.createWildColorCard();
+    void cuandoCartaComodinSinColor_DeberiaSerInvalida() {
+        var cartaComodin = CardTestFactory.createWildColorCard();
 
-        var result = CardRules.isValidWildCard(wildCard);
+        var resultado = CardRules.isValidWildCard(cartaComodin);
 
-        assertFalse(result, wildCard.toString());
+        assertFalse(resultado, cartaComodin.toString());
     }
 
-    private String createTestMessage(Card topCard, Card playedCard) {
-        return String.format("Top Card %s, Played Card %s", topCard, playedCard);
+    /**
+     * Crea un mensaje de prueba detallado para depuración.
+     *
+     * @param topCard La carta en la parte superior del mazo.
+     * @param playedCard La carta que se intenta jugar.
+     * @return Mensaje con detalles de las cartas involucradas.
+     */
+    private String crearMensajePrueba(Card topCard, Card playedCard) {
+        return String.format("Carta Superior: %s, Carta Jugada: %s", topCard, playedCard);
     }
 }

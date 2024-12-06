@@ -7,15 +7,27 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Clase que prueba las funcionalidades de la pila de robo (DrawPile).
+ */
 class TestDrawPile {
+
+    /**
+     * Prueba que al robar una carta, se retorne la última carta agregada a la pila.
+     */
     @Test
-    void WhenDrawn_ShouldReturnLastCard() {
-        var numberCard = CardTestFactory.createNumberCard();
-        var skipCard = CardTestFactory.createSkipCard();
+    void cuandoEsRobado_DebeDevolverUltimaCarta() {
+        // Configuración
+        var cartaNumerica = CardTestFactory.createNumberCard();
+        var cartaDeSaltar = CardTestFactory.createSkipCard();
 
-        var drawPile = new DrawPile(Arrays.asList(numberCard, skipCard));
-        var drawnCard = drawPile.drawCard();
+        var pilaDeRobo = new DrawPile(Arrays.asList(cartaNumerica, cartaDeSaltar));
 
-        assertEquals(drawnCard, skipCard);
+        // Acción
+        var cartaRobada = pilaDeRobo.drawCard();
+
+        // Verificación
+        assertEquals(cartaRobada, cartaDeSaltar);
     }
 }
+
