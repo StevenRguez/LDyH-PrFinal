@@ -18,326 +18,382 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestGamePlay {
-    private final Player[] players = PlayerTestFactory.createPlayers(4);
-    private final PlayerRoundIterator playersIterator = new PlayerRoundIterator(players);
+    private final Player[] jugadores = PlayerTestFactory.createPlayers(4);
+    private final PlayerRoundIterator iteradorDeJugadores = new PlayerRoundIterator(jugadores);
 
+    /**
+     * @brief Verifica que si un jugador inválido intenta jugar, el juego lo rechace.
+     */
     @Test
-    void WhenInvalidPlayerPlayed_ShouldBeRejected() {
-        // Arrange
-        var cardToPlay = CardTestFactory.createNumberCard();
-        var game = createGame(cardToPlay, CardTestFactory.createNumberCard());
+    void CuandoJugadorInvalidoJuega_DeberiaSerRechazado() {
+        // Preparación
+        var cartaParaJugar = CardTestFactory.createNumberCard();
+        var juego = crearJuego(cartaParaJugar, CardTestFactory.createNumberCard());
 
-        var playerToPlay = players[2].getId();
+        var jugadorParaJugar = jugadores[2].getId();
 
-        // Act
-        assertThrows(IllegalArgumentException.class, () -> game.playCard(playerToPlay, cardToPlay));
+        // Acción y verificación
+        assertThrows(IllegalArgumentException.class, () -> juego.playCard(jugadorParaJugar, cartaParaJugar));
     }
 
+    /**
+     * @brief Verifica que si un jugador intenta jugar una carta que no posee, el juego lo rechace.
+     */
     @Test
-    void WhenNonExistingCardPlayed_ShouldBeRejected() {
-        // Arrange
-        var handCard = CardTestFactory.createNumberCard(1, CardColor.RED);
-        var cardToPlay = CardTestFactory.createNumberCard(2, CardColor.RED);
+    void CuandoCartaNoExistenteEsJugado_DeberiaSerRechazado() {
+        // Preparación
+        var cartaEnMano = CardTestFactory.createNumberCard(1, CardColor.RED);
+        var cartaParaJugar = CardTestFactory.createNumberCard(2, CardColor.RED);
 
-        var game = createGame(handCard, CardTestFactory.createNumberCard());
+        var juego = crearJuego(cartaEnMano, CardTestFactory.createNumberCard());
 
-        // Act
-        assertThrows(IllegalArgumentException.class, () -> playCardFromCurrentPlayer(game, cardToPlay));
+        // Acción y verificación
+        assertThrows(IllegalArgumentException.class, () -> jugarCartaDelJugadorActual(juego, cartaParaJugar));
     }
 
+    /**
+     * @brief Verifica que las cartas numéricas válidas sean aceptadas.
+     */
     @ParameterizedTest
-    @MethodSource("provideValidNumberCards")
-    void WhenValidNumberCardPlayed_ShouldBeAccepted(Card topCard, Card cardToPlay) {
-        // Arrange
-        var game = createGame(cardToPlay, topCard);
+    @MethodSource("proveerCartasNumericasValidas")
+    void CuandoCartaNumericaValidaEsJugado_DeberiaSerAceptado(Card cartaSuperior, Card cartaParaJugar) {
+        // Preparación
+        var juego = crearJuego(cartaParaJugar, cartaSuperior);
 
-        // Act
-        playCardFromCurrentPlayer(game, cardToPlay);
+        // Acción
+        jugarCartaDelJugadorActual(juego, cartaParaJugar);
 
-        // Assert
-        assertGameState(game, cardToPlay, "2");
+        // Verificación
+        verificarEstadoDelJuego(juego, cartaParaJugar, "2");
     }
 
-    private static Stream<Arguments> provideValidNumberCards() {
-        var cardToPlay = CardTestFactory.createNumberCard(4, CardColor.BLUE);
+    /**
+     * @brief Provee un conjunto de combinaciones de cartas numéricas válidas.
+     */
+    private static Stream<Arguments> proveerCartasNumericasValidas() {
+        var cartaParaJugar = CardTestFactory.createNumberCard(4, CardColor.BLUE);
 
         return Stream.of(
-            Arguments.of(CardTestFactory.createNumberCard(5, CardColor.BLUE), cardToPlay),
-            Arguments.of(CardTestFactory.createWildColorCard(), cardToPlay)
+            Arguments.of(CardTestFactory.createNumberCard(5, CardColor.BLUE), cartaParaJugar),
+            Arguments.of(CardTestFactory.createWildColorCard(), cartaParaJugar)
         );
     }
 
+    /**
+     * @brief Verifica que las cartas de tipo "Skip" válidas sean aceptadas.
+     */
     @ParameterizedTest
-    @MethodSource("provideValidSkipCards")
-    void WhenValidSkipCardPlayed_ShouldBeAccepted(Card topCard, Card cardToPlay) {
-        // Arrange
-        var game = createGame(cardToPlay, topCard);
+    @MethodSource("proveerCartasSkipValidas")
+    void CuandoCartaSkipValidaEsJugado_DeberiaSerAceptado(Card cartaSuperior, Card cartaParaJugar) {
+        // Preparación
+        var juego = crearJuego(cartaParaJugar, cartaSuperior);
 
-        // Act
-        playCardFromCurrentPlayer(game, cardToPlay);
+        // Acción
+        jugarCartaDelJugadorActual(juego, cartaParaJugar);
 
-        // Assert
-        assertGameState(game, cardToPlay, "3");
+        // Verificación
+        verificarEstadoDelJuego(juego, cartaParaJugar, "3");
     }
 
-    private static Stream<Arguments> provideValidSkipCards() {
-        var cardToPlay = CardTestFactory.createSkipCard(CardColor.YELLOW);
+    /**
+     * @brief Provee un conjunto de combinaciones de cartas "Skip" válidas.
+     */
+    private static Stream<Arguments> proveerCartasSkipValidas() {
+        var cartaParaJugar = CardTestFactory.createSkipCard(CardColor.YELLOW);
 
         return Stream.of(
-            Arguments.of(CardTestFactory.createNumberCard(5, CardColor.YELLOW), cardToPlay),
-            Arguments.of(CardTestFactory.createWildColorCard(), cardToPlay)
+            Arguments.of(CardTestFactory.createNumberCard(5, CardColor.YELLOW), cartaParaJugar),
+            Arguments.of(CardTestFactory.createWildColorCard(), cartaParaJugar)
         );
     }
 
+    /**
+     * @brief Verifica que las cartas de tipo "Reverse" válidas sean aceptadas.
+     */
     @ParameterizedTest
-    @MethodSource("provideValidReverseCards")
-    void WhenValidReverseCardPlayed_ShouldBeAccepted(Card topCard, Card cardToPlay) {
-        // Arrange
-        var game = createGame(cardToPlay, topCard);
+    @MethodSource("proveerCartasReverseValidas")
+    void CuandoCartaReverseValidaEsJugado_DeberiaSerAceptado(Card cartaSuperior, Card cartaParaJugar) {
+        // Preparación
+        var juego = crearJuego(cartaParaJugar, cartaSuperior);
 
-        // Act
-        playCardFromCurrentPlayer(game, cardToPlay);
+        // Acción
+        jugarCartaDelJugadorActual(juego, cartaParaJugar);
 
-        // Assert
-        assertGameState(game, cardToPlay, "4");
+        // Verificación
+        verificarEstadoDelJuego(juego, cartaParaJugar, "4");
     }
 
-    private static Stream<Arguments> provideValidReverseCards() {
-        var cardToPlay = CardTestFactory.createReverseCard(CardColor.YELLOW);
+    /**
+     * @brief Provee un conjunto de combinaciones de cartas "Reverse" válidas.
+     */
+    private static Stream<Arguments> proveerCartasReverseValidas() {
+        var cartaParaJugar = CardTestFactory.createReverseCard(CardColor.YELLOW);
 
         return Stream.of(
-            Arguments.of(CardTestFactory.createNumberCard(5, CardColor.YELLOW), cardToPlay),
-            Arguments.of(CardTestFactory.createWildColorCard(), cardToPlay)
+            Arguments.of(CardTestFactory.createNumberCard(5, CardColor.YELLOW), cartaParaJugar),
+            Arguments.of(CardTestFactory.createWildColorCard(), cartaParaJugar)
         );
     }
 
+    /**
+     * @brief Verifica que las cartas de tipo "Draw Two" válidas sean aceptadas.
+     */
     @ParameterizedTest
-    @MethodSource("provideValidDrawTwoCards")
-    void WhenValidDrawTwoCardPlayed_ShouldBeAccepted(Card topCard, Card cardToPlay) {
-        // Arrange
-        var game = createGame(
-            cardToPlay,
+    @MethodSource("proveerCartasDrawTwoValidas")
+    void CuandoCartaDrawTwoValidaEsJugado_DeberiaSerAceptado(Card cartaSuperior, Card cartaParaJugar) {
+        // Preparación
+        var juego = crearJuego(
+            cartaParaJugar,
             CardTestFactory.createNumberCard(),
             CardTestFactory.createNumberCard(),
-            topCard);
+            cartaSuperior);
 
-        // Act
-        playCardFromCurrentPlayer(game, cardToPlay);
+        // Acción
+        jugarCartaDelJugadorActual(juego, cartaParaJugar);
 
-        // Assert
-        assertGameState(game, cardToPlay, "3");
-        assertEquals(2, players[1].getHandCards().count());
+        // Verificación
+        verificarEstadoDelJuego(juego, cartaParaJugar, "3");
+        assertEquals(2, jugadores[1].getHandCards().count());
     }
 
-    private static Stream<Arguments> provideValidDrawTwoCards() {
-        var cardToPlay = CardTestFactory.createDrawTwoCard(CardColor.YELLOW);
+    /**
+     * @brief Provee un conjunto de combinaciones de cartas "Draw Two" válidas.
+     */
+    private static Stream<Arguments> proveerCartasDrawTwoValidas() {
+        var cartaParaJugar = CardTestFactory.createDrawTwoCard(CardColor.YELLOW);
 
         return Stream.of(
-            Arguments.of(CardTestFactory.createNumberCard(5, CardColor.YELLOW), cardToPlay),
-            Arguments.of(CardTestFactory.createWildColorCard(), cardToPlay)
+            Arguments.of(CardTestFactory.createNumberCard(5, CardColor.YELLOW), cartaParaJugar),
+            Arguments.of(CardTestFactory.createWildColorCard(), cartaParaJugar)
         );
     }
 
+    /**
+     * @brief Verifica que las cartas de tipo "Wild Color" válidas sean aceptadas.
+     */
     @ParameterizedTest
-    @MethodSource("provideValidWildColorCards")
-    void WhenValidWildColorCardPlayed_ShouldBeAccepted(Card topCard, Card cardToPlay) {
-        // Arrange
-        var game = createGame(cardToPlay, topCard);
+    @MethodSource("proveerCartasWildColorValidas")
+    void CuandoCartaWildColorValidaEsJugado_DeberiaSerAceptado(Card cartaSuperior, Card cartaParaJugar) {
+        // Preparación
+        var juego = crearJuego(cartaParaJugar, cartaSuperior);
 
-        // Act
-        playCardFromCurrentPlayer(game, cardToPlay);
+        // Acción
+        jugarCartaDelJugadorActual(juego, cartaParaJugar);
 
-        // Assert
-        assertGameState(game, cardToPlay, "2");
+        // Verificación
+        verificarEstadoDelJuego(juego, cartaParaJugar, "2");
     }
 
-    private static Stream<Arguments> provideValidWildColorCards() {
-        var cardToPlay = CardTestFactory.createWildColorCard(CardColor.RED);
+    /**
+     * @brief Provee un conjunto de combinaciones de cartas "Wild Color" válidas.
+     */
+    private static Stream<Arguments> proveerCartasWildColorValidas() {
+        var cartaParaJugar = CardTestFactory.createWildColorCard(CardColor.RED);
 
         return Stream.of(
-            Arguments.of(CardTestFactory.createNumberCard(5, CardColor.YELLOW), cardToPlay),
-            Arguments.of(CardTestFactory.createWildColorCard(), cardToPlay)
+            Arguments.of(CardTestFactory.createNumberCard(5, CardColor.YELLOW), cartaParaJugar),
+            Arguments.of(CardTestFactory.createWildColorCard(), cartaParaJugar)
         );
     }
 
+    /**
+     * @brief Verifica que las cartas de tipo "Wild Draw Four" válidas sean aceptadas.
+     */
     @ParameterizedTest
-    @MethodSource("provideValidWildDrawFourCards")
-    void WhenValidWildDrawFourCardPlayed_ShouldBeAccepted(Card topCard, Card cardToPlay) {
-        // Arrange
-        var game = createGame(
-            cardToPlay,
+    @MethodSource("proveerCartasWildDrawFourValidas")
+    void CuandoCartaWildDrawFourValidaEsJugado_DeberiaSerAceptado(Card cartaSuperior, Card cartaParaJugar) {
+        // Preparación
+        var juego = crearJuego(
+            cartaParaJugar,
             CardTestFactory.createNumberCard(),
             CardTestFactory.createNumberCard(),
             CardTestFactory.createSkipCard(),
             CardTestFactory.createReverseCard(),
-            topCard);
+            cartaSuperior);
 
-        // Act
-        playCardFromCurrentPlayer(game, cardToPlay);
+        // Acción
+        jugarCartaDelJugadorActual(juego, cartaParaJugar);
 
-        // Assert
-        assertGameState(game, cardToPlay, "3");
-        assertEquals(4, players[1].getHandCards().count());
+        // Verificación
+        verificarEstadoDelJuego(juego, cartaParaJugar, "3");
+        assertEquals(4, jugadores[1].getHandCards().count());
     }
 
-    private static Stream<Arguments> provideValidWildDrawFourCards() {
-        var cardToPlay = CardTestFactory.createWildDrawFourCard(CardColor.RED);
+    /**
+     * @brief Provee un conjunto de combinaciones de cartas "Wild Draw Four" válidas.
+     */
+    private static Stream<Arguments> proveerCartasWildDrawFourValidas() {
+        var cartaParaJugar = CardTestFactory.createWildDrawFourCard(CardColor.RED);
 
         return Stream.of(
-            Arguments.of(CardTestFactory.createNumberCard(5, CardColor.YELLOW), cardToPlay),
-            Arguments.of(CardTestFactory.createWildColorCard(), cardToPlay)
+            Arguments.of(CardTestFactory.createNumberCard(5, CardColor.YELLOW), cartaParaJugar),
+            Arguments.of(CardTestFactory.createWildColorCard(), cartaParaJugar)
         );
     }
 
-    @ParameterizedTest
-    @MethodSource("provideInvalidCardsForNumberCard")
-    void WhenInvalidCardPlayed_ShouldBeRejected(Card topCard, Card cardToPlay) {
-        // Arrange
-        var game = createGame(cardToPlay, topCard);
+    /**
+     * @brief Crea un nuevo juego con las cartas proporcionadas.
+     * @param cartaParaJugar Carta que el jugador actual puede jugar.
+     * @param cartasDelMazo Cartas que forman el mazo del juego.
+     * @return Instancia del juego.
+     */
+    private Game crearJuego(Card cartaParaJugar, Card... cartasDelMazo) {
+        var mazo = crearMazo(cartasDelMazo);
 
-        // Assert
-        assertThrows(IllegalArgumentException.class, () -> playCardFromCurrentPlayer(game, cardToPlay));
-        assertGameState(game, topCard, "1");
+        var juego = new Game(mazo, iteradorDeJugadores);
+
+        var cartaAgregar = CardUtil.isWildCard(cartaParaJugar)
+            ? CardTestFactory.createWildCard(cartaParaJugar.getType())
+            : cartaParaJugar;
+
+        iteradorDeJugadores.getCurrentPlayer().addToHandCards(cartaAgregar);
+
+        return juego;
     }
 
-    private static Stream<Arguments> provideInvalidCardsForNumberCard() {
-        var topCard = CardTestFactory.createNumberCard(5, CardColor.BLUE);
-
-        return Stream.of(
-            Arguments.of(topCard, CardTestFactory.createNumberCard(4, CardColor.RED)),
-            Arguments.of(topCard, CardTestFactory.createSkipCard(CardColor.RED)),
-            Arguments.of(topCard, CardTestFactory.createReverseCard(CardColor.RED)),
-            Arguments.of(topCard, CardTestFactory.createDrawTwoCard(CardColor.RED)),
-            Arguments.of(topCard, CardTestFactory.createWildColorCard()),
-            Arguments.of(topCard, CardTestFactory.createWildDrawFourCard())
-        );
+    /**
+     * @brief Crea un mazo de cartas con las cartas proporcionadas.
+     * @param cartas Lista de cartas para el mazo.
+     * @return Instancia del mazo.
+     */
+    private DrawPile crearMazo(Card... cartas) {
+        return new DrawPile(Arrays.asList(cartas));
     }
 
+    /**
+     * @brief Permite que el jugador actual juegue una carta.
+     * @param juego Instancia del juego.
+     * @param cartaParaJugar Carta que se desea jugar.
+     */
+    private void jugarCartaDelJugadorActual(Game juego, Card cartaParaJugar) {
+        juego.playCard(iteradorDeJugadores.getCurrentPlayer().getId(), cartaParaJugar);
+    }
+
+    /**
+     * @brief Verifica el estado del juego.
+     * @param juego Instancia del juego.
+     * @param cartaSuperiorEsperada Carta superior esperada del mazo.
+     * @param jugadorActualEsperado Nombre del jugador actual esperado.
+     */
+    private void verificarEstadoDelJuego(Game juego, Card cartaSuperiorEsperada, String jugadorActualEsperado) {
+        assertEquals(cartaSuperiorEsperada, juego.peekTopCard());
+        assertEquals(jugadorActualEsperado, juego.getCurrentPlayer().getName());
+    }
+
+    /**
+     * @brief Verifica que, si una carta robada es jugable, se juegue automáticamente.
+     */
     @Test
-    void WhenDrawnCardIsPlayable_ShouldPlay() {
-        // Arrange
-        var cardToDraw = CardTestFactory.createWildColorCard();
-        var game = createGame(
+    void CuandoCartaRobadaEsJugable_DeberiaJugarse() {
+        // Preparación
+        var cartaParaRobar = CardTestFactory.createWildColorCard();
+        var juego = crearJuego(
             CardTestFactory.createSkipCard(CardColor.GREEN),
-            cardToDraw,
+            cartaParaRobar,
             CardTestFactory.createNumberCard(2, CardColor.RED));
 
-        // Act
-        game.drawCard(game.getCurrentPlayer().getId());
+        // Acción
+        juego.drawCard(juego.getCurrentPlayer().getId());
 
-        // Assert
-        assertGameState(game, CardTestFactory.createWildColorCard(CardColor.RED), "2");
-        assertEquals(1, players[0].getHandCards().count());
+        // Verificación
+        verificarEstadoDelJuego(juego, CardTestFactory.createWildColorCard(CardColor.RED), "2");
+        assertEquals(1, jugadores[0].getHandCards().count());
     }
 
+    /**
+     * @brief Verifica que, si una carta robada no es jugable, no se juegue automáticamente.
+     */
     @Test
-    void WhenDrawnCardIsNotPlayable_ShouldNotPlay() {
-        // Arrange
-        var cardToDraw = CardTestFactory.createNumberCard(3, CardColor.GREEN);
-        var topCard = CardTestFactory.createNumberCard(2, CardColor.RED);
+    void CuandoCartaRobadaNoEsJugable_NoDeberiaJugarse() {
+        // Preparación
+        var cartaParaRobar = CardTestFactory.createNumberCard(3, CardColor.GREEN);
+        var cartaSuperior = CardTestFactory.createNumberCard(2, CardColor.RED);
 
-        var game = createGame(
-            CardTestFactory.createSkipCard(CardColor.GREEN), cardToDraw, topCard);
+        var juego = crearJuego(
+            CardTestFactory.createSkipCard(CardColor.GREEN),
+            cartaParaRobar,
+            cartaSuperior);
 
-        // Act
-        game.drawCard(game.getCurrentPlayer().getId());
+        // Acción
+        juego.drawCard(juego.getCurrentPlayer().getId());
 
-        // Assert
-        assertGameState(game, topCard, "2");
-        assertEquals(2, players[0].getHandCards().count());
-        assertTrue(players[0].hasHandCard(cardToDraw));
+        // Verificación
+        verificarEstadoDelJuego(juego, cartaSuperior, "2");
+        assertEquals(2, jugadores[0].getHandCards().count());
+        assertTrue(jugadores[0].hasHandCard(cartaParaRobar));
     }
 
+    /**
+     * @brief Verifica que un jugador reciba una penalización si no dice "UNO" al jugar su penúltima carta.
+     */
     @Test
-    void GivenTwoCards_WhenPlayedWithoutSayingUno_ShouldReceivePenalty() {
-        // Arrange
-        var currentPlayer = players[0];
-        var penaltyCard1 = CardTestFactory.createNumberCard(1, CardColor.BLUE);
-        var penaltyCard2 = CardTestFactory.createNumberCard(2, CardColor.BLUE);
-        var cardToPlay = CardTestFactory.createNumberCard(3, CardColor.GREEN);
-        var topCard = CardTestFactory.createNumberCard(3, CardColor.RED);
+    void DadoDosCartas_CuandoJuegaSinDecirUno_DeberiaRecibirPenalizacion() {
+        // Preparación
+        var jugadorActual = jugadores[0];
+        var cartaPenalizacion1 = CardTestFactory.createNumberCard(1, CardColor.BLUE);
+        var cartaPenalizacion2 = CardTestFactory.createNumberCard(2, CardColor.BLUE);
+        var cartaParaJugar = CardTestFactory.createNumberCard(3, CardColor.GREEN);
+        var cartaSuperior = CardTestFactory.createNumberCard(3, CardColor.RED);
 
-        currentPlayer.addToHandCards(CardTestFactory.createSkipCard());
+        jugadorActual.addToHandCards(CardTestFactory.createSkipCard());
 
-        var game = createGame(cardToPlay,
-            penaltyCard1, penaltyCard2,
-            topCard);
+        var juego = crearJuego(cartaParaJugar, cartaPenalizacion1, cartaPenalizacion2, cartaSuperior);
 
-        // Act
-        game.playCard(currentPlayer.getId(), cardToPlay, false);
+        // Acción
+        juego.playCard(jugadorActual.getId(), cartaParaJugar, false);
 
-        // Assert
-        assertGameState(game, cardToPlay, "2");
-        assertEquals(3, players[0].getHandCards().count());
-        assertTrue(currentPlayer.hasHandCard(penaltyCard1));
-        assertTrue(currentPlayer.hasHandCard(penaltyCard2));
+        // Verificación
+        verificarEstadoDelJuego(juego, cartaParaJugar, "2");
+        assertEquals(3, jugadores[0].getHandCards().count());
+        assertTrue(jugadorActual.hasHandCard(cartaPenalizacion1));
+        assertTrue(jugadorActual.hasHandCard(cartaPenalizacion2));
     }
 
+    /**
+     * @brief Verifica que un jugador no reciba penalización si dice "UNO" al jugar su penúltima carta.
+     */
     @Test
-    void GivenTwoCards_WhenPlayedWithSayingUno_ShouldNotReceivePenalty() {
-        // Arrange
-        var currentPlayer = players[0];
-        var penaltyCard1 = CardTestFactory.createNumberCard(1, CardColor.BLUE);
-        var penaltyCard2 = CardTestFactory.createNumberCard(2, CardColor.BLUE);
-        var cardToPlay = CardTestFactory.createNumberCard(3, CardColor.GREEN);
-        var topCard = CardTestFactory.createNumberCard(3, CardColor.RED);
+    void DadoDosCartas_CuandoJuegaDiciendoUno_NoDeberiaRecibirPenalizacion() {
+        // Preparación
+        var jugadorActual = jugadores[0];
+        var cartaPenalizacion1 = CardTestFactory.createNumberCard(1, CardColor.BLUE);
+        var cartaPenalizacion2 = CardTestFactory.createNumberCard(2, CardColor.BLUE);
+        var cartaParaJugar = CardTestFactory.createNumberCard(3, CardColor.GREEN);
+        var cartaSuperior = CardTestFactory.createNumberCard(3, CardColor.RED);
 
-        currentPlayer.addToHandCards(CardTestFactory.createSkipCard());
+        jugadorActual.addToHandCards(CardTestFactory.createSkipCard());
 
-        var game = createGame(cardToPlay,
-            penaltyCard1, penaltyCard2,
-            topCard);
+        var juego = crearJuego(cartaParaJugar, cartaPenalizacion1, cartaPenalizacion2, cartaSuperior);
 
-        // Act
-        game.playCard(currentPlayer.getId(), cardToPlay, true);
+        // Acción
+        juego.playCard(jugadorActual.getId(), cartaParaJugar, true);
 
-        // Assert
-        assertGameState(game, cardToPlay, "2");
-        assertEquals(1, currentPlayer.getHandCards().count());
-        assertFalse(game.isOver());
+        // Verificación
+        verificarEstadoDelJuego(juego, cartaParaJugar, "2");
+        assertEquals(1, jugadorActual.getHandCards().count());
+        assertFalse(juego.isOver());
     }
 
+    /**
+     * @brief Verifica que, cuando un jugador juega su última carta, el juego finaliza.
+     */
     @Test
-    void WhenPlayedLastCard_GameShouldBeOver() {// Arrange
-        var currentPlayer = players[0];
-        var cardToPlay = CardTestFactory.createNumberCard(3, CardColor.GREEN);
-        var topCard = CardTestFactory.createNumberCard(3, CardColor.RED);
+    void CuandoJuegaUltimaCarta_JuegoDeberiaFinalizar() {
+        // Preparación
+        var jugadorActual = jugadores[0];
+        var cartaParaJugar = CardTestFactory.createNumberCard(3, CardColor.GREEN);
+        var cartaSuperior = CardTestFactory.createNumberCard(3, CardColor.RED);
 
-        var game = createGame(cardToPlay, topCard);
+        var juego = crearJuego(cartaParaJugar, cartaSuperior);
 
-        // Act
-        game.playCard(currentPlayer.getId(), cardToPlay);
+        // Acción
+        juego.playCard(jugadorActual.getId(), cartaParaJugar);
 
-        // Assert
-        assertEquals(0, currentPlayer.getHandCards().count());
-        assertTrue(game.isOver());
-        assertEquals(currentPlayer.getId(), game.getWinner().getId());
+        // Verificación
+        assertEquals(0, jugadorActual.getHandCards().count());
+        assertTrue(juego.isOver());
+        assertEquals(jugadorActual.getId(), juego.getWinner().getId());
     }
 
-    private Game createGame(Card cardToPlay, Card... drawPileCards) {
-        var drawPile = createDrawPile(drawPileCards);
-
-        var game = new Game(drawPile, playersIterator);
-
-        var cardToAdd = CardUtil.isWildCard(cardToPlay)
-            ? CardTestFactory.createWildCard(cardToPlay.getType())
-            : cardToPlay;
-
-        playersIterator.getCurrentPlayer().addToHandCards(cardToAdd);
-
-        return game;
-    }
-
-    private DrawPile createDrawPile(Card... cards) {
-        return new DrawPile(Arrays.asList(cards));
-    }
-
-    private void playCardFromCurrentPlayer(Game game, Card cardToPlay) {
-        game.playCard(playersIterator.getCurrentPlayer().getId(), cardToPlay);
-    }
-
-    private void assertGameState(Game game, Card expectedTopCard, String expectedCurrentPlayer) {
-        assertEquals(expectedTopCard, game.peekTopCard());
-        assertEquals(expectedCurrentPlayer, game.getCurrentPlayer().getName());
-    }
 }
+

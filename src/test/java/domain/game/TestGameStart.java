@@ -13,74 +13,114 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * @brief Pruebas relacionadas con el inicio del juego.
+ */
 class TestGameStart {
-    private final PlayerRoundIterator players = new PlayerRoundIterator(PlayerTestFactory.createPlayers(3));
+    private final PlayerRoundIterator jugadores = new PlayerRoundIterator(PlayerTestFactory.createPlayers(3));
 
+    /**
+     * @brief Verifica que cuando se juega una carta numérica, no haya efectos adicionales.
+     */
     @Test
-    void WhenNumberCardPlayed_ShouldHaveNoEffect() {
-        var game = createGame(CardTestFactory.createNumberCard());
+    void CuandoCartaNumericaEsJugada_NoDeberiaHaberEfecto() {
+        var juego = crearJuego(CardTestFactory.createNumberCard());
 
-        assertGameState(game, CardType.NUMBER, "1");
+        verificarEstadoDelJuego(juego, CardType.NUMBER, "1");
     }
 
+    /**
+     * @brief Verifica que cuando se juega una carta "Skip", el jugador actual sea omitido.
+     */
     @Test
-    void WhenSkipCardPlayed_CurrentPlayerShouldBeSkipped() {
-        var game = createGame(CardTestFactory.createSkipCard());
+    void CuandoCartaSkipEsJugado_ElJugadorActualDeberiaSerOmitido() {
+        var juego = crearJuego(CardTestFactory.createSkipCard());
 
-        assertGameState(game, CardType.SKIP, "2");
+        verificarEstadoDelJuego(juego, CardType.SKIP, "2");
     }
 
+    /**
+     * @brief Verifica que cuando se juega una carta "Reverse", la dirección del juego se invierta.
+     */
     @Test
-    void WhenReverseCardPlayed_DirectionShouldBeReversed() {
-        var game = createGame(CardTestFactory.createReverseCard());
+    void CuandoCartaReverseEsJugado_LaDireccionDeberiaInvertirse() {
+        var juego = crearJuego(CardTestFactory.createReverseCard());
 
-        assertGameState(game, CardType.REVERSE, "3");
+        verificarEstadoDelJuego(juego, CardType.REVERSE, "3");
     }
 
+    /**
+     * @brief Verifica que cuando se juega una carta "Draw Two", el primer jugador reciba dos cartas.
+     */
     @Test
-    void WhenDrawTwoCardPlayed_FirstPlayerShouldGetTwoCards() {
-        var game = createGame(
+    void CuandoCartaDrawTwoEsJugado_ElPrimerJugadorDeberiaRecibirDosCartas() {
+        var juego = crearJuego(
             CardTestFactory.createNumberCard(),
             CardTestFactory.createSkipCard(),
             CardTestFactory.createDrawTwoCard());
 
-        var previousPlayer = players.stream().toArray(Player[]::new)[0];
+        var jugadorAnterior = jugadores.stream().toArray(Player[]::new)[0];
 
-        assertGameState(game, CardType.DRAW_TWO, "2");
-        assertEquals(2, previousPlayer.getHandCards().count());
+        verificarEstadoDelJuego(juego, CardType.DRAW_TWO, "2");
+        assertEquals(2, jugadorAnterior.getHandCards().count());
     }
 
+    /**
+     * @brief Verifica que cuando se juega una carta "Wild Color", no haya efectos adicionales.
+     */
     @Test
-    void WhenWildColorCardPlayed_ShouldHaveNoEffect() {
-        var game = createGame(CardTestFactory.createWildColorCard());
+    void CuandoCartaWildColorEsJugado_NoDeberiaHaberEfecto() {
+        var juego = crearJuego(CardTestFactory.createWildColorCard());
 
-        assertGameState(game, CardType.WILD_COLOR, "1");
+        verificarEstadoDelJuego(juego, CardType.WILD_COLOR, "1");
     }
 
+    /**
+     * @brief Verifica que si solo hay una carta y se intenta jugar una carta "Wild Draw Four", se arroje un error.
+     */
     @Test
-    void GivenOnlyOneCard_WhenWildDrawFourCardPlayed_ShouldThrowError() {
-        assertThrows(IllegalStateException.class, () -> createGame(CardTestFactory.createWildDrawFourCard()));
+    void DadoSoloUnaCarta_CuandoCartaWildDrawFourEsJugado_DeberiaArrojarError() {
+        assertThrows(IllegalStateException.class, () -> crearJuego(CardTestFactory.createWildDrawFourCard()));
     }
 
+    /**
+     * @brief Verifica que cuando se juega una carta "Wild Draw Four", se baraje hasta encontrar una carta jugable.
+     */
     @Test
-    void WhenWildDrawFourCardPlayed_ShouldShuffleUntilPlayableCardFound() {
-        var game = createGame(CardTestFactory.createNumberCard(), CardTestFactory.createWildDrawFourCard());
+    void CuandoCartaWildDrawFourEsJugado_DeberiaBarajarHastaEncontrarCartaJugable() {
+        var juego = crearJuego(CardTestFactory.createNumberCard(), CardTestFactory.createWildDrawFourCard());
 
-        assertGameState(game, CardType.NUMBER, "1");
+        verificarEstadoDelJuego(juego, CardType.NUMBER, "1");
     }
 
-    private Game createGame(Card... cards) {
-        var drawPile = createDrawPile(cards);
+    /**
+     * @brief Crea un juego utilizando una pila de robo con las cartas especificadas.
+     * @param cartas Las cartas que se añadirán a la pila de robo.
+     * @return Una instancia del juego inicializada.
+     */
+    private Game crearJuego(Card... cartas) {
+        var pilaDeRobo = crearPilaDeRobo(cartas);
 
-        return new Game(drawPile, players);
+        return new Game(pilaDeRobo, jugadores);
     }
 
-    private DrawPile createDrawPile(Card... cards) {
-        return new DrawPile(Arrays.asList(cards));
+    /**
+     * @brief Crea una pila de robo a partir de un conjunto de cartas.
+     * @param cartas Las cartas que formarán la pila de robo.
+     * @return Una instancia de DrawPile con las cartas especificadas.
+     */
+    private DrawPile crearPilaDeRobo(Card... cartas) {
+        return new DrawPile(Arrays.asList(cartas));
     }
 
-    private void assertGameState(Game game, CardType expectedPlayedCardType, String expectedCurrentPlayer) {
-        assertEquals(expectedPlayedCardType, game.peekTopCard().getType());
-        assertEquals(expectedCurrentPlayer, game.getCurrentPlayer().getName());
+    /**
+     * @brief Verifica el estado actual del juego.
+     * @param juego El juego que se está verificando.
+     * @param tipoDeCartaJugado El tipo de carta que se espera que esté en la parte superior de la pila de descarte.
+     * @param jugadorActualEsperado El nombre del jugador que se espera que tenga el turno actual.
+     */
+    private void verificarEstadoDelJuego(Game juego, CardType tipoDeCartaJugado, String jugadorActualEsperado) {
+        assertEquals(tipoDeCartaJugado, juego.peekTopCard().getType());
+        assertEquals(jugadorActualEsperado, juego.getCurrentPlayer().getName());
     }
 }
