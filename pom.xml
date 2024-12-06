@@ -11,11 +11,15 @@
   <description>Proyecto migrado de Gradle a Maven</description>
 
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <log4j2.version>2.17.2</log4j2.version>
-    <junit.version>5.8.1</junit.version>
+    <!-- Configuración de cobertura JaCoCo para SonarCloud -->
+    <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco-coverage/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.projectName>LABgrupal</sonar.projectName>
+    <sonar.projectKey>LABgrupal</sonar.projectKey>
+    <sonar.organization>stevenrguez</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
 
   <dependencies>
@@ -162,6 +166,28 @@
             </manifest>
           </archive>
         </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M7</version>
+      </plugin>
+      <!-- Plugin de JaCoCo para la cobertura -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.12</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+              <goal>report</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/jacoco-coverage</outputDirectory>
+              <append>false</append>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

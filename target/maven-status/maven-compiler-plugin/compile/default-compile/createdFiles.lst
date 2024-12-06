@@ -18,8 +18,8 @@ ui/AppFrame.class
 domain/card/CardType.class
 domain/card/NumberCard.class
 ui/view/TableView.class
-domain/common/DomainEventPublisher.class
 domain/common/DomainEventSubscriber.class
+domain/common/DomainEventPublisher.class
 domain/game/Game$1.class
 domain/game/DrawPile.class
 domain/common/DomainEvent.class
