@@ -12,7 +12,11 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.*;
 import java.util.stream.Stream;
+import java.util.logging.Logger;
+
+
 public class Game extends Entity {
+    private static final Logger logger = Logger.getLogger(Game.class.getName());
     private final PlayerRoundIterator players;
     private DrawPile drawPile;
     private final Stack<Card> discardPile = new Stack<>();
@@ -91,7 +95,7 @@ public class Game extends Entity {
         validatePlayedCard(playerId, playedCard);
         // Contamos los movimientos por jugador
         playerMoves.put(playerId, playerMoves.getOrDefault(playerId, 0) + 1);
-        System.out.println("Jugador " + getCurrentPlayer().getName() + " ha realizado " + playerMoves.get(playerId) + " movimientos.");
+        logger.info("Jugador " + getCurrentPlayer().getName() + " ha realizado " + playerMoves.get(playerId) + " movimientos.");
         switch (playedCard.getType()) {
             case NUMBER -> {
                 checkNumberCardRule(playedCard);
