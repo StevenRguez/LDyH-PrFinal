@@ -52,11 +52,12 @@ class TestGamePlay {
     }
 
     /**
-     * @brief Verifica que las cartas numéricas válidas sean aceptadas.
+     * @brief Método auxiliar para probar que una carta válida es jugada correctamente.
+     * @param cartaSuperior La carta en la parte superior del mazo.
+     * @param cartaParaJugar La carta que se quiere jugar.
+     * @param estadoEsperado El estado esperado del juego tras jugar la carta.
      */
-    @ParameterizedTest
-    @MethodSource("proveerCartasNumericasValidas")
-    void CuandoCartaNumericaValidaEsJugado_DeberiaSerAceptado(Card cartaSuperior, Card cartaParaJugar) {
+    private void probarCartaValida(Card cartaSuperior, Card cartaParaJugar, String estadoEsperado) {
         // Preparación
         var juego = crearJuego(cartaParaJugar, cartaSuperior);
 
@@ -64,7 +65,16 @@ class TestGamePlay {
         jugarCartaDelJugadorActual(juego, cartaParaJugar);
 
         // Verificación
-        verificarEstadoDelJuego(juego, cartaParaJugar, "2");
+        verificarEstadoDelJuego(juego, cartaParaJugar, estadoEsperado);
+    }
+
+    /**
+     * @brief Verifica que las cartas numéricas válidas sean aceptadas.
+     */
+    @ParameterizedTest
+    @MethodSource("proveerCartasNumericasValidas")
+    void CuandoCartaNumericaValidaEsJugado_DeberiaSerAceptado(Card cartaSuperior, Card cartaParaJugar) {
+        probarCartaValida(cartaSuperior, cartaParaJugar, "2");
     }
 
     /**
@@ -85,14 +95,7 @@ class TestGamePlay {
     @ParameterizedTest
     @MethodSource("proveerCartasSkipValidas")
     void CuandoCartaSkipValidaEsJugado_DeberiaSerAceptado(Card cartaSuperior, Card cartaParaJugar) {
-        // Preparación
-        var juego = crearJuego(cartaParaJugar, cartaSuperior);
-
-        // Acción
-        jugarCartaDelJugadorActual(juego, cartaParaJugar);
-
-        // Verificación
-        verificarEstadoDelJuego(juego, cartaParaJugar, "3");
+        probarCartaValida(cartaSuperior, cartaParaJugar, "3");
     }
 
     /**
@@ -113,14 +116,7 @@ class TestGamePlay {
     @ParameterizedTest
     @MethodSource("proveerCartasReverseValidas")
     void CuandoCartaReverseValidaEsJugado_DeberiaSerAceptado(Card cartaSuperior, Card cartaParaJugar) {
-        // Preparación
-        var juego = crearJuego(cartaParaJugar, cartaSuperior);
-
-        // Acción
-        jugarCartaDelJugadorActual(juego, cartaParaJugar);
-
-        // Verificación
-        verificarEstadoDelJuego(juego, cartaParaJugar, "4");
+        probarCartaValida(cartaSuperior, cartaParaJugar, "4");
     }
 
     /**
@@ -174,14 +170,7 @@ class TestGamePlay {
     @ParameterizedTest
     @MethodSource("proveerCartasWildColorValidas")
     void CuandoCartaWildColorValidaEsJugado_DeberiaSerAceptado(Card cartaSuperior, Card cartaParaJugar) {
-        // Preparación
-        var juego = crearJuego(cartaParaJugar, cartaSuperior);
-
-        // Acción
-        jugarCartaDelJugadorActual(juego, cartaParaJugar);
-
-        // Verificación
-        verificarEstadoDelJuego(juego, cartaParaJugar, "2");
+        probarCartaValida(cartaSuperior, cartaParaJugar, "2");
     }
 
     /**

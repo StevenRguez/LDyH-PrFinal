@@ -1,6 +1,6 @@
 domain.card.WildCard#equals(Ljava/lang/Object;)Z
 false
-529d4435a9755bb047ad81f5a016fd39
+86da9407890f6500ef0fca7118943ec0
 java.lang.Object#getClass()Ljava/lang/Class;
 ==
 getColor domain.card.AbstractCard#getColor()Ldomain/card/CardColor;

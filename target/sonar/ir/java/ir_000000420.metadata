@@ -1,6 +1,6 @@
 ui.AppFrame#setupLayout()V
 false
-9e1a25d3fe3c4f00b4c748809998ede5
+b88b44ae4b4a1d21eae8933259e0856a
 java.awt.BorderLayout#<init>()V
 java.awt.BorderLayout#instance-init#
 java.awt.Color#<init>(III)V

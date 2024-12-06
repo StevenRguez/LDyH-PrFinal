@@ -1,6 +1,6 @@
 domain.game.Game#drawCard(Ljava/util/UUID;)V
 false
-00a8696a9fa90114888b3942e5730f2a
+898f7724c5b3b4342a2267da072faccc
 domain.game.Game#drawCards(Ldomain/player/Player;I)Ljava/util/List;
 domain.game.Game#tryToPlayDrawnCard(Ljava/util/UUID;Ldomain/card/Card;)V
 java.util.UUID#equals(Ljava/lang/Object;)Z

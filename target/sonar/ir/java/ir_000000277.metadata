@@ -1,6 +1,6 @@
 domain.game.Game#rejectPlayedCard(Ldomain/card/Card;)V
 false
-97879e749c620d1127af83628885badc
+7d0b2e55d6dc3b94455fdd127227532d
 java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)V
 java.lang.IllegalArgumentException#instance-init#
 java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;

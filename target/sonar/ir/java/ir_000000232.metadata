@@ -1,6 +1,6 @@
 ui.view.PlayerView#playCard(Ldomain/card/Card;)V
 false
-aee7731b2246640e06ea6077e07da3c7
+012b325bdd96fbc88c2e796db7a5d206
 domain.card.WildCard#<init>(Ldomain/card/CardType;Ldomain/card/CardColor;)V
 domain.card.WildCard#instance-init#
 ui.view.ColorPicker#getInstance()Lui/view/ColorPicker;

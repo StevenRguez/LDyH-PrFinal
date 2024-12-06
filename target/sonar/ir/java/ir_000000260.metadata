@@ -1,6 +1,6 @@
 domain.game.Game#playCard(Ljava/util/UUID;Ldomain/card/Card;Z)V
 false
-bbc00f45f2c727e332290f62f0bbeed5
+066708ce5cbb9966eb93727923083a8d
 domain.common.DomainEventPublisher#publish(Ldomain/common/DomainEvent;)V
 domain.game.Game#acceptPlayedCard(Ldomain/card/Card;Z)V
 domain.game.Game#checkActionCardRule(Ldomain/card/Card;)V

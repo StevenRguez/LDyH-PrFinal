@@ -1,6 +1,6 @@
 ui.view.GameStatusView#<init>(Lapplication/IGameAppService;)V
 false
-acab2b2c5417faebd34e16a61b14130d
+fca551b92536ff81a1f6c0fbaafda7be
 domain.common.DomainEventPublisher#subscribe(Ldomain/common/DomainEventSubscriber;)V
 java.awt.Dimension#<init>(II)V
 java.awt.Dimension#instance-init#
