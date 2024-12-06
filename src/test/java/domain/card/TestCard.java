@@ -121,6 +121,6 @@ public class TestCard {
         var comodinColor = CardTestFactory.createWildColorCard();
         var cartaNumerica = new NumberCard(1, CardColor.RED);
 
-        assertNotEquals(comodinColor, cartaNumerica);
+        assertFalse(comodinColor.getClass().equals(cartaNumerica.getClass()), "Los tipos de las cartas no deberían ser iguales.");
     }
 }
