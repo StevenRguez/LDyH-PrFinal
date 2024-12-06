@@ -79,7 +79,11 @@ public class TestActionCard{
     void cartaNoDebeSerIgualAObjetoDeOtraClase() {
         var carta = new ActionCard(CardType.SKIP, CardColor.RED);
 
-        assertNotEquals(carta, "cadena");
+        // Compara con null para verificar que no es igual a null
         assertNotEquals(carta, null);
+
+        // Opcionalmente, compara con otro objeto del mismo tipo con diferentes valores
+        var otraCarta = new ActionCard(CardType.REVERSE, CardColor.BLUE);
+        assertNotEquals(carta, otraCarta);
     }
 }
