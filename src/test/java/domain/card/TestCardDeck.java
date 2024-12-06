@@ -6,59 +6,88 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Clase de pruebas unitarias para la clase CardDeck.
+ */
 class TestCardDeck {
 
-    private CardDeck testee;
+    private CardDeck mazo;
 
+    /**
+     * Configuración inicial antes de cada prueba.
+     * Se inicializa un nuevo mazo de cartas.
+     */
     @BeforeEach
-    private void setup() {
-        testee = new CardDeck();
+    void setUp() {
+        mazo = new CardDeck();
     }
 
+    /**
+     * Verifica que las cartas obtenidas sean inmutables.
+     * Intenta modificar la lista y espera una excepción UnsupportedOperationException.
+     */
     @Test
-    void WhenInitialized_ShouldBeImmutable() {
-        var cards = testee.getImmutableCards();
+    void alInicializar_DebeSerInmutable() {
+        var cartas = mazo.getImmutableCards();
 
-        Assertions.assertThrows(UnsupportedOperationException.class, () -> cards.remove(0));
+        Assertions.assertThrows(UnsupportedOperationException.class, () -> cartas.remove(0));
     }
 
+    /**
+     * Verifica que el mazo contenga exactamente 108 cartas al inicializarse.
+     */
     @Test
-    void WhenInitialized_ShouldHave108Cards() {
-        assertEquals(108, testee.getImmutableCards().size());
+    void alInicializar_DebeTener108Cartas() {
+        assertEquals(108, mazo.getImmutableCards().size());
     }
 
+    /**
+     * Verifica que el mazo contenga exactamente 76 cartas numéricas al inicializarse.
+     */
     @Test
-    void WhenInitialized_ShouldHave76NumberCards() {
-        var cards = testee.getImmutableCards();
+    void alInicializar_DebeTenerCartasNumericas() {
+        var cartas = mazo.getImmutableCards();
 
-        CardCounterAssertionHelper.assertNumberCards(cards);
+        CardCounterAssertionHelper.assertNumberCards(cartas);
     }
 
+    /**
+     * Verifica que el mazo contenga exactamente 8 cartas de tipo "Saltar turno" al inicializarse.
+     */
     @Test
-    void WhenInitialized_ShouldHave8SkipCards() {
-        var cards = testee.getImmutableCards();
+    void alInicializar_DebeTener8CartasSaltarTurno() {
+        var cartas = mazo.getImmutableCards();
 
-        CardCounterAssertionHelper.assertSkipCards(cards);
+        CardCounterAssertionHelper.assertSkipCards(cartas);
     }
 
+    /**
+     * Verifica que el mazo contenga exactamente 8 cartas de tipo "Reversa" al inicializarse.
+     */
     @Test
-    void WhenInitialized_ShouldHave8ReverseCards() {
-        var cards = testee.getImmutableCards();
+    void alInicializar_DebeTener8CartasReversa() {
+        var cartas = mazo.getImmutableCards();
 
-        CardCounterAssertionHelper.assertReverseCards(cards);
+        CardCounterAssertionHelper.assertReverseCards(cartas);
     }
 
+    /**
+     * Verifica que el mazo contenga exactamente 8 cartas de tipo "Robar dos" al inicializarse.
+     */
     @Test
-    void WhenInitialized_ShouldHave8DrawTwoCards() {
-        var cards = testee.getImmutableCards();
+    void alInicializar_DebeTenerCartasRobarDos() {
+        var cartas = mazo.getImmutableCards();
 
-        CardCounterAssertionHelper.assertDrawTwoCards(cards);
+        CardCounterAssertionHelper.assertDrawTwoCards(cartas);
     }
 
+    /**
+     * Verifica que el mazo contenga exactamente 8 cartas comodín al inicializarse.
+     */
     @Test
-    void WhenInitialized_ShouldHave8WildCards() {
-        var cards = testee.getImmutableCards();
+    void alInicializar_DebeTenerCartasComodin() {
+        var cartas = mazo.getImmutableCards();
 
-        CardCounterAssertionHelper.assertWildCards(cards);
+        CardCounterAssertionHelper.assertWildCards(cartas);
     }
 }

@@ -5,61 +5,122 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TestCard {
-    @Test
-    void GivenSameNumberCardValues_ShouldBeEqual() {
-        var numberCard = new NumberCard(1, CardColor.RED);
-        var anotherNumberCard = new NumberCard(1, CardColor.RED);
+/**
+ * Clase de pruebas unitarias para la clase Card y sus subclases.
+ */
+public class TestCard {
 
-        assertNotSame(numberCard, anotherNumberCard);
-        assertEquals(numberCard, anotherNumberCard);
+
+
+    /**
+     * Verifica que dos cartas numéricas con el mismo valor y color sean iguales.
+     */
+    @Test
+    void cartasNumericasConMismoValorYColor_DebenSerIguales() {
+        var cartaNumerica = new NumberCard(1, CardColor.RED);
+        var otraCartaNumerica = new NumberCard(1, CardColor.RED);
+
+        assertNotSame(cartaNumerica, otraCartaNumerica);
+        assertEquals(cartaNumerica, otraCartaNumerica);
     }
 
+    /**
+     * Verifica que dos cartas numéricas con valores diferentes no sean iguales.
+     */
     @Test
-    void GivenDifferentNumberCardValues_ShouldNotBeEqual() {
-        var numberCard = new NumberCard(1, CardColor.GREEN);
-        var anotherNumberCard = new NumberCard(1, CardColor.RED);
+    void cartasNumericasConDistintoValor_DebenSerDiferentes() {
+        var cartaNumerica = new NumberCard(1, CardColor.RED);
+        var otraCartaNumerica = new NumberCard(2, CardColor.RED);
 
-        assertNotEquals(numberCard, anotherNumberCard);
+        assertNotEquals(cartaNumerica, otraCartaNumerica);
     }
 
+    /**
+     * Verifica que dos cartas numéricas con colores diferentes no sean iguales.
+     */
     @Test
-    void GivenSameSkipCard_ShouldBeEqual() {
-        var skipCard = CardTestFactory.createSkipCard(CardColor.RED);
-        var anotherSkipCard = CardTestFactory.createSkipCard(CardColor.RED);
+    void cartasNumericasConDistintoColor_DebenSerDiferentes() {
+        var cartaNumerica = new NumberCard(1, CardColor.RED);
+        var otraCartaNumerica = new NumberCard(1, CardColor.BLUE);
 
-        assertEquals(skipCard, anotherSkipCard);
+        assertNotEquals(cartaNumerica, otraCartaNumerica);
     }
 
+    /**
+     * Verifica que dos cartas de tipo "Saltar turno" con el mismo color sean iguales.
+     */
     @Test
-    void GivenDifferentSkipCard_ShouldNotBeEqual() {
-        var skipCard = CardTestFactory.createSkipCard(CardColor.RED);
-        var anotherSkipCard = CardTestFactory.createSkipCard(CardColor.GREEN);
+    void cartasSaltarTurnoConMismoColor_DebenSerIguales() {
+        var cartaSaltarTurno = CardTestFactory.createSkipCard(CardColor.RED);
+        var otraCartaSaltarTurno = CardTestFactory.createSkipCard(CardColor.RED);
 
-        assertNotEquals(skipCard, anotherSkipCard);
+        assertEquals(cartaSaltarTurno, otraCartaSaltarTurno);
     }
 
+    /**
+     * Verifica que dos cartas de tipo "Saltar turno" con colores diferentes no sean iguales.
+     */
     @Test
-    void GivenDifferentActionCard_ShouldNotBeEqual() {
-        var skipCard = CardTestFactory.createSkipCard(CardColor.RED);
-        var reverseCard = CardTestFactory.createReverseCard(CardColor.RED);
+    void cartasSaltarTurnoConDistintoColor_DebenSerDiferentes() {
+        var cartaSaltarTurno = CardTestFactory.createSkipCard(CardColor.RED);
+        var otraCartaSaltarTurno = CardTestFactory.createSkipCard(CardColor.BLUE);
 
-        assertNotEquals(skipCard, reverseCard);
+        assertNotEquals(cartaSaltarTurno, otraCartaSaltarTurno);
     }
 
+    /**
+     * Verifica que una carta de tipo "Reversa" y una de tipo "Saltar turno" con el mismo color no sean iguales.
+     */
     @Test
-    void GivenSameWildColorCard_ShouldBeEqual() {
-        var card = CardTestFactory.createWildColorCard();
-        var anotherCard = CardTestFactory.createWildColorCard();
+    void cartaReversaYCartaSaltarTurnoConMismoColor_DebenSerDiferentes() {
+        var cartaReversa = CardTestFactory.createReverseCard(CardColor.RED);
+        var cartaSaltarTurno = CardTestFactory.createSkipCard(CardColor.RED);
 
-        assertEquals(card, anotherCard);
+        assertNotEquals(cartaReversa, cartaSaltarTurno);
     }
 
+    /**
+     * Verifica que dos cartas de tipo "Comodín de color" sean iguales.
+     */
     @Test
-    void GivenSameWildDrawFourCard_ShouldBeEqual() {
-        var card = CardTestFactory.createWildDrawFourCard();
-        var anotherCard = CardTestFactory.createWildDrawFourCard();
+    void comodinesDeColor_Iguales() {
+        var comodinColor = CardTestFactory.createWildColorCard();
+        var otroComodinColor = CardTestFactory.createWildColorCard();
 
-        assertEquals(card, anotherCard);
+        assertEquals(comodinColor, otroComodinColor);
+    }
+
+    /**
+     * Verifica que dos cartas de tipo "Comodín robar cuatro" sean iguales.
+     */
+    @Test
+    void comodinesRobarCuatro_Iguales() {
+        var comodinRobarCuatro = CardTestFactory.createWildDrawFourCard();
+        var otroComodinRobarCuatro = CardTestFactory.createWildDrawFourCard();
+
+        assertEquals(comodinRobarCuatro, otroComodinRobarCuatro);
+    }
+
+    /**
+     * Verifica que una carta de tipo "Comodín de color" y una de tipo "Comodín robar cuatro" no sean iguales.
+     */
+    @Test
+    void comodinColorYComodinRobarCuatro_Diferentes() {
+        var comodinColor = CardTestFactory.createWildColorCard();
+        var comodinRobarCuatro = CardTestFactory.createWildDrawFourCard();
+
+        assertNotEquals(comodinColor, comodinRobarCuatro);
+    }
+
+    /**
+     * Verifica que una carta de tipo "Comodín de color" y una carta numérica no sean iguales.
+     */
+
+    @Test
+    void comodinColorYCartaNumerica_Diferentes() {
+        var comodinColor = CardTestFactory.createWildColorCard();
+        var cartaNumerica = new NumberCard(1, CardColor.RED);
+
+        assertNotEquals(comodinColor, cartaNumerica);
     }
 }
