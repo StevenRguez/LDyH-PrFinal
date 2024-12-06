@@ -1,0 +1,7 @@
+domain.card.CardDeck#createActionCards()V
+false
+31e7e85bfeb9e142d5302b23325b8699
+domain.card.ActionCard#<init>(Ldomain/card/CardType;Ldomain/card/CardColor;)V
+domain.card.ActionCard#instance-init#
+==
+add java.util.List#add(Ljava/lang/Object;)Z

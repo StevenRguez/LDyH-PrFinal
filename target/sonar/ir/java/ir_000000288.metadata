@@ -1,0 +1,6 @@
+domain.common.Entity#<init>()V
+false
+0e71ac6b51d9ae5b71fc9cf971acb65a
+java.util.UUID#randomUUID()Ljava/util/UUID;
+==
+<init> domain.common.Entity#<init>(Ljava/util/UUID;)V

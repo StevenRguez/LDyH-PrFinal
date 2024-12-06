@@ -1,0 +1,5 @@
+domain.game.CardRules#isValidWildCard(Ldomain/card/WildCard;)Z
+false
+34bdf2f44fbd24153109519a73464421
+==
+getColor domain.card.AbstractCard#getColor()Ldomain/card/CardColor;

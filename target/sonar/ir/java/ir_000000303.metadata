@@ -1,0 +1,5 @@
+domain.game.DrawPile#drawCard()Ldomain/card/Card;
+false
+07e4c77ef00454a63c6e479b06d49035
+==
+pop java.util.Stack#pop()Ljava/lang/Object;

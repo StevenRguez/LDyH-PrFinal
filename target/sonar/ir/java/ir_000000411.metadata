@@ -1,0 +1,4 @@
+ui.view.TableView#handleEvent(Ldomain/common/DomainEvent;)V
+false
+d20945ef1a244ff255e7c88f66569c03
+ui.view.TableView#initTable()V

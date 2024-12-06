@@ -1,0 +1,11 @@
+ui.view.TableView#initInfoView()V
+false
+2ca2a6c35285724a7adce9416de81801
+java.awt.GridBagConstraints#<init>()V
+java.awt.GridBagConstraints#instance-init#
+java.awt.Insets#<init>(IIII)V
+java.awt.Insets#instance-init#
+ui.view.GameStatusView#<init>(Lapplication/IGameAppService;)V
+ui.view.GameStatusView#instance-init#
+==
+add java.awt.Container#add(Ljava/awt/Component;Ljava/lang/Object;)V

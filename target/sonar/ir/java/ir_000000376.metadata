@@ -1,0 +1,9 @@
+application.GameAppService#<init>()V
+false
+c5f583d1aa8e69ad806233b93c0b55c4
+application.GameAppService#logGameInfo()V
+domain.game.GameBuilder#<init>()V
+domain.game.GameBuilder#instance-init#
+==
+build domain.game.GameBuilder#build()Ldomain/game/Game;
+withPlayer domain.game.GameBuilder#withPlayer(Ljava/lang/String;)Ldomain/game/GameBuilder;

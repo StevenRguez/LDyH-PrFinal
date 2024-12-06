@@ -1,0 +1,7 @@
+domain.card.ActionCard#hashCode()I
+false
+4b5363df3bbc392645b5a0df1d16b507
+java.util.Objects#hash([Ljava/lang/Object;)I
+==
+getColor domain.card.AbstractCard#getColor()Ldomain/card/CardColor;
+getType domain.card.AbstractCard#getType()Ldomain/card/CardType;

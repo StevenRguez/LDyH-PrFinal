@@ -1,0 +1,5 @@
+application.GameAppService#getWinner()Ldomain/player/ImmutablePlayer;
+false
+8b2f41b9acc8e40024f0d83b0e60466a
+==
+getWinner domain.game.Game#getWinner()Ldomain/player/ImmutablePlayer;

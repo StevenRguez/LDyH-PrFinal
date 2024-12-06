@@ -1,0 +1,5 @@
+domain.game.Game#checkWildCardRule(Ldomain/card/Card;)V
+false
+13f077675e8def84101214a8c40b2223
+domain.game.CardRules#isValidWildCard(Ldomain/card/WildCard;)Z
+domain.game.Game#rejectPlayedCard(Ldomain/card/Card;)V

@@ -1,0 +1,7 @@
+domain.game.CardRules#isValidNumberCard(Ldomain/card/Card;Ldomain/card/NumberCard;)Z
+false
+1d7cddbfb56c00d524b380700c7786a7
+domain.game.CardRules#isSameColor(Ldomain/card/Card;Ldomain/card/Card;)Z
+==
+getType domain.card.Card#getType()Ldomain/card/CardType;
+getValue domain.card.NumberCard#getValue()I

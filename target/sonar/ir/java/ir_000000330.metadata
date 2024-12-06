@@ -1,0 +1,18 @@
+domain.game.Game#playCard(Ljava/util/UUID;Ldomain/card/Card;Z)V
+false
+5753a99c3bc90878e7173daff342c46b
+domain.common.DomainEventPublisher#publish(Ldomain/common/DomainEvent;)V
+domain.game.Game#rejectPlayedCard(Ldomain/card/Card;)V
+domain.game.Game#validatePlayedCard(Ljava/util/UUID;Ldomain/card/Card;)V
+domain.game.events.CardPlayed#<init>(Ljava/util/UUID;Ldomain/card/Card;)V
+domain.game.events.CardPlayed#instance-init#
+domain.game.events.GameOver#<init>(Ldomain/player/ImmutablePlayer;)V
+domain.game.events.GameOver#instance-init#
+java.lang.IllegalStateException#<init>(Ljava/lang/String;)V
+java.lang.IllegalStateException#instance-init#
+java.time.Instant#now()Ljava/time/Instant;
+==
+getOrDefault java.util.Map#getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+getType domain.card.Card#getType()Ldomain/card/CardType;
+isOver domain.game.Game#isOver()Z
+put java.util.Map#put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

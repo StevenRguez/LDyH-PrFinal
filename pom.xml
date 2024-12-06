@@ -13,8 +13,8 @@
     <maven.compiler.target>17</maven.compiler.target>
     <!-- Configuración de cobertura JaCoCo para SonarCloud -->
     <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/jacoco-coverage/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
-    <sonar.projectName>LABgrupal</sonar.projectName>
-    <sonar.projectKey>LABgrupal</sonar.projectKey>
+    <sonar.projectName>LDyH-PrFinal</sonar.projectName>
+    <sonar.projectKey>LDyH-PrFinal</sonar.projectKey>
     <sonar.organization>stevenrguez</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>

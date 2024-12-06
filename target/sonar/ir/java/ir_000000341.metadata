@@ -1,0 +1,6 @@
+domain.game.Game#checkSaidUno(IZ)V
+false
+064c39f010ec9e6cbb0c8ebbe88e3007
+domain.game.Game#drawCards(Ldomain/player/Player;I)Ljava/util/List;
+==
+getCurrentPlayer domain.player.PlayerRoundIterator#getCurrentPlayer()Ldomain/player/Player;

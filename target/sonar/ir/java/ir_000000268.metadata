@@ -1,0 +1,5 @@
+domain.player.HandCardList#findCardOfType(Ldomain/card/CardType;)Ldomain/card/Card;
+false
+d8b267fa7f5d44decaaf1c0d50ec86fa
+==
+getType domain.card.Card#getType()Ldomain/card/CardType;

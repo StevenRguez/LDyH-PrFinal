@@ -1,0 +1,11 @@
+domain.game.GameBuilder#build()Ldomain/game/Game;
+false
+2497c16ee2f8e5f6ddc13a6785dc16c5
+domain.card.CardDeck#<init>()V
+domain.card.CardDeck#instance-init#
+domain.game.Game#<init>(Ldomain/game/DrawPile;Ldomain/player/PlayerRoundIterator;)V
+domain.game.Game#instance-init#
+domain.game.GameBuilder#buildDrawPile(Ljava/util/List;)Ldomain/game/DrawPile;
+domain.game.GameBuilder#buildPlayers(Ldomain/game/DrawPile;)Ldomain/player/PlayerRoundIterator;
+==
+getImmutableCards domain.card.CardDeck#getImmutableCards()Ljava/util/List;

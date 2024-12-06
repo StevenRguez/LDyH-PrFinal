@@ -1,0 +1,6 @@
+ui.view.CardView#fillBackground(Ljava/awt/Graphics2D;Ljava/awt/Color;)V
+false
+aee449a2a9a0ef8553552de9cf01e9c9
+==
+fillRect java.awt.Graphics#fillRect(IIII)V
+setColor java.awt.Graphics#setColor(Ljava/awt/Color;)V
