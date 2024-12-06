@@ -96,7 +96,7 @@ public class TestNumberCard {
     @Test
     void dadoUnaCartaComparadaConSiguiente_DebenSerIguales() {
         var carta = new NumberCard(9, CardColor.GREEN);
-
-        assertEquals(carta, carta);
+        var otraCarta = new NumberCard(9, CardColor.GREEN); // Nueva instancia con los mismos valores
+        assertEquals(carta, otraCarta); // Ahora comparamos dos instancias con el mismo valor
     }
 }
