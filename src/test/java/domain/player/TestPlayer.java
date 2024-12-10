@@ -1,5 +1,6 @@
 package domain.player;
 
+import application.dto.PlayerInfoDTO;
 import domain.card.Card;
 import domain.card.CardType;
 import domain.player.HandCardList;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,5 +40,13 @@ class TestPlayer {
         var handCardList = new HandCardList();
         var player = new Player("TestPlayer", handCardList);
         assertNotNull(player.getHandCards());
+    }
+
+    @Test
+    public void givenDifferentIdOrName_shouldNotBeEqual() {
+        var player1 = new PlayerInfoDTO(UUID.fromString("123e4567-e89b-12d3-a456-426614174000"), "Alice");
+        var player2 = new PlayerInfoDTO(UUID.fromString("223e4567-e89b-12d3-a456-426614174000"), "Bob");
+
+        assertNotEquals(player1, player2);
     }
 }

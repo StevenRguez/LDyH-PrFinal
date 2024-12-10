@@ -1,6 +1,6 @@
 domain.game.Game#getGameDuration()Ljava/lang/String;
 false
-8300660553eefc563412b0e4cb882a96
+d3e0674872965a066da87f1e19e8061d
 java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 java.time.Duration#between(Ljava/time/temporal/Temporal;Ljava/time/temporal/Temporal;)Ljava/time/Duration;
 java.time.Duration#getSeconds()J

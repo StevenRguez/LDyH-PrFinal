@@ -1,6 +1,6 @@
 ui.view.PlayerView#initDrawButton()V
 false
-4bde14cad517c0a3fdd5517cc4fd9890
+a155e87a445b3e9b3273d10fb706787f
 java.awt.Color#<init>(III)V
 java.awt.Color#instance-init#
 java.awt.Font#<init>(Ljava/lang/String;II)V

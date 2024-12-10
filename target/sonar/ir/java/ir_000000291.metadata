@@ -1,6 +1,6 @@
 application.GameAppService#<init>()V
 false
-d3c142ade38b769e4e6df19ee87774b3
+c5f583d1aa8e69ad806233b93c0b55c4
 application.GameAppService#logGameInfo()V
 domain.game.GameBuilder#<init>()V
 domain.game.GameBuilder#instance-init#

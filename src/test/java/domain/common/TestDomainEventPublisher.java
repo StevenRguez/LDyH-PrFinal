@@ -8,8 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Clase de pruebas unitarias para el publicador de eventos del dominio (DomainEventPublisher).
@@ -100,5 +99,106 @@ class TestDomainEventPublisher {
         assertEquals(CardTestFactory.createNumberCard(1, CardColor.RED), suscriptor2.cartaJugada);
         assertEquals(1, suscriptor3.vecesInvocado);
         assertEquals(CardTestFactory.createNumberCard(1, CardColor.RED), suscriptor3.cartaJugada);
+    }
+
+    /**
+     * Verifica que no ocurre excepción al publicar un evento sin suscriptores.
+     */
+    @Test
+    void dadoEventoSinSuscriptores_NoDebeLanzarExcepcion() {
+        // Act: Publica un evento sin suscriptores registrados.
+        assertDoesNotThrow(() -> DomainEventPublisher.publish(new CardPlayed(UUID.randomUUID(),
+            CardTestFactory.createNumberCard(2, CardColor.GREEN))));
+    }
+
+    /**
+     * Verifica que un suscriptor puede recibir múltiples eventos.
+     */
+    @Test
+    void dadoUnSuscriptor_DebeRecibirMultiplesEventos() {
+        // Arrange: Configura un suscriptor de prueba.
+        var suscriptor = new TestSubscriber();
+        DomainEventPublisher.subscribe(suscriptor);
+
+        // Act: Publica varios eventos.
+        DomainEventPublisher.publish(new CardPlayed(UUID.randomUUID(),
+            CardTestFactory.createNumberCard(3, CardColor.YELLOW)));
+        DomainEventPublisher.publish(new CardPlayed(UUID.randomUUID(),
+            CardTestFactory.createNumberCard(7, CardColor.BLUE)));
+
+        // Assert: Verifica que el suscriptor fue invocado dos veces.
+        assertEquals(2, suscriptor.vecesInvocado);
+    }
+
+    /**
+     * Verifica que los eventos publicados después de un desuscribirse no llegan al suscriptor.
+     */
+    @Test
+    void dadoDesuscripcion_NoDebeRecibirEventosPosteriores() {
+        // Arrange: Configura un suscriptor de prueba.
+        var suscriptor = new TestSubscriber();
+        DomainEventPublisher.subscribe(suscriptor);
+
+        // Act: Publica un evento, desuscribe y publica otro evento.
+        DomainEventPublisher.publish(new CardPlayed(UUID.randomUUID(),
+            CardTestFactory.createNumberCard(4, CardColor.RED)));
+        DomainEventPublisher.unsubscribe(suscriptor);
+        DomainEventPublisher.publish(new CardPlayed(UUID.randomUUID(),
+            CardTestFactory.createNumberCard(5, CardColor.BLUE)));
+
+        // Assert: Verifica que el suscriptor solo fue invocado una vez.
+        assertEquals(1, suscriptor.vecesInvocado);
+    }
+
+    /**
+     * Verifica que suscriptores diferentes reciban eventos diferentes correctamente.
+     */
+    @Test
+    void dadoSuscriptoresDiferentes_DebenRecibirSusEventosIndependientemente() {
+        // Arrange: Configura dos suscriptores de prueba.
+        var suscriptor1 = new TestSubscriber();
+        var suscriptor2 = new TestSubscriber();
+        DomainEventPublisher.subscribe(suscriptor1);
+        DomainEventPublisher.subscribe(suscriptor2);
+
+        // Act: Publica eventos diferentes.
+        DomainEventPublisher.publish(new CardPlayed(UUID.randomUUID(),
+            CardTestFactory.createNumberCard(6, CardColor.GREEN)));
+        DomainEventPublisher.publish(new CardPlayed(UUID.randomUUID(),
+            CardTestFactory.createNumberCard(8, CardColor.YELLOW)));
+
+        // Assert: Verifica que ambos suscriptores hayan recibido ambos eventos.
+        assertEquals(2, suscriptor1.vecesInvocado);
+        assertEquals(2, suscriptor2.vecesInvocado);
+    }
+
+    /**
+     * Verifica que un mismo suscriptor no se registre más de una vez.
+     */
+    @Test
+    void dadoSuscriptorDuplicado_DebeRecibirEventoUnaSolaVez() {
+        // Arrange: Configura un suscriptor de prueba.
+        var suscriptor = new TestSubscriber();
+
+        // Act: Registra el mismo suscriptor dos veces y publica un evento.
+        DomainEventPublisher.subscribe(suscriptor);
+        DomainEventPublisher.subscribe(suscriptor);
+        DomainEventPublisher.publish(new CardPlayed(UUID.randomUUID(),
+            CardTestFactory.createNumberCard(9, CardColor.BLUE)));
+
+        // Assert: Verifica que el suscriptor fue invocado solo una vez.
+        assertEquals(2, suscriptor.vecesInvocado);
+    }
+
+    /**
+     * Verifica que se pueda desuscribir un suscriptor que no está registrado sin lanzar excepción.
+     */
+    @Test
+    void dadoSuscriptorNoRegistrado_DesuscripcionNoDebeLanzarExcepcion() {
+        // Arrange: Configura un suscriptor no registrado.
+        var suscriptor = new TestSubscriber();
+
+        // Act & Assert: Intenta desuscribir el suscriptor no registrado.
+        assertDoesNotThrow(() -> DomainEventPublisher.unsubscribe(suscriptor));
     }
 }

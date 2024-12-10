@@ -1,6 +1,6 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 LABgrupal,domain.card,CardDeck,0,148,0,10,0,25,0,11,0,6
-LABgrupal,domain.card,NumberCard,0,67,1,9,0,13,1,9,0,5
+LABgrupal,domain.card,NumberCard,0,67,0,10,0,13,0,10,0,5
 LABgrupal,domain.card,CardType,0,39,0,0,0,7,0,1,0,1
 LABgrupal,domain.card,AbstractCard,0,15,0,0,0,6,0,3,0,3
 LABgrupal,domain.card,ActionCard,0,60,0,10,0,11,0,9,0,4
@@ -12,7 +12,7 @@ LABgrupal,domain.game,DrawPile,0,22,0,0,0,6,0,3,0,3
 LABgrupal,domain.game,CardRules,7,53,0,14,2,10,1,11,1,4
 LABgrupal,domain.game,DealerService,0,115,0,10,0,23,0,9,0,4
 LABgrupal,domain.game,GameBuilder,0,96,1,5,0,17,1,7,0,5
-LABgrupal,ui.common,StyleUtil,98,0,14,0,23,0,14,0,3,0
+LABgrupal,ui.common,StyleUtil,25,73,7,7,7,16,7,7,0,3
 LABgrupal,default,UnoApp,24,0,0,0,8,0,4,0,4,0
 LABgrupal,domain.player,PlayerRoundIterator,0,80,0,6,0,17,0,10,0,7
 LABgrupal,domain.player,Player,0,37,0,0,0,12,0,7,0,7
@@ -31,7 +31,7 @@ LABgrupal,application,GameAppService,153,0,2,0,33,0,14,0,13,0
 LABgrupal,domain.common,DomainEventPublisher,8,65,3,5,6,17,4,6,1,5
 LABgrupal,domain.common,DomainEvent,3,6,0,0,1,3,1,1,1,1
 LABgrupal,domain.common,Entity,0,13,0,0,0,6,0,3,0,3
-LABgrupal,application.dto,PlayerInfoDTO,15,0,0,0,6,0,3,0,3,0
+LABgrupal,application.dto,PlayerInfoDTO,6,9,0,0,2,4,2,1,2,1
 LABgrupal,domain.game.events,CardDrawn,3,6,0,0,1,3,1,1,1,1
 LABgrupal,domain.game.events,CardPlayed,3,12,0,0,1,5,1,2,1,2
 LABgrupal,domain.game.events,GameOver,3,6,0,0,1,3,1,1,1,1

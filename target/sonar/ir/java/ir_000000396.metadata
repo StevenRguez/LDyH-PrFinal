@@ -1,4 +1,4 @@
 ui.view.GameStatusView#handleEvent(Ldomain/common/DomainEvent;)V
 false
-5af90e9022c740b6035516a3803e3e44
+a5e1ad4af1865dc1520c0bb43dec6226
 ui.view.GameStatusView#updateStatus()V

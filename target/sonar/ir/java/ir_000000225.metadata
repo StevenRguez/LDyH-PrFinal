@@ -1,6 +1,6 @@
 ui.view.PlayerView#getFirstCardPoint(I)Ljava/awt/Point;
 false
-74ddcaf703d19349d7222e55d3767e96
+fa5e7a999c147f8e4abc3748c60fc057
 java.awt.Point#<init>(II)V
 java.awt.Point#instance-init#
 ui.view.PlayerView#calculateOffset(II)I

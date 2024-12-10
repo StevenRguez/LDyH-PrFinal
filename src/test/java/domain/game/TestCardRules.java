@@ -204,4 +204,91 @@ class TestCardRules {
     private String crearMensajePrueba(Card topCard, Card playedCard) {
         return String.format("Carta Superior: %s, Carta Jugada: %s", topCard, playedCard);
     }
+
+    /**
+     * Prueba si una carta de tipo "Draw Two" es válida cuando está en la parte superior.
+     */
+    @Test
+    void cuandoCartaDrawTwoEsJugada_ConCoincidenciaDeColor_DeberiaSerValida() {
+        var topCard = CardTestFactory.createDrawTwoCard(CardColor.RED);
+        var cartaAJugar = CardTestFactory.createDrawTwoCard(CardColor.RED);
+
+        assertTrue(CardRules.isValidActionCard(topCard, (ActionCard) cartaAJugar), crearMensajePrueba(topCard, cartaAJugar));
+    }
+
+    /**
+     * Prueba si una carta de tipo "Draw Two" es inválida cuando no coincide ni el color ni el tipo.
+     */
+    @Test
+    void cuandoCartaDrawTwoEsJugada_SinCoincidencia_DeberiaSerInvalida() {
+        var topCard = CardTestFactory.createNumberCard(7, CardColor.BLUE);
+        var cartaAJugar = CardTestFactory.createDrawTwoCard(CardColor.RED);
+
+        assertFalse(CardRules.isValidActionCard(topCard, (ActionCard) cartaAJugar), crearMensajePrueba(topCard, cartaAJugar));
+    }
+
+    /**
+     * Prueba si una carta comodín puede ser jugada sin importar la carta superior.
+     */
+    @Test
+    void cuandoCartaComodinEsJugada_DeberiaSerValida() {
+        var cartaComodin = CardTestFactory.createWildColorCard(CardColor.RED);
+        var topCard = CardTestFactory.createNumberCard(4, CardColor.BLUE);
+
+        assertTrue(CardRules.isValidWildCard(cartaComodin), crearMensajePrueba(topCard, cartaComodin));
+    }
+
+    /**
+     * Prueba si una carta de tipo "Reversa" es válida cuando coincide el color con la carta superior.
+     */
+    @Test
+    void cuandoCartaReversaEsJugada_ConCoincidenciaDeColor_DeberiaSerValida() {
+        var topCard = CardTestFactory.createReverseCard(CardColor.GREEN);
+        var cartaAJugar = CardTestFactory.createReverseCard(CardColor.GREEN);
+
+        assertTrue(CardRules.isValidActionCard(topCard, (ActionCard) cartaAJugar), crearMensajePrueba(topCard, cartaAJugar));
+    }
+
+    /**
+     * Prueba si jugar una carta numérica con un comodín en la parte superior es inválido.
+     */
+    @Test
+    void cuandoCartaNumericaEsJugadaConComodinSuperior_DeberiaSerInvalida() {
+        var topCard = CardTestFactory.createWildColorCard();
+        var cartaAJugar = CardTestFactory.createNumberCard(3, CardColor.YELLOW);
+
+        assertFalse(CardRules.isValidNumberCard(topCard, cartaAJugar), crearMensajePrueba(topCard, cartaAJugar));
+    }
+
+    /**
+     * Prueba si jugar una carta "Wild Draw Four" es válido cuando la regla permite cualquier carta.
+     */
+    @Test
+    void cuandoCartaWildDrawFourEsJugada_DeberiaSerValida() {
+        var cartaWildDrawFour = CardTestFactory.createWildDrawFourCard(CardColor.RED);
+        var topCard = CardTestFactory.createNumberCard(5, CardColor.BLUE);
+
+        assertTrue(CardRules.isValidWildCard(cartaWildDrawFour), crearMensajePrueba(topCard, cartaWildDrawFour));
+    }
+
+    /**
+     * Prueba que una carta comodín no válida sea rechazada si no tiene color asignado.
+     */
+    @Test
+    void cuandoCartaWildDrawFourSinColor_DeberiaSerInvalida() {
+        var cartaWildDrawFour = CardTestFactory.createWildDrawFourCard();
+
+        assertFalse(CardRules.isValidWildCard(cartaWildDrawFour), cartaWildDrawFour.toString());
+    }
+
+    /**
+     * Verifica que una carta "Skip" no sea válida si el color no coincide con la carta superior.
+     */
+    @Test
+    void cuandoCartaSkipEsJugada_SinCoincidenciaDeColor_DeberiaSerInvalida() {
+        var topCard = CardTestFactory.createNumberCard(2, CardColor.BLUE);
+        var cartaSkip = CardTestFactory.createSkipCard(CardColor.RED);
+
+        assertFalse(CardRules.isValidActionCard(topCard, (ActionCard) cartaSkip), crearMensajePrueba(topCard, cartaSkip));
+    }
 }

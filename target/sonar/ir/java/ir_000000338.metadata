@@ -1,6 +1,6 @@
 domain.game.DealerService#dealInitialHandCards(Ldomain/game/DrawPile;I)[Ldomain/player/HandCardList;
 false
-37a3c611d97ece105c52b057a28be726
+580d78db47b5d48ac9d6bcb29204e50f
 domain.player.HandCardList#<init>()V
 domain.player.HandCardList#instance-init#
 ==

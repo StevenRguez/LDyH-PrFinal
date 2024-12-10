@@ -1,6 +1,6 @@
 ui.AppFrame#showFrame()V
 false
-2427adfb82cf44d6e04b0fd751d982e1
+f1d3eaf42eed366c359d7d0e7b4732a0
 ==
 pack java.awt.Window#pack()V
 setDefaultCloseOperation javax.swing.JFrame#setDefaultCloseOperation(I)V

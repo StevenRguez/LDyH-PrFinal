@@ -1,6 +1,6 @@
 ui.view.TableView#initInfoView()V
 false
-6b25307c7ec606cf3c356675812e2ea1
+5dedd64212b2eadf8041295c9ebb7e83
 java.awt.GridBagConstraints#<init>()V
 java.awt.GridBagConstraints#instance-init#
 java.awt.Insets#<init>(IIII)V

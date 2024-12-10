@@ -21,18 +21,18 @@ public class StyleUtil {
     }
 
     /// Colores comunes a lo largo de la aplicación del juego UNO.
-<span class="nc" id="L24">    public static final Color redColor = new Color(192, 80, 77);</span>
-<span class="nc" id="L25">    public static final Color blueColor = new Color(31, 73, 125);</span>
-<span class="nc" id="L26">    public static final Color greenColor = new Color(0, 153, 0);</span>
-<span class="nc" id="L27">    public static final Color yellowColor = new Color(255, 204, 0);</span>
-<span class="nc" id="L28">    public static final Color blackColor = new Color(0, 0, 0);</span>
+<span class="fc" id="L24">    public static final Color redColor = new Color(192, 80, 77);</span>
+<span class="fc" id="L25">    public static final Color blueColor = new Color(31, 73, 125);</span>
+<span class="fc" id="L26">    public static final Color greenColor = new Color(0, 153, 0);</span>
+<span class="fc" id="L27">    public static final Color yellowColor = new Color(255, 204, 0);</span>
+<span class="fc" id="L28">    public static final Color blackColor = new Color(0, 0, 0);</span>
 
     /// Fuentes comunes a lo largo de la aplicación del juego UNO.
     public static final String DEFAULT_FONT = &quot;Helvetica&quot;;
 
     /// Caracteres especiales para las cartas especiales.
-<span class="nc" id="L34">    private static final Character REVERSE_CHAR = (char) 8634;</span>
-<span class="nc" id="L35">    private static final Character SKIP_CHAR = (char) Integer.parseInt(&quot;2718&quot;, 16);</span>
+<span class="fc" id="L34">    private static final Character REVERSE_CHAR = (char) 8634;</span>
+<span class="fc" id="L35">    private static final Character SKIP_CHAR = (char) Integer.parseInt(&quot;2718&quot;, 16);</span>
 
     /**
      * Metodo que convierte un color de carta a un color de la interfaz grafica.
@@ -40,22 +40,22 @@ public class StyleUtil {
      * @return Color de la interfaz gráfica.
      */
     public static Color convertCardColor(CardColor color) {
-<span class="nc bnc" id="L43" title="All 2 branches missed.">        if (color == null) {</span>
-<span class="nc" id="L44">            return blackColor;</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if (color == null) {</span>
+<span class="fc" id="L44">            return blackColor;</span>
         }
 
-<span class="nc bnc" id="L47" title="All 5 branches missed.">        switch (color) {</span>
+<span class="pc bpc" id="L47" title="1 of 5 branches missed.">        switch (color) {</span>
             case RED -&gt; {
-<span class="nc" id="L49">                return redColor;</span>
+<span class="fc" id="L49">                return redColor;</span>
             }
             case GREEN -&gt; {
-<span class="nc" id="L52">                return greenColor;</span>
+<span class="fc" id="L52">                return greenColor;</span>
             }
             case BLUE -&gt; {
-<span class="nc" id="L55">                return blueColor;</span>
+<span class="fc" id="L55">                return blueColor;</span>
             }
             case YELLOW -&gt; {
-<span class="nc" id="L58">                return yellowColor;</span>
+<span class="fc" id="L58">                return yellowColor;</span>
             }
             default -&gt; {
 <span class="nc" id="L61">                throw new IllegalArgumentException(&quot;Unsupported card color &quot; + color);</span>
@@ -69,9 +69,9 @@ public class StyleUtil {
      * @return Valor a mostrar en la carta.
      */
     public static String getValueToDisplay(Card card) {
-<span class="nc bnc" id="L72" title="All 7 branches missed.">        switch (card.getType()) {</span>
+<span class="pc bpc" id="L72" title="6 of 7 branches missed.">        switch (card.getType()) {</span>
             case NUMBER -&gt; {
-<span class="nc" id="L74">                return Integer.toString(((NumberCard) card).getValue());</span>
+<span class="fc" id="L74">                return Integer.toString(((NumberCard) card).getValue());</span>
             }
             case SKIP -&gt; {
 <span class="nc" id="L77">                return SKIP_CHAR.toString();</span>

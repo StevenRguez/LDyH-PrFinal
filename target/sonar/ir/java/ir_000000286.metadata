@@ -1,6 +1,6 @@
 ui.view.CardView#drawValueInCenter(Ljava/awt/Graphics2D;Ljava/awt/Color;)V
 false
-f892452ae19fa39df29c2cb4bac79b3a
+2193160f393cc76921252c2383dbbe75
 java.awt.Font#<init>(Ljava/lang/String;II)V
 java.awt.Font#instance-init#
 ==

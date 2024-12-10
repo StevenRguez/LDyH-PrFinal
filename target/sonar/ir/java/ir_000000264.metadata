@@ -1,6 +1,6 @@
 domain.game.Game#validatePlayedCard(Ljava/util/UUID;Ldomain/card/Card;)V
 false
-d54512052b7904657b8c2710b9964c86
+e0f6e57ed35897fa86b6752102cfdadd
 java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)V
 java.lang.IllegalArgumentException#instance-init#
 java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;

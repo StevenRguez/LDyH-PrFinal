@@ -1,7 +1,6 @@
 package domain.game;
 
-import domain.card.Card;
-import domain.card.CardType;
+import domain.card.*;
 import domain.player.Player;
 import domain.player.PlayerRoundIterator;
 import domain.testhelper.CardTestFactory;
@@ -9,6 +8,8 @@ import domain.testhelper.PlayerTestFactory;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.EmptyStackException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -122,5 +123,22 @@ class TestGameStart {
     private void verificarEstadoDelJuego(Game juego, CardType tipoDeCartaJugado, String jugadorActualEsperado) {
         assertEquals(tipoDeCartaJugado, juego.peekTopCard().getType());
         assertEquals(jugadorActualEsperado, juego.getCurrentPlayer().getName());
+    }
+
+    @Test
+    void CuandoPilaDeRoboEstaVacia_DeberiaArrojarExcepcion() {
+        var pilaVacia = new DrawPile(Collections.emptyList());
+        assertThrows(EmptyStackException.class, () -> new Game(pilaVacia, jugadores));
+    }
+
+    @Test
+    void CuandoSeJuegaDrawTwoSeguidoDeSkip_DeberiaAplicarEfectosEnCadena() {
+        var juego = crearJuego(
+            CardTestFactory.createDrawTwoCard(),
+            CardTestFactory.createSkipCard()
+        );
+
+        verificarEstadoDelJuego(juego, CardType.SKIP, "2");
+        assertEquals(0, jugadores.getCurrentPlayer().getHandCards().count());
     }
 }

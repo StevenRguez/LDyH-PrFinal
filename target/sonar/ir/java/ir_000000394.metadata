@@ -1,6 +1,6 @@
 ui.view.GameStatusView#updateStatus()V
 false
-b81aa8c5ed753ce71c513a51966a2a83
+aa45e39e5e0cb1be8b4374ce6fc0d07d
 java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 ==
 getCurrentPlayer application.IGameAppService#getCurrentPlayer()Lapplication/dto/PlayerInfoDTO;

@@ -1,5 +1,5 @@
 domain.card.CardUtil#validateColor(Ldomain/card/CardColor;)V
 false
-f0228f84144110075a2b3fa898dd4bf6
+81212a87a344d45fa73f3e986ce829fe
 java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)V
 java.lang.IllegalArgumentException#instance-init#

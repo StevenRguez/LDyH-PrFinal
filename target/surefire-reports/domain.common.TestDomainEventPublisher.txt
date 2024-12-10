@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: domain.common.TestDomainEventPublisher
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in domain.common.TestDomainEventPublisher
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s - in domain.common.TestDomainEventPublisher
