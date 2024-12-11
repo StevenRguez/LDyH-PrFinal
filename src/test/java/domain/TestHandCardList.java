@@ -1,6 +1,5 @@
 package domain;
 
-import application.IGameAppService;
 import domain.card.CardColor;
 import domain.player.HandCardList;
 import domain.testhelper.CardTestFactory;
