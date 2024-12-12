@@ -15,6 +15,7 @@ public class Player extends Entity {
     private final String name;
     /// Lista de cartas en la mano del jugador.
     private final HandCardList handCards;
+    private int level;
 
     /**
      * Constructor de la clase Player dado el nombre y un listado de cartas en la mano.
@@ -73,6 +74,6 @@ public class Player extends Entity {
      * @return Jugador inmutable.
      */
     public ImmutablePlayer toImmutable() {
-        return new ImmutablePlayer(this);
+        return new ImmutablePlayer(this, level);
     }
 }
