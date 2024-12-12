@@ -74,6 +74,6 @@ public class Player extends Entity {
      * @return Jugador inmutable.
      */
     public ImmutablePlayer toImmutable() {
-        return new ImmutablePlayer(this, level);
+        return new ImmutablePlayer(this);
     }
 }
