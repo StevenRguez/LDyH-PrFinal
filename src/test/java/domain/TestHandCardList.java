@@ -1,5 +1,6 @@
 package domain;
 
+import application.IGameAppService;
 import domain.card.CardColor;
 import domain.player.HandCardList;
 import domain.testhelper.CardTestFactory;
@@ -10,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestHandCardList {
     @Test
-    void GivenSameNumberCard_ShouldExist() {
+    public void GivenSameNumberCard_ShouldExist() {
         var numberCard = CardTestFactory.createNumberCard(1, CardColor.YELLOW);
         var sameNumberCard = CardTestFactory.createNumberCard(1, CardColor.YELLOW);
 
@@ -23,7 +24,7 @@ public class TestHandCardList {
     }
 
     @Test
-    void GivenDifferentNumberCard_ShouldNotExist() {
+    public void GivenDifferentNumberCard_ShouldNotExist() {
         var numberCard = CardTestFactory.createNumberCard(1, CardColor.YELLOW);
         var anotherNumberCard = CardTestFactory.createNumberCard(2, CardColor.YELLOW);
 
@@ -36,7 +37,7 @@ public class TestHandCardList {
     }
 
     @Test
-    void GivenCardWithDifferentColor_ShouldNotExist() {
+    public void GivenCardWithDifferentColor_ShouldNotExist() {
         var numberCard = CardTestFactory.createNumberCard(1, CardColor.YELLOW);
         var sameNumberDifferentColor = CardTestFactory.createNumberCard(1, CardColor.RED);
 
@@ -49,7 +50,7 @@ public class TestHandCardList {
     }
 
     @Test
-    void GivenSameCardInstance_ShouldExist() {
+    public void GivenSameCardInstance_ShouldExist() {
         var card = CardTestFactory.createNumberCard(3, CardColor.BLUE);
 
         var handCards = new HandCardList();
@@ -61,7 +62,7 @@ public class TestHandCardList {
     }
 
     @Test
-    void GivenCardNotAdded_ShouldNotExist() {
+    public void GivenCardNotAdded_ShouldNotExist() {
         var card = CardTestFactory.createNumberCard(7, CardColor.GREEN);
 
         var handCards = new HandCardList();
@@ -72,7 +73,7 @@ public class TestHandCardList {
     }
 
     @Test
-    void AfterRemovingCard_ShouldNotExist() {
+    public void AfterRemovingCard_ShouldNotExist() {
         var card = CardTestFactory.createNumberCard(4, CardColor.RED);
 
         var handCards = new HandCardList();
@@ -85,7 +86,7 @@ public class TestHandCardList {
     }
 
     @Test
-    void AddingDuplicateCards_ShouldStillExistOnce() {
+    public void AddingDuplicateCards_ShouldStillExistOnce() {
         var card = CardTestFactory.createNumberCard(5, CardColor.YELLOW);
 
         var handCards = new HandCardList();
@@ -98,32 +99,32 @@ public class TestHandCardList {
     }
 
     @Test
-    void givenRedCardColor_shouldConvertToRedColor() {
+    public void givenRedCardColor_shouldConvertToRedColor() {
         assertEquals(StyleUtil.redColor, StyleUtil.convertCardColor(CardColor.RED));
     }
 
     @Test
-    void givenBlueCardColor_shouldConvertToRedColor() {
+    public void givenBlueCardColor_shouldConvertToRedColor() {
         assertEquals(StyleUtil.blueColor, StyleUtil.convertCardColor(CardColor.BLUE));
     }
 
     @Test
-    void givenGreenCardColor_shouldConvertToRedColor() {
+    public void givenGreenCardColor_shouldConvertToRedColor() {
         assertEquals(StyleUtil.greenColor, StyleUtil.convertCardColor(CardColor.GREEN));
     }
 
     @Test
-    void givenYellowCardColor_shouldConvertToRedColor() {
+    public void givenYellowCardColor_shouldConvertToRedColor() {
         assertEquals(StyleUtil.yellowColor, StyleUtil.convertCardColor(CardColor.YELLOW));
     }
 
     @Test
-     void givenNullCardColor_shouldConvertToBlackColor() {
+    public void givenNullCardColor_shouldConvertToBlackColor() {
         assertEquals(StyleUtil.blackColor, StyleUtil.convertCardColor(null));
     }
 
     @Test
-     void givenNumberCard_shouldReturnNumber() {
+    public void givenNumberCard_shouldReturnNumber() {
         var card = CardTestFactory.createNumberCard(5, CardColor.YELLOW);
         assertEquals("5", StyleUtil.getValueToDisplay(card));
     }

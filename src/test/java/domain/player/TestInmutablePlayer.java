@@ -21,7 +21,7 @@ class TestInmutablePlayer {
     void testGetId() {
         // Creamos un jugador con un identificador aleatorio.
         var player = new Player("TestPlayer", new HandCardList());
-        var immutablePlayer = new ImmutablePlayer(player,0);
+        var immutablePlayer = new ImmutablePlayer(player);
         // Comprobamos que el identificador del jugador es el mismo que el del jugador inmutable.
         assertEquals(player.getId(), immutablePlayer.getId());
     }
@@ -31,7 +31,7 @@ class TestInmutablePlayer {
     void testGetName() {
         // Creamos un jugador con un nombre.
         var player = new Player("TestPlayer", new HandCardList());
-        var immutablePlayer = new ImmutablePlayer(player,0);
+        var immutablePlayer = new ImmutablePlayer(player);
         // Comprobamos que el nombre del jugador es el mismo que el del jugador inmutable.
         assertEquals(player.getName(), immutablePlayer.getName());
     }
