@@ -20,18 +20,40 @@ public class StyleUtil {
     private StyleUtil() {
     }
 
-    /// Colores comunes a lo largo de la aplicación del juego UNO.
+     /// Colores comunes a lo largo de la aplicación del juego UNO.
+    /**
+     * Color rojo
+     */
     public static final Color redColor = new Color(192, 80, 77);
+    /**
+     * Color azul
+     */
     public static final Color blueColor = new Color(31, 73, 125);
+    /**
+     * Color verde
+     */
     public static final Color greenColor = new Color(0, 153, 0);
+    /**
+     * Color amarillo
+     */
     public static final Color yellowColor = new Color(255, 204, 0);
+    /**
+     * Color negro de los comodines
+     */
     public static final Color blackColor = new Color(0, 0, 0);
 
-    /// Fuentes comunes a lo largo de la aplicación del juego UNO.
+    /**
+     * Fuentes comunes a lo largo de la aplicación del juego UNO.
+     */
     public static final String DEFAULT_FONT = "Helvetica";
 
-    /// Caracteres especiales para las cartas especiales.
+    /**
+     * Caracteres especiales para las cartas de reverso.
+     */
     private static final Character REVERSE_CHAR = (char) 8634;
+    /**
+     * Caracteres especiales para las cartas de bloqueo.
+     */
     private static final Character SKIP_CHAR = (char) Integer.parseInt("2718", 16);
 
     /**

@@ -4,12 +4,15 @@ package domain.card;
  * Clase de utilidad para validar las cartas.
  */
 public class CardUtil {
+    /**
+     * Constructor
+     */
     private CardUtil() {
     }
 
     /**
      * Valida una carta.
-     * @param card carta a validar.
+     * @param color carta a validar.
      */
     public static void validateColor(CardColor color) {
         if (color == null) {
@@ -40,10 +43,9 @@ public class CardUtil {
     }
 
     /**
-     * Valida el tipo de carta.
-     * @param type tipo de carta a validar.
+     * @param card tipo de carta.
+     * @return ¿es comodin?
      */
-
     public static boolean isWildCard(Card card) {
         return card.getType() == CardType.WILD_COLOR || card.getType() == CardType.WILD_DRAW_FOUR;
     }

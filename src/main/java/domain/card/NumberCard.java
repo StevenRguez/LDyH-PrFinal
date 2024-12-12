@@ -7,8 +7,17 @@ import java.util.Objects;
  * Implementa la interfaz Card.
  */
 public class NumberCard extends AbstractCard {
+
+    /**
+     * Valor de la carta
+     */
     private final int value;
 
+    /**
+     * Constructor
+     * @param value valor de la carta
+     * @param color color de la carta
+     */
     public NumberCard(int value, CardColor color) {
         super(CardType.NUMBER, color);
 
@@ -17,7 +26,6 @@ public class NumberCard extends AbstractCard {
         CardUtil.validateNumber(value);
         this.value = value;
     }
-
 
     /**
      * Devuelve el valor de la carta.

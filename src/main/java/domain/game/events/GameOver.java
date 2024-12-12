@@ -7,6 +7,9 @@ import domain.player.ImmutablePlayer;
  * Evento que representa el final de la partida.
  */
 public class GameOver extends DomainEvent {
+    /**
+     * Ganador
+     */
     private ImmutablePlayer winner;
 
     /**

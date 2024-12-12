@@ -8,6 +8,12 @@ package domain.player;
  * @see domain.player.Player
  */
 public enum Direction {
+    /**
+     * Reloj
+     */
     CLOCKWISE,
+    /**
+     * Contador del reloj
+     */
     COUNTER_CLOCK_WISE
 }

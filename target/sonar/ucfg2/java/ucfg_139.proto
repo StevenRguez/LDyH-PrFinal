@@ -1,21 +1,0 @@
-
-Cdomain.player.HandCardList#getCardStream()Ljava/util/stream/Stream;œ
-‘/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/main/java/domain/player/HandCardList.java: :(%"1*Ô
-1; ;(s
-q
-; ;(
-%0java.util.List"__id*I
-
-__unknown_file (-*+
-domain.player.HandCardList"
-	handCards¢Ÿ
-; ;(!
-%1java.util.stream.Stream"6java.util.Collection#stream()Ljava/util/stream/Stream;*2
-
-__unknown_file (
-
-%0java.util.List2stream()"+
-; ;("
-
-%1java.util.stream.StreamB
-domain.player.HandCardListH

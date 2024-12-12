@@ -1,4 +1,0 @@
-domain.game.Game#drawFourCards(Ldomain/player/Player;)V
-false
-c22147958720d9ac45d32d4897b4b0d5
-domain.game.Game#drawCards(Ldomain/player/Player;I)Ljava/util/List;

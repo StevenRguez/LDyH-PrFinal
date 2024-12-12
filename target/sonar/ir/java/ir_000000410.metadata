@@ -1,5 +1,0 @@
-domain.player.Player#getHandCards()Ljava/util/stream/Stream;
-false
-00eee475b0330ce04a0e4560831d3a8c
-==
-getCardStream domain.player.HandCardList#getCardStream()Ljava/util/stream/Stream;

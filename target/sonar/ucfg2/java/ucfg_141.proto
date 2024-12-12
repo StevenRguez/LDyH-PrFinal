@@ -1,38 +1,0 @@
-
-+__sonar_lambda_6$domain.player.HandCardListœ
-‘/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/main/java/domain/player/HandCardList.javaF' F(:"startingBlock*Î
-startingBlockF' F(:ƒ
-€
-
-__unknown_file (
-carddomain.card.Card"__id*D
-
-__unknown_file ((*&
-domain.player.HandCardList"
-card§
-¤
-
-__unknown_file (/
-HandCardList.thisdomain.player.HandCardList"__id*Q
-
-__unknown_file (5*3
-domain.player.HandCardList"
-HandCardList.this*
-1*‚
-1F, F(-ÔÑ
-F, F(:
-%11boolean",java.lang.Object#equals(Ljava/lang/Object;)Z*3
-
-__unknown_file (
-
-cdomain.card.Card*6
-
-__unknown_file (
-
-carddomain.card.Card2equals(Ljava/lang/Object;)"
-F, F(:
-
-%11boolean:!
-F' F((
-cdomain.card.CardB 
-java.util.function.Predicate

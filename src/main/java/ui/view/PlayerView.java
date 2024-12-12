@@ -27,21 +27,38 @@ import java.util.stream.Collectors;
  * el turno del jugador y la acción de jugar una carta.
  */
 public class PlayerView extends JPanel implements DomainEventSubscriber {
-    /// Panel donde se visualizan las cartas en mano del jugador.
+    /**
+     * Panel donde se visualizan las cartas en mano del jugador.
+     */
     private JLayeredPane handCardsView;
-    /// Panel de controles del jugador, que incluye botones y el nombre.
+    /**
+     * Panel de controles del jugador, que incluye botones y el nombre.
+     */
     private Box controlPanel;
-    /// Etiqueta que muestra el nombre del jugador.
+    /**
+     * Etiqueta que muestra el nombre del jugador.
+     */
     private JLabel nameLabel;
-    /// Botón que permite al jugador dibujar una carta.
+    /**
+     * Botón que permite al jugador dibujar una carta.
+     */
     private JButton drawButton;
-    /// Botón que permite al jugador decir "UNO".
+    /**
+     * Botón que permite al jugador decir "UNO".
+     */
     private JButton sayUnoButton;
-    /// Indica si el jugador ha dicho "UNO".
+    /**
+     * Indica si el jugador ha dicho "UNO".
+     */
     private boolean hasSaidUno = false;
-
+    /**
+     * Información del jugador
+     */
     private final PlayerInfoDTO player;
 
+    /**
+     * Atributo de la clase PlayerView
+     */
     private final IGameAppService appService;
 
     /**

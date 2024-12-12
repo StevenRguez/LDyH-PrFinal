@@ -10,7 +10,9 @@ import java.util.ArrayList;
  * La funcionalidad de esta clase es mostrar un selector de colores en la interfaz gráfica.
  */
 public class ColorPicker {
-    /// Colores que se pueden seleccionar en el selector de colores.
+    /**
+     * Colores que se pueden seleccionar en el selector de colores.
+      */
     private final ArrayList<String> colors;
 
     /**

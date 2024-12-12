@@ -1,7 +1,0 @@
-application.GameAppService#playCard(Ljava/util/UUID;Ldomain/card/Card;Z)V
-false
-abd63b018c0aa225c51dff7adeec20a0
-java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-==
-info org.apache.logging.log4j.Logger#info(Ljava/lang/String;)V
-playCard domain.game.Game#playCard(Ljava/util/UUID;Ldomain/card/Card;Z)V

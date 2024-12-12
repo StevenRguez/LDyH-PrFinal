@@ -1,5 +1,0 @@
-domain.player.Player#hasHandCard(Ldomain/card/Card;)Z
-false
-38d5aabe35b52e270d329ea20b1f5867
-==
-hasCard domain.player.HandCardList#hasCard(Ldomain/card/Card;)Z

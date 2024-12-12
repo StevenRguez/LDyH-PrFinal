@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 https://pmd.github.io/schema/report_2_0_0.xsd" version="7.3.0" timestamp="2024-12-12T13:08:48.873">
+<file name="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin título/LDyH-PrFinal/src/main/java/ui/AppFrame.java">
+<violation beginline="49" endline="49" begincolumn="34" endcolumn="49" rule="UnnecessaryFullyQualifiedName" ruleset="Code Style" package="ui" class="AppFrame" method="showFrame" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.3.0/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname" priority="4">
+Unnecessary qualifier 'WindowConstants': 'EXIT_ON_CLOSE' is already in scope because it is inherited by an enclosing type
+</violation>
+</file>
+</pmd>

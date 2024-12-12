@@ -7,6 +7,11 @@ import java.util.Objects;
  * Implementa la interfaz Card.
  */
 public class ActionCard extends AbstractCard {
+    /**
+     * Constructor de la clase ActionCard para generar cartas de acción
+     * @param type tipo de carta
+     * @param color color de la carta
+     */
     public ActionCard(CardType type, CardColor color) {
         super(type, color);
         CardUtil.validateActionType(type);

@@ -3,13 +3,13 @@ package domain.game;
 import domain.card.*;
 
 /**
- * @class CardRules
- * @brief Clase de utilidad que contiene las reglas para validar el juego de cartas en una partida.
+ CardRules
+ * Clase de utilidad que contiene las reglas para validar el juego de cartas en una partida.
  */
 public class CardRules {
 
     /**
-     * @brief Constructor privado para evitar la instanciación de esta clase de utilidad.
+     * Constructor privado para evitar la instanciación de esta clase de utilidad.
      * @throws IllegalStateException siempre que se intente instanciar la clase.
      */
     private CardRules(){
@@ -17,7 +17,7 @@ public class CardRules {
     }
 
     /**
-     * @brief Valida si una carta de número puede ser jugada sobre otra carta.
+     * Valida si una carta de número puede ser jugada sobre otra carta.
      * 
      * @param topCard La carta en la parte superior del mazo de descarte.
      * @param playedCard La carta de número que se desea jugar.
@@ -36,7 +36,7 @@ public class CardRules {
     }
 
     /**
-     * @brief Valida si una carta de acción puede ser jugada sobre otra carta.
+     * Valida si una carta de acción puede ser jugada sobre otra carta.
      * 
      * @param topCard La carta en la parte superior del mazo de descarte.
      * @param playedCard La carta de acción que se desea jugar.
@@ -51,7 +51,7 @@ public class CardRules {
     }
 
     /**
-     * @brief Valida si una carta comodín puede ser jugada.
+     * Valida si una carta comodín puede ser jugada.
      * 
      * @param playedCard La carta comodín que se desea jugar.
      * @return true si la carta comodín tiene un color asignado; false en caso contrario.
@@ -61,7 +61,7 @@ public class CardRules {
     }
 
     /**
-     * @brief Comprueba si dos cartas tienen el mismo color.
+     * Comprueba si dos cartas tienen el mismo color.
      * 
      * @param topCard La carta en la parte superior del mazo de descarte.
      * @param playedCard La carta que se desea jugar.

@@ -1,7 +1,0 @@
-application.GameAppService#logGameInfo()V
-false
-2cd0bb71c71b8c6878d6fb11d784a466
-==
-forEach java.util.stream.Stream#forEach(Ljava/util/function/Consumer;)V
-getPlayers domain.game.Game#getPlayers()Ljava/util/stream/Stream;
-info org.apache.logging.log4j.Logger#info(Ljava/lang/String;)V

@@ -1,7 +1,0 @@
-domain.game.CardRules#isValidActionCard(Ldomain/card/Card;Ldomain/card/ActionCard;)Z
-false
-06ad6448b56410350435b26ec84057b7
-domain.game.CardRules#isSameColor(Ldomain/card/Card;Ldomain/card/Card;)Z
-==
-getType domain.card.AbstractCard#getType()Ldomain/card/CardType;
-getType domain.card.Card#getType()Ldomain/card/CardType;

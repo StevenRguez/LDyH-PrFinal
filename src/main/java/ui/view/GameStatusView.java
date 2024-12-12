@@ -17,14 +17,22 @@ import java.awt.*;
  * Esta clase es necesaria para mostrar el estado.
  */
 public class GameStatusView extends JPanel implements DomainEventSubscriber {
-    /// Mensaje de error.
+    /**
+     * Mensaje de error.
+      */
     private String error;
-    /// Mensaje de estado del juego.
+    /**
+     * Mensaje de estado del juego.
+     */
     private String text;
-    /// Centro del panel.
+    /**
+     * Centro del panel.
+     */
     private int panelCenter;
 
-    /// Servicio de la aplicación del juego.
+    /**
+     * Servicio de la aplicación del juego.
+     */
     private final IGameAppService appService;
 
     /**
@@ -110,7 +118,7 @@ public class GameStatusView extends JPanel implements DomainEventSubscriber {
 
     /**
      * Establece un mensaje de error.
-     * Este método recibe un mensaje de error como parámetro y lo asigna a la variable
+     * Este metodo recibe un mensaje de error como parámetro y lo asigna a la variable
      * `error`, que puede ser utilizada posteriormente para mostrar el mensaje de error
      * en la interfaz de usuario o en otro lugar dentro de la aplicación.
      * @param errorMgs El mensaje de error que se va a establecer.

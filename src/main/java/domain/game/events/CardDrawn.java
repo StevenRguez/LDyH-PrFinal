@@ -8,6 +8,9 @@ import java.util.UUID;
  * Evento que representa que un jugador ha robado una carta.
  */
 public class CardDrawn extends DomainEvent {
+    /**
+     * Almacena el ID del usuario
+     */
     private final UUID playerId;
 
     /**

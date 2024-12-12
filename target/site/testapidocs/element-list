@@ -1,0 +1,7 @@
+application
+domain
+domain.card
+domain.common
+domain.game
+domain.player
+domain.testhelper

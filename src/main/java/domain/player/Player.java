@@ -11,9 +11,13 @@ import java.util.stream.Stream;
  * @version 1.0
  */
 public class Player extends Entity {
-    /// Nombre del jugador.
+    /**
+     * Nombre del jugador.
+     */
     private final String name;
-    /// Lista de cartas en la mano del jugador.
+    /**
+     * Lista de cartas en la mano del jugador.
+     */
     private final HandCardList handCards;
 
     /**

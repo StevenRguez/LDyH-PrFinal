@@ -9,13 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @brief Clase utilizada para construir una instancia de un juego configurado con jugadores y un mazo de cartas.
+ * Clase utilizada para construir una instancia de un juego configurado con jugadores y un mazo de cartas.
  */
 public class GameBuilder {
+    /**
+     * Listado de jugadores
+     */
     private List<String> playerNames = new ArrayList<>();
 
     /**
-     * @brief Añade un jugador al juego en construcción.
+     * Añade un jugador al juego en construcción.
      * 
      * @param name Nombre del jugador.
      * @return La instancia actual de GameBuilder para encadenamiento de métodos.
@@ -26,7 +29,7 @@ public class GameBuilder {
     }
 
     /**
-     * @brief Construye una instancia del juego con los jugadores y mazo configurados.
+     * Construye una instancia del juego con los jugadores y mazo configurados.
      * 
      * @return Una nueva instancia de la clase Game.
      */
@@ -40,7 +43,7 @@ public class GameBuilder {
     }
 
     /**
-     * @brief Crea el mazo de robar a partir de un mazo de cartas inicial.
+     * Crea el mazo de robar a partir de un mazo de cartas inicial.
      * 
      * @param cards Lista de cartas inicial.
      * @return Una instancia de DrawPile con las cartas barajadas.
@@ -51,7 +54,7 @@ public class GameBuilder {
     }
 
     /**
-     * @brief Crea una iteración circular de jugadores, asignándoles cartas iniciales.
+     * Crea una iteración circular de jugadores, asignándoles cartas iniciales.
      * 
      * @param drawPile Mazo de robar utilizado para repartir cartas.
      * @return Una instancia de PlayerRoundIterator que contiene los jugadores.

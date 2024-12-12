@@ -1,6 +1,0 @@
-domain.game.Game#getCurrentPlayer()Ldomain/player/ImmutablePlayer;
-false
-d04e8acd216578015ce0d5dc937cd079
-==
-getCurrentPlayer domain.player.PlayerRoundIterator#getCurrentPlayer()Ldomain/player/Player;
-toImmutable domain.player.Player#toImmutable()Ldomain/player/ImmutablePlayer;

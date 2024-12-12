@@ -8,6 +8,9 @@ import java.util.List;
  * Clase que representa una baraja de cartas.
  */
 public class CardDeck {
+    /**
+     * Crea el espacio requerido para almacenar la baraja
+     */
     private final List<Card> cards = new ArrayList<>(108);
 
     /**

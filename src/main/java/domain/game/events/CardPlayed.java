@@ -9,7 +9,14 @@ import java.util.UUID;
  * Evento que representa que un jugador ha jugado una carta.
  */
 public class CardPlayed extends DomainEvent {
+    /**
+     * Almacena el ID del usuario
+     */
     private final UUID playerId;
+
+    /**
+     * Almacena la carta del usuario
+     */
     private final Card playedCard;
 
     /**

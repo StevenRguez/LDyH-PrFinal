@@ -1,0 +1,11 @@
+unnamed package
+application
+application.dto
+domain.card
+domain.common
+domain.game
+domain.game.events
+domain.player
+ui
+ui.common
+ui.view

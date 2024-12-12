@@ -7,6 +7,10 @@ import java.util.Objects;
  * Implementa la interfaz Card.
  */
 public class WildCard extends AbstractCard {
+    /**
+     * Constructor
+     * @param type tipo de comodin
+     */
     public WildCard(CardType type) {
         super(type, null);
     }

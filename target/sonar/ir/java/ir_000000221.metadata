@@ -1,5 +1,0 @@
-ui.view.PlayerView#<init>(Lapplication/dto/PlayerInfoDTO;Lapplication/IGameAppService;)V
-false
-42e397b000c98de5d77dee7d2de280f1
-domain.common.DomainEventPublisher#subscribe(Ldomain/common/DomainEventSubscriber;)V
-ui.view.PlayerView#initView()V

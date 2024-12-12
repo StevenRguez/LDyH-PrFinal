@@ -1,27 +1,0 @@
-
-Bdomain.game.Game#getCurrentPlayer()Ldomain/player/ImmutablePlayer;’
-‡/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/src/main/java/domain/game/Game.java' '(+"1*Ð
-1( ((z
-x
-( (('
-%0!domain.player.PlayerRoundIterator"__id*=
-
-__unknown_file (!*
-domain.game.Game"	
-playersÐÍ
-( (()
-%1domain.player.Player"Jdomain.player.PlayerRoundIterator#getCurrentPlayer()Ldomain/player/Player;*E
-
-__unknown_file ()
-'
-%0!domain.player.PlayerRoundIterator2getCurrentPlayer()¾»
-( ((7#
-%2domain.player.ImmutablePlayer"Adomain.player.Player#toImmutable()Ldomain/player/ImmutablePlayer;*8
-
-__unknown_file (
-
-%1domain.player.Player2toImmutable()"1
-( ((8%
-#
-%2domain.player.ImmutablePlayerB
-domain.game.GameH

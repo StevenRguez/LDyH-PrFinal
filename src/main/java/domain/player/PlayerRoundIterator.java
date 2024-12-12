@@ -12,11 +12,17 @@ import java.util.stream.Stream;
  * @see domain.player.Player
  */
 public class PlayerRoundIterator {
-    /// Lista de jugadores.
+    /**
+     * Lista de jugadores.
+     */
     private final Player[] players;
-    /// Índice del jugador actual.
+    /**
+     * Índice del jugador actual.
+     */
     private int current = 0;
-    /// Dirección en la que se mueve el jugador.
+    /**
+     * Dirección en la que se mueve el jugador.
+     */
     private Direction direction = Direction.CLOCKWISE;
 
     /**
@@ -45,6 +51,7 @@ public class PlayerRoundIterator {
 
     /**
      * Devuelve el jugador siguiente dado su id.
+     * @param playerId id del usuario
      * @return Jugador siguiente.
      */
     public Player getPlayerById(UUID playerId) {

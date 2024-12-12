@@ -1,6 +1,0 @@
-domain.card.ActionCard#toString()Ljava/lang/String;
-false
-25755dd2d8972ca07e2558a9781a8bc2
-==
-getColor domain.card.AbstractCard#getColor()Ldomain/card/CardColor;
-getType domain.card.AbstractCard#getType()Ldomain/card/CardType;

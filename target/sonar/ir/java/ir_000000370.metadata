@@ -1,5 +1,0 @@
-domain.player.ImmutablePlayer#getId()Ljava/util/UUID;
-false
-7ff0316ea4c7b2ed84ecc5421fb9f6d7
-==
-getId domain.common.Entity#getId()Ljava/util/UUID;

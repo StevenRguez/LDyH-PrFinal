@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.UUID;
 
 /**
- * @class PlayerInfoDTO
- * @brief Objeto de Transferencia de Datos (DTO) que contiene la información del jugador para la transferencia de datos entre capas.
+ PlayerInfoDTO
+ * Objeto de Transferencia de Datos (DTO) que contiene la información del jugador para la transferencia de datos entre capas.
  *
  * Esta clase representa la información esencial de un jugador, encapsulando
  * su identificador único (UUID) y su nombre.
@@ -14,17 +14,17 @@ import java.util.UUID;
 public class PlayerInfoDTO implements Serializable {
 
     /**
-     * @brief Identificador único del jugador.
+     * Identificador único del jugador.
      */
     private final UUID id;
 
     /**
-     * @brief Nombre del jugador.
+     * Nombre del jugador.
      */
     private final String name;
 
     /**
-     * @brief Constructor que inicializa el PlayerInfoDTO con un id y un nombre especificados.
+     * Constructor que inicializa el PlayerInfoDTO con un id y un nombre especificados.
      *
      * @param id Identificador único (UUID) del jugador.
      * @param name Nombre del jugador.
@@ -35,7 +35,7 @@ public class PlayerInfoDTO implements Serializable {
     }
 
     /**
-     * @brief Obtiene el identificador único (UUID) del jugador.
+     * Obtiene el identificador único (UUID) del jugador.
      *
      * @return UUID del jugador.
      */
@@ -44,7 +44,7 @@ public class PlayerInfoDTO implements Serializable {
     }
 
     /**
-     * @brief Obtiene el nombre del jugador.
+     * Obtiene el nombre del jugador.
      *
      * @return Nombre del jugador.
      */

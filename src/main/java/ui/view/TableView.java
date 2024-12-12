@@ -24,9 +24,13 @@ import java.awt.*;
  * cada vez que se juega una carta.
  */
 public class TableView extends JPanel implements DomainEventSubscriber {
-    /// Panel que representa la mesa
+    /**
+     * Panel que representa la mesa
+     */
     private final JPanel table;
-    /// Esta variable almacena una referencia al servicio de aplicación del juego.
+    /**
+     * Esta variable almacena una referencia al servicio de aplicación del juego.
+     */
     private final IGameAppService appService;
 
     /**
@@ -46,13 +50,14 @@ public class TableView extends JPanel implements DomainEventSubscriber {
 
         DomainEventPublisher.subscribe(this);
     }
+
     /**
      * Inicializa el panel de la mesa con la carta superior de la pila de descarte.
      * **Precondición:** El servicio de aplicación del juego debe estar inicializado.
      * **Postcondición:** El panel `table` contiene una instancia de `CardView` que muestra
      * la carta superior.
      */
-    private void initTable(){
+    private void initTable() {
         table.removeAll();
 
         table.setPreferredSize(new Dimension(500,200));
@@ -73,6 +78,9 @@ public class TableView extends JPanel implements DomainEventSubscriber {
         table.revalidate();
     }
 
+    /**
+     * Metodo para mostrar datos de la partida
+     */
     private void initInfoView() {
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -91,6 +99,10 @@ public class TableView extends JPanel implements DomainEventSubscriber {
         add(new GameStatusView(appService), c);
     }
 
+    /**
+     * Metodo handleEvent
+     * @param event Objeto DomainEvent que representa el evento de dominio recibido.
+     */
     @Override
     public void handleEvent(DomainEvent event) {
         if(event instanceof CardPlayed) {

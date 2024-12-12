@@ -19,24 +19,57 @@ import java.util.function.Consumer;
  * La funcion extendida de esta clase es la de mostrar una carta en la interfaz gráfica.
  */
 public class CardView extends JPanel {
-    /// Carta que se va a mostrar en la vista.
+    /**
+     * Carta que se va a mostrar en la vista.
+     * Representa el objeto de tipo Card que se está visualizando en la interfaz de usuario.
+     */
     private final Card card;
-    /// Valor de la carta que se va a mostrar en la vista.
+
+    /**
+     * Valor de la carta que se va a mostrar en la vista.
+     * Este valor es una cadena que representa el valor visualizado de la carta, por ejemplo, "2", "Joker", "Skip", etc.
+     */
     private final String value;
 
-    /// Medidas de la carta: ancho y alto. Margen de la carta.
+    /**
+     * Medidas de la carta: ancho y alto. Margen de la carta.
+     * Estas son las dimensiones predeterminadas para mostrar la carta en la vista.
+     * El ancho de la carta es 100 y la altura es 150, con un margen de 5 píxeles.
+     */
     private final int cardWidth = 100;
+    /**
+     * Ancho de la carta
+     */
     private final int cardHeight = 150;
+    /**
+     * Margen de la carta
+     */
     private static final int margin = 5;
 
-    /// Dimension de la carta.
+    /**
+     * Dimensión de la carta.
+     * Este objeto de tipo Dimension almacena las dimensiones (ancho y alto) de la carta,
+     * utilizado para la presentación visual de la misma en la interfaz.
+     */
     private final Dimension dimension = new Dimension(cardWidth, cardHeight);
 
-    /// Bordes de la carta para el efecto de hover.
+    /**
+     * Bordes de la carta para el efecto de hover.
+     * Se utiliza un borde con efecto "etched" para cuando la carta recibe foco, cambiando de color entre blanco y gris.
+     */
     private final Border defaultBorder = BorderFactory.createEtchedBorder(WHEN_FOCUSED, Color.white, Color.gray);
+
+    /**
+     * Bordes de la carta para el efecto de foco.
+     * Este borde se utiliza cuando la carta está en foco, mostrando un borde con color negro y gris.
+     */
     private final Border focusedBorder = BorderFactory.createEtchedBorder(WHEN_FOCUSED, Color.black, Color.gray);
 
-    /// Manejador de eventos para el click en la carta.
+    /**
+     * Manejador de eventos para el click en la carta.
+     * Este consumidor define la acción que se tomará cuando el usuario haga clic sobre la carta.
+     * Recibe un objeto de tipo Card como parámetro para la carta que ha sido clickeada.
+     */
     private final Consumer<Card> handleCardClick;
 
     /**
@@ -78,7 +111,7 @@ public class CardView extends JPanel {
         addMouseListener(new MouseAdapter() {
             /**
              * Se invoca cuando el cursor entra en los límites de la carta.
-             * @param e the event to be processed
+             * e the event to be processed
              */
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -88,7 +121,7 @@ public class CardView extends JPanel {
 
             /**
              * Se invoca cuando el cursor sale de los límites de la carta.
-             * @param e the event to be processed
+             * e the event to be processed
              */
             @Override
             public void mouseExited(MouseEvent e) {
@@ -98,7 +131,7 @@ public class CardView extends JPanel {
 
             /**
              * Se invoca cuando se presiona un botón del ratón en los límites de la carta.
-             * @param e the event to be processed
+             * e the event to be processed
              */
             @Override
             public void mousePressed(MouseEvent e) {

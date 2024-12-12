@@ -1,5 +1,0 @@
-application.GameAppService#peekTopCard()Ldomain/card/Card;
-false
-c64aceab6b1c0bdf4a0818cdfe8ffd84
-==
-peekTopCard domain.game.Game#peekTopCard()Ldomain/card/Card;

@@ -1,5 +1,0 @@
-application.GameAppService#getHandCards(Ljava/util/UUID;)Ljava/util/stream/Stream;
-false
-a7c7e82eb334072d573952b2b700d6fe
-==
-getHandCards domain.game.Game#getHandCards(Ljava/util/UUID;)Ljava/util/stream/Stream;

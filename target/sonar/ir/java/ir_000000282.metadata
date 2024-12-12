@@ -1,7 +1,0 @@
-ui.view.CardView#initView()V
-false
-9b60c94058704e5bdc85dfc2296f9259
-==
-addMouseListener java.awt.Component#addMouseListener(Ljava/awt/event/MouseListener;)V
-setBorder javax.swing.JComponent#setBorder(Ljavax/swing/border/Border;)V
-setPreferredSize javax.swing.JComponent#setPreferredSize(Ljava/awt/Dimension;)V

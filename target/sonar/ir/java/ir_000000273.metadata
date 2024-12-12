@@ -1,6 +1,0 @@
-domain.game.Game#reverse()V
-false
-5d3b0a896ac4f8d79026d4b863a7619d
-==
-next domain.player.PlayerRoundIterator#next()Ldomain/player/Player;
-reverseDirection domain.player.PlayerRoundIterator#reverseDirection()V

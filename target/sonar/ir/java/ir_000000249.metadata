@@ -1,7 +1,0 @@
-domain.game.Game#instance-init#
-false
-18d930e5808f06550d419b22a9a35f2d
-java.util.HashMap#<init>()V
-java.util.HashMap#instance-init#
-java.util.Stack#<init>()V
-java.util.Stack#instance-init#

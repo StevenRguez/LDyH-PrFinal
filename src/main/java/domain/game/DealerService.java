@@ -8,26 +8,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @class DealerService
- * @brief Clase de utilidad que proporciona servicios relacionados con la baraja y distribución de cartas.
+ DealerService
+ * Clase de utilidad que proporciona servicios relacionados con la baraja y distribución de cartas.
  */
 public class DealerService {
 
     /** 
-     * @brief Número total de cartas iniciales que cada jugador recibe al inicio del juego.
+     * Número total de cartas iniciales que cada jugador recibe al inicio del juego.
      */
     public static final int TOTAL_INITIAL_HAND_CARDS = 7;
 
     /**
-     * @brief Constructor privado para evitar la instanciación de esta clase de utilidad.
+     * Constructor privado para evitar la instanciación de esta clase de utilidad.
      */
     private DealerService() {
     }
 
     /**
-     * @brief Baraja una lista de cartas utilizando el algoritmo moderno de Fisher-Yates.
+     * Baraja una lista de cartas utilizando el algoritmo moderno de Fisher-Yates.
      * 
-     * @details El método crea una nueva lista de cartas barajadas sin modificar la lista original.
+     * El metodo crea una nueva lista de cartas barajadas sin modificar la lista original.
      *          Se utiliza `SecureRandom` para generar índices aleatorios de forma segura.
      * 
      * @param cards Lista de cartas a barajar. No se modifica.
@@ -49,7 +49,7 @@ public class DealerService {
     }
 
     /**
-     * @brief Baraja el mazo de robar y coloca una carta previamente jugada como primera.
+     * Baraja el mazo de robar y coloca una carta previamente jugada como primera.
      * 
      * @param drawPile Mazo de robar que será barajado.
      * @param lastPlayedCard Carta previamente jugada que se usará como referencia inicial.
@@ -71,7 +71,7 @@ public class DealerService {
     }
 
     /**
-     * @brief Intercambia dos cartas en una lista.
+     * Intercambia dos cartas en una lista.
      * 
      * @param shuffledList Lista de cartas en la que se realizará el intercambio.
      * @param currentIndex Índice de la carta actual.
@@ -85,9 +85,9 @@ public class DealerService {
     }
 
     /**
-     * @brief Reparte cartas iniciales a los jugadores desde el mazo.
+     * Reparte cartas iniciales a los jugadores desde el mazo.
      * 
-     * @details Cada jugador recibe una mano inicial de 7 cartas (definido por `TOTAL_INITIAL_HAND_CARDS`).
+     * Cada jugador recibe una mano inicial de 7 cartas (definido por `TOTAL_INITIAL_HAND_CARDS`).
      * 
      * @param drawPile Mazo de robar del cual se extraen las cartas.
      * @param totalPlayers Número total de jugadores en la partida.
