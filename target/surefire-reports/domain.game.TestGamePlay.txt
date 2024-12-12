@@ -1,4 +1,80 @@
 -------------------------------------------------------------------------------
 Test set: domain.game.TestGamePlay
 -------------------------------------------------------------------------------
-Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.387 s - in domain.game.TestGamePlay
+Tests run: 19, Failures: 0, Errors: 14, Skipped: 0, Time elapsed: 0.154 s <<< FAILURE! - in domain.game.TestGamePlay
+domain.game.TestGamePlay.CuandoCartaWildColorValidaEsJugado_DeberiaSerAceptado(Card, Card)[1]  Time elapsed: 0.033 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.jugarCartaDelJugadorActual(TestGamePlay.java:258)
+	at domain.game.TestGamePlay.probarCartaValida(TestGamePlay.java:65)
+	at domain.game.TestGamePlay.CuandoCartaWildColorValidaEsJugado_DeberiaSerAceptado(TestGamePlay.java:173)
+
+domain.game.TestGamePlay.CuandoCartaWildColorValidaEsJugado_DeberiaSerAceptado(Card, Card)[2]  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.jugarCartaDelJugadorActual(TestGamePlay.java:258)
+	at domain.game.TestGamePlay.probarCartaValida(TestGamePlay.java:65)
+	at domain.game.TestGamePlay.CuandoCartaWildColorValidaEsJugado_DeberiaSerAceptado(TestGamePlay.java:173)
+
+domain.game.TestGamePlay.CuandoCartaRobadaNoEsJugable_NoDeberiaJugarse  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.CardDrawn cannot be cast to class domain.game.events.CardPlayed (domain.game.events.CardDrawn and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.CuandoCartaRobadaNoEsJugable_NoDeberiaJugarse(TestGamePlay.java:307)
+
+domain.game.TestGamePlay.CuandoJuegaUltimaCarta_JuegoDeberiaFinalizar  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.CuandoJuegaUltimaCarta_JuegoDeberiaFinalizar(TestGamePlay.java:379)
+
+domain.game.TestGamePlay.CuandoCartaSkipValidaEsJugado_DeberiaSerAceptado(Card, Card)[1]  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.jugarCartaDelJugadorActual(TestGamePlay.java:258)
+	at domain.game.TestGamePlay.probarCartaValida(TestGamePlay.java:65)
+	at domain.game.TestGamePlay.CuandoCartaSkipValidaEsJugado_DeberiaSerAceptado(TestGamePlay.java:98)
+
+domain.game.TestGamePlay.CuandoCartaSkipValidaEsJugado_DeberiaSerAceptado(Card, Card)[2]  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.jugarCartaDelJugadorActual(TestGamePlay.java:258)
+	at domain.game.TestGamePlay.probarCartaValida(TestGamePlay.java:65)
+	at domain.game.TestGamePlay.CuandoCartaSkipValidaEsJugado_DeberiaSerAceptado(TestGamePlay.java:98)
+
+domain.game.TestGamePlay.CuandoCartaWildDrawFourValidaEsJugado_DeberiaSerAceptado(Card, Card)[1]  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.jugarCartaDelJugadorActual(TestGamePlay.java:258)
+	at domain.game.TestGamePlay.CuandoCartaWildDrawFourValidaEsJugado_DeberiaSerAceptado(TestGamePlay.java:204)
+
+domain.game.TestGamePlay.CuandoCartaWildDrawFourValidaEsJugado_DeberiaSerAceptado(Card, Card)[2]  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.jugarCartaDelJugadorActual(TestGamePlay.java:258)
+	at domain.game.TestGamePlay.CuandoCartaWildDrawFourValidaEsJugado_DeberiaSerAceptado(TestGamePlay.java:204)
+
+domain.game.TestGamePlay.CuandoCartaReverseValidaEsJugado_DeberiaSerAceptado(Card, Card)[1]  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.jugarCartaDelJugadorActual(TestGamePlay.java:258)
+	at domain.game.TestGamePlay.probarCartaValida(TestGamePlay.java:65)
+	at domain.game.TestGamePlay.CuandoCartaReverseValidaEsJugado_DeberiaSerAceptado(TestGamePlay.java:119)
+
+domain.game.TestGamePlay.CuandoCartaReverseValidaEsJugado_DeberiaSerAceptado(Card, Card)[2]  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.jugarCartaDelJugadorActual(TestGamePlay.java:258)
+	at domain.game.TestGamePlay.probarCartaValida(TestGamePlay.java:65)
+	at domain.game.TestGamePlay.CuandoCartaReverseValidaEsJugado_DeberiaSerAceptado(TestGamePlay.java:119)
+
+domain.game.TestGamePlay.CuandoCartaDrawTwoValidaEsJugado_DeberiaSerAceptado(Card, Card)[1]  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.jugarCartaDelJugadorActual(TestGamePlay.java:258)
+	at domain.game.TestGamePlay.CuandoCartaDrawTwoValidaEsJugado_DeberiaSerAceptado(TestGamePlay.java:148)
+
+domain.game.TestGamePlay.CuandoCartaDrawTwoValidaEsJugado_DeberiaSerAceptado(Card, Card)[2]  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.jugarCartaDelJugadorActual(TestGamePlay.java:258)
+	at domain.game.TestGamePlay.CuandoCartaDrawTwoValidaEsJugado_DeberiaSerAceptado(TestGamePlay.java:148)
+
+domain.game.TestGamePlay.CuandoCartaNumericaValidaEsJugado_DeberiaSerAceptado(Card, Card)[1]  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.jugarCartaDelJugadorActual(TestGamePlay.java:258)
+	at domain.game.TestGamePlay.probarCartaValida(TestGamePlay.java:65)
+	at domain.game.TestGamePlay.CuandoCartaNumericaValidaEsJugado_DeberiaSerAceptado(TestGamePlay.java:77)
+
+domain.game.TestGamePlay.CuandoCartaNumericaValidaEsJugado_DeberiaSerAceptado(Card, Card)[2]  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.ClassCastException: class domain.game.events.GameOver cannot be cast to class domain.game.events.CardPlayed (domain.game.events.GameOver and domain.game.events.CardPlayed are in unnamed module of loader 'app')
+	at domain.game.TestGamePlay.jugarCartaDelJugadorActual(TestGamePlay.java:258)
+	at domain.game.TestGamePlay.probarCartaValida(TestGamePlay.java:65)
+	at domain.game.TestGamePlay.CuandoCartaNumericaValidaEsJugado_DeberiaSerAceptado(TestGamePlay.java:77)
+
