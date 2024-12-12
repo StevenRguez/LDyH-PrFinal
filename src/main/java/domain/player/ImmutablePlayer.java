@@ -16,14 +16,19 @@ public class ImmutablePlayer implements Serializable {
     /**
      * Jugador al que representa.
      */
+
     private final Player player;
+    private final int level;
+    private final String name;
 
     /**
      * Constructor de la clase ImmutablePlayer dado un jugador.
      * @param player Jugador al que representa.
      */
-    public ImmutablePlayer(Player player) {
+    public ImmutablePlayer(Player player, int level) {
         this.player = player;
+        this.level = level;
+        this.name = player.getName();
     }
 
     /**
