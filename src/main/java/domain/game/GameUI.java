@@ -58,7 +58,7 @@ public class GameUI {
             gameDurationLabel.setText("Duración de la partida: " + durationText);
         });
     }
-
-
-
+    public String getgameDurationLabel() {
+        return gameDurationLabel.getText();
+    }
 }
