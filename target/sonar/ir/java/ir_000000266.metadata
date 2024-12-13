@@ -1,0 +1,8 @@
+domain.game.Game#checkActionCardRule(Ldomain/card/Card;)V
+false
+0fedf692dfc6e0ca906931c1118a291c
+domain.game.CardRules#isValidActionCard(Ldomain/card/Card;Ldomain/card/ActionCard;)Z
+domain.game.Game#isFirstDiscardAWildCard()Z
+domain.game.Game#rejectPlayedCard(Ldomain/card/Card;)V
+==
+peekTopCard domain.game.Game#peekTopCard()Ldomain/card/Card;

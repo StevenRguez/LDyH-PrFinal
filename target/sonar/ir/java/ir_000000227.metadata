@@ -1,0 +1,10 @@
+ui.view.PlayerView#initControlPanel()V
+false
+dd53564db10c08f639522893c47da735
+javax.swing.Box#createVerticalBox()Ljavax/swing/Box;
+javax.swing.Box#createVerticalStrut(I)Ljava/awt/Component;
+ui.view.PlayerView#initDrawButton()V
+ui.view.PlayerView#initNameLabel()V
+ui.view.PlayerView#initSayNoButton()V
+==
+add java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;

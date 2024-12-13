@@ -1,0 +1,5 @@
+ui.view.CardView#<init>(Ldomain/card/Card;)V
+false
+189bb6df274ec120fa299c61661ae69a
+==
+<init> ui.view.CardView#<init>(Ldomain/card/Card;Ljava/util/function/Consumer;)V

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AppFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LABgrupal</a> &gt; <a href="index.source.html" class="el_package">ui</a> &gt; <span class="el_source">AppFrame.java</span></div><h1>AppFrame.java</h1><pre class="source lang-java linenums">package ui;
+
+import application.IGameAppService;
+import ui.view.PlayerView;
+import ui.view.TableView;
+
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ * Clase principal de la interfaz gráfica que extiende JFrame.
+ * Representa la ventana principal de la aplicación.
+ */
+public class AppFrame extends JFrame {
+
+    /**
+     * Panel principal que contiene el diseño de la interfaz.
+     */
+    private final JPanel mainLayout;
+
+    /**
+     * Servicio de aplicación para manejar la lógica del juego.
+     */
+    private final IGameAppService appService;
+
+    /**
+     * Constructor que inicializa la ventana principal de la aplicación.
+     * Configura el diseño de la interfaz y muestra la ventana.
+     *
+     * @param appService instancia de IGameAppService para interactuar con la lógica del juego.
+     */
+<span class="nc" id="L32">    public AppFrame(IGameAppService appService) {</span>
+<span class="nc" id="L33">        this.appService = appService;</span>
+
+<span class="nc" id="L35">        mainLayout = new JPanel();</span>
+<span class="nc" id="L36">        setupLayout();</span>
+
+<span class="nc" id="L38">        showFrame();</span>
+<span class="nc" id="L39">    }</span>
+
+    /**
+     * Configura las propiedades básicas de la ventana y la hace visible.
+     */
+    private void showFrame() {
+<span class="nc" id="L45">        setVisible(true);</span>
+<span class="nc" id="L46">        setResizable(false);</span>
+<span class="nc" id="L47">        setLocation(200, 100);</span>
+<span class="nc" id="L48">        pack();</span>
+<span class="nc" id="L49">        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L50">    }</span>
+
+    /**
+     * Configura el diseño y los componentes de la interfaz gráfica.
+     * Añade las vistas de los jugadores y la vista de la mesa al diseño principal.
+     */
+    private void setupLayout() {
+<span class="nc" id="L57">        mainLayout.setPreferredSize(new Dimension(960, 720));</span>
+<span class="nc" id="L58">        mainLayout.setBackground(new Color(30, 36, 40));</span>
+<span class="nc" id="L59">        mainLayout.setLayout(new BorderLayout());</span>
+
+        // Esta aplicación de escritorio solo soporta juego para dos jugadores
+<span class="nc" id="L62">        var players = appService.getPlayerInfos();</span>
+<span class="nc" id="L63">        var playerView1 = new PlayerView(players.get(0), appService);</span>
+<span class="nc" id="L64">        var playerView2 = new PlayerView(players.get(1), appService);</span>
+
+<span class="nc" id="L66">        var tableView = new TableView(appService);</span>
+
+<span class="nc" id="L68">        mainLayout.add(playerView1, BorderLayout.SOUTH);</span>
+<span class="nc" id="L69">        mainLayout.add(tableView, BorderLayout.CENTER);</span>
+<span class="nc" id="L70">        mainLayout.add(playerView2, BorderLayout.NORTH);</span>
+<span class="nc" id="L71">        add(mainLayout);</span>
+<span class="nc" id="L72">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

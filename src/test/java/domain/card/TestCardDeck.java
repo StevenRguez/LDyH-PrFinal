@@ -11,6 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 class TestCardDeck {
 
+    /**
+     * Atributo que representa un conjunto de cartas
+     */
     private CardDeck mazo;
 
     /**

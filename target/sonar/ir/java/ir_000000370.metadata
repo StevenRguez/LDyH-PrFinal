@@ -1,0 +1,5 @@
+domain.card.CardUtil#isWildCard(Ldomain/card/Card;)Z
+false
+4a44d95339f1061ee5b2fdc472b36b2e
+==
+getType domain.card.Card#getType()Ldomain/card/CardType;

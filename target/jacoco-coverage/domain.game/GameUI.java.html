@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GameUI.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LABgrupal</a> &gt; <a href="index.source.html" class="el_package">domain.game</a> &gt; <span class="el_source">GameUI.java</span></div><h1>GameUI.java</h1><pre class="source lang-java linenums">package domain.game;
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.Map;
+import java.util.UUID;
+
+public class GameUI {
+    private final Game game;
+    private final JFrame frame;
+    private final JPanel playerMovePanel;
+    private final JLabel gameDurationLabel;
+
+<span class="fc" id="L14">    public GameUI(Game game) {</span>
+<span class="fc" id="L15">        this.game = game;</span>
+
+        // Crear ventana principal
+<span class="fc" id="L18">        frame = new JFrame(&quot;Estado del Juego&quot;);</span>
+<span class="fc" id="L19">        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="fc" id="L20">        frame.setSize(400, 300);</span>
+<span class="fc" id="L21">        frame.setLayout(new BorderLayout());</span>
+
+        // Crear panel para movimientos de jugadores
+<span class="fc" id="L24">        playerMovePanel = new JPanel();</span>
+<span class="fc" id="L25">        playerMovePanel.setLayout(new GridLayout(0, 1)); // Una fila por jugador</span>
+
+        // Crear etiqueta para duración del juego
+<span class="fc" id="L28">        gameDurationLabel = new JLabel(&quot;Duración de la partida: 0 minutos y 0 segundos&quot;, SwingConstants.CENTER);</span>
+
+        // Añadir componentes a la ventana
+<span class="fc" id="L31">        frame.add(playerMovePanel, BorderLayout.CENTER);</span>
+<span class="fc" id="L32">        frame.add(gameDurationLabel, BorderLayout.SOUTH);</span>
+
+        // Mostrar la ventana
+<span class="fc" id="L35">        frame.setVisible(true);</span>
+<span class="fc" id="L36">    }</span>
+
+    // Método para actualizar los movimientos de cada jugador
+    public void updatePlayerMoves() {
+<span class="fc" id="L40">        SwingUtilities.invokeLater(() -&gt; {</span>
+<span class="fc" id="L41">            playerMovePanel.removeAll(); // Limpiar el panel</span>
+<span class="fc" id="L42">            Map&lt;UUID, Integer&gt; playerMoves = game.getPlayerMoves(); // Obtener movimientos</span>
+<span class="fc" id="L43">            game.getPlayers().forEach(player -&gt; {</span>
+<span class="fc" id="L44">                String playerName = player.getName();</span>
+<span class="fc" id="L45">                int moves = playerMoves.getOrDefault(player.getId(), 0);</span>
+<span class="fc" id="L46">                JLabel playerMoveLabel = new JLabel(playerName + &quot;: &quot; + moves + &quot; movimientos&quot;, SwingConstants.CENTER);</span>
+<span class="fc" id="L47">                playerMovePanel.add(playerMoveLabel);</span>
+<span class="fc" id="L48">            });</span>
+<span class="fc" id="L49">            playerMovePanel.revalidate();</span>
+<span class="fc" id="L50">            playerMovePanel.repaint();</span>
+<span class="fc" id="L51">        });</span>
+<span class="fc" id="L52">    }</span>
+
+    // Método para actualizar el tiempo de la partida
+    public void updateGameDuration() {
+<span class="nc" id="L56">        SwingUtilities.invokeLater(() -&gt; {</span>
+<span class="nc" id="L57">            String durationText = game.getGameDuration();</span>
+<span class="nc" id="L58">            gameDurationLabel.setText(&quot;Duración de la partida: &quot; + durationText);</span>
+<span class="nc" id="L59">        });</span>
+<span class="nc" id="L60">    }</span>
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

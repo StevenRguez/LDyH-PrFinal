@@ -1,0 +1,8 @@
+domain.game.Game#rejectPlayedCard(Ldomain/card/Card;)V
+false
+8c4ce64701c8eaa8245f5f6b965dae57
+java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)V
+java.lang.IllegalArgumentException#instance-init#
+java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+==
+peekTopCard domain.game.Game#peekTopCard()Ldomain/card/Card;

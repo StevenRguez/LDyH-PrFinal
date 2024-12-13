@@ -16,7 +16,9 @@ import static org.junit.jupiter.api.Assertions.*;
  * Pruebas unitarias para la clase ImmutablePlayer.
  */
 class TestInmutablePlayer {
-    // Test para la clase de Inmutable Player que se encarga de devolver el identificador del jugador.
+    /**
+     * Test para la clase de Inmutable Player que se encarga de devolver el identificador del jugador.
+     */
     @Test
     void testGetId() {
         // Creamos un jugador con un identificador aleatorio.
@@ -26,7 +28,9 @@ class TestInmutablePlayer {
         assertEquals(player.getId(), immutablePlayer.getId());
     }
 
-    // Test para la clase de Inmutable Player que se encarga de devolver el nombre del jugador.
+    /**
+     *  Test para la clase de Inmutable Player que se encarga de devolver el nombre del jugador.
+     */
     @Test
     void testGetName() {
         // Creamos un jugador con un nombre.

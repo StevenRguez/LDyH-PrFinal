@@ -1,0 +1,11 @@
+domain.game.Game#validatePlayedCard(Ljava/util/UUID;Ldomain/card/Card;)V
+false
+82a91f474dd89ab092b80a5979e7d624
+java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)V
+java.lang.IllegalArgumentException#instance-init#
+java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+java.util.UUID#equals(Ljava/lang/Object;)Z
+==
+getCurrentPlayer domain.player.PlayerRoundIterator#getCurrentPlayer()Ldomain/player/Player;
+getId domain.common.Entity#getId()Ljava/util/UUID;
+hasHandCard domain.player.Player#hasHandCard(Ldomain/card/Card;)Z

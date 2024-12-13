@@ -1,0 +1,5 @@
+domain.player.Player#toImmutable()Ldomain/player/ImmutablePlayer;
+false
+2c18645e57af841ab17fe2b5fd47b3b0
+domain.player.ImmutablePlayer#<init>(Ldomain/player/Player;)V
+domain.player.ImmutablePlayer#instance-init#

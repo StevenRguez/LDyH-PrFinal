@@ -1,0 +1,11 @@
+ui.view.GameStatusView#updateStatus()V
+false
+1bae91c4ab8d348860dc84b185efd2c4
+java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+==
+getCurrentPlayer application.IGameAppService#getCurrentPlayer()Lapplication/dto/PlayerInfoDTO;
+getName application.dto.PlayerInfoDTO#getName()Ljava/lang/String;
+getName domain.player.ImmutablePlayer#getName()Ljava/lang/String;
+getWinner application.IGameAppService#getWinner()Ldomain/player/ImmutablePlayer;
+isGameOver application.IGameAppService#isGameOver()Z
+repaint java.awt.Component#repaint()V

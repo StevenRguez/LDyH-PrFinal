@@ -1,0 +1,9 @@
+application.GameAppService#getCurrentPlayer()Lapplication/dto/PlayerInfoDTO;
+false
+5b4833d9e6acf4b0d575b204aada8e41
+application.dto.PlayerInfoDTO#<init>(Ljava/util/UUID;Ljava/lang/String;)V
+application.dto.PlayerInfoDTO#instance-init#
+==
+getCurrentPlayer domain.game.Game#getCurrentPlayer()Ldomain/player/ImmutablePlayer;
+getId domain.player.ImmutablePlayer#getId()Ljava/util/UUID;
+getName domain.player.ImmutablePlayer#getName()Ljava/lang/String;

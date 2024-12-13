@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TableView.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LABgrupal</a> &gt; <a href="index.source.html" class="el_package">ui.view</a> &gt; <span class="el_source">TableView.java</span></div><h1>TableView.java</h1><pre class="source lang-java linenums">package ui.view;
+
+import application.IGameAppService;
+import domain.card.Card;
+import domain.common.DomainEvent;
+import domain.common.DomainEventPublisher;
+import domain.common.DomainEventSubscriber;
+import domain.game.events.CardPlayed;
+import ui.common.StyleUtil;
+
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ * Representa la vista de la mesa de juego en la interfaz de usuario.
+ * Esta clase se encarga de mostrar la carta superior de la pila de descarte y
+ * proporciona información sobre el estado actual del juego.
+ * **Diseño:**
+ * La clase utiliza un `GridBagLayout` para organizar los componentes de la vista.
+ * El panel `table` contiene la carta superior, mientras que `GameStatusView` muestra
+ * información adicional sobre el juego.
+ * **Interacciones:**
+ * La clase se suscribe a eventos de tipo `CardPlayed` para actualizar la vista
+ * cada vez que se juega una carta.
+ */
+public class TableView extends JPanel implements DomainEventSubscriber {
+    /**
+     * Panel que representa la mesa
+     */
+    private final JPanel table;
+    /**
+     * Esta variable almacena una referencia al servicio de aplicación del juego.
+     */
+    private final IGameAppService appService;
+
+    /**
+     * Constructor de la clase
+     * @param appService servicio
+     */
+<span class="nc" id="L40">    public TableView(IGameAppService appService){</span>
+<span class="nc" id="L41">        this.appService = appService;</span>
+
+<span class="nc" id="L43">        setOpaque(false);</span>
+<span class="nc" id="L44">        setLayout(new GridBagLayout());</span>
+<span class="nc" id="L45">        table = new JPanel();</span>
+<span class="nc" id="L46">        table.setBackground(new Color(64,64,64));</span>
+
+<span class="nc" id="L48">        initTable();</span>
+<span class="nc" id="L49">        initInfoView();</span>
+
+<span class="nc" id="L51">        DomainEventPublisher.subscribe(this);</span>
+<span class="nc" id="L52">    }</span>
+
+    /**
+     * Inicializa el panel de la mesa con la carta superior de la pila de descarte.
+     * **Precondición:** El servicio de aplicación del juego debe estar inicializado.
+     * **Postcondición:** El panel `table` contiene una instancia de `CardView` que muestra
+     * la carta superior.
+     */
+    private void initTable() {
+<span class="nc" id="L61">        table.removeAll();</span>
+
+<span class="nc" id="L63">        table.setPreferredSize(new Dimension(500,200));</span>
+<span class="nc" id="L64">        table.setLayout(new GridBagLayout());</span>
+
+<span class="nc" id="L66">        GridBagConstraints c = new GridBagConstraints();</span>
+<span class="nc" id="L67">        c.fill = GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L68">        c.gridx = 0;</span>
+<span class="nc" id="L69">        c.gridy = 0;</span>
+
+<span class="nc" id="L71">        Card topCard = appService.peekTopCard();</span>
+<span class="nc" id="L72">        Color background = StyleUtil.convertCardColor(topCard.getColor());</span>
+
+<span class="nc" id="L74">        var cardView = new CardView(topCard);</span>
+<span class="nc" id="L75">        table.add(cardView, c);</span>
+
+<span class="nc" id="L77">        table.setBackground(background);</span>
+<span class="nc" id="L78">        table.revalidate();</span>
+<span class="nc" id="L79">    }</span>
+
+    /**
+     * Metodo para mostrar datos de la partida
+     */
+    private void initInfoView() {
+<span class="nc" id="L85">        GridBagConstraints c = new GridBagConstraints();</span>
+<span class="nc" id="L86">        c.fill = GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L87">        c.gridx = 0;</span>
+<span class="nc" id="L88">        c.gridy = 0;</span>
+<span class="nc" id="L89">        c.insets = new Insets(0, 130, 0, 45);</span>
+<span class="nc" id="L90">        add(table,c);</span>
+
+<span class="nc" id="L92">        c.fill = GridBagConstraints.HORIZONTAL;</span>
+<span class="nc" id="L93">        c.anchor = GridBagConstraints.LINE_END;</span>
+<span class="nc" id="L94">        c.gridwidth = GridBagConstraints.REMAINDER;</span>
+<span class="nc" id="L95">        c.gridx = 1;</span>
+<span class="nc" id="L96">        c.gridy = 0;</span>
+<span class="nc" id="L97">        c.insets = new Insets(0, 1, 0, 1);</span>
+
+<span class="nc" id="L99">        add(new GameStatusView(appService), c);</span>
+<span class="nc" id="L100">    }</span>
+
+    /**
+     * Metodo handleEvent
+     * @param event Objeto DomainEvent que representa el evento de dominio recibido.
+     */
+    @Override
+    public void handleEvent(DomainEvent event) {
+<span class="nc bnc" id="L108" title="All 2 branches missed.">        if(event instanceof CardPlayed) {</span>
+<span class="nc" id="L109">            initTable();</span>
+        }
+<span class="nc" id="L111">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

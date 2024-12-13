@@ -21,6 +21,7 @@ ui/view/TableView.class
 domain/common/DomainEventSubscriber.class
 domain/common/DomainEventPublisher.class
 domain/game/Game$1.class
+domain/game/GameUI.class
 domain/game/DrawPile.class
 domain/common/DomainEvent.class
 ui/view/GameStatusView.class

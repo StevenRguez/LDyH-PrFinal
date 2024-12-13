@@ -1,0 +1,7 @@
+ui.view.CardView#removeHoverEffect()V
+false
+a48e894fbb8771b2463c4830797c1259
+==
+getLocation java.awt.Component#getLocation()Ljava/awt/Point;
+setBorder javax.swing.JComponent#setBorder(Ljavax/swing/border/Border;)V
+setLocation java.awt.Component#setLocation(Ljava/awt/Point;)V

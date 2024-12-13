@@ -19,8 +19,15 @@ class TestDomainEventPublisher {
      * Clase interna que simula un suscriptor para pruebas.
      */
     class TestSubscriber implements DomainEventSubscriber {
-        int vecesInvocado = 0; ///< Número de veces que se ha invocado al suscriptor.
-        Card cartaJugada = null; ///< Última carta jugada recibida por el suscriptor.
+        /**
+         * Número de veces que se ha invocado al suscriptor.
+         */
+        int vecesInvocado = 0;
+
+        /**
+         * Última carta jugada recibida por el suscriptor.
+         */
+        Card cartaJugada = null;
 
         /**
          * Maneja un evento recibido.
@@ -74,7 +81,6 @@ class TestDomainEventPublisher {
     /**
      * Verifica que al publicar un evento, se invoca a todos los suscriptores registrados.
      */
-
     @Test
     void dadoVariosSuscriptoresRegistrados_DebeInvocarATodos() {
         // Arrange: Configura varios suscriptores de prueba.

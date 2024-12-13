@@ -1,0 +1,6 @@
+ui.view.CardView#instance-init#
+false
+5bad460c61031cb573727a238348f56b
+java.awt.Dimension#<init>(II)V
+java.awt.Dimension#instance-init#
+javax.swing.BorderFactory#createEtchedBorder(ILjava/awt/Color;Ljava/awt/Color;)Ljavax/swing/border/Border;

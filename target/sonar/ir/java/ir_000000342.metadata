@@ -1,0 +1,6 @@
+domain.game.DealerService#swapCard(Ljava/util/List;II)V
+false
+d118fd0d71a2dda86126ed078d89c4b5
+==
+get java.util.List#get(I)Ljava/lang/Object;
+set java.util.List#set(ILjava/lang/Object;)Ljava/lang/Object;

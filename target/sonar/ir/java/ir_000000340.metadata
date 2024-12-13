@@ -1,0 +1,11 @@
+domain.game.DealerService#shuffle(Ljava/util/List;)Ljava/util/List;
+false
+090086941f3b2bd4c86c212f8d70b53f
+domain.game.DealerService#swapCard(Ljava/util/List;II)V
+java.security.SecureRandom#<init>()V
+java.security.SecureRandom#instance-init#
+java.util.ArrayList#<init>(Ljava/util/Collection;)V
+java.util.ArrayList#instance-init#
+==
+nextInt java.util.Random#nextInt(I)I
+size java.util.ArrayList#size()I

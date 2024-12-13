@@ -1,0 +1,5 @@
+domain.player.Player#hasHandCard(Ldomain/card/Card;)Z
+false
+a12e5ecbaa80fcafc6487fc32db40292
+==
+hasCard domain.player.HandCardList#hasCard(Ldomain/card/Card;)Z

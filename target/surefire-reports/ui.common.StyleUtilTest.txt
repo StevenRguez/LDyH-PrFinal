@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: ui.common.StyleUtilTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.324 s - in ui.common.StyleUtilTest

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PlayerInfoDTO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LABgrupal</a> &gt; <a href="index.source.html" class="el_package">application.dto</a> &gt; <span class="el_source">PlayerInfoDTO.java</span></div><h1>PlayerInfoDTO.java</h1><pre class="source lang-java linenums">package application.dto;
+
+import java.io.Serializable;
+import java.util.UUID;
+
+/**
+ PlayerInfoDTO
+ * Objeto de Transferencia de Datos (DTO) que contiene la información del jugador para la transferencia de datos entre capas.
+ *
+ * Esta clase representa la información esencial de un jugador, encapsulando
+ * su identificador único (UUID) y su nombre.
+ * Implementa Serializable para permitir la serialización del objeto para la transferencia de datos.
+ */
+public class PlayerInfoDTO implements Serializable {
+
+    /**
+     * Identificador único del jugador.
+     */
+    private final UUID id;
+
+    /**
+     * Nombre del jugador.
+     */
+    private final String name;
+
+    /**
+     * Constructor que inicializa el PlayerInfoDTO con un id y un nombre especificados.
+     *
+     * @param id Identificador único (UUID) del jugador.
+     * @param name Nombre del jugador.
+     */
+<span class="fc" id="L32">    public PlayerInfoDTO(UUID id, String name) {</span>
+<span class="fc" id="L33">        this.id = id;</span>
+<span class="fc" id="L34">        this.name = name;</span>
+<span class="fc" id="L35">    }</span>
+
+    /**
+     * Obtiene el identificador único (UUID) del jugador.
+     *
+     * @return UUID del jugador.
+     */
+    public UUID getId() {
+<span class="fc" id="L43">        return id;</span>
+    }
+
+    /**
+     * Obtiene el nombre del jugador.
+     *
+     * @return Nombre del jugador.
+     */
+    public String getName() {
+<span class="fc" id="L52">        return name;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,34 @@
+domain.game.Game#playCard(Ljava/util/UUID;Ldomain/card/Card;Z)V
+false
+2da6e5312ff5ecf6063d1dc43ba02a5e
+domain.common.DomainEventPublisher#publish(Ldomain/common/DomainEvent;)V
+domain.game.Game#acceptPlayedCard(Ldomain/card/Card;Z)V
+domain.game.Game#checkActionCardRule(Ldomain/card/Card;)V
+domain.game.Game#checkNumberCardRule(Ldomain/card/Card;)V
+domain.game.Game#checkWildCardRule(Ldomain/card/Card;)V
+domain.game.Game#drawFourCards(Ldomain/player/Player;)V
+domain.game.Game#drawTwoCards(Ldomain/player/Player;)V
+domain.game.Game#rejectPlayedCard(Ldomain/card/Card;)V
+domain.game.Game#reverse()V
+domain.game.events.CardPlayed#<init>(Ljava/util/UUID;Ldomain/card/Card;)V
+domain.game.events.CardPlayed#instance-init#
+domain.game.events.GameOver#<init>(Ldomain/player/ImmutablePlayer;)V
+domain.game.events.GameOver#instance-init#
+java.lang.IllegalStateException#<init>(Ljava/lang/String;)V
+java.lang.IllegalStateException#instance-init#
+java.time.Instant#now()Ljava/time/Instant;
+==
+get java.util.Map#get(Ljava/lang/Object;)Ljava/lang/Object;
+getCurrentPlayer domain.game.Game#getCurrentPlayer()Ldomain/player/ImmutablePlayer;
+getCurrentPlayer domain.player.PlayerRoundIterator#getCurrentPlayer()Ldomain/player/Player;
+getGameDuration domain.game.Game#getGameDuration()Ljava/lang/String;
+getName domain.player.ImmutablePlayer#getName()Ljava/lang/String;
+getOrDefault java.util.Map#getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+getType domain.card.Card#getType()Ldomain/card/CardType;
+info java.util.logging.Logger#info(Ljava/lang/String;)V
+isOver domain.game.Game#isOver()Z
+next domain.player.PlayerRoundIterator#next()Ldomain/player/Player;
+println java.io.PrintStream#println(Ljava/lang/String;)V
+put java.util.Map#put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+updateGameDuration domain.game.GameUI#updateGameDuration()V
+updatePlayerMoves domain.game.GameUI#updatePlayerMoves()V

@@ -1,0 +1,6 @@
+domain.card.NumberCard#equals(Ljava/lang/Object;)Z
+false
+63b022bdd5d32a3d333fd1d1b52361eb
+java.lang.Object#getClass()Ljava/lang/Class;
+==
+getColor domain.card.AbstractCard#getColor()Ldomain/card/CardColor;

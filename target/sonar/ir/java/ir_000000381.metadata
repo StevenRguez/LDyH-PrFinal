@@ -1,0 +1,5 @@
+domain.player.HandCardList#addCard(Ldomain/card/Card;)V
+false
+929c2279789a4d1296adae7cc563de17
+==
+add java.util.List#add(Ljava/lang/Object;)Z

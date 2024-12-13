@@ -6,9 +6,16 @@ import java.io.*;
 import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
-
+/**
+ * Clase de prueba para verificar el correcto funcionamiento de la clase PlayerInfoDTO.
+ * Se realizan pruebas sobre su constructor, getters, igualdad, serialización y representación en cadena.
+ */
 class TestPlayerInfoDTO {
 
+    /**
+     * Prueba unitaria para verificar el constructor y los métodos getters de PlayerInfoDTO.
+     * Comprueba que los valores proporcionados en el constructor se asignan correctamente.
+     */
     @Test
     void testConstructorAndGetters() {
         UUID testId = UUID.randomUUID();
@@ -20,6 +27,10 @@ class TestPlayerInfoDTO {
         assertEquals(testName, playerInfo.getName());
     }
 
+    /**
+     * Prueba unitaria para verificar que la clase PlayerInfoDTO es inmutable.
+     * Comprueba que los valores iniciales no pueden ser modificados después de la creación del objeto.
+     */
     @Test
     void testImmutability() {
         UUID testId = UUID.randomUUID();
@@ -32,6 +43,13 @@ class TestPlayerInfoDTO {
         assertEquals(testName, playerInfo.getName());
     }
 
+    /**
+     * Prueba unitaria para verificar que PlayerInfoDTO es serializable.
+     * Serializa y deserializa el objeto, comprobando que los datos se mantienen.
+     *
+     * @throws IOException            Si ocurre un error en la serialización/deserialización.
+     * @throws ClassNotFoundException Si no se encuentra la clase durante la deserialización.
+     */
     @Test
     void testSerialization() throws IOException, ClassNotFoundException {
         UUID testId = UUID.randomUUID();
@@ -53,6 +71,11 @@ class TestPlayerInfoDTO {
         assertEquals(playerInfo.getName(), deserializedPlayerInfo.getName());
     }
 
+    /**
+     * Prueba unitaria para verificar los métodos equals y hashCode de PlayerInfoDTO.
+     * Comprueba que dos instancias con los mismos valores son iguales
+     * y que las instancias diferentes no son iguales.
+     */
     @Test
     void testEqualsAndHashCode() {
         UUID testId = UUID.randomUUID();
@@ -71,6 +94,10 @@ class TestPlayerInfoDTO {
         assertNotEquals(playerInfo1, playerInfo3);
     }
 
+    /**
+     * Prueba unitaria para verificar el método toString de PlayerInfoDTO.
+     * Comprueba que la representación en cadena incluye los valores de los atributos.
+     */
     @Test
     void testToString() {
         UUID testId = UUID.randomUUID();

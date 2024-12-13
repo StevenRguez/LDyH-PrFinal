@@ -1,0 +1,5 @@
+application.GameAppService#isGameOver()Z
+false
+d5fb775208ea6e8902728dac682c927f
+==
+isOver domain.game.Game#isOver()Z

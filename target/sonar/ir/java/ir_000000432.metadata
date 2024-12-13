@@ -1,0 +1,7 @@
+domain.card.CardDeck#createWildCards()V
+false
+1f00813aad4c21725a88968a3ed7f683
+domain.card.WildCard#<init>(Ldomain/card/CardType;)V
+domain.card.WildCard#instance-init#
+==
+add java.util.List#add(Ljava/lang/Object;)Z

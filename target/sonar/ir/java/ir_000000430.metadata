@@ -1,0 +1,7 @@
+domain.card.CardDeck#createNumberCards()V
+false
+e918d7a9b67b3fe12e832137b187e67f
+domain.card.NumberCard#<init>(ILdomain/card/CardColor;)V
+domain.card.NumberCard#instance-init#
+==
+add java.util.List#add(Ljava/lang/Object;)Z

@@ -1,0 +1,7 @@
+domain.game.Game#getGameDuration()Ljava/lang/String;
+false
+67965a3ca65630ac1ac16ee562a82229
+java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+java.time.Duration#between(Ljava/time/temporal/Temporal;Ljava/time/temporal/Temporal;)Ljava/time/Duration;
+java.time.Duration#getSeconds()J
+java.time.Duration#toMinutes()J

@@ -1,0 +1,6 @@
+domain.card.WildCard#toString()Ljava/lang/String;
+false
+e3107b11a11bea29c2473008d6cd1aea
+==
+getColor domain.card.AbstractCard#getColor()Ldomain/card/CardColor;
+getType domain.card.AbstractCard#getType()Ldomain/card/CardType;

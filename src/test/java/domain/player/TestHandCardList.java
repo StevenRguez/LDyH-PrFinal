@@ -9,7 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class TestHandCardList {
 
     /**
-     * Test para comprobar que se añade una carta a la mano.
+     * Prueba que no se puede eliminar una carta de la mano cuando está vacía.
+     * Verifica que el intento de eliminar una carta de una lista vacía falle.
      */
     @Test
     void WhenEmpty_ShouldNotRemove() {
@@ -20,6 +21,10 @@ class TestHandCardList {
         assertFalse(result);
     }
 
+    /**
+     * Prueba que solo se elimine una vez cuando hay dos cartas con el mismo valor.
+     * Verifica que la carta se elimina correctamente solo una vez, incluso si existen duplicados.
+     */
     @Test
     void GivenTwoCardsWithSameValues_ShouldRemoveOnlyOnce() {
         var handCards = new HandCardList();
@@ -34,6 +39,10 @@ class TestHandCardList {
         assertEquals(1, handCards.size());
     }
 
+    /**
+     * Prueba que solo se elimine una vez cuando ambas cartas son la misma instancia.
+     * Verifica que, aunque haya referencias duplicadas a la misma carta, solo se elimine una vez.
+     */
     @Test
     void GivenTwoCardsWithSameReference_ShouldRemoveOnlyOnce() {
         var handCards = new HandCardList();
@@ -47,6 +56,10 @@ class TestHandCardList {
         assertEquals(1, handCards.size());
     }
 
+    /**
+     * Prueba que solo se elimine una vez una carta comodín de color, incluso si se añaden múltiples instancias de la misma carta.
+     * Verifica que, aunque haya varias cartas del mismo tipo, solo se elimine una cuando se intente eliminar una carta específica.
+     */
     @Test
     void GivenWildColorWithColor_ShouldRemoveOnlyOnce() {
         var handCards = new HandCardList();
@@ -59,6 +72,10 @@ class TestHandCardList {
         assertEquals(1, handCards.size());
     }
 
+    /**
+     * Prueba que una carta comodín de robar cuatro no se elimine si no existe una carta del tipo adecuado.
+     * Verifica que, si el tipo de la carta que se intenta eliminar no coincide con el tipo de carta presente en la lista, la eliminación no tiene éxito.
+     */
     @Test
     void GivenWildDrawFourWithColor_WhenTypeDoesNotExist_ShouldNotRemove() {
         var handCards = new HandCardList();
@@ -70,6 +87,4 @@ class TestHandCardList {
         assertFalse(result);
         assertEquals(2, handCards.size());
     }
-
-
 }

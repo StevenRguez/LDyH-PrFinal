@@ -10,8 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class TestCard {
 
-
-
     /**
      * Verifica que dos cartas numéricas con el mismo valor y color sean iguales.
      */
@@ -115,7 +113,6 @@ public class TestCard {
     /**
      * Verifica que una carta de tipo "Comodín de color" y una carta numérica no sean iguales.
      */
-
     @Test
     void comodinColorYCartaNumerica_Diferentes() {
         var comodinColor = CardTestFactory.createWildColorCard();

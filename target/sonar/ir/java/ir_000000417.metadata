@@ -1,0 +1,5 @@
+domain.player.Player#removePlayedCard(Ldomain/card/Card;)V
+false
+958c5faac69bd23d9563ab3d24884cd0
+==
+removeCard domain.player.HandCardList#removeCard(Ldomain/card/Card;)Z

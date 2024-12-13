@@ -1,0 +1,4 @@
+domain.game.Game#drawTwoCards(Ldomain/player/Player;)V
+false
+ae6d099a2816c54daefc6bd9d8533f2a
+domain.game.Game#drawCards(Ldomain/player/Player;I)Ljava/util/List;

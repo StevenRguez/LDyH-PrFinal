@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AbstractCard.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LABgrupal</a> &gt; <a href="index.source.html" class="el_package">domain.card</a> &gt; <span class="el_source">AbstractCard.java</span></div><h1>AbstractCard.java</h1><pre class="source lang-java linenums">package domain.card;
+/**
+ * Clase abstracta que implementa la interfaz Card.
+ * Define los métodos getType y getColor.
+ * Implementa los métodos equals, hashCode y toString.
+ */
+public abstract class AbstractCard implements Card {
+
+    /**
+     * Tipo de la carta, que define su función o rol en el juego.
+     */
+    private final CardType type;
+
+    /**
+     * Color de la carta, que puede influir en las reglas del juego.
+     */
+    private final CardColor color;
+
+    /**
+     * Constructor protegido que inicializa una carta con su tipo y color.
+     * @param type tipo de la carta.
+     * @param color color de la carta.
+     */
+<span class="fc" id="L24">    protected AbstractCard(CardType type, CardColor color) {</span>
+<span class="fc" id="L25">        this.type = type;</span>
+<span class="fc" id="L26">        this.color = color;</span>
+<span class="fc" id="L27">    }</span>
+
+    // Métodos de la interfaz Card
+
+    /**
+     * Devuelve el tipo de la carta.
+     * @return tipo de la carta.
+     */
+    @Override
+    public CardType getType() {
+<span class="fc" id="L37">        return type;</span>
+    }
+
+    /**
+     * Devuelve el color de la carta.
+     * @return color de la carta.
+     */
+    @Override
+    public CardColor getColor() {
+<span class="fc" id="L46">        return color;</span>
+    }
+
+    // Métodos de Object
+
+    /**
+     * Comprueba si dos cartas son iguales.
+     * La comparación se basa en el tipo y el color de la carta.
+     * @param o objeto a comparar.
+     * @return true si las cartas son iguales, false en caso contrario.
+     */
+    @Override
+    public abstract boolean equals(Object o);
+
+    /**
+     * Devuelve el hash code de la carta.
+     * El valor del hash se basa en el tipo y el color de la carta.
+     * @return hash code de la carta.
+     */
+    @Override
+    public abstract int hashCode();
+
+    /**
+     * Devuelve la representación en cadena de la carta.
+     * La cadena incluye información sobre el tipo y el color de la carta.
+     * @return representación en cadena de la carta.
+     */
+    @Override
+    public abstract String toString();
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
