@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="application.TestGameAppService" time="0.53" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="application.TestGameAppService" time="0.443" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
-    <property name="sonar.login" value="12aeda1852058bcd85f3a0897244805f5973dbe1"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="sun.awt.enableExtraMouseButtons" value="true"/>
-    <property name="java.class.path" value="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin título/LDyH-PrFinal/target/test-classes:/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin título/LDyH-PrFinal/target/classes:/Users/stevenr/.m2/repository/org/springframework/spring-core/5.3.9/spring-core-5.3.9.jar:/Users/stevenr/.m2/repository/org/springframework/spring-jcl/5.3.9/spring-jcl-5.3.9.jar:/Users/stevenr/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/stevenr/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/stevenr/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar:/Users/stevenr/.m2/repository/org/apache/logging/log4j/log4j-core/2.17.2/log4j-core-2.17.2.jar:/Users/stevenr/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar:/Users/stevenr/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/stevenr/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar:/Users/stevenr/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/stevenr/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar:/Users/stevenr/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar:/Users/stevenr/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar:"/>
+    <property name="java.class.path" value="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/target/test-classes:/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/target/classes:/Users/stevenr/.m2/repository/org/springframework/spring-core/5.3.9/spring-core-5.3.9.jar:/Users/stevenr/.m2/repository/org/springframework/spring-jcl/5.3.9/spring-jcl-5.3.9.jar:/Users/stevenr/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/stevenr/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/stevenr/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar:/Users/stevenr/.m2/repository/org/apache/logging/log4j/log4j-core/2.17.2/log4j-core-2.17.2.jar:/Users/stevenr/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar:/Users/stevenr/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/stevenr/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar:/Users/stevenr/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/stevenr/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar:/Users/stevenr/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar:/Users/stevenr/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar:"/>
     <property name="java.vm.vendor" value="Homebrew"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="sun.font.fontmanager" value="sun.font.CFontManager"/>
@@ -16,10 +15,10 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk@17/17.0.13/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin título/LDyH-PrFinal/target/surefire/surefirebooter12648941239989440403.jar /Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin título/LDyH-PrFinal/target/surefire 2024-12-13T20-11-55_999-jvmRun1 surefire2275239711771754109tmp surefire_0912239701423708379tmp"/>
+    <property name="sun.java.command" value="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/target/surefire/surefirebooter11459067886456250737.jar /Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/target/surefire 2024-12-18T20-28-36_209-jvmRun1 surefire10502621367213480589tmp surefire_02403854502191470964tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin título/LDyH-PrFinal/target/test-classes:/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin título/LDyH-PrFinal/target/classes:/Users/stevenr/.m2/repository/org/springframework/spring-core/5.3.9/spring-core-5.3.9.jar:/Users/stevenr/.m2/repository/org/springframework/spring-jcl/5.3.9/spring-jcl-5.3.9.jar:/Users/stevenr/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/stevenr/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/stevenr/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar:/Users/stevenr/.m2/repository/org/apache/logging/log4j/log4j-core/2.17.2/log4j-core-2.17.2.jar:/Users/stevenr/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar:/Users/stevenr/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/stevenr/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar:/Users/stevenr/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/stevenr/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar:/Users/stevenr/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar:/Users/stevenr/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar:"/>
+    <property name="surefire.test.class.path" value="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/target/test-classes:/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/target/classes:/Users/stevenr/.m2/repository/org/springframework/spring-core/5.3.9/spring-core-5.3.9.jar:/Users/stevenr/.m2/repository/org/springframework/spring-jcl/5.3.9/spring-jcl-5.3.9.jar:/Users/stevenr/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/stevenr/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/stevenr/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar:/Users/stevenr/.m2/repository/org/apache/logging/log4j/log4j-core/2.17.2/log4j-core-2.17.2.jar:/Users/stevenr/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar:/Users/stevenr/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/stevenr/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar:/Users/stevenr/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/stevenr/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar:/Users/stevenr/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar:/Users/stevenr/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/stevenr"/>
     <property name="user.language" value="es"/>
@@ -27,12 +26,12 @@
     <property name="java.version.date" value="2024-10-15"/>
     <property name="java.home" value="/usr/local/Cellar/openjdk@17/17.0.13/libexec/openjdk.jdk/Contents/Home"/>
     <property name="file.separator" value="/"/>
-    <property name="basedir" value="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin título/LDyH-PrFinal"/>
+    <property name="basedir" value="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin título/LDyH-PrFinal/target/surefire/surefirebooter12648941239989440403.jar"/>
+    <property name="surefire.real.class.path" value="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal/target/surefire/surefirebooter11459067886456250737.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="17.0.13+0"/>
@@ -47,12 +46,10 @@
     <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
     <property name="java.io.tmpdir" value="/var/folders/d1/pq2_x5r97md0vrqjyw2ymw680000gn/T/"/>
     <property name="java.version" value="17.0.13"/>
-    <property name="user.dir" value="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin título/LDyH-PrFinal"/>
+    <property name="user.dir" value="/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/Proyecto final/Uno/LDyH-PrFinal"/>
     <property name="os.arch" value="x86_64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="sonar.organization" value="stevenrguez"/>
     <property name="native.encoding" value="UTF-8"/>
-    <property name="sonar.projectKey" value="StevenRguez_LDyH-PrFinal"/>
     <property name="java.library.path" value="/Users/stevenr/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Homebrew"/>
@@ -62,56 +59,53 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testPlayCard" classname="application.TestGameAppService" time="0.065">
-    <system-out><![CDATA[20:12:07.912 [main] INFO  GameAppService - Juego creado exitosamente
-20:12:07.915 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [WildCard{WILD_COLOR, null},NumberCard{8, RED},NumberCard{8, BLUE},NumberCard{2, RED},NumberCard{7, YELLOW},NumberCard{1, RED},NumberCard{2, YELLOW}]
-20:12:07.917 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [NumberCard{1, GREEN},NumberCard{1, BLUE},NumberCard{5, GREEN},NumberCard{4, YELLOW},ActionCard{SKIP, RED},ActionCard{REVERSE, BLUE},ActionCard{SKIP, BLUE}]
+  <testcase name="testPlayCard" classname="application.TestGameAppService" time="0.077">
+    <system-out><![CDATA[20:28:41.606 [main] INFO  GameAppService - Juego creado exitosamente
+20:28:41.608 [main] DEBUG GameAppService - Jugador Jugador 1 con 9 cartas => [NumberCard{6, GREEN},NumberCard{5, GREEN},NumberCard{8, BLUE},NumberCard{7, RED},ActionCard{REVERSE, RED},WildCard{WILD_DRAW_FOUR, null},NumberCard{9, BLUE},ActionCard{SKIP, BLUE},NumberCard{1, BLUE}]
+20:28:41.609 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [NumberCard{1, GREEN},NumberCard{4, GREEN},NumberCard{4, YELLOW},NumberCard{5, BLUE},NumberCard{3, RED},NumberCard{5, GREEN},ActionCard{DRAW_TWO, BLUE}]
 ]]></system-out>
   </testcase>
-  <testcase name="testGetPlayerInfos" classname="application.TestGameAppService" time="0.063">
-    <system-out><![CDATA[20:12:07.981 [main] INFO  GameAppService - Juego creado exitosamente
-20:12:07.983 [main] DEBUG GameAppService - Jugador Jugador 1 con 9 cartas => [ActionCard{REVERSE, BLUE},NumberCard{3, GREEN},NumberCard{3, RED},NumberCard{7, YELLOW},NumberCard{9, BLUE},ActionCard{SKIP, RED},NumberCard{4, BLUE},ActionCard{DRAW_TWO, BLUE},WildCard{WILD_COLOR, null}]
-20:12:07.984 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [NumberCard{9, YELLOW},ActionCard{REVERSE, RED},WildCard{WILD_COLOR, null},NumberCard{1, GREEN},NumberCard{1, BLUE},NumberCard{0, RED},NumberCard{5, YELLOW}]
+  <testcase name="testGetPlayerInfos" classname="application.TestGameAppService" time="0.031">
+    <system-out><![CDATA[20:28:41.641 [main] INFO  GameAppService - Juego creado exitosamente
+20:28:41.641 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [NumberCard{9, YELLOW},WildCard{WILD_DRAW_FOUR, null},NumberCard{3, RED},ActionCard{SKIP, YELLOW},NumberCard{0, GREEN},NumberCard{8, YELLOW},WildCard{WILD_DRAW_FOUR, null}]
+20:28:41.641 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [NumberCard{4, YELLOW},NumberCard{4, GREEN},NumberCard{3, GREEN},NumberCard{9, YELLOW},NumberCard{4, BLUE},NumberCard{5, GREEN},NumberCard{5, YELLOW}]
 ]]></system-out>
   </testcase>
-  <testcase name="testDrawCard" classname="application.TestGameAppService" time="0.071">
-    <system-out><![CDATA[20:12:08.042 [main] INFO  GameAppService - Juego creado exitosamente
-20:12:08.043 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [ActionCard{SKIP, RED},NumberCard{2, YELLOW},NumberCard{5, YELLOW},WildCard{WILD_DRAW_FOUR, null},ActionCard{SKIP, YELLOW},NumberCard{5, RED},NumberCard{7, BLUE}]
-20:12:08.044 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [ActionCard{DRAW_TWO, RED},NumberCard{9, GREEN},NumberCard{6, YELLOW},ActionCard{REVERSE, BLUE},NumberCard{3, BLUE},NumberCard{2, GREEN},NumberCard{3, GREEN}]
-20:12:08.049 [main] INFO  GameAppService - El jugador 3cf3b51d-a515-47c0-908c-6e6896cde3d9 roba una carta
-]]></system-out>
-    <system-err><![CDATA[dic 13, 2024 8:12:08 P. M. domain.game.Game playCard
-INFORMACIÓN: Jugador Jugador 1 ha realizado 1 movimientos.
-]]></system-err>
-  </testcase>
-  <testcase name="testGetCurrentPlayer" classname="application.TestGameAppService" time="0.062">
-    <system-out><![CDATA[20:12:08.111 [main] INFO  GameAppService - Juego creado exitosamente
-20:12:08.114 [main] DEBUG GameAppService - Jugador Jugador 1 con 9 cartas => [NumberCard{3, YELLOW},ActionCard{DRAW_TWO, RED},NumberCard{1, YELLOW},ActionCard{REVERSE, YELLOW},NumberCard{7, GREEN},NumberCard{0, BLUE},NumberCard{6, GREEN},NumberCard{7, BLUE},NumberCard{6, YELLOW}]
-20:12:08.116 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [NumberCard{1, GREEN},ActionCard{REVERSE, YELLOW},NumberCard{4, RED},NumberCard{3, YELLOW},NumberCard{7, BLUE},ActionCard{SKIP, YELLOW},NumberCard{4, BLUE}]
+  <testcase name="testDrawCard" classname="application.TestGameAppService" time="0.047">
+    <system-out><![CDATA[20:28:41.687 [main] INFO  GameAppService - Juego creado exitosamente
+20:28:41.688 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [ActionCard{REVERSE, RED},NumberCard{5, BLUE},ActionCard{SKIP, BLUE},NumberCard{6, BLUE},ActionCard{REVERSE, BLUE},WildCard{WILD_COLOR, null},ActionCard{SKIP, RED}]
+20:28:41.688 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [NumberCard{5, GREEN},NumberCard{9, BLUE},NumberCard{8, GREEN},NumberCard{5, GREEN},NumberCard{1, RED},NumberCard{0, YELLOW},NumberCard{3, YELLOW}]
+20:28:41.689 [main] INFO  GameAppService - El jugador 7bec2136-51fb-428c-ad10-4ca8773a4d08 roba una carta
 ]]></system-out>
   </testcase>
-  <testcase name="testIsGameOver" classname="application.TestGameAppService" time="0.047">
-    <system-out><![CDATA[20:12:08.178 [main] INFO  GameAppService - Juego creado exitosamente
-20:12:08.178 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [ActionCard{REVERSE, YELLOW},NumberCard{7, BLUE},NumberCard{7, RED},NumberCard{6, GREEN},NumberCard{0, BLUE},WildCard{WILD_COLOR, null},NumberCard{9, RED}]
-20:12:08.178 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [ActionCard{SKIP, GREEN},WildCard{WILD_COLOR, null},ActionCard{DRAW_TWO, BLUE},NumberCard{6, BLUE},NumberCard{5, YELLOW},NumberCard{9, YELLOW},NumberCard{8, BLUE}]
+  <testcase name="testGetCurrentPlayer" classname="application.TestGameAppService" time="0.031">
+    <system-out><![CDATA[20:28:41.724 [main] INFO  GameAppService - Juego creado exitosamente
+20:28:41.724 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [NumberCard{9, BLUE},NumberCard{4, YELLOW},NumberCard{3, GREEN},NumberCard{5, RED},NumberCard{7, GREEN},ActionCard{REVERSE, GREEN},ActionCard{SKIP, RED}]
+20:28:41.725 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [WildCard{WILD_COLOR, null},NumberCard{7, YELLOW},NumberCard{1, BLUE},ActionCard{SKIP, YELLOW},NumberCard{4, RED},NumberCard{7, RED},ActionCard{SKIP, BLUE}]
 ]]></system-out>
   </testcase>
-  <testcase name="testGetHandCards" classname="application.TestGameAppService" time="0.066">
-    <system-out><![CDATA[20:12:08.245 [main] INFO  GameAppService - Juego creado exitosamente
-20:12:08.246 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [ActionCard{DRAW_TWO, YELLOW},NumberCard{8, GREEN},NumberCard{7, GREEN},NumberCard{9, GREEN},NumberCard{1, BLUE},ActionCard{DRAW_TWO, GREEN},NumberCard{4, RED}]
-20:12:08.246 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [NumberCard{5, RED},NumberCard{5, GREEN},NumberCard{3, YELLOW},NumberCard{2, YELLOW},ActionCard{DRAW_TWO, YELLOW},NumberCard{7, BLUE},NumberCard{2, RED}]
+  <testcase name="testIsGameOver" classname="application.TestGameAppService" time="0.078">
+    <system-out><![CDATA[20:28:41.807 [main] INFO  GameAppService - Juego creado exitosamente
+20:28:41.807 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [NumberCard{5, BLUE},NumberCard{7, RED},ActionCard{REVERSE, BLUE},NumberCard{5, BLUE},ActionCard{SKIP, BLUE},ActionCard{REVERSE, YELLOW},NumberCard{9, RED}]
+20:28:41.808 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [NumberCard{8, GREEN},NumberCard{9, BLUE},NumberCard{3, RED},ActionCard{REVERSE, YELLOW},NumberCard{8, YELLOW},WildCard{WILD_COLOR, null},NumberCard{3, GREEN}]
 ]]></system-out>
   </testcase>
-  <testcase name="testGetWinner" classname="application.TestGameAppService" time="0.067">
-    <system-out><![CDATA[20:12:08.311 [main] INFO  GameAppService - Juego creado exitosamente
-20:12:08.313 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [NumberCard{2, RED},NumberCard{6, RED},NumberCard{1, YELLOW},NumberCard{7, GREEN},ActionCard{REVERSE, BLUE},ActionCard{SKIP, BLUE},NumberCard{2, YELLOW}]
-20:12:08.314 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [ActionCard{REVERSE, YELLOW},NumberCard{4, GREEN},NumberCard{6, BLUE},NumberCard{6, GREEN},NumberCard{5, YELLOW},NumberCard{0, BLUE},NumberCard{1, GREEN}]
+  <testcase name="testGetHandCards" classname="application.TestGameAppService" time="0.033">
+    <system-out><![CDATA[20:28:41.841 [main] INFO  GameAppService - Juego creado exitosamente
+20:28:41.841 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [NumberCard{8, RED},WildCard{WILD_DRAW_FOUR, null},NumberCard{7, RED},ActionCard{DRAW_TWO, GREEN},NumberCard{4, YELLOW},NumberCard{2, YELLOW},NumberCard{5, YELLOW}]
+20:28:41.842 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [NumberCard{3, YELLOW},NumberCard{8, YELLOW},NumberCard{7, RED},NumberCard{8, GREEN},NumberCard{2, RED},ActionCard{DRAW_TWO, YELLOW},ActionCard{REVERSE, YELLOW}]
 ]]></system-out>
   </testcase>
-  <testcase name="testPeekTopCard" classname="application.TestGameAppService" time="0.063">
-    <system-out><![CDATA[20:12:08.378 [main] INFO  GameAppService - Juego creado exitosamente
-20:12:08.378 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [WildCard{WILD_COLOR, null},NumberCard{2, YELLOW},NumberCard{2, RED},ActionCard{SKIP, RED},ActionCard{REVERSE, RED},NumberCard{7, BLUE},NumberCard{8, BLUE}]
-20:12:08.378 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [NumberCard{7, BLUE},NumberCard{6, GREEN},NumberCard{1, GREEN},NumberCard{9, RED},NumberCard{6, RED},NumberCard{5, RED},NumberCard{1, RED}]
+  <testcase name="testGetWinner" classname="application.TestGameAppService" time="0.046">
+    <system-out><![CDATA[20:28:41.891 [main] INFO  GameAppService - Juego creado exitosamente
+20:28:41.891 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [NumberCard{9, GREEN},NumberCard{1, BLUE},NumberCard{5, YELLOW},ActionCard{SKIP, RED},NumberCard{8, RED},NumberCard{5, GREEN},NumberCard{1, BLUE}]
+20:28:41.891 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [NumberCard{6, RED},NumberCard{5, YELLOW},WildCard{WILD_DRAW_FOUR, null},WildCard{WILD_COLOR, null},ActionCard{REVERSE, GREEN},ActionCard{REVERSE, YELLOW},ActionCard{REVERSE, RED}]
+]]></system-out>
+  </testcase>
+  <testcase name="testPeekTopCard" classname="application.TestGameAppService" time="0.082">
+    <system-out><![CDATA[20:28:41.972 [main] INFO  GameAppService - Juego creado exitosamente
+20:28:41.973 [main] DEBUG GameAppService - Jugador Jugador 1 con 7 cartas => [NumberCard{4, YELLOW},ActionCard{REVERSE, BLUE},NumberCard{3, RED},NumberCard{1, GREEN},NumberCard{2, RED},NumberCard{3, BLUE},NumberCard{8, GREEN}]
+20:28:41.973 [main] DEBUG GameAppService - Jugador Jugador 2 con 7 cartas => [WildCard{WILD_COLOR, null},NumberCard{5, RED},NumberCard{8, RED},NumberCard{3, YELLOW},NumberCard{4, GREEN},NumberCard{4, BLUE},NumberCard{3, RED}]
 ]]></system-out>
   </testcase>
 </testsuite>

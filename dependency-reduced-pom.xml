@@ -52,7 +52,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>com.example.MainClass</mainClass>
+              <mainClass>UnoApp</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -173,6 +173,18 @@
         <configuration>
           <show>private</show>
           <nohelp>true</nohelp>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>com.example.LABgrupal.MainClass</mainClass>
+            </manifest>
+          </archive>
         </configuration>
       </plugin>
     </plugins>

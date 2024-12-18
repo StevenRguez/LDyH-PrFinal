@@ -109,6 +109,19 @@
           <nohelp>true</nohelp>
         </configuration>
       </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.2.0</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <mainClass>com.example.LABgrupal.MainClass</mainClass> <!-- Clase principal -->
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
     </plugins>
   </reporting>
 
@@ -169,7 +182,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>com.example.MainClass</mainClass> <!-- Cambia MainClass por la clase principal -->
+              <mainClass>UnoApp</mainClass> <!-- Cambia MainClass por la clase principal -->
             </manifest>
           </archive>
         </configuration>
