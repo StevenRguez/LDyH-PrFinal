@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unoapp_2ejava_0',['UnoApp.java',['../_uno_app_8java.html',1,'']]]
+  ['wildcard_2ejava_0',['WildCard.java',['../_wild_card_8java.html',1,'']]]
 ];

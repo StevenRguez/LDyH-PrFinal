@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TizonTools: Archivo de código fuente src/main/java/UnoApp.java</title>
+<title>LabGrupal: Archivo de código fuente src/main/java/UnoApp.java</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TizonTools
+   <div id="projectname">LabGrupal
    </div>
   </td>
  </tr>
@@ -98,27 +98,28 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> javax.swing.*;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_uno_app.html">    8</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_uno_app.html">UnoApp</a> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">// Usamos la clase actual para nombrar el logger</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LogManager.getLogger(<a class="code hl_class" href="class_uno_app.html">UnoApp</a>.class);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_uno_app.html#ab157eaacd06ab49e4b3b37beeb49f86c">   12</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_uno_app.html#ab157eaacd06ab49e4b3b37beeb49f86c">main</a>(String[] args) {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        var appService = <span class="keyword">new</span> <a class="code hl_class" href="classapplication_1_1_game_app_service.html">GameAppService</a>();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        SwingUtilities.invokeLater(() -&gt; {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keyword">new</span> <a class="code hl_class" href="classui_1_1_app_frame.html">AppFrame</a>(appService);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            logger.info(<span class="stringliteral">&quot;UNO app is launched&quot;</span>);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        });</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// mvn exec:java -Dexec.mainClass=&quot;UnoApp&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_uno_app.html">   13</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_uno_app.html">UnoApp</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LogManager.getLogger(<a class="code hl_class" href="class_uno_app.html">UnoApp</a>.class);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_uno_app.html#ab157eaacd06ab49e4b3b37beeb49f86c">   23</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_uno_app.html#ab157eaacd06ab49e4b3b37beeb49f86c">main</a>(String[] args) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        var appService = <span class="keyword">new</span> <a class="code hl_class" href="classapplication_1_1_game_app_service.html">GameAppService</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        SwingUtilities.invokeLater(() -&gt; {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keyword">new</span> <a class="code hl_class" href="classui_1_1_app_frame.html">AppFrame</a>(appService);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            logger.info(<span class="stringliteral">&quot;UNO app is launched&quot;</span>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        });</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
 </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 </div>
-<div class="ttc" id="aclass_uno_app_html"><div class="ttname"><a href="class_uno_app.html">UnoApp</a></div><div class="ttdef"><b>Definition</b> <a href="#l00008">UnoApp.java:8</a></div></div>
-<div class="ttc" id="aclass_uno_app_html_ab157eaacd06ab49e4b3b37beeb49f86c"><div class="ttname"><a href="class_uno_app.html#ab157eaacd06ab49e4b3b37beeb49f86c">UnoApp.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdef"><b>Definition</b> <a href="#l00012">UnoApp.java:12</a></div></div>
-<div class="ttc" id="aclassapplication_1_1_game_app_service_html"><div class="ttname"><a href="classapplication_1_1_game_app_service.html">application.GameAppService</a></div><div class="ttdoc">Servicio de aplicación que actúa como intermediario entre el dominio del juego y la capa de presentac...</div><div class="ttdef"><b>Definition</b> <a href="_game_app_service_8java_source.html#l00023">GameAppService.java:23</a></div></div>
-<div class="ttc" id="aclassui_1_1_app_frame_html"><div class="ttname"><a href="classui_1_1_app_frame.html">ui.AppFrame</a></div><div class="ttdef"><b>Definition</b> <a href="_app_frame_8java_source.html#l00010">AppFrame.java:10</a></div></div>
+<div class="ttc" id="aclass_uno_app_html"><div class="ttname"><a href="class_uno_app.html">UnoApp</a></div><div class="ttdef"><b>Definition</b> <a href="#l00013">UnoApp.java:13</a></div></div>
+<div class="ttc" id="aclass_uno_app_html_ab157eaacd06ab49e4b3b37beeb49f86c"><div class="ttname"><a href="class_uno_app.html#ab157eaacd06ab49e4b3b37beeb49f86c">UnoApp.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdef"><b>Definition</b> <a href="#l00023">UnoApp.java:23</a></div></div>
+<div class="ttc" id="aclassapplication_1_1_game_app_service_html"><div class="ttname"><a href="classapplication_1_1_game_app_service.html">application.GameAppService</a></div><div class="ttdef"><b>Definition</b> <a href="_game_app_service_8java_source.html#l00023">GameAppService.java:23</a></div></div>
+<div class="ttc" id="aclassui_1_1_app_frame_html"><div class="ttname"><a href="classui_1_1_app_frame.html">ui.AppFrame</a></div><div class="ttdef"><b>Definition</b> <a href="_app_frame_8java_source.html#l00014">AppFrame.java:14</a></div></div>
 <div class="ttc" id="anamespaceapplication_html"><div class="ttname"><a href="namespaceapplication.html">application</a></div></div>
 <div class="ttc" id="anamespaceui_html"><div class="ttname"><a href="namespaceui.html">ui</a></div><div class="ttdef"><b>Definition</b> <a href="_app_frame_8java_source.html#l00001">AppFrame.java:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

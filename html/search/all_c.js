@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['red_1',['RED',['../enumdomain_1_1card_1_1_card_color.html#a8eb02103d54940d12cf95fee5edd7c67',1,'domain::card::CardColor']]],
-  ['redcolor_2',['redColor',['../classui_1_1common_1_1_style_util.html#a1e0a1552bcd07a5402bf508cb795751e',1,'ui::common::StyleUtil']]],
-  ['removecard_3',['removeCard',['../classdomain_1_1player_1_1_hand_card_list.html#a625c165949f98cc60c3360196e3b73c5',1,'domain::player::HandCardList']]],
-  ['removeplayedcard_4',['removePlayedCard',['../classdomain_1_1player_1_1_player.html#a0c89d44cf2b75b4be01f9d26b0465e1d',1,'domain::player::Player']]],
-  ['reset_5',['reset',['../classdomain_1_1common_1_1_domain_event_publisher.html#a16cc815b63854eb6d9240ed9cae06d45',1,'domain::common::DomainEventPublisher']]],
-  ['reverse_6',['REVERSE',['../enumdomain_1_1card_1_1_card_type.html#a5e77614f2a1739673da483f1d0be36ba',1,'domain::card::CardType']]],
-  ['reversedirection_7',['reverseDirection',['../classdomain_1_1player_1_1_player_round_iterator.html#a29bb55edeaf80a2e860916840d07f848',1,'domain::player::PlayerRoundIterator']]]
+  ['seterror_0',['setError',['../classui_1_1view_1_1_game_status_view.html#a539505a6146b4a26bacb587cb1399959',1,'ui::view::GameStatusView']]],
+  ['show_1',['show',['../classui_1_1view_1_1_color_picker.html#aeeb7f944e777c2a396f3381c574ccc7d',1,'ui::view::ColorPicker']]],
+  ['shuffle_2',['shuffle',['../classdomain_1_1game_1_1_dealer_service.html#a3ec18e43620ad481f6005e7c0cebef77',1,'domain.game.DealerService.shuffle(List&lt; Card &gt; cards)'],['../classdomain_1_1game_1_1_dealer_service.html#af2fca55501c011a31b5bea654cbc9e7e',1,'domain.game.DealerService.shuffle(DrawPile drawPile, Card lastPlayedCard)']]],
+  ['size_3',['size',['../classdomain_1_1player_1_1_hand_card_list.html#ae5cd7e7ef80ac307bc90345ab5175c94',1,'domain::player::HandCardList']]],
+  ['skip_4',['SKIP',['../enumdomain_1_1card_1_1_card_type.html#a1068053593676eb98a9dd738f1b3eacc',1,'domain::card::CardType']]],
+  ['stream_5',['stream',['../classdomain_1_1player_1_1_player_round_iterator.html#a37c7beac4dbbdc90d6fadaabb9274aea',1,'domain::player::PlayerRoundIterator']]],
+  ['styleutil_6',['StyleUtil',['../classui_1_1common_1_1_style_util.html',1,'ui::common']]],
+  ['styleutil_2ejava_7',['StyleUtil.java',['../_style_util_8java.html',1,'']]],
+  ['subscribe_8',['subscribe',['../classdomain_1_1common_1_1_domain_event_publisher.html#a46375ebe23f967a56b9c66a9b0b7586e',1,'domain::common::DomainEventPublisher']]]
 ];

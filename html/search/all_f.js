@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['ui_0',['ui',['../namespaceui.html',1,'']]],
-  ['ui_3a_3acommon_1',['common',['../namespaceui_1_1common.html',1,'ui']]],
-  ['ui_3a_3aview_2',['view',['../namespaceui_1_1view.html',1,'ui']]],
-  ['unoapp_3',['UnoApp',['../class_uno_app.html',1,'']]],
-  ['unoapp_2ejava_4',['UnoApp.java',['../_uno_app_8java.html',1,'']]],
-  ['unsubscribe_5',['unsubscribe',['../classdomain_1_1common_1_1_domain_event_publisher.html#aea83fe7bd2a9129e55c2a7c6b8fe20ce',1,'domain::common::DomainEventPublisher']]]
+  ['validateactiontype_0',['validateActionType',['../classdomain_1_1card_1_1_card_util.html#af61cf27a22f57cf832a05fae871f7985',1,'domain::card::CardUtil']]],
+  ['validatecolor_1',['validateColor',['../classdomain_1_1card_1_1_card_util.html#a2fc51ce37f1833ed7d74c5953316c614',1,'domain::card::CardUtil']]],
+  ['validatenumber_2',['validateNumber',['../classdomain_1_1card_1_1_card_util.html#a326507b9793dd6363ab5a99a42a8cdf7',1,'domain::card::CardUtil']]]
 ];

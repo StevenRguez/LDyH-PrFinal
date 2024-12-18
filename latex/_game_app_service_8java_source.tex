@@ -1,93 +1,93 @@
 \doxysection{Game\+App\+Service.\+java}
-\label{_game_app_service_8java_source}\index{src/main/java/application/GameAppService.java@{src/main/java/application/GameAppService.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_game_app_service_8java_source}{}\label{_game_app_service_8java_source}\index{src/main/java/application/GameAppService.java@{src/main/java/application/GameAppService.java}}
+\mbox{\hyperlink{_game_app_service_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }application;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ application.dto.PlayerInfoDTO;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.card.Card;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.game.Game;}
-\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.game.GameBuilder;}
-\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ domain.player.ImmutablePlayer;}
-\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ org.apache.logging.log4j.LogManager;}
-\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ org.apache.logging.log4j.Logger;}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ java.util.List;}
-\DoxyCodeLine{00012\ \textcolor{keyword}{import}\ java.util.UUID;}
-\DoxyCodeLine{00013\ \textcolor{keyword}{import}\ java.util.stream.Collectors;}
-\DoxyCodeLine{00014\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }GameAppService\ \textcolor{keyword}{implements}\ IGameAppService\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Logger\ logger\ =\ LogManager.getLogger(\textcolor{stringliteral}{"{}GameAppService"{}});}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Game\ game;}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}\ GameAppService()\ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ game\ =\ \textcolor{keyword}{new}\ GameBuilder()}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Jugador\ 1"{}})}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Jugador\ 2"{}})}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ .build();}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ logGameInfo();}
-\DoxyCodeLine{00044\ \ \ \ \ \}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ logGameInfo()\ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ logger.info(\textcolor{stringliteral}{"{}Juego\ creado\ exitosamente"{}});}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ game.getPlayers().forEach(p\ -\/>\ \{}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ var\ joinedCardValues\ =\ p.getHandCards()}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .map(Object::toString)}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .collect(Collectors.joining(\textcolor{stringliteral}{"{},"{}}));}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ logger.debug(String.format(\textcolor{stringliteral}{"{}Jugador\ \%s\ con\ \%s\ cartas\ =>\ [\%s]"{}},\ p.getName(),\ p.getTotalCards(),\ joinedCardValues));}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00061\ \ \ \ \ \}}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00068\ \ \ \ \ @Override}
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{public}\ List<PlayerInfoDTO>\ getPlayerInfos()\ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.getPlayers()}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ .map(p\ -\/>\ \textcolor{keyword}{new}\ PlayerInfoDTO(p.getId(),\ p.getName()))}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ .collect(Collectors.toList());}
-\DoxyCodeLine{00073\ \ \ \ \ \}}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00080\ \ \ \ \ @Override}
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{public}\ PlayerInfoDTO\ getCurrentPlayer()\ \{}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ var\ currentPlayer\ =\ game.getCurrentPlayer();}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ PlayerInfoDTO(currentPlayer.getId(),\ currentPlayer.getName());}
-\DoxyCodeLine{00084\ \ \ \ \ \}}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00092\ \ \ \ \ @Override}
-\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Card>\ getHandCards(UUID\ playerId)\ \{}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.getHandCards(playerId);}
-\DoxyCodeLine{00095\ \ \ \ \ \}}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00104\ \ \ \ \ @Override}
-\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ playCard(UUID\ playerId,\ Card\ card,\ \textcolor{keywordtype}{boolean}\ hasSaidUno)\ \{}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ var\ message\ =\ String.format(\textcolor{stringliteral}{"{}El\ jugador\ \%s\ juega\ \%s\ \%s"{}},\ playerId,\ card,\ hasSaidUno\ ?\ \textcolor{stringliteral}{"{}y\ dijo\ UNO!!!"{}}\ :\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ logger.info(message);}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ game.playCard(playerId,\ card,\ hasSaidUno);}
-\DoxyCodeLine{00109\ \ \ \ \ \}}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00116\ \ \ \ \ @Override}
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ drawCard(UUID\ playerId)\ \{}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ var\ message\ =\ String.format(\textcolor{stringliteral}{"{}El\ jugador\ \%s\ roba\ una\ carta"{}},\ playerId);}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ logger.info(message);}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ game.drawCard(playerId);}
-\DoxyCodeLine{00121\ \ \ \ \ \}}
-\DoxyCodeLine{00122\ }
-\DoxyCodeLine{00128\ \ \ \ \ @Override}
-\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{public}\ Card\ peekTopCard()\ \{}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.peekTopCard();}
-\DoxyCodeLine{00131\ \ \ \ \ \}}
-\DoxyCodeLine{00132\ }
-\DoxyCodeLine{00138\ \ \ \ \ @Override}
-\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ isGameOver()\ \{}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.isOver();}
-\DoxyCodeLine{00141\ \ \ \ \ \}}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00148\ \ \ \ \ @Override}
-\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{public}\ ImmutablePlayer\ getWinner()\ \{}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.getWinner();}
-\DoxyCodeLine{00151\ \ \ \ \ \}}
-\DoxyCodeLine{00152\ \}}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00001}00001\ \textcolor{keyword}{package\ }application;}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceapplication}{application}}.\mbox{\hyperlink{namespaceapplication_1_1dto}{dto}}.\mbox{\hyperlink{classapplication_1_1dto_1_1_player_info_d_t_o}{PlayerInfoDTO}};}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}};}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1game}{game}}.\mbox{\hyperlink{classdomain_1_1game_1_1_game}{Game}};}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00006}00006\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1game}{game}}.\mbox{\hyperlink{classdomain_1_1game_1_1_game_builder}{GameBuilder}};}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00007}00007\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1player}{player}}.\mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player}{ImmutablePlayer}};}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00008}00008\ \textcolor{keyword}{import}\ org.apache.logging.log4j.LogManager;}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00009}00009\ \textcolor{keyword}{import}\ org.apache.logging.log4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00012}00012\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00013}00013\ \textcolor{keyword}{import}\ java.util.stream.Collectors;}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00014}00014\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00023}\mbox{\hyperlink{classapplication_1_1_game_app_service}{00023}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classapplication_1_1_game_app_service}{GameAppService}}\ \textcolor{keyword}{implements}\ \mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service}{IGameAppService}}\ \{}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Logger\ logger\ =\ LogManager.getLogger(\textcolor{stringliteral}{"{}GameAppService"{}});}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game}{Game}}\ game;}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00037}\mbox{\hyperlink{classapplication_1_1_game_app_service_a5182f4403db57416b140a09082286704}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classapplication_1_1_game_app_service_a5182f4403db57416b140a09082286704}{GameAppService}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ game\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_builder}{GameBuilder}}()}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ .\mbox{\hyperlink{classdomain_1_1game_1_1_game_builder_a0c6c1b220751be687495911f668b2956}{withPlayer}}(\textcolor{stringliteral}{"{}Jugador\ 1"{}})}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ .\mbox{\hyperlink{classdomain_1_1game_1_1_game_builder_a0c6c1b220751be687495911f668b2956}{withPlayer}}(\textcolor{stringliteral}{"{}Jugador\ 2"{}})}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ .\mbox{\hyperlink{classdomain_1_1game_1_1_game_builder_aefa110217a8656c9d805614ff4ed6f33}{build}}();}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ logGameInfo();}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ logGameInfo()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ logger.info(\textcolor{stringliteral}{"{}Juego\ creado\ exitosamente"{}});}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ game.\mbox{\hyperlink{classdomain_1_1game_1_1_game_a8ef02b63db5e4ce1c13302458327de07}{getPlayers}}().forEach(p\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ var\ joinedCardValues\ =\ p.getHandCards()}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .map(Object::toString)}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .collect(Collectors.joining(\textcolor{stringliteral}{"{},"{}}));}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ logger.debug(String.format(\textcolor{stringliteral}{"{}Jugador\ \%s\ con\ \%s\ cartas\ =>\ [\%s]"{}},\ p.getName(),\ p.getTotalCards(),\ joinedCardValues));}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00068}00068\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00069}\mbox{\hyperlink{classapplication_1_1_game_app_service_a47e4aa5e2a9ec317fce96c68dc2f0b2f}{00069}}\ \ \ \ \ \textcolor{keyword}{public}\ List<PlayerInfoDTO>\ \mbox{\hyperlink{classapplication_1_1_game_app_service_a47e4aa5e2a9ec317fce96c68dc2f0b2f}{getPlayerInfos}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.\mbox{\hyperlink{classdomain_1_1game_1_1_game_a8ef02b63db5e4ce1c13302458327de07}{getPlayers}}()}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ .map(p\ -\/>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapplication_1_1dto_1_1_player_info_d_t_o}{PlayerInfoDTO}}(p.getId(),\ p.getName()))}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ .collect(Collectors.toList());}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00080}00080\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00081}\mbox{\hyperlink{classapplication_1_1_game_app_service_a95308d358c22a877687ccaab77cedb09}{00081}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classapplication_1_1dto_1_1_player_info_d_t_o}{PlayerInfoDTO}}\ \mbox{\hyperlink{classapplication_1_1_game_app_service_a95308d358c22a877687ccaab77cedb09}{getCurrentPlayer}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ var\ currentPlayer\ =\ game.\mbox{\hyperlink{classdomain_1_1game_1_1_game_a2e746d8b75db101e2d634cc64b3aac95}{getCurrentPlayer}}();}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapplication_1_1dto_1_1_player_info_d_t_o}{PlayerInfoDTO}}(currentPlayer.getId(),\ currentPlayer.getName());}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00092}00092\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00093}\mbox{\hyperlink{classapplication_1_1_game_app_service_aae193f174f11553e87d0bbfca59dab39}{00093}}\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Card>\ \mbox{\hyperlink{classapplication_1_1_game_app_service_aae193f174f11553e87d0bbfca59dab39}{getHandCards}}(UUID\ playerId)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.\mbox{\hyperlink{classdomain_1_1game_1_1_game_a74d046132b8bd2c266644eb1e1b09a44}{getHandCards}}(playerId);}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00104}00104\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00105}\mbox{\hyperlink{classapplication_1_1_game_app_service_ae6cde6636bf9c91431f2f917e1df234d}{00105}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classapplication_1_1_game_app_service_ae6cde6636bf9c91431f2f917e1df234d}{playCard}}(UUID\ playerId,\ \mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ card,\ \textcolor{keywordtype}{boolean}\ hasSaidUno)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ var\ message\ =\ String.format(\textcolor{stringliteral}{"{}El\ jugador\ \%s\ juega\ \%s\ \%s"{}},\ playerId,\ card,\ hasSaidUno\ ?\ \textcolor{stringliteral}{"{}y\ dijo\ UNO!!!"{}}\ :\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ logger.info(message);}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ game.\mbox{\hyperlink{classdomain_1_1game_1_1_game_a3782e391b270083eddad87bceaaa1578}{playCard}}(playerId,\ card,\ hasSaidUno);}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00116}00116\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00117}\mbox{\hyperlink{classapplication_1_1_game_app_service_ab1324c8c32bdde5917f640be138c38b5}{00117}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classapplication_1_1_game_app_service_ab1324c8c32bdde5917f640be138c38b5}{drawCard}}(UUID\ playerId)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ var\ message\ =\ String.format(\textcolor{stringliteral}{"{}El\ jugador\ \%s\ roba\ una\ carta"{}},\ playerId);}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ logger.info(message);}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ game.\mbox{\hyperlink{classdomain_1_1game_1_1_game_a0b9311b6306912fb96812183262531da}{drawCard}}(playerId);}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00128}00128\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00129}\mbox{\hyperlink{classapplication_1_1_game_app_service_aa3b2f00d6c4056e0aec2d02bd8b6dc7b}{00129}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ \mbox{\hyperlink{classapplication_1_1_game_app_service_aa3b2f00d6c4056e0aec2d02bd8b6dc7b}{peekTopCard}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.\mbox{\hyperlink{classdomain_1_1game_1_1_game_aeb2092f6ec706480301ed20c1dff9912}{peekTopCard}}();}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00138}00138\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00139}\mbox{\hyperlink{classapplication_1_1_game_app_service_a9f54e75b7d73e62a1f4fe3a79c3b0058}{00139}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classapplication_1_1_game_app_service_a9f54e75b7d73e62a1f4fe3a79c3b0058}{isGameOver}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.\mbox{\hyperlink{classdomain_1_1game_1_1_game_ae54bdd128c692df9cb96f5a390a601f5}{isOver}}();}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00148}00148\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00149}\mbox{\hyperlink{classapplication_1_1_game_app_service_a2e6a60dd832ae2472563bcaab70a1309}{00149}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player}{ImmutablePlayer}}\ \mbox{\hyperlink{classapplication_1_1_game_app_service_a2e6a60dd832ae2472563bcaab70a1309}{getWinner}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ game.\mbox{\hyperlink{classdomain_1_1game_1_1_game_a569f3fcef7c8dd9a2026dc970a705fef}{getWinner}}();}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00151}00151\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_app_service_8java_source_l00152}00152\ \}}
 
 \end{DoxyCode}

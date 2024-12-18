@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TizonTools: Referencia de la clase domain.common.DomainEventPublisher</title>
+<title>LabGrupal: Referencia de la clase domain.common.DomainEventPublisher</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TizonTools
+   <div id="projectname">LabGrupal
    </div>
   </td>
  </tr>
@@ -94,27 +94,20 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Referencia de la clase domain.common.DomainEventPublisher</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Publicador de eventos de dominio que gestiona suscriptores y la publicación de eventos de manera segura en un contexto de subprocesos.  
- <a href="#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Métodos públicos estáticos</h2></td></tr>
 <tr class="memitem:a46375ebe23f967a56b9c66a9b0b7586e" id="r_a46375ebe23f967a56b9c66a9b0b7586e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46375ebe23f967a56b9c66a9b0b7586e">subscribe</a> (<a class="el" href="interfacedomain_1_1common_1_1_domain_event_subscriber.html">DomainEventSubscriber</a> subscriber)</td></tr>
-<tr class="memdesc:a46375ebe23f967a56b9c66a9b0b7586e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un suscriptor para recibir eventos de dominio.  <br /></td></tr>
 <tr class="separator:a46375ebe23f967a56b9c66a9b0b7586e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea83fe7bd2a9129e55c2a7c6b8fe20ce" id="r_aea83fe7bd2a9129e55c2a7c6b8fe20ce"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea83fe7bd2a9129e55c2a7c6b8fe20ce">unsubscribe</a> (<a class="el" href="interfacedomain_1_1common_1_1_domain_event_subscriber.html">DomainEventSubscriber</a> subscriber)</td></tr>
-<tr class="memdesc:aea83fe7bd2a9129e55c2a7c6b8fe20ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancela la suscripción de un suscriptor, evitando que reciba futuros eventos de dominio.  <br /></td></tr>
 <tr class="separator:aea83fe7bd2a9129e55c2a7c6b8fe20ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab38e0a8b41a75193be70a52a97a4f982" id="r_ab38e0a8b41a75193be70a52a97a4f982"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab38e0a8b41a75193be70a52a97a4f982">publish</a> (final <a class="el" href="classdomain_1_1common_1_1_domain_event.html">DomainEvent</a> event)</td></tr>
-<tr class="memdesc:ab38e0a8b41a75193be70a52a97a4f982"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publica un evento de dominio, notificando a todos los suscriptores registrados.  <br /></td></tr>
 <tr class="separator:ab38e0a8b41a75193be70a52a97a4f982"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16cc815b63854eb6d9240ed9cae06d45" id="r_a16cc815b63854eb6d9240ed9cae06d45"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16cc815b63854eb6d9240ed9cae06d45">reset</a> ()</td></tr>
-<tr class="memdesc:a16cc815b63854eb6d9240ed9cae06d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restablece el estado del publicador de eventos, eliminando suscriptores y el estado de publicación del hilo actual.  <br /></td></tr>
 <tr class="separator:a16cc815b63854eb6d9240ed9cae06d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Publicador de eventos de dominio que gestiona suscriptores y la publicación de eventos de manera segura en un contexto de subprocesos. </p>
+<div class="textblock"><p><a class="el" href="classdomain_1_1common_1_1_domain_event_publisher.html">DomainEventPublisher</a> Publicador de eventos de dominio que gestiona suscriptores y la publicación de eventos de manera segura en un contexto de subprocesos.</p>
 <p>Esta clase permite registrar suscriptores que escucharán eventos de dominio específicos, publicar eventos a todos los suscriptores registrados, y manejar la suscripción y cancelación de suscriptores. </p>
 
 <p class="definition">Definición en la línea <a class="el" href="_domain_event_publisher_8java_source.html#l00013">13</a> del archivo <a class="el" href="_domain_event_publisher_8java_source.html">DomainEventPublisher.java</a>.</p>
@@ -141,22 +134,16 @@ Métodos públicos estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Publica un evento de dominio, notificando a todos los suscriptores registrados. </p>
-<p>Este método marca el estado de publicación como activo mientras el evento se distribuye a los suscriptores, y luego lo restablece. Los suscriptores reciben el evento a través de su método <code>handleEvent</code>.</p>
+<p>Publica un evento de dominio, notificando a todos los suscriptores registrados.</p>
+<p>Este metodo marca el estado de publicación como activo mientras el evento se distribuye a los suscriptores, y luego lo restablece. Los suscriptores reciben el evento a través de su método <code>handleEvent</code>.</p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>Objeto <a class="el" href="classdomain_1_1common_1_1_domain_event.html" title="Clase abstracta base que representa un evento de dominio genérico en la aplicación.">DomainEvent</a> que representa el evento a publicar. </td></tr>
+    <tr><td class="paramname">event</td><td>Objeto <a class="el" href="classdomain_1_1common_1_1_domain_event.html">DomainEvent</a> que representa el evento a publicar. </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definición en la línea <a class="el" href="_domain_event_publisher_8java_source.html#l00069">69</a> del archivo <a class="el" href="_domain_event_publisher_8java_source.html">DomainEventPublisher.java</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1common_1_1_domain_event_publisher_ab38e0a8b41a75193be70a52a97a4f982_icgraph.png" border="0" usemap="#aclassdomain_1_1common_1_1_domain_event_publisher_ab38e0a8b41a75193be70a52a97a4f982_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -182,9 +169,8 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Restablece el estado del publicador de eventos, eliminando suscriptores y el estado de publicación del hilo actual. </p>
-<p>Este método es útil para limpiar el contexto de eventos en casos de pruebas o reinicios. </p>
+<p>Restablece el estado del publicador de eventos, eliminando suscriptores y el estado de publicación del hilo actual.</p>
+<p>Este metodo es útil para limpiar el contexto de eventos en casos de pruebas o reinicios. </p>
 
 <p class="definition">Definición en la línea <a class="el" href="_domain_event_publisher_8java_source.html#l00092">92</a> del archivo <a class="el" href="_domain_event_publisher_8java_source.html">DomainEventPublisher.java</a>.</p>
 
@@ -212,8 +198,7 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Registra un suscriptor para recibir eventos de dominio. </p>
+<p>Registra un suscriptor para recibir eventos de dominio.</p>
 <p>Si la publicación de eventos está en curso, el suscriptor no será añadido hasta que esta finalice.</p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
@@ -223,11 +208,6 @@ Gráfico de llamadas a esta función:</div>
 </dl>
 
 <p class="definition">Definición en la línea <a class="el" href="_domain_event_publisher_8java_source.html#l00037">37</a> del archivo <a class="el" href="_domain_event_publisher_8java_source.html">DomainEventPublisher.java</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1common_1_1_domain_event_publisher_a46375ebe23f967a56b9c66a9b0b7586e_icgraph.png" border="0" usemap="#aclassdomain_1_1common_1_1_domain_event_publisher_a46375ebe23f967a56b9c66a9b0b7586e_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -253,8 +233,7 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Cancela la suscripción de un suscriptor, evitando que reciba futuros eventos de dominio. </p>
+<p>Cancela la suscripción de un suscriptor, evitando que reciba futuros eventos de dominio.</p>
 <p>Si la publicación de eventos está en curso, el suscriptor no será eliminado hasta que esta finalice.</p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">

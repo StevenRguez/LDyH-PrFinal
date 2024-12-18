@@ -1,47 +1,47 @@
 \doxysection{Number\+Card.\+java}
-\label{_number_card_8java_source}\index{src/main/java/domain/card/NumberCard.java@{src/main/java/domain/card/NumberCard.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_number_card_8java_source}{}\label{_number_card_8java_source}\index{src/main/java/domain/card/NumberCard.java@{src/main/java/domain/card/NumberCard.java}}
+\mbox{\hyperlink{_number_card_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.card;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ java.util.Objects;}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }NumberCard\ \textcolor{keyword}{extends}\ AbstractCard\ \{}
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \textcolor{keywordtype}{int}\ value;}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}\ NumberCard(\textcolor{keywordtype}{int}\ value,\ CardColor\ color)\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ super(CardType.NUMBER,\ color);}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ CardUtil.validateColor(color);}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ CardUtil.validateNumber(value);}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ this.value\ =\ value;}
-\DoxyCodeLine{00019\ \ \ \ \ \}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ getValue()\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
-\DoxyCodeLine{00028\ \ \ \ \ \}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00035\ \ \ \ \ @Override}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ equals(Object\ o)\ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ o)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ ==\ \textcolor{keyword}{null}\ ||\ getClass()\ !=\ o.getClass())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ NumberCard\ that\ =\ (NumberCard)\ o;}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\ ==\ that.value\ \&\&\ getColor()\ ==\ that.getColor();}
-\DoxyCodeLine{00041\ \ \ \ \ \}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00047\ \ \ \ \ @Override}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ hashCode()\ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Objects.hash(value,\ getColor());}
-\DoxyCodeLine{00050\ \ \ \ \ \}}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00056\ \ \ \ \ @Override}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{public}\ String\ toString()\ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}NumberCard\{"{}}\ +}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ value\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ getColor()\ +}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{charliteral}{'\}'};}
-\DoxyCodeLine{00061\ \ \ \ \ \}}
-\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.card;}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.util.Objects;}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00009}\mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{00009}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}\ \textcolor{keyword}{extends}\ \mbox{\hyperlink{classdomain_1_1card_1_1_abstract_card}{AbstractCard}}\ \{}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \textcolor{keywordtype}{int}\ value;}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00021}\mbox{\hyperlink{classdomain_1_1card_1_1_number_card_ab1aa23682100c3d13ba309bad7c6dfe3}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card_ab1aa23682100c3d13ba309bad7c6dfe3}{NumberCard}}(\textcolor{keywordtype}{int}\ value,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}\ color)\ \{}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ super(\mbox{\hyperlink{enumdomain_1_1card_1_1_card_type}{CardType}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_type_a88c4edb36a412661145ce520093fbb5f}{NUMBER}},\ color);}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1card_1_1_card_util}{CardUtil}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_util_a2fc51ce37f1833ed7d74c5953316c614}{validateColor}}(color);}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1card_1_1_card_util}{CardUtil}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_util_a326507b9793dd6363ab5a99a42a8cdf7}{validateNumber}}(value);}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ this.value\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00034}\mbox{\hyperlink{classdomain_1_1card_1_1_number_card_a2c15b8828fcf3240877e76d7c75a9cf4}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card_a2c15b8828fcf3240877e76d7c75a9cf4}{getValue}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00043}00043\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00044}\mbox{\hyperlink{classdomain_1_1card_1_1_number_card_adabcd67095c5c9083f6b0b7f99ad18c2}{00044}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card_adabcd67095c5c9083f6b0b7f99ad18c2}{equals}}(Object\ o)\ \{}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ ==\ o)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ ==\ \textcolor{keyword}{null}\ ||\ getClass()\ !=\ o.getClass())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}\ that\ =\ (\mbox{\hyperlink{classdomain_1_1card_1_1_number_card_ab1aa23682100c3d13ba309bad7c6dfe3}{NumberCard}})\ o;}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value\ ==\ that.value\ \&\&\ \mbox{\hyperlink{classdomain_1_1card_1_1_abstract_card_aba5333502be39184365292c98b7da318}{getColor}}()\ ==\ that.\mbox{\hyperlink{classdomain_1_1card_1_1_abstract_card_aba5333502be39184365292c98b7da318}{getColor}}();}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00055}00055\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00056}\mbox{\hyperlink{classdomain_1_1card_1_1_number_card_aab49ee3a2f00e0549f65e892b99445e7}{00056}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card_aab49ee3a2f00e0549f65e892b99445e7}{hashCode}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Objects.hash(value,\ \mbox{\hyperlink{classdomain_1_1card_1_1_abstract_card_aba5333502be39184365292c98b7da318}{getColor}}());}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00064}00064\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00065}\mbox{\hyperlink{classdomain_1_1card_1_1_number_card_af9ab2a106a8e3466eadeaccdafc4d3bd}{00065}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card_af9ab2a106a8e3466eadeaccdafc4d3bd}{toString}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}NumberCard\{"{}}\ +}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ value\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ \mbox{\hyperlink{classdomain_1_1card_1_1_abstract_card_aba5333502be39184365292c98b7da318}{getColor}}()\ +}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{charliteral}{'\}'};}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_number_card_8java_source_l00070}00070\ \}}
 
 \end{DoxyCode}

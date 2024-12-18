@@ -1,0 +1,78 @@
+\doxysection{Test\+Number\+Card.\+java}
+\hypertarget{_test_number_card_8java_source}{}\label{_test_number_card_8java_source}\index{src/test/java/domain/card/TestNumberCard.java@{src/test/java/domain/card/TestNumberCard.java}}
+\mbox{\hyperlink{_test_number_card_8java}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.card;}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00003}00003\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00010}\mbox{\hyperlink{classdomain_1_1card_1_1_test_number_card}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdomain_1_1card_1_1_test_number_card}{TestNumberCard}}\ \{}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00015}00015\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnValorYUnColor\_DebeCrearUnaCartaCorrectamente()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00017}00017\ \ \ \ \ \ \ \ \ var\ carta\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(5,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a8eb02103d54940d12cf95fee5edd7c67}{RED}});}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00019}00019\ \ \ \ \ \ \ \ \ assertEquals(5,\ carta.getValue());}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ assertEquals(\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a8eb02103d54940d12cf95fee5edd7c67}{RED}},\ carta.getColor());}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ assertEquals(\mbox{\hyperlink{enumdomain_1_1card_1_1_card_type}{CardType}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_type_a88c4edb36a412661145ce520093fbb5f}{NUMBER}},\ carta.getType());}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00027}00027\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoDosCartasConElMismoValorYColor\_DebenSerIguales()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ var\ carta1\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(7,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a4953b3c8a29604397dc4de12749a531f}{BLUE}});}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ var\ carta2\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(7,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a4953b3c8a29604397dc4de12749a531f}{BLUE}});}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ assertEquals(carta1,\ carta2);}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ assertEquals(carta1.hashCode(),\ carta2.hashCode());}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00039}00039\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoDosCartasConDiferenteValor\_NoDebenSerIguales()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ var\ carta1\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(4,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_aeafa2c5ebed7d387c3e85311602d35fb}{YELLOW}});}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ var\ carta2\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(6,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_aeafa2c5ebed7d387c3e85311602d35fb}{YELLOW}});}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ assertNotEquals(carta1,\ carta2);}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00050}00050\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoDosCartasConDiferenteColor\_NoDebenSerIguales()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ var\ carta1\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(8,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a8eb02103d54940d12cf95fee5edd7c67}{RED}});}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ var\ carta2\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(8,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a38d119f2a79114a1db9db20c13c98e85}{GREEN}});}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ assertNotEquals(carta1,\ carta2);}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00061}00061\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnaCarta\_DebeDevolverLaRepresentacionCorrecta()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ var\ carta\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(3,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a8eb02103d54940d12cf95fee5edd7c67}{RED}});}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}NumberCard\{3,\ RED\}"{}},\ carta.toString());}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00071}00071\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnaCartaComparadaConOtroObjeto\_NoDebenSerIguales()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ var\ carta\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(2,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a4953b3c8a29604397dc4de12749a531f}{BLUE}});}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ assertFalse(carta.getClass().equals(String.class),\ \textcolor{stringliteral}{"{}Las\ cartas\ no\ deberían\ ser\ iguales\ a\ un\ String."{}});}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00080}00080\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnValorNegativo\_DebeLanzarExcepcion()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ assertThrows(IllegalArgumentException.class,\ ()\ -\/>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(-\/1,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a8eb02103d54940d12cf95fee5edd7c67}{RED}}));}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00088}00088\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnValorMayorQueElMaximo\_DebeLanzarExcepcion()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ assertThrows(IllegalArgumentException.class,\ ()\ -\/>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(20,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_aeafa2c5ebed7d387c3e85311602d35fb}{YELLOW}}));}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00096}00096\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnaCartaComparadaConSiguiente\_DebenSerIguales()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ var\ carta\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(9,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a38d119f2a79114a1db9db20c13c98e85}{GREEN}});}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ var\ otraCarta\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(9,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a38d119f2a79114a1db9db20c13c98e85}{GREEN}});\ \textcolor{comment}{//\ Nueva\ instancia\ con\ los\ mismos\ valores}}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ assertEquals(carta,\ otraCarta);\ \textcolor{comment}{//\ Ahora\ comparamos\ dos\ instancias\ con\ el\ mismo\ valor}}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_number_card_8java_source_l00102}00102\ \}}
+
+\end{DoxyCode}

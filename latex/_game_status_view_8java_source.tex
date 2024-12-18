@@ -1,98 +1,98 @@
 \doxysection{Game\+Status\+View.\+java}
-\label{_game_status_view_8java_source}\index{src/main/java/ui/view/GameStatusView.java@{src/main/java/ui/view/GameStatusView.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_game_status_view_8java_source}{}\label{_game_status_view_8java_source}\index{src/main/java/ui/view/GameStatusView.java@{src/main/java/ui/view/GameStatusView.java}}
+\mbox{\hyperlink{_game_status_view_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }ui.view;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ application.IGameAppService;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.common.DomainEvent;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.common.DomainEventPublisher;}
-\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.common.DomainEventSubscriber;}
-\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ domain.game.events.CardDrawn;}
-\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ domain.game.events.CardPlayed;}
-\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ domain.game.events.GameOver;}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ javax.swing.*;}
-\DoxyCodeLine{00012\ \textcolor{keyword}{import}\ java.awt.*;}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00019\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }GameStatusView\ \textcolor{keyword}{extends}\ JPanel\ implements\ DomainEventSubscriber\ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{private}\ String\ error;}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{private}\ String\ text;}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ panelCenter;}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ IGameAppService\ appService;}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}\ GameStatusView(IGameAppService\ appService)\ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ this.appService\ =\ appService;}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ setPreferredSize(\textcolor{keyword}{new}\ Dimension(275,\ 200));}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ setOpaque(\textcolor{keyword}{false});}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ error\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ updateStatus();}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(\textcolor{keyword}{this});}
-\DoxyCodeLine{00044\ \ \ \ \ \}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00050\ \ \ \ \ @Override}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ paintComponent(Graphics\ g)\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ super.paintComponent(g);}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ panelCenter\ =\ getWidth()\ /\ 2;}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ printMessage(g);}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ printError(g);}
-\DoxyCodeLine{00057\ \ \ \ \ \}}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ printError(Graphics\ g)\ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!error.isEmpty())\ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ Font\ adjustedFont\ =\ \textcolor{keyword}{new}\ Font(\textcolor{stringliteral}{"{}Calibri"{}},\ Font.PLAIN,\ 25);}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ the\ width\ of\ the\ word\ to\ position}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ FontMetrics\ fm\ =\ this.getFontMetrics(adjustedFont);}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xPos\ =\ panelCenter\ -\/\ fm.stringWidth(error)\ /\ 2;}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ g.setFont(adjustedFont);}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ g.setColor(Color.red);}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ g.drawString(error,\ xPos,\ 35);}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ error\ =\ \textcolor{stringliteral}{"{}"{}};}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00077\ \ \ \ \ \}}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ printMessage(Graphics\ g)\ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ Font\ adjustedFont\ =\ \textcolor{keyword}{new}\ Font(\textcolor{stringliteral}{"{}Calibri"{}},\ Font.BOLD,\ 25);}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Determine\ the\ width\ of\ the\ word\ to\ position}}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ FontMetrics\ fm\ =\ this.getFontMetrics(adjustedFont);}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xPos\ =\ panelCenter\ -\/\ fm.stringWidth(text)\ /\ 2;}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ g.setFont(adjustedFont);}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ g.setColor(\textcolor{keyword}{new}\ Color(228,\ 108,\ 10));}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ g.drawString(text,\ xPos,\ 75);}
-\DoxyCodeLine{00093\ \ \ \ \ \}}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ updateStatus()\ \{}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (appService.isGameOver())\ \{}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ text\ =\ String.format(\textcolor{stringliteral}{"{}\%s\ won"{}},\ appService.getWinner().getName());}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ text\ =\ String.format(\textcolor{stringliteral}{"{}\%s's\ turn"{}},\ appService.getCurrentPlayer().getName());}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ repaint();}
-\DoxyCodeLine{00109\ \ \ \ \ \}}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ setError(String\ errorMgs)\ \{}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ error\ =\ errorMgs;}
-\DoxyCodeLine{00120\ \ \ \ \ \}}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00128\ \ \ \ \ @Override}
-\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ handleEvent(DomainEvent\ event)\ \{}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (event\ instanceof\ CardPlayed}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ event\ instanceof\ CardDrawn}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ event\ instanceof\ GameOver)\ \{}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ updateStatus();}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00135\ \ \ \ \ \}}
-\DoxyCodeLine{00136\ \}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00001}00001\ \textcolor{keyword}{package\ }ui.view;}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceapplication}{application}}.\mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service}{IGameAppService}};}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1common}{common}}.\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event}{DomainEvent}};}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1common}{common}}.\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher}{DomainEventPublisher}};}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00006}00006\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1common}{common}}.\mbox{\hyperlink{interfacedomain_1_1common_1_1_domain_event_subscriber}{DomainEventSubscriber}};}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00007}00007\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1game}{game}}.\mbox{\hyperlink{namespacedomain_1_1game_1_1events}{events}}.\mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_card_drawn}{CardDrawn}};}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00008}00008\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1game}{game}}.\mbox{\hyperlink{namespacedomain_1_1game_1_1events}{events}}.\mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_card_played}{CardPlayed}};}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00009}00009\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1game}{game}}.\mbox{\hyperlink{namespacedomain_1_1game_1_1events}{events}}.\mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_game_over}{GameOver}};}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00011}00011\ \textcolor{keyword}{import}\ javax.swing.*;}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00012}00012\ \textcolor{keyword}{import}\ java.awt.*;}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00019}\mbox{\hyperlink{classui_1_1view_1_1_game_status_view}{00019}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classui_1_1view_1_1_game_status_view}{GameStatusView}}\ \textcolor{keyword}{extends}\ JPanel\ implements\ \mbox{\hyperlink{interfacedomain_1_1common_1_1_domain_event_subscriber}{DomainEventSubscriber}}\ \{}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ String\ error;}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{private}\ String\ text;}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ panelCenter;}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service}{IGameAppService}}\ appService;}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00042}\mbox{\hyperlink{classui_1_1view_1_1_game_status_view_afe421237b8a7bf22d21a4aab1a27bd97}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classui_1_1view_1_1_game_status_view_afe421237b8a7bf22d21a4aab1a27bd97}{GameStatusView}}(\mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service}{IGameAppService}}\ appService)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ this.appService\ =\ appService;}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ setPreferredSize(\textcolor{keyword}{new}\ Dimension(275,\ 200));}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ setOpaque(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ error\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ updateStatus();}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher}{DomainEventPublisher}}.\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher_a46375ebe23f967a56b9c66a9b0b7586e}{subscribe}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00058}00058\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00059}\mbox{\hyperlink{classui_1_1view_1_1_game_status_view_ab6d54170c662c22af5517ebff958645e}{00059}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classui_1_1view_1_1_game_status_view_ab6d54170c662c22af5517ebff958645e}{paintComponent}}(Graphics\ g)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ super.paintComponent(g);}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ panelCenter\ =\ getWidth()\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ printMessage(g);}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ printError(g);}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ printError(Graphics\ g)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!error.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ Font\ adjustedFont\ =\ \textcolor{keyword}{new}\ Font(\textcolor{stringliteral}{"{}Calibri"{}},\ Font.PLAIN,\ 25);}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ the\ width\ of\ the\ word\ to\ position}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ FontMetrics\ fm\ =\ this.getFontMetrics(adjustedFont);}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xPos\ =\ panelCenter\ -\/\ fm.stringWidth(error)\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ g.setFont(adjustedFont);}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ g.setColor(Color.red);}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ g.drawString(error,\ xPos,\ 35);}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ error\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ printMessage(Graphics\ g)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ Font\ adjustedFont\ =\ \textcolor{keyword}{new}\ Font(\textcolor{stringliteral}{"{}Calibri"{}},\ Font.BOLD,\ 25);}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Determine\ the\ width\ of\ the\ word\ to\ position}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ FontMetrics\ fm\ =\ this.getFontMetrics(adjustedFont);}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xPos\ =\ panelCenter\ -\/\ fm.stringWidth(text)\ /\ 2;}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ g.setFont(adjustedFont);}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ g.setColor(\textcolor{keyword}{new}\ Color(228,\ 108,\ 10));}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ g.drawString(text,\ xPos,\ 75);}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00109}00109\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ updateStatus()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (appService.\mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service_a71ad24066758708ff1cd45b5c0695d24}{isGameOver}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ text\ =\ String.format(\textcolor{stringliteral}{"{}\%s\ won"{}},\ appService.\mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service_ac7259cd1076e50d9e379ce381dee0938}{getWinner}}().\mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player_af440c7b383c89a60c4934ef2836fa3c2}{getName}}());}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ text\ =\ String.format(\textcolor{stringliteral}{"{}\%s's\ turn"{}},\ appService.\mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service_ab150c7007ad30a88434fb9e19addf082}{getCurrentPlayer}}().\mbox{\hyperlink{classapplication_1_1dto_1_1_player_info_d_t_o_a3c75fb1f3522571f6eb91723ef3b1b69}{getName}}());}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ repaint();}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00126}\mbox{\hyperlink{classui_1_1view_1_1_game_status_view_a539505a6146b4a26bacb587cb1399959}{00126}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classui_1_1view_1_1_game_status_view_a539505a6146b4a26bacb587cb1399959}{setError}}(String\ errorMgs)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ error\ =\ errorMgs;}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00136}00136\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00137}\mbox{\hyperlink{classui_1_1view_1_1_game_status_view_a63827e5beae9baa8782fe1e69cbf2df1}{00137}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classui_1_1view_1_1_game_status_view_a63827e5beae9baa8782fe1e69cbf2df1}{handleEvent}}(\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event}{DomainEvent}}\ event)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (event\ instanceof\ \mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_card_played}{CardPlayed}}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ event\ instanceof\ \mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_card_drawn}{CardDrawn}}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ event\ instanceof\ \mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_game_over}{GameOver}})\ \{}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ updateStatus();}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00142}00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00143}00143\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_status_view_8java_source_l00144}00144\ \}}
 
 \end{DoxyCode}

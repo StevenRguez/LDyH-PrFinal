@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TizonTools: Referencia de la clase domain.common.DomainEvent</title>
+<title>LabGrupal: Referencia de la clase domain.common.DomainEvent</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TizonTools
+   <div id="projectname">LabGrupal
    </div>
   </td>
  </tr>
@@ -95,30 +95,31 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Referencia de la clase domain.common.DomainEvent<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Clase abstracta base que representa un evento de dominio genérico en la aplicación.  
- <a href="#details">Más...</a></p>
 <div class="dynheader">
 Diagrama de herencia de domain.common.DomainEvent</div>
 <div class="dyncontent">
-<div class="center"><img src="classdomain_1_1common_1_1_domain_event__inherit__graph.png" border="0" usemap="#adomain_8common_8_domain_event_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">leyenda</a>]</span></center></div>
+ <div class="center">
+  <img src="classdomain_1_1common_1_1_domain_event.png" usemap="#domain.common.DomainEvent_map" alt=""/>
+  <map id="domain.common.DomainEvent_map" name="domain.common.DomainEvent_map">
+<area href="classdomain_1_1game_1_1events_1_1_card_drawn.html" alt="domain.game.events.CardDrawn" shape="rect" coords="0,56,198,80"/>
+<area href="classdomain_1_1game_1_1events_1_1_card_played.html" alt="domain.game.events.CardPlayed" shape="rect" coords="208,56,406,80"/>
+<area href="classdomain_1_1game_1_1events_1_1_game_over.html" alt="domain.game.events.GameOver" shape="rect" coords="416,56,614,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
 <tr class="memitem:a0d4e49ed8616e3ebb27e0743d9bca057" id="r_a0d4e49ed8616e3ebb27e0743d9bca057"><td class="memItemLeft" align="right" valign="top">LocalDate&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d4e49ed8616e3ebb27e0743d9bca057">getOccurredDate</a> ()</td></tr>
-<tr class="memdesc:a0d4e49ed8616e3ebb27e0743d9bca057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la fecha en la que ocurrió el evento.  <br /></td></tr>
 <tr class="separator:a0d4e49ed8616e3ebb27e0743d9bca057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Métodos protegidos</h2></td></tr>
 <tr class="memitem:af270d8eab3b0b498c5eb9826bf38e4b3" id="r_af270d8eab3b0b498c5eb9826bf38e4b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af270d8eab3b0b498c5eb9826bf38e4b3">DomainEvent</a> ()</td></tr>
-<tr class="memdesc:af270d8eab3b0b498c5eb9826bf38e4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor protegido que inicializa occurredDate con la fecha actual.  <br /></td></tr>
 <tr class="separator:af270d8eab3b0b498c5eb9826bf38e4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Clase abstracta base que representa un evento de dominio genérico en la aplicación. </p>
-<p>Un evento de dominio captura una ocurrencia específica dentro del dominio, incluyendo una marca de tiempo de cuándo ocurrió. Las subclases deben heredar de <a class="el" href="classdomain_1_1common_1_1_domain_event.html" title="Clase abstracta base que representa un evento de dominio genérico en la aplicación.">DomainEvent</a> para representar tipos específicos de eventos. </p>
+<div class="textblock"><p><a class="el" href="classdomain_1_1common_1_1_domain_event.html">DomainEvent</a> Clase abstracta base que representa un evento de dominio genérico en la aplicación.</p>
+<p>Un evento de dominio captura una ocurrencia específica dentro del dominio, incluyendo una marca de tiempo de cuándo ocurrió. Las subclases deben heredar de <a class="el" href="classdomain_1_1common_1_1_domain_event.html">DomainEvent</a> para representar tipos específicos de eventos. </p>
 
 <p class="definition">Definición en la línea <a class="el" href="_domain_event_8java_source.html#l00013">13</a> del archivo <a class="el" href="_domain_event_8java_source.html">DomainEvent.java</a>.</p>
 </div><h2 class="groupheader">Documentación de constructores y destructores</h2>
@@ -144,8 +145,7 @@ Métodos protegidos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Constructor protegido que inicializa occurredDate con la fecha actual. </p>
+<p>Constructor protegido que inicializa occurredDate con la fecha actual.</p>
 <p>Este constructor está destinado a ser llamado por las subclases para establecer automáticamente la fecha de ocurrencia del evento. </p>
 
 <p class="definition">Definición en la línea <a class="el" href="_domain_event_8java_source.html#l00028">28</a> del archivo <a class="el" href="_domain_event_8java_source.html">DomainEvent.java</a>.</p>
@@ -167,8 +167,7 @@ Métodos protegidos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Obtiene la fecha en la que ocurrió el evento. </p>
+<p>Obtiene la fecha en la que ocurrió el evento.</p>
 <dl class="section return"><dt>Devuelve</dt><dd>LocalDate que representa la fecha de ocurrencia del evento. </dd></dl>
 
 <p class="definition">Definición en la línea <a class="el" href="_domain_event_8java_source.html#l00037">37</a> del archivo <a class="el" href="_domain_event_8java_source.html">DomainEvent.java</a>.</p>

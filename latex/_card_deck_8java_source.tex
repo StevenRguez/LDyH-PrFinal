@@ -1,56 +1,56 @@
 \doxysection{Card\+Deck.\+java}
-\label{_card_deck_8java_source}\index{src/main/java/domain/card/CardDeck.java@{src/main/java/domain/card/CardDeck.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_card_deck_8java_source}{}\label{_card_deck_8java_source}\index{src/main/java/domain/card/CardDeck.java@{src/main/java/domain/card/CardDeck.java}}
+\mbox{\hyperlink{_card_deck_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.card;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ java.util.ArrayList;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ java.util.Collections;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ java.util.List;}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CardDeck\ \{}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ List<Card>\ cards\ =\ \textcolor{keyword}{new}\ ArrayList<>(108);}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}\ CardDeck()\ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ createCards();}
-\DoxyCodeLine{00018\ \ \ \ \ \}}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}\ List<Card>\ getImmutableCards()\ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Collections.unmodifiableList(cards);}
-\DoxyCodeLine{00026\ \ \ \ \ \}}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ createCards()\ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ createNumberCards();}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ createActionCards();}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ createWildCards();}
-\DoxyCodeLine{00035\ \ \ \ \ \}}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ createNumberCards()\ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ color\ :\ CardColor.values())\ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ NumberCard(0,\ color));}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ 1;\ i\ <=\ 9;\ i++)\ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ NumberCard(i,\ color));}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ NumberCard(i,\ color));}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00049\ \ \ \ \ \}}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ createActionCards()\ \{}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ color\ :\ CardColor.values())\ \{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ 0;\ i\ <\ 2;\ i++)\ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ ActionCard(CardType.SKIP,\ color));}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ ActionCard(CardType.REVERSE,\ color));}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ ActionCard(CardType.DRAW\_TWO,\ color));}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00062\ \ \ \ \ \}}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ createWildCards()\ \{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ 0;\ i\ <\ 4;\ i++)\ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ WildCard(CardType.WILD\_COLOR));}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ WildCard(CardType.WILD\_DRAW\_FOUR));}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00072\ \ \ \ \ \}}
-\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.card;}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.util.Collections;}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00010}\mbox{\hyperlink{classdomain_1_1card_1_1_card_deck}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdomain_1_1card_1_1_card_deck}{CardDeck}}\ \{}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ List<Card>\ cards\ =\ \textcolor{keyword}{new}\ ArrayList<>(108);}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00019}\mbox{\hyperlink{classdomain_1_1card_1_1_card_deck_aabc4388f34db6223d96fe87ed2f6d823}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1card_1_1_card_deck_aabc4388f34db6223d96fe87ed2f6d823}{CardDeck}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ createCards();}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00027}\mbox{\hyperlink{classdomain_1_1card_1_1_card_deck_a76f06e93c7ec5b87101feba191d40072}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Card>\ \mbox{\hyperlink{classdomain_1_1card_1_1_card_deck_a76f06e93c7ec5b87101feba191d40072}{getImmutableCards}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Collections.unmodifiableList(cards);}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ createCards()\ \{}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ createNumberCards();}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ createActionCards();}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ createWildCards();}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ createNumberCards()\ \{}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ color\ :\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.values())\ \{}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ NumberCard(0,\ color));}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ 1;\ i\ <=\ 9;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ NumberCard(i,\ color));}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ NumberCard(i,\ color));}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ createActionCards()\ \{}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ color\ :\ CardColor.values())\ \{}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ 0;\ i\ <\ 2;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ ActionCard(CardType.SKIP,\ color));}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ ActionCard(CardType.REVERSE,\ color));}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ ActionCard(CardType.DRAW\_TWO,\ color));}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ createWildCards()\ \{}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ i\ =\ 0;\ i\ <\ 4;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ WildCard(CardType.WILD\_COLOR));}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ cards.add(\textcolor{keyword}{new}\ WildCard(CardType.WILD\_DRAW\_FOUR));}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_card_deck_8java_source_l00076}00076\ \}}
 
 \end{DoxyCode}

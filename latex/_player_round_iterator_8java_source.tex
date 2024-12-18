@@ -1,52 +1,52 @@
 \doxysection{Player\+Round\+Iterator.\+java}
-\label{_player_round_iterator_8java_source}\index{src/main/java/domain/player/PlayerRoundIterator.java@{src/main/java/domain/player/PlayerRoundIterator.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_player_round_iterator_8java_source}{}\label{_player_round_iterator_8java_source}\index{src/main/java/domain/player/PlayerRoundIterator.java@{src/main/java/domain/player/PlayerRoundIterator.java}}
+\mbox{\hyperlink{_player_round_iterator_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.player;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ java.util.Arrays;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ java.util.UUID;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }PlayerRoundIterator\ \{}
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Player[]\ players;}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ current\ =\ 0;}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}\ Direction\ direction\ =\ Direction.CLOCKWISE;}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}\ PlayerRoundIterator(Player[]\ players)\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ this.players\ =\ players;}
-\DoxyCodeLine{00028\ \ \ \ \ \}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Player>\ stream()\ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Arrays.stream(players);}
-\DoxyCodeLine{00036\ \ \ \ \ \}}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}\ Player\ getCurrentPlayer()\ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players[current];}
-\DoxyCodeLine{00044\ \ \ \ \ \}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{public}\ Player\ getPlayerById(UUID\ playerId)\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ player\ :\ players)\ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (player.getId().equals(playerId))\ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ player;}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00058\ \ \ \ \ \}}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ reverseDirection()\ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ direction\ =\ Direction.COUNTER\_CLOCK\_WISE;}
-\DoxyCodeLine{00067\ \ \ \ \ \}}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{public}\ Player\ next()\ \{}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ current\ =\ getNextIndex();}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ getCurrentPlayer();}
-\DoxyCodeLine{00076\ \ \ \ \ \}}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ getNextIndex()\ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ var\ increment\ =\ direction\ ==\ Direction.CLOCKWISE\ ?\ 1\ :\ -\/1;}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (players.length\ +\ current\ +\ increment)\ \%\ players.length;}
-\DoxyCodeLine{00085\ \ \ \ \ \}}
-\DoxyCodeLine{00086\ \}}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.player;}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.util.Arrays;}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00014}\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator}{00014}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator}{PlayerRoundIterator}}\ \{}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player}{Player}}[]\ players;}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ current\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{enumdomain_1_1player_1_1_direction}{Direction}}\ direction\ =\ \mbox{\hyperlink{enumdomain_1_1player_1_1_direction}{Direction}}.\mbox{\hyperlink{enumdomain_1_1player_1_1_direction_a057bb520ade53c23e1cf27f29d8af729}{CLOCKWISE}};}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00032}\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a0227e84026fef38fe7f1817b933f7ffc}{00032}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a0227e84026fef38fe7f1817b933f7ffc}{PlayerRoundIterator}}(\mbox{\hyperlink{classdomain_1_1player_1_1_player}{Player}}[]\ players)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ this.players\ =\ players;}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00040}\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a37c7beac4dbbdc90d6fadaabb9274aea}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Player>\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a37c7beac4dbbdc90d6fadaabb9274aea}{stream}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Arrays.stream(players);}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00048}\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_aa943e5e96c10ec3b2d5eccd968fad21c}{00048}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player}{Player}}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_aa943e5e96c10ec3b2d5eccd968fad21c}{getCurrentPlayer}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players[current];}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00057}\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a65afe00de60f22bea5d03a72319c219e}{00057}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player}{Player}}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a65afe00de60f22bea5d03a72319c219e}{getPlayerById}}(UUID\ playerId)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (var\ player\ :\ players)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (player.getId().equals(playerId))\ \{}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ player;}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00072}\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a29bb55edeaf80a2e860916840d07f848}{00072}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a29bb55edeaf80a2e860916840d07f848}{reverseDirection}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ direction\ =\ \mbox{\hyperlink{enumdomain_1_1player_1_1_direction}{Direction}}.\mbox{\hyperlink{enumdomain_1_1player_1_1_direction_a5e9934f8140bd3e08e6415bbcc65c36b}{COUNTER\_CLOCK\_WISE}};}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00080}\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{00080}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player}{Player}}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ current\ =\ getNextIndex();}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_aa943e5e96c10ec3b2d5eccd968fad21c}{getCurrentPlayer}}();}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ getNextIndex()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ var\ increment\ =\ direction\ ==\ Direction.CLOCKWISE\ ?\ 1\ :\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (players.length\ +\ current\ +\ increment)\ \%\ players.length;}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_round_iterator_8java_source_l00093}00093\ \}}
 
 \end{DoxyCode}

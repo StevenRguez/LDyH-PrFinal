@@ -1,0 +1,70 @@
+\doxysection{Game\+UI.\+java}
+\hypertarget{_game_u_i_8java_source}{}\label{_game_u_i_8java_source}\index{src/main/java/domain/game/GameUI.java@{src/main/java/domain/game/GameUI.java}}
+\mbox{\hyperlink{_game_u_i_8java}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.game;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00003}00003\ \textcolor{keyword}{import}\ javax.swing.*;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.awt.*;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.util.Map;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00006}00006\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00008}\mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i}{GameUI}}\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game}{Game}}\ game;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ JFrame\ frame;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ JPanel\ playerMovePanel;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ JLabel\ gameDurationLabel;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00014}\mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i_a2d3d76d5e56d94d735ac9a2037ee9969}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i_a2d3d76d5e56d94d735ac9a2037ee9969}{GameUI}}(\mbox{\hyperlink{classdomain_1_1game_1_1_game}{Game}}\ game)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00015}00015\ \ \ \ \ \ \ \ \ this.game\ =\ game;}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crear\ ventana\ principal}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00018}00018\ \ \ \ \ \ \ \ \ frame\ =\ \textcolor{keyword}{new}\ JFrame(\textcolor{stringliteral}{"{}Estado\ del\ Juego"{}});}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00019}00019\ \ \ \ \ \ \ \ \ frame.setDefaultCloseOperation(JFrame.EXIT\_ON\_CLOSE);}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ frame.setSize(400,\ 300);}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ frame.setLayout(\textcolor{keyword}{new}\ BorderLayout());}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crear\ panel\ para\ movimientos\ de\ jugadores}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ playerMovePanel\ =\ \textcolor{keyword}{new}\ JPanel();}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ playerMovePanel.setLayout(\textcolor{keyword}{new}\ GridLayout(0,\ 1));\ \textcolor{comment}{//\ Una\ fila\ por\ jugador}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crear\ etiqueta\ para\ duración\ del\ juego}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ gameDurationLabel\ =\ \textcolor{keyword}{new}\ JLabel(\textcolor{stringliteral}{"{}Duración\ de\ la\ partida:\ 0\ minutos\ y\ 0\ segundos"{}},\ SwingConstants.CENTER);}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Añadir\ componentes\ a\ la\ ventana}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ frame.add(playerMovePanel,\ BorderLayout.CENTER);}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ frame.add(gameDurationLabel,\ BorderLayout.SOUTH);}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mostrar\ la\ ventana}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ frame.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ Método\ para\ actualizar\ los\ movimientos\ de\ cada\ jugador}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00039}\mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i_ad9ca8ab2fd7b990d74de55d875a9f48c}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i_ad9ca8ab2fd7b990d74de55d875a9f48c}{updatePlayerMoves}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ SwingUtilities.invokeLater(()\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ playerMovePanel.removeAll();\ \textcolor{comment}{//\ Limpiar\ el\ panel}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ Map<UUID,\ Integer>\ playerMoves\ =\ game.\mbox{\hyperlink{classdomain_1_1game_1_1_game_accc54292fc876f90bec53c8dc33af436}{getPlayerMoves}}();\ \textcolor{comment}{//\ Obtener\ movimientos}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ game.\mbox{\hyperlink{classdomain_1_1game_1_1_game_a8ef02b63db5e4ce1c13302458327de07}{getPlayers}}().forEach(player\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ playerName\ =\ player.getName();}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ moves\ =\ playerMoves.getOrDefault(player.getId(),\ 0);}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JLabel\ playerMoveLabel\ =\ \textcolor{keyword}{new}\ JLabel(playerName\ +\ \textcolor{stringliteral}{"{}:\ "{}}\ +\ moves\ +\ \textcolor{stringliteral}{"{}\ movimientos"{}},\ SwingConstants.CENTER);}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerMovePanel.add(playerMoveLabel);}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ playerMovePanel.revalidate();}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ playerMovePanel.repaint();}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ Método\ para\ actualizar\ el\ tiempo\ de\ la\ partida}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00055}\mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i_ac7321fd2148b4b1e8d886d26b9f49c8a}{00055}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i_ac7321fd2148b4b1e8d886d26b9f49c8a}{updateGameDuration}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ SwingUtilities.invokeLater(()\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ String\ durationText\ =\ game.\mbox{\hyperlink{classdomain_1_1game_1_1_game_aa14a169032a1312f213685edb747877b}{getGameDuration}}();}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ gameDurationLabel.setText(\textcolor{stringliteral}{"{}Duración\ de\ la\ partida:\ "{}}\ +\ durationText);}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00061}\mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i_a8cf10ef516a143b9a81dc4c602221d3e}{00061}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i_a8cf10ef516a143b9a81dc4c602221d3e}{getgameDurationLabel}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ gameDurationLabel.getText();}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_u_i_8java_source_l00064}00064\ \}}
+
+\end{DoxyCode}

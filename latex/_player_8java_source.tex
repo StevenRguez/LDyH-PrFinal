@@ -1,47 +1,47 @@
 \doxysection{Player.\+java}
-\label{_player_8java_source}\index{src/main/java/domain/player/Player.java@{src/main/java/domain/player/Player.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_player_8java_source}{}\label{_player_8java_source}\index{src/main/java/domain/player/Player.java@{src/main/java/domain/player/Player.java}}
+\mbox{\hyperlink{_player_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.player;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.Card;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.common.Entity;}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }Player\ \textcolor{keyword}{extends}\ Entity\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ String\ name;}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ HandCardList\ handCards;}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}\ Player(String\ name,\ HandCardList\ handCards)\{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ super();}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ this.name\ =\ name;}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ this.handCards\ =\ handCards;}
-\DoxyCodeLine{00028\ \ \ \ \ \}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}\ String\ getName()\ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
-\DoxyCodeLine{00036\ \ \ \ \ \}}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Card>\ getHandCards()\ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.handCards.getCardStream();}
-\DoxyCodeLine{00044\ \ \ \ \ \}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ addToHandCards(Card\ card)\{}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ handCards.addCard(card);}
-\DoxyCodeLine{00052\ \ \ \ \ \}}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ removePlayedCard(Card\ card)\ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ handCards.removeCard(card);}
-\DoxyCodeLine{00061\ \ \ \ \ \}}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ hasHandCard(Card\ card)\ \{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.handCards.hasCard(card);}
-\DoxyCodeLine{00069\ \ \ \ \ \}}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{public}\ ImmutablePlayer\ toImmutable()\ \{}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ ImmutablePlayer(\textcolor{keyword}{this});}
-\DoxyCodeLine{00077\ \ \ \ \ \}}
-\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.player;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}};}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1common}{common}}.\mbox{\hyperlink{classdomain_1_1common_1_1_entity}{Entity}};}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00006}00006\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00013}\mbox{\hyperlink{classdomain_1_1player_1_1_player}{00013}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdomain_1_1player_1_1_player}{Player}}\ \textcolor{keyword}{extends}\ \mbox{\hyperlink{classdomain_1_1common_1_1_entity}{Entity}}\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ String\ name;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{HandCardList}}\ handCards;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00028}\mbox{\hyperlink{classdomain_1_1player_1_1_player_a174688cf76f65da2a711f6653e5ea43b}{00028}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_a174688cf76f65da2a711f6653e5ea43b}{Player}}(String\ name,\ \mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{HandCardList}}\ handCards)\{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ super();}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ this.handCards\ =\ handCards;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00038}\mbox{\hyperlink{classdomain_1_1player_1_1_player_a2c102b9c325615ef82546dde979d712f}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_a2c102b9c325615ef82546dde979d712f}{getName}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00046}\mbox{\hyperlink{classdomain_1_1player_1_1_player_a541dcd07f326c98a7f3f635e193fc892}{00046}}\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Card>\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_a541dcd07f326c98a7f3f635e193fc892}{getHandCards}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.handCards.\mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list_ade9386c6e1dc0186fd321abbe1348bfb}{getCardStream}}();}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00054}\mbox{\hyperlink{classdomain_1_1player_1_1_player_af7ded916cdfb9b92cd87170cc22da205}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_af7ded916cdfb9b92cd87170cc22da205}{addToHandCards}}(\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ card)\{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ handCards.\mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list_af518325f553817e757541d2d0b6b702e}{addCard}}(card);}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00063}\mbox{\hyperlink{classdomain_1_1player_1_1_player_a0c89d44cf2b75b4be01f9d26b0465e1d}{00063}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_a0c89d44cf2b75b4be01f9d26b0465e1d}{removePlayedCard}}(\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ card)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ handCards.\mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list_a625c165949f98cc60c3360196e3b73c5}{removeCard}}(card);}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00071}\mbox{\hyperlink{classdomain_1_1player_1_1_player_a99209271043f5332e645e37af40fce51}{00071}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_a99209271043f5332e645e37af40fce51}{hasHandCard}}(\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ card)\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this.handCards.\mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list_acade787f386af468618529d39a833b11}{hasCard}}(card);}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00079}\mbox{\hyperlink{classdomain_1_1player_1_1_player_a13c6660993e83ed3109f1fa7e618f3ba}{00079}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player}{ImmutablePlayer}}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_a13c6660993e83ed3109f1fa7e618f3ba}{toImmutable}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player}{ImmutablePlayer}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_player_8java_source_l00082}00082\ \}}
 
 \end{DoxyCode}

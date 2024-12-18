@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TizonTools: Referencia de la clase domain.testhelper.CardTestFactory</title>
+<title>LabGrupal: Referencia de la clase domain.testhelper.CardTestFactory</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TizonTools
+   <div id="projectname">LabGrupal
    </div>
   </td>
  </tr>
@@ -125,10 +125,13 @@ Métodos públicos estáticos</h2></td></tr>
 <tr class="separator:ad65c2a427b7aed880333c359d9a86c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ff7ac847c473a01491024ed813a97a1" id="r_a1ff7ac847c473a01491024ed813a97a1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classdomain_1_1card_1_1_wild_card.html">WildCard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ff7ac847c473a01491024ed813a97a1">createWildDrawFourCard</a> (<a class="el" href="enumdomain_1_1card_1_1_card_color.html">CardColor</a> color)</td></tr>
 <tr class="separator:a1ff7ac847c473a01491024ed813a97a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71caac322db2801781809ef0e6173aed" id="r_a71caac322db2801781809ef0e6173aed"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="interfacedomain_1_1card_1_1_card.html">Card</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71caac322db2801781809ef0e6173aed">createCard</a> (<a class="el" href="enumdomain_1_1card_1_1_card_type.html">CardType</a> cardType, <a class="el" href="enumdomain_1_1card_1_1_card_color.html">CardColor</a> cardColor, int i)</td></tr>
+<tr class="separator:a71caac322db2801781809ef0e6173aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock">
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00005">5</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
+<div class="textblock"><p>Clase de utilidad para la creación de objetos de cartas de diferentes tipos. Proporciona métodos estáticos para generar cartas numéricas, cartas de acción y cartas especiales (comodines). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00010">10</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 </div><h2 class="groupheader">Documentación de funciones miembro</h2>
 <a id="af2dcc62eef76a12051da33bea5d2361e" name="af2dcc62eef76a12051da33bea5d2361e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af2dcc62eef76a12051da33bea5d2361e">&#9670;&#160;</a></span>createActionCard()</h2>
@@ -156,8 +159,63 @@ Métodos públicos estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea una carta de acción con un tipo y color específicos.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>el tipo de la carta de acción. </td></tr>
+    <tr><td class="paramname">color</td><td>el color de la carta. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">ActionCard</a></code>. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00014">14</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00039">39</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
+
+</div>
+</div>
+<a id="a71caac322db2801781809ef0e6173aed" name="a71caac322db2801781809ef0e6173aed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71caac322db2801781809ef0e6173aed">&#9670;&#160;</a></span>createCard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="interfacedomain_1_1card_1_1_card.html">Card</a> domain.testhelper.CardTestFactory.createCard </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enumdomain_1_1card_1_1_card_type.html">CardType</a></td>          <td class="paramname"><span class="paramname"><em>cardType</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enumdomain_1_1card_1_1_card_color.html">CardColor</a></td>          <td class="paramname"><span class="paramname"><em>cardColor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Crea una carta genérica dependiendo del tipo, color y valor proporcionados. Si el tipo es <code><a class="el" href="">CardType#NUMBER</a></code>, se crea una <code><a class="el" href="">NumberCard</a></code>. Para otros tipos, se crea una <code><a class="el" href="">ActionCard</a></code>.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cardType</td><td>el tipo de la carta. </td></tr>
+    <tr><td class="paramname">cardColor</td><td>el color de la carta. </td></tr>
+    <tr><td class="paramname">i</td><td>el valor numérico (solo aplicable para cartas numéricas). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">Card</a></code> (puede ser NumberCard o ActionCard). </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00158">158</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -183,18 +241,10 @@ Métodos públicos estáticos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea una carta de tipo "roba dos" con color amarillo por defecto.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">ActionCard</a></code> de tipo DRAW_TWO. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00034">34</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1testhelper_1_1_card_test_factory_a57eae6779845faeabc430e236103b274_cgraph.png" border="0" usemap="#aclassdomain_1_1testhelper_1_1_card_test_factory_a57eae6779845faeabc430e236103b274_cgraph" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1testhelper_1_1_card_test_factory_a57eae6779845faeabc430e236103b274_icgraph.png" border="0" usemap="#aclassdomain_1_1testhelper_1_1_card_test_factory_a57eae6779845faeabc430e236103b274_icgraph" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00086">86</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -220,8 +270,16 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea una carta de tipo "roba dos" con un color específico.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>el color de la carta. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">ActionCard</a></code> de tipo DRAW_TWO. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00038">38</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00096">96</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -247,13 +305,10 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea una carta numérica con valor 1 y color rojo.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">NumberCard</a></code>. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00006">6</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9_icgraph.png" border="0" usemap="#aclassdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9_icgraph" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00017">17</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -283,8 +338,17 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea una carta numérica con un valor y color específicos.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>el valor numérico de la carta. </td></tr>
+    <tr><td class="paramname">color</td><td>el color de la carta. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">NumberCard</a></code>. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00010">10</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00028">28</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -310,18 +374,10 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea una carta de tipo "reversa" con color azul por defecto.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">ActionCard</a></code> de tipo REVERSE. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00026">26</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1testhelper_1_1_card_test_factory_a06f0bd059b5487e5b6e8c9f23d04bf94_cgraph.png" border="0" usemap="#aclassdomain_1_1testhelper_1_1_card_test_factory_a06f0bd059b5487e5b6e8c9f23d04bf94_cgraph" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1testhelper_1_1_card_test_factory_a06f0bd059b5487e5b6e8c9f23d04bf94_icgraph.png" border="0" usemap="#aclassdomain_1_1testhelper_1_1_card_test_factory_a06f0bd059b5487e5b6e8c9f23d04bf94_icgraph" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00067">67</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -347,8 +403,16 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea una carta de tipo "reversa" con un color específico.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>el color de la carta. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">ActionCard</a></code> de tipo REVERSE. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00030">30</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00077">77</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -374,18 +438,10 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea una carta de tipo "saltar" con color azul por defecto.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">ActionCard</a></code> de tipo SKIP. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00018">18</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1testhelper_1_1_card_test_factory_a63a0debfb183d48e6c3558ae20592a4c_cgraph.png" border="0" usemap="#aclassdomain_1_1testhelper_1_1_card_test_factory_a63a0debfb183d48e6c3558ae20592a4c_cgraph" alt=""/></div>
-</div>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1testhelper_1_1_card_test_factory_a63a0debfb183d48e6c3558ae20592a4c_icgraph.png" border="0" usemap="#aclassdomain_1_1testhelper_1_1_card_test_factory_a63a0debfb183d48e6c3558ae20592a4c_icgraph" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00048">48</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -411,8 +467,16 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea una carta de tipo "saltar" con un color específico.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>el color de la carta. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">ActionCard</a></code> de tipo SKIP. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00022">22</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00058">58</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -438,8 +502,16 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea un comodín con un tipo específico.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>el tipo del comodín. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">WildCard</a></code>. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00042">42</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00106">106</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -465,8 +537,10 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea un comodín de cambio de color.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">WildCard</a></code> de tipo WILD_COLOR. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00046">46</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00115">115</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -492,8 +566,16 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea un comodín de cambio de color con un color específico.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>el color asociado al comodín. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">WildCard</a></code> de tipo WILD_COLOR. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00050">50</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00125">125</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -519,8 +601,10 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea un comodín de "roba cuatro".</p>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">WildCard</a></code> de tipo WILD_DRAW_FOUR. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00054">54</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00134">134</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>
@@ -546,8 +630,16 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Crea un comodín de "roba cuatro" con un color específico.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>el color asociado al comodín. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>una instancia de <code><a class="el" href="">WildCard</a></code> de tipo WILD_DRAW_FOUR. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00058">58</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_test_factory_8java_source.html#l00144">144</a> del archivo <a class="el" href="_card_test_factory_8java_source.html">CardTestFactory.java</a>.</p>
 
 </div>
 </div>

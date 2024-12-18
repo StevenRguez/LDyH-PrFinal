@@ -1,78 +1,76 @@
 \doxysection{Test\+Hand\+Card\+List.\+java}
-\label{player_2_test_hand_card_list_8java_source}\index{src/test/java/domain/player/TestHandCardList.java@{src/test/java/domain/player/TestHandCardList.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{player_2_test_hand_card_list_8java_source}{}\label{player_2_test_hand_card_list_8java_source}\index{src/test/java/domain/player/TestHandCardList.java@{src/test/java/domain/player/TestHandCardList.java}}
+\mbox{\hyperlink{player_2_test_hand_card_list_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.player;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.CardColor;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.testhelper.CardTestFactory;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }TestHandCardList\ \{}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \ \ \ \ @Test}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenEmpty\_ShouldNotRemove()\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.removeCard(CardTestFactory.createSkipCard());}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ assertFalse(result);}
-\DoxyCodeLine{00018\ \ \ \ \ \}}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ @Test}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenTwoCardsWithSameValues\_ShouldRemoveOnlyOnce()\ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ var\ numberCard1\ =\ CardTestFactory.createNumberCard(1,\ CardColor.RED);}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ var\ numberCard2\ =\ CardTestFactory.createNumberCard(1,\ CardColor.RED);}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard1);}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard2);}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.removeCard(numberCard1);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ assertTrue(result);}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ assertEquals(1,\ handCards.size());}
-\DoxyCodeLine{00032\ \ \ \ \ \}}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ @Test}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenTwoCardsWithSameReference\_ShouldRemoveOnlyOnce()\ \{}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ var\ numberCard1\ =\ CardTestFactory.createNumberCard(1,\ CardColor.RED);}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard1);}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard1);}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.removeCard(numberCard1);}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ assertTrue(result);}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ assertEquals(1,\ handCards.size());}
-\DoxyCodeLine{00045\ \ \ \ \ \}}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ @Test}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenWildColorWithColor\_ShouldRemoveOnlyOnce()\ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ handCards.addCard(CardTestFactory.createWildColorCard());}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ handCards.addCard(CardTestFactory.createWildColorCard());}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.removeCard(CardTestFactory.createWildColorCard(CardColor.GREEN));}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ assertTrue(result);}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ assertEquals(1,\ handCards.size());}
-\DoxyCodeLine{00057\ \ \ \ \ \}}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ @Test}
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenWildDrawFourWithColor\_WhenTypeDoesNotExist\_ShouldNotRemove()\ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ handCards.addCard(CardTestFactory.createWildColorCard());}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ handCards.addCard(CardTestFactory.createWildColorCard());}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.removeCard(CardTestFactory.createWildDrawFourCard(CardColor.GREEN));}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ assertFalse(result);}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ assertEquals(2,\ handCards.size());}
-\DoxyCodeLine{00069\ \ \ \ \ \}}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.player;}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}};}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1testhelper}{testhelper}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}};}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00005}00005\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00007}00007\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00009}00009\ \textcolor{keyword}{class\ }TestHandCardList\ \{}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00015}00015\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00016}00016\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenEmpty\_ShouldNotRemove()\ \{}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00017}00017\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00019}00019\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.removeCard(CardTestFactory.createSkipCard());}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ assertFalse(result);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00028}00028\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenTwoCardsWithSameValues\_ShouldRemoveOnlyOnce()\ \{}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ var\ numberCard1\ =\ CardTestFactory.createNumberCard(1,\ CardColor.RED);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ var\ numberCard2\ =\ CardTestFactory.createNumberCard(1,\ CardColor.RED);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard1);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard2);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.removeCard(numberCard1);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ assertTrue(result);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ assertEquals(1,\ handCards.size());}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00046}00046\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenTwoCardsWithSameReference\_ShouldRemoveOnlyOnce()\ \{}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ var\ numberCard1\ =\ CardTestFactory.createNumberCard(1,\ CardColor.RED);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard1);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard1);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.removeCard(numberCard1);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ assertTrue(result);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ assertEquals(1,\ handCards.size());}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00063}00063\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenWildColorWithColor\_ShouldRemoveOnlyOnce()\ \{}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ handCards.addCard(CardTestFactory.createWildColorCard());}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ handCards.addCard(CardTestFactory.createWildColorCard());}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.removeCard(CardTestFactory.createWildColorCard(CardColor.GREEN));}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ assertTrue(result);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ assertEquals(1,\ handCards.size());}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00079}00079\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenWildDrawFourWithColor\_WhenTypeDoesNotExist\_ShouldNotRemove()\ \{}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ handCards.addCard(CardTestFactory.createWildColorCard());}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ handCards.addCard(CardTestFactory.createWildColorCard());}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.removeCard(CardTestFactory.createWildDrawFourCard(CardColor.GREEN));}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ assertFalse(result);}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ assertEquals(2,\ handCards.size());}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{player_2_test_hand_card_list_8java_source_l00090}00090\ \}}
 
 \end{DoxyCode}

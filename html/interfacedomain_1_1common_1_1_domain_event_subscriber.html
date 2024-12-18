@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TizonTools: Referencia de la interface domain.common.DomainEventSubscriber</title>
+<title>LabGrupal: Referencia de la interface domain.common.DomainEventSubscriber</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TizonTools
+   <div id="projectname">LabGrupal
    </div>
   </td>
  </tr>
@@ -94,24 +94,26 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Referencia de la interface domain.common.DomainEventSubscriber</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Interfaz para suscriptores de eventos de dominio.  
- <a href="#details">Más...</a></p>
 <div class="dynheader">
 Diagrama de herencia de domain.common.DomainEventSubscriber</div>
 <div class="dyncontent">
-<div class="center"><img src="interfacedomain_1_1common_1_1_domain_event_subscriber__inherit__graph.png" border="0" usemap="#adomain_8common_8_domain_event_subscriber_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">leyenda</a>]</span></center></div>
+ <div class="center">
+  <img src="interfacedomain_1_1common_1_1_domain_event_subscriber.png" usemap="#domain.common.DomainEventSubscriber_map" alt=""/>
+  <map id="domain.common.DomainEventSubscriber_map" name="domain.common.DomainEventSubscriber_map">
+<area href="classui_1_1view_1_1_game_status_view.html" alt="ui.view.GameStatusView" shape="rect" coords="0,56,242,80"/>
+<area href="classui_1_1view_1_1_player_view.html" alt="ui.view.PlayerView" shape="rect" coords="252,56,494,80"/>
+<area href="classui_1_1view_1_1_table_view.html" alt="ui.view.TableView" shape="rect" coords="504,56,746,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
 <tr class="memitem:aeb0ff351727baa38e3830e89ab21acb7" id="r_aeb0ff351727baa38e3830e89ab21acb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb0ff351727baa38e3830e89ab21acb7">handleEvent</a> (<a class="el" href="classdomain_1_1common_1_1_domain_event.html">DomainEvent</a> event)</td></tr>
-<tr class="memdesc:aeb0ff351727baa38e3830e89ab21acb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maneja un evento de dominio específico.  <br /></td></tr>
 <tr class="separator:aeb0ff351727baa38e3830e89ab21acb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Interfaz para suscriptores de eventos de dominio. </p>
-<p>Define el contrato que debe implementar cualquier clase que desee suscribirse y responder a eventos de dominio publicados por el <code><a class="el" href="classdomain_1_1common_1_1_domain_event_publisher.html" title="Publicador de eventos de dominio que gestiona suscriptores y la publicación de eventos de manera segu...">DomainEventPublisher</a></code>. </p>
+<div class="textblock"><p><a class="el" href="interfacedomain_1_1common_1_1_domain_event_subscriber.html">DomainEventSubscriber</a> Interfaz para suscriptores de eventos de dominio.</p>
+<p>Define el contrato que debe implementar cualquier clase que desee suscribirse y responder a eventos de dominio publicados por el <code><a class="el" href="classdomain_1_1common_1_1_domain_event_publisher.html">DomainEventPublisher</a></code>. </p>
 
 <p class="definition">Definición en la línea <a class="el" href="_domain_event_subscriber_8java_source.html#l00010">10</a> del archivo <a class="el" href="_domain_event_subscriber_8java_source.html">DomainEventSubscriber.java</a>.</p>
 </div><h2 class="groupheader">Documentación de funciones miembro</h2>
@@ -129,12 +131,11 @@ Métodos públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Maneja un evento de dominio específico. </p>
-<p>Este método es invocado cuando un evento de dominio es publicado y debe ser implementado por la clase suscriptora para definir cómo responder al evento.</p>
+<p>Maneja un evento de dominio específico.</p>
+<p>Este metodo es invocado cuando un evento de dominio es publicado y debe ser implementado por la clase suscriptora para definir cómo responder al evento.</p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td>Objeto <a class="el" href="classdomain_1_1common_1_1_domain_event.html" title="Clase abstracta base que representa un evento de dominio genérico en la aplicación.">DomainEvent</a> que representa el evento de dominio recibido. </td></tr>
+    <tr><td class="paramname">event</td><td>Objeto <a class="el" href="classdomain_1_1common_1_1_domain_event.html">DomainEvent</a> que representa el evento de dominio recibido. </td></tr>
   </table>
   </dd>
 </dl>

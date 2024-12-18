@@ -1,82 +1,82 @@
 \doxysection{Test\+Players\+Iterator.\+java}
-\label{_test_players_iterator_8java_source}\index{src/test/java/domain/player/TestPlayersIterator.java@{src/test/java/domain/player/TestPlayersIterator.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_test_players_iterator_8java_source}{}\label{_test_players_iterator_8java_source}\index{src/test/java/domain/player/TestPlayersIterator.java@{src/test/java/domain/player/TestPlayersIterator.java}}
+\mbox{\hyperlink{_test_players_iterator_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.player;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.testhelper.PlayerTestFactory;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ org.junit.jupiter.api.BeforeEach;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ java.util.UUID;}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }TestPlayersIterator\ \{}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Player[]\ players\ =\ PlayerTestFactory.createPlayers(4);}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{private}\ PlayerRoundIterator\ playerIterator;}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \ \ \ \ @BeforeEach}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ setUp()\ \{}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ playerIterator\ =\ \textcolor{keyword}{new}\ PlayerRoundIterator(players);}
-\DoxyCodeLine{00019\ \ \ \ \ \}}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ @Test}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenInitialized\_FirstPlayerShouldBeCurrent()\ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ var\ current\ =\ playerIterator.getCurrentPlayer();}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}1"{}});}
-\DoxyCodeLine{00026\ \ \ \ \ \}}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ @Test}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenClockwise\_ShouldHaveAscendingOrder()\ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ var\ current\ =\ playerIterator.next();}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}2"{}});}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}3"{}});}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}4"{}});}
-\DoxyCodeLine{00038\ \ \ \ \ \}}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ @Test}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenReversed\_ShouldHaveDescendingOrder()\ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ playerIterator.reverseDirection();}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ var\ current\ =\ playerIterator.getCurrentPlayer();}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}1"{}});}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}4"{}});}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}3"{}});}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}2"{}});}
-\DoxyCodeLine{00055\ \ \ \ \ \}}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ @Test}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenValidPlayerId\_ShouldFind()\{}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ var\ playerToFind\ =\ players[2];}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ var\ foundPlayer\ =\ playerIterator.getPlayerById(playerToFind.getId());}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ assertEquals(playerToFind.getName(),\ foundPlayer.getName());}
-\DoxyCodeLine{00064\ \ \ \ \ \}}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ @Test}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenInvalidPlayerId\_ShouldNotFind()\{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ var\ foundPlayer\ =\ playerIterator.getPlayerById(UUID.randomUUID());}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ assertNull(foundPlayer);}
-\DoxyCodeLine{00071\ \ \ \ \ \}}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ assertPlayer(Player\ player,\ String\ expectedName)\{}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ assertEquals(expectedName,\ player.getName());}
-\DoxyCodeLine{00075\ \ \ \ \ \}}
-\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.player;}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1testhelper}{testhelper}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_player_test_factory}{PlayerTestFactory}};}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00004}00004\ \textcolor{keyword}{import}\ org.junit.jupiter.api.BeforeEach;}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00005}00005\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00009}00009\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00014}00014\ \textcolor{keyword}{class\ }TestPlayersIterator\ \{}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Player[]\ players\ =\ PlayerTestFactory.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_player_test_factory_acfcd6ae1e6163c8bfee72624e83b3cc4}{createPlayers}}(4);}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ PlayerRoundIterator\ playerIterator;}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00029}00029\ \ \ \ \ @BeforeEach}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ setUp()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ playerIterator\ =\ \textcolor{keyword}{new}\ PlayerRoundIterator(players);}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00038}00038\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenInitialized\_FirstPlayerShouldBeCurrent()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ var\ current\ =\ playerIterator.getCurrentPlayer();}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00049}00049\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenClockwise\_ShouldHaveAscendingOrder()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ var\ current\ =\ playerIterator.next();}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}3"{}});}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}4"{}});}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00065}00065\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenReversed\_ShouldHaveDescendingOrder()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ playerIterator.reverseDirection();}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ var\ current\ =\ playerIterator.getCurrentPlayer();}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}4"{}});}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}3"{}});}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ current\ =\ playerIterator.next();}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ assertPlayer(current,\ \textcolor{stringliteral}{"{}2"{}});}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00086}00086\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenValidPlayerId\_ShouldFind()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ var\ playerToFind\ =\ players[2];}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ var\ foundPlayer\ =\ playerIterator.getPlayerById(playerToFind.getId());}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ assertEquals(playerToFind.getName(),\ foundPlayer.getName());}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00099}00099\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00100}00100\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenInvalidPlayerId\_ShouldNotFind()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ var\ foundPlayer\ =\ playerIterator.getPlayerById(UUID.randomUUID());}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ assertNull(foundPlayer);}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00111}00111\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ assertPlayer(Player\ player,\ String\ expectedName)\{}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ assertEquals(expectedName,\ player.getName());}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00113}00113\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_players_iterator_8java_source_l00114}00114\ \}}
 
 \end{DoxyCode}

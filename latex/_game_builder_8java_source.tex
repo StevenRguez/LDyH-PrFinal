@@ -1,56 +1,56 @@
 \doxysection{Game\+Builder.\+java}
-\label{_game_builder_8java_source}\index{src/main/java/domain/game/GameBuilder.java@{src/main/java/domain/game/GameBuilder.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_game_builder_8java_source}{}\label{_game_builder_8java_source}\index{src/main/java/domain/game/GameBuilder.java@{src/main/java/domain/game/GameBuilder.java}}
+\mbox{\hyperlink{_game_builder_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.game;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.Card;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.card.CardDeck;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.player.Player;}
-\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.player.PlayerRoundIterator;}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ java.util.ArrayList;}
-\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ java.util.List;}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }GameBuilder\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{private}\ List<String>\ playerNames\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}\ GameBuilder\ withPlayer(String\ name)\ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ playerNames.add(name);}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
-\DoxyCodeLine{00026\ \ \ \ \ \}}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{public}\ Game\ build()\ \{}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ var\ cards\ =\ \textcolor{keyword}{new}\ CardDeck().getImmutableCards();\ \textcolor{comment}{//\ Obtiene\ un\ mazo\ de\ cartas\ inmutable.}}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ var\ drawPile\ =\ buildDrawPile(cards);\ \textcolor{comment}{//\ Construye\ el\ mazo\ de\ robar.}}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ var\ players\ =\ buildPlayers(drawPile);\ \textcolor{comment}{//\ Configura\ los\ jugadores.}}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Game(drawPile,\ players);}
-\DoxyCodeLine{00040\ \ \ \ \ \}}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{private}\ DrawPile\ buildDrawPile(List<Card>\ cards)\ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ var\ shuffledCards\ =\ DealerService.shuffle(cards);\ \textcolor{comment}{//\ Baraja\ las\ cartas.}}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ DrawPile(shuffledCards);\ \textcolor{comment}{//\ Crea\ el\ mazo\ de\ robar.}}
-\DoxyCodeLine{00051\ \ \ \ \ \}}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{private}\ PlayerRoundIterator\ buildPlayers(DrawPile\ drawPile)\ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerNames.size()\ <\ 2\ ||\ playerNames.size()\ >\ 10)\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalStateException(\textcolor{stringliteral}{"{}Se\ requieren\ entre\ 2\ y\ 10\ jugadores\ para\ crear\ un\ juego"{}});}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reparte\ las\ cartas\ iniciales\ a\ los\ jugadores.}}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ var\ handCardLists\ =\ DealerService.dealInitialHandCards(drawPile,\ playerNames.size());}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ var\ players\ =\ \textcolor{keyword}{new}\ Player[playerNames.size()];}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crea\ los\ jugadores\ con\ sus\ nombres\ y\ manos\ iniciales.}}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ playerNames.size();\ i++)\ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ players[i]\ =\ \textcolor{keyword}{new}\ Player(playerNames.get(i),\ handCardLists[i]);}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Devuelve\ el\ iterador\ circular\ de\ jugadores.}}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ PlayerRoundIterator(players);}
-\DoxyCodeLine{00076\ \ \ \ \ \}}
-\DoxyCodeLine{00077\ \}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.game;}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}};}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_deck}{CardDeck}};}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1player}{player}}.\mbox{\hyperlink{classdomain_1_1player_1_1_player}{Player}};}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00006}00006\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1player}{player}}.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator}{PlayerRoundIterator}};}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00014}\mbox{\hyperlink{classdomain_1_1game_1_1_game_builder}{00014}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdomain_1_1game_1_1_game_builder}{GameBuilder}}\ \{}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ List<String>\ playerNames\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00026}\mbox{\hyperlink{classdomain_1_1game_1_1_game_builder_a0c6c1b220751be687495911f668b2956}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_builder}{GameBuilder}}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_builder_a0c6c1b220751be687495911f668b2956}{withPlayer}}(String\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ playerNames.add(name);}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00036}\mbox{\hyperlink{classdomain_1_1game_1_1_game_builder_aefa110217a8656c9d805614ff4ed6f33}{00036}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game}{Game}}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_builder_aefa110217a8656c9d805614ff4ed6f33}{build}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ var\ cards\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_card_deck}{CardDeck}}().\mbox{\hyperlink{classdomain_1_1card_1_1_card_deck_a76f06e93c7ec5b87101feba191d40072}{getImmutableCards}}();\ \textcolor{comment}{//\ Obtiene\ un\ mazo\ de\ cartas\ inmutable.}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ var\ drawPile\ =\ buildDrawPile(cards);\ \textcolor{comment}{//\ Construye\ el\ mazo\ de\ robar.}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ var\ players\ =\ buildPlayers(drawPile);\ \textcolor{comment}{//\ Configura\ los\ jugadores.}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game}{Game}}(drawPile,\ players);}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classdomain_1_1game_1_1_draw_pile}{DrawPile}}\ buildDrawPile(List<Card>\ cards)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ var\ shuffledCards\ =\ \mbox{\hyperlink{classdomain_1_1game_1_1_dealer_service}{DealerService}}.\mbox{\hyperlink{classdomain_1_1game_1_1_dealer_service_a3ec18e43620ad481f6005e7c0cebef77}{shuffle}}(cards);\ \textcolor{comment}{//\ Baraja\ las\ cartas.}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1game_1_1_draw_pile}{DrawPile}}(shuffledCards);\ \textcolor{comment}{//\ Crea\ el\ mazo\ de\ robar.}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{private}\ PlayerRoundIterator\ buildPlayers(DrawPile\ drawPile)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (playerNames.size()\ <\ 2\ ||\ playerNames.size()\ >\ 10)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalStateException(\textcolor{stringliteral}{"{}Se\ requieren\ entre\ 2\ y\ 10\ jugadores\ para\ crear\ un\ juego"{}});}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Reparte\ las\ cartas\ iniciales\ a\ los\ jugadores.}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ var\ handCardLists\ =\ DealerService.dealInitialHandCards(drawPile,\ playerNames.size());}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ var\ players\ =\ \textcolor{keyword}{new}\ Player[playerNames.size()];}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crea\ los\ jugadores\ con\ sus\ nombres\ y\ manos\ iniciales.}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ playerNames.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ players[i]\ =\ \textcolor{keyword}{new}\ Player(playerNames.get(i),\ handCardLists[i]);}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Devuelve\ el\ iterador\ circular\ de\ jugadores.}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ PlayerRoundIterator(players);}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_builder_8java_source_l00080}00080\ \}}
 
 \end{DoxyCode}

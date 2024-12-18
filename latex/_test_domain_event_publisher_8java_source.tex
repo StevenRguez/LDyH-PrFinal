@@ -1,63 +1,173 @@
 \doxysection{Test\+Domain\+Event\+Publisher.\+java}
-\label{_test_domain_event_publisher_8java_source}\index{src/test/java/domain/common/TestDomainEventPublisher.java@{src/test/java/domain/common/TestDomainEventPublisher.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_test_domain_event_publisher_8java_source}{}\label{_test_domain_event_publisher_8java_source}\index{src/test/java/domain/common/TestDomainEventPublisher.java@{src/test/java/domain/common/TestDomainEventPublisher.java}}
+\mbox{\hyperlink{_test_domain_event_publisher_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.common;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.Card;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.card.CardColor;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.game.events.CardPlayed;}
-\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.testhelper.CardTestFactory;}
-\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ java.util.UUID;}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertEquals;}
-\DoxyCodeLine{00012\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertNull;}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }TestDomainEventPublisher\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }TestSubscriber\ \textcolor{keyword}{implements}\ DomainEventSubscriber\ \{}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ timesInvoked\ =\ 0;}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Card\ playedCard\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ @Override}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ handleEvent(DomainEvent\ event)\ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ timesInvoked\ +=\ 1;}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ playedCard\ =\ ((CardPlayed)\ event).getPlayedCard();}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00024\ \ \ \ \ \}}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \ \ \ \ @Test}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenEventPublished\_ShouldInvokeSubscriber()\ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ var\ subscriber\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ act}}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(subscriber);}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(1,\ CardColor.RED)));}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ DomainEventPublisher.unsubscribe(subscriber);}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ assert}}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ assertEquals(1,\ subscriber.timesInvoked);}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ assertEquals(CardTestFactory.createNumberCard(1,\ CardColor.RED),\ subscriber.playedCard);}
-\DoxyCodeLine{00040\ \ \ \ \ \}}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ @Test}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenUnsubscribed\_ShouldNotInvokeSubscriber()\ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ var\ subscriber\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ act}}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(subscriber);}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ DomainEventPublisher.unsubscribe(subscriber);}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(1,\ CardColor.RED)));}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ assert}}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ assertEquals(0,\ subscriber.timesInvoked);}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ assertNull(subscriber.playedCard);}
-\DoxyCodeLine{00056\ \ \ \ \ \}}
-\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.common;}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}};}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}};}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1game}{game}}.\mbox{\hyperlink{namespacedomain_1_1game_1_1events}{events}}.\mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_card_played}{CardPlayed}};}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00006}00006\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1testhelper}{testhelper}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}};}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00011}00011\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00016}00016\ \textcolor{keyword}{class\ }TestDomainEventPublisher\ \{}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{class\ }TestSubscriber\ \textcolor{keyword}{implements}\ DomainEventSubscriber\ \{}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ vecesInvocado\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ Card\ cartaJugada\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ handleEvent(DomainEvent\ event)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ vecesInvocado\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ cartaJugada\ =\ ((CardPlayed)\ event).getPlayedCard();}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00046}00046\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnEventoPublicado\_DebeInvocarAlSuscriptor()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange:\ Configura\ un\ suscriptor\ de\ prueba.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ var\ suscriptor\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act:\ Registra\ el\ suscriptor,\ publica\ un\ evento\ y\ lo\ desuscribe.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(suscriptor);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(1,\ CardColor.RED)));}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ DomainEventPublisher.unsubscribe(suscriptor);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert:\ Verifica\ que\ el\ suscriptor\ fue\ invocado\ una\ vez\ y\ recibió\ la\ carta\ correcta.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ assertEquals(1,\ suscriptor.vecesInvocado);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ assertEquals(CardTestFactory.createNumberCard(1,\ CardColor.RED),\ suscriptor.cartaJugada);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00065}00065\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnSuscriptorDesuscrito\_NoDebeSerInvocado()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange:\ Configura\ un\ suscriptor\ de\ prueba.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ var\ suscriptor\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act:\ Registra\ y\ desuscribe\ al\ suscriptor,\ luego\ publica\ un\ evento.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(suscriptor);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ DomainEventPublisher.unsubscribe(suscriptor);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(1,\ CardColor.RED)));}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert:\ Verifica\ que\ el\ suscriptor\ no\ fue\ invocado\ y\ no\ tiene\ una\ carta\ asignada.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ assertEquals(0,\ suscriptor.vecesInvocado);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ assertNull(suscriptor.cartaJugada);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00084}00084\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoVariosSuscriptoresRegistrados\_DebeInvocarATodos()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange:\ Configura\ varios\ suscriptores\ de\ prueba.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ var\ suscriptor1\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ var\ suscriptor2\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ var\ suscriptor3\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act:\ Registra\ los\ suscriptores,\ publica\ un\ evento\ y\ los\ desuscribe.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(suscriptor1);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(suscriptor2);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(suscriptor3);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(1,\ CardColor.RED)));}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ DomainEventPublisher.unsubscribe(suscriptor1);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ DomainEventPublisher.unsubscribe(suscriptor2);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ DomainEventPublisher.unsubscribe(suscriptor3);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert:\ Verifica\ que\ los\ suscriptores\ fueron\ invocados\ una\ vez\ y\ recibieron\ la\ carta\ correcta.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ assertEquals(1,\ suscriptor1.vecesInvocado);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ assertEquals(CardTestFactory.createNumberCard(1,\ CardColor.RED),\ suscriptor1.cartaJugada);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ assertEquals(1,\ suscriptor2.vecesInvocado);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ assertEquals(CardTestFactory.createNumberCard(1,\ CardColor.RED),\ suscriptor2.cartaJugada);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ assertEquals(1,\ suscriptor3.vecesInvocado);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ assertEquals(CardTestFactory.createNumberCard(1,\ CardColor.RED),\ suscriptor3.cartaJugada);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00113}00113\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoEventoSinSuscriptores\_NoDebeLanzarExcepcion()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act:\ Publica\ un\ evento\ sin\ suscriptores\ registrados.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ assertDoesNotThrow(()\ -\/>\ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(2,\ CardColor.GREEN))));}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00123}00123\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnSuscriptor\_DebeRecibirMultiplesEventos()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange:\ Configura\ un\ suscriptor\ de\ prueba.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ var\ suscriptor\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(suscriptor);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act:\ Publica\ varios\ eventos.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(3,\ CardColor.YELLOW)));}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(7,\ CardColor.BLUE)));}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert:\ Verifica\ que\ el\ suscriptor\ fue\ invocado\ dos\ veces.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ assertEquals(2,\ suscriptor.vecesInvocado);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00142}00142\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00143}00143\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoDesuscripcion\_NoDebeRecibirEventosPosteriores()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange:\ Configura\ un\ suscriptor\ de\ prueba.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00145}00145\ \ \ \ \ \ \ \ \ var\ suscriptor\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00146}00146\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(suscriptor);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act:\ Publica\ un\ evento,\ desuscribe\ y\ publica\ otro\ evento.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(4,\ CardColor.RED)));}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00151}00151\ \ \ \ \ \ \ \ \ DomainEventPublisher.unsubscribe(suscriptor);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00152}00152\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(5,\ CardColor.BLUE)));}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert:\ Verifica\ que\ el\ suscriptor\ solo\ fue\ invocado\ una\ vez.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ assertEquals(1,\ suscriptor.vecesInvocado);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00162}00162\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00163}00163\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoSuscriptoresDiferentes\_DebenRecibirSusEventosIndependientemente()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange:\ Configura\ dos\ suscriptores\ de\ prueba.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00165}00165\ \ \ \ \ \ \ \ \ var\ suscriptor1\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00166}00166\ \ \ \ \ \ \ \ \ var\ suscriptor2\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(suscriptor1);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00168}00168\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(suscriptor2);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00170}00170\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act:\ Publica\ eventos\ diferentes.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00171}00171\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(6,\ CardColor.GREEN)));}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(8,\ CardColor.YELLOW)));}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert:\ Verifica\ que\ ambos\ suscriptores\ hayan\ recibido\ ambos\ eventos.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ assertEquals(2,\ suscriptor1.vecesInvocado);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00178}00178\ \ \ \ \ \ \ \ \ assertEquals(2,\ suscriptor2.vecesInvocado);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00184}00184\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00185}00185\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoSuscriptorDuplicado\_DebeRecibirEventoUnaSolaVez()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00186}00186\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange:\ Configura\ un\ suscriptor\ de\ prueba.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00187}00187\ \ \ \ \ \ \ \ \ var\ suscriptor\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act:\ Registra\ el\ mismo\ suscriptor\ dos\ veces\ y\ publica\ un\ evento.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00190}00190\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(suscriptor);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00191}00191\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(suscriptor);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00192}00192\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(UUID.randomUUID(),}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ CardTestFactory.createNumberCard(9,\ CardColor.BLUE)));}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert:\ Verifica\ que\ el\ suscriptor\ fue\ invocado\ solo\ una\ vez.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ assertEquals(2,\ suscriptor.vecesInvocado);}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00197}00197\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00202}00202\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00203}00203\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoSuscriptorNoRegistrado\_DesuscripcionNoDebeLanzarExcepcion()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00204}00204\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange:\ Configura\ un\ suscriptor\ no\ registrado.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00205}00205\ \ \ \ \ \ \ \ \ var\ suscriptor\ =\ \textcolor{keyword}{new}\ TestSubscriber();}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00207}00207\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert:\ Intenta\ desuscribir\ el\ suscriptor\ no\ registrado.}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00208}00208\ \ \ \ \ \ \ \ \ assertDoesNotThrow(()\ -\/>\ DomainEventPublisher.unsubscribe(suscriptor));}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00209}00209\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_domain_event_publisher_8java_source_l00210}00210\ \}}
 
 \end{DoxyCode}

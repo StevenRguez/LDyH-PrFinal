@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TizonTools: Referencia de la interface application.IGameAppService</title>
+<title>LabGrupal: Referencia de la interface application.IGameAppService</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TizonTools
+   <div id="projectname">LabGrupal
    </div>
   </td>
  </tr>
@@ -94,49 +94,37 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Referencia de la interface application.IGameAppService</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Interfaz que define el servicio de aplicación para interactuar con una sesión de juego.  
- <a href="#details">Más...</a></p>
 <div class="dynheader">
 Diagrama de herencia de application.IGameAppService</div>
 <div class="dyncontent">
-<div class="center"><img src="interfaceapplication_1_1_i_game_app_service__inherit__graph.png" border="0" usemap="#aapplication_8_i_game_app_service_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">leyenda</a>]</span></center></div>
-<div class="dynheader">
-Diagrama de colaboración de application.IGameAppService:</div>
-<div class="dyncontent">
-<div class="center"><img src="interfaceapplication_1_1_i_game_app_service__coll__graph.png" border="0" usemap="#aapplication_8_i_game_app_service_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">leyenda</a>]</span></center></div>
+ <div class="center">
+  <img src="interfaceapplication_1_1_i_game_app_service.png" usemap="#application.IGameAppService_map" alt=""/>
+  <map id="application.IGameAppService_map" name="application.IGameAppService_map">
+<area href="classapplication_1_1_game_app_service.html" alt="application.GameAppService" shape="rect" coords="0,112,179,136"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
 <tr class="memitem:a45508b3b6c7645777db451fa7017792d" id="r_a45508b3b6c7645777db451fa7017792d"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classapplication_1_1dto_1_1_player_info_d_t_o.html">PlayerInfoDTO</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45508b3b6c7645777db451fa7017792d">getPlayerInfos</a> ()</td></tr>
-<tr class="memdesc:a45508b3b6c7645777db451fa7017792d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera una lista de objetos PlayerInfoDTO que contiene información básica de cada jugador.  <br /></td></tr>
 <tr class="separator:a45508b3b6c7645777db451fa7017792d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab150c7007ad30a88434fb9e19addf082" id="r_ab150c7007ad30a88434fb9e19addf082"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classapplication_1_1dto_1_1_player_info_d_t_o.html">PlayerInfoDTO</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab150c7007ad30a88434fb9e19addf082">getCurrentPlayer</a> ()</td></tr>
-<tr class="memdesc:ab150c7007ad30a88434fb9e19addf082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera la información del jugador actual.  <br /></td></tr>
 <tr class="separator:ab150c7007ad30a88434fb9e19addf082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa02f7eba42f32439db2eedf2ad1aa626" id="r_aa02f7eba42f32439db2eedf2ad1aa626"><td class="memItemLeft" align="right" valign="top">Stream&lt; <a class="el" href="interfacedomain_1_1card_1_1_card.html">Card</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa02f7eba42f32439db2eedf2ad1aa626">getHandCards</a> (UUID playerId)</td></tr>
-<tr class="memdesc:aa02f7eba42f32439db2eedf2ad1aa626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera las cartas en mano de un jugador específico.  <br /></td></tr>
 <tr class="separator:aa02f7eba42f32439db2eedf2ad1aa626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86dfaeadb93af52f3694a33eeb7eb132" id="r_a86dfaeadb93af52f3694a33eeb7eb132"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86dfaeadb93af52f3694a33eeb7eb132">playCard</a> (UUID playerId, <a class="el" href="interfacedomain_1_1card_1_1_card.html">Card</a> card, boolean hasSaidUno)</td></tr>
-<tr class="memdesc:a86dfaeadb93af52f3694a33eeb7eb132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permite a un jugador jugar una carta, con la opción de declarar "UNO".  <br /></td></tr>
 <tr class="separator:a86dfaeadb93af52f3694a33eeb7eb132"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea4e8274520bb8dfb8d099df301d8e5d" id="r_aea4e8274520bb8dfb8d099df301d8e5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea4e8274520bb8dfb8d099df301d8e5d">drawCard</a> (UUID playerId)</td></tr>
-<tr class="memdesc:aea4e8274520bb8dfb8d099df301d8e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permite a un jugador robar una carta del mazo.  <br /></td></tr>
 <tr class="separator:aea4e8274520bb8dfb8d099df301d8e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b82fbccec479da182416d35ca7fce44" id="r_a7b82fbccec479da182416d35ca7fce44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacedomain_1_1card_1_1_card.html">Card</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b82fbccec479da182416d35ca7fce44">peekTopCard</a> ()</td></tr>
-<tr class="memdesc:a7b82fbccec479da182416d35ca7fce44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera la carta superior de la pila de descarte sin retirarla.  <br /></td></tr>
 <tr class="separator:a7b82fbccec479da182416d35ca7fce44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71ad24066758708ff1cd45b5c0695d24" id="r_a71ad24066758708ff1cd45b5c0695d24"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71ad24066758708ff1cd45b5c0695d24">isGameOver</a> ()</td></tr>
-<tr class="memdesc:a71ad24066758708ff1cd45b5c0695d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si el juego ha terminado.  <br /></td></tr>
 <tr class="separator:a71ad24066758708ff1cd45b5c0695d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7259cd1076e50d9e379ce381dee0938" id="r_ac7259cd1076e50d9e379ce381dee0938"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdomain_1_1player_1_1_immutable_player.html">ImmutablePlayer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7259cd1076e50d9e379ce381dee0938">getWinner</a> ()</td></tr>
-<tr class="memdesc:ac7259cd1076e50d9e379ce381dee0938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera el jugador ganador, si el juego ha terminado.  <br /></td></tr>
 <tr class="separator:ac7259cd1076e50d9e379ce381dee0938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Interfaz que define el servicio de aplicación para interactuar con una sesión de juego. </p>
+<div class="textblock"><p><a class="el" href="interfaceapplication_1_1_i_game_app_service.html">IGameAppService</a> Interfaz que define el servicio de aplicación para interactuar con una sesión de juego.</p>
 <p>Proporciona métodos para recuperar información de los jugadores, gestionar acciones de los mismos y consultar el estado del juego. Este servicio está diseñado para separar la capa de aplicación de la capa de dominio. </p>
 
 <p class="definition">Definición en la línea <a class="el" href="_i_game_app_service_8java_source.html#l00019">19</a> del archivo <a class="el" href="_i_game_app_service_8java_source.html">IGameAppService.java</a>.</p>
@@ -155,8 +143,7 @@ Métodos públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Permite a un jugador robar una carta del mazo. </p>
+<p>Permite a un jugador robar una carta del mazo.</p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">playerId</td><td>UUID del jugador que roba la carta. </td></tr>
@@ -182,8 +169,7 @@ Métodos públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Recupera la información del jugador actual. </p>
+<p>Recupera la información del jugador actual.</p>
 <dl class="section return"><dt>Devuelve</dt><dd>Objeto PlayerInfoDTO que contiene el ID y el nombre del jugador actual. </dd></dl>
 
 <p>Implementado en <a class="el" href="classapplication_1_1_game_app_service.html#a95308d358c22a877687ccaab77cedb09">application.GameAppService</a>.</p>
@@ -204,8 +190,7 @@ Métodos públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Recupera las cartas en mano de un jugador específico. </p>
+<p>Recupera las cartas en mano de un jugador específico.</p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">playerId</td><td>UUID del jugador cuyas cartas en mano se van a recuperar. </td></tr>
@@ -232,8 +217,7 @@ Métodos públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Recupera una lista de objetos PlayerInfoDTO que contiene información básica de cada jugador. </p>
+<p>Recupera una lista de objetos PlayerInfoDTO que contiene información básica de cada jugador.</p>
 <dl class="section return"><dt>Devuelve</dt><dd>Lista de objetos PlayerInfoDTO con los IDs y nombres de los jugadores. </dd></dl>
 
 <p>Implementado en <a class="el" href="classapplication_1_1_game_app_service.html#a47e4aa5e2a9ec317fce96c68dc2f0b2f">application.GameAppService</a>.</p>
@@ -254,8 +238,7 @@ Métodos públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Recupera el jugador ganador, si el juego ha terminado. </p>
+<p>Recupera el jugador ganador, si el juego ha terminado.</p>
 <dl class="section return"><dt>Devuelve</dt><dd>Objeto ImmutablePlayer que representa al ganador, o null si el juego no ha finalizado. </dd></dl>
 
 <p>Implementado en <a class="el" href="classapplication_1_1_game_app_service.html#a2e6a60dd832ae2472563bcaab70a1309">application.GameAppService</a>.</p>
@@ -276,8 +259,7 @@ Métodos públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Verifica si el juego ha terminado. </p>
+<p>Verifica si el juego ha terminado.</p>
 <dl class="section return"><dt>Devuelve</dt><dd>Valor booleano que indica si el juego ha finalizado. </dd></dl>
 
 <p>Implementado en <a class="el" href="classapplication_1_1_game_app_service.html#a9f54e75b7d73e62a1f4fe3a79c3b0058">application.GameAppService</a>.</p>
@@ -298,8 +280,7 @@ Métodos públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Recupera la carta superior de la pila de descarte sin retirarla. </p>
+<p>Recupera la carta superior de la pila de descarte sin retirarla.</p>
 <dl class="section return"><dt>Devuelve</dt><dd>Objeto Card que representa la carta superior de la pila de descarte. </dd></dl>
 
 <p>Implementado en <a class="el" href="classapplication_1_1_game_app_service.html#aa3b2f00d6c4056e0aec2d02bd8b6dc7b">application.GameAppService</a>.</p>
@@ -329,8 +310,7 @@ Métodos públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Permite a un jugador jugar una carta, con la opción de declarar "UNO". </p>
+<p>Permite a un jugador jugar una carta, con la opción de declarar "UNO".</p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">playerId</td><td>UUID del jugador que juega la carta. </td></tr>

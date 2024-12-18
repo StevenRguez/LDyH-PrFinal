@@ -1,0 +1,90 @@
+\doxysection{Test\+Game\+App\+Service.\+java}
+\hypertarget{_test_game_app_service_8java_source}{}\label{_test_game_app_service_8java_source}\index{src/test/java/application/TestGameAppService.java@{src/test/java/application/TestGameAppService.java}}
+\mbox{\hyperlink{_test_game_app_service_8java}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00001}00001\ \textcolor{keyword}{package\ }application;}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceapplication}{application}}.\mbox{\hyperlink{namespaceapplication_1_1dto}{dto}}.\mbox{\hyperlink{classapplication_1_1dto_1_1_player_info_d_t_o}{PlayerInfoDTO}};}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}};}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1game}{game}}.\mbox{\hyperlink{classdomain_1_1game_1_1_game}{Game}};}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00006}00006\ \textcolor{keyword}{import}\ org.junit.jupiter.api.BeforeEach;}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00013}00013\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00021}00021\ \textcolor{keyword}{class\ }TestGameAppService\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ GameAppService\ gameAppService;}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00032}00032\ \ \ \ \ @BeforeEach}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{void}\ setUp()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inicializa\ el\ servicio\ de\ aplicación\ con\ una\ instancia\ real\ de\ GameBuilder}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ gameAppService\ =\ \textcolor{keyword}{new}\ GameAppService();}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00044}00044\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{void}\ testGetPlayerInfos()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ List<PlayerInfoDTO>\ playerInfos\ =\ gameAppService.getPlayerInfos();}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ assertNotNull(playerInfos);}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ assertEquals(2,\ playerInfos.size());\ \textcolor{comment}{//\ Verifica\ que\ hay\ dos\ jugadores\ iniciales}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Jugador\ 1"{}},\ playerInfos.get(0).getName());}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Jugador\ 2"{}},\ playerInfos.get(1).getName());}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00060}00060\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{void}\ testGetCurrentPlayer()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ PlayerInfoDTO\ currentPlayer\ =\ gameAppService.getCurrentPlayer();}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ assertNotNull(currentPlayer);}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ assertTrue(currentPlayer.getName().equals(\textcolor{stringliteral}{"{}Jugador\ 1"{}})\ ||\ currentPlayer.getName().equals(\textcolor{stringliteral}{"{}Jugador\ 2"{}}));}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00073}00073\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{void}\ testGetHandCards()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ UUID\ playerId\ =\ gameAppService.getPlayerInfos().get(0).getId();}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ Stream<Card>\ handCards\ =\ gameAppService.getHandCards(playerId);}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ assertNotNull(handCards);}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ assertTrue(handCards.count()\ >\ 0);\ \textcolor{comment}{//\ Verifica\ que\ el\ jugador\ tiene\ cartas\ en\ mano}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00087}00087\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{void}\ testPlayCard()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ UUID\ playerId\ =\ gameAppService.getPlayerInfos().get(0).getId();}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ Card\ cardToPlay\ =\ gameAppService.getHandCards(playerId).findFirst().orElse(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ assertNotNull(cardToPlay);}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00100}00100\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{void}\ testDrawCard()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ UUID\ playerId\ =\ gameAppService.getPlayerInfos().get(0).getId();}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Roba\ una\ carta\ y\ verifica\ que\ no\ lanza\ excepciones}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ assertDoesNotThrow(()\ -\/>\ gameAppService.drawCard(playerId));}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00113}00113\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{void}\ testPeekTopCard()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ Card\ topCard\ =\ gameAppService.peekTopCard();}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ assertNotNull(topCard);}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00123}00123\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{void}\ testIsGameOver()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ assertFalse(gameAppService.isGameOver());\ \textcolor{comment}{//\ El\ juego\ no\ debería\ haber\ terminado\ inicialmente}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00131}00131\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00132}00132\ \ \ \ \ \textcolor{keywordtype}{void}\ testGetWinner()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ assertNull(gameAppService.getWinner());\ \textcolor{comment}{//\ Al\ inicio\ no\ debería\ haber\ ganador}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_game_app_service_8java_source_l00135}00135\ \}}
+
+\end{DoxyCode}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TizonTools: Referencia de la clase domain.card.AbstractCard</title>
+<title>LabGrupal: Referencia de la clase domain.card.AbstractCard</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TizonTools
+   <div id="projectname">LabGrupal
    </div>
   </td>
  </tr>
@@ -98,13 +98,15 @@ $(function(){ initResizable(false); });
 <div class="dynheader">
 Diagrama de herencia de domain.card.AbstractCard</div>
 <div class="dyncontent">
-<div class="center"><img src="classdomain_1_1card_1_1_abstract_card__inherit__graph.png" border="0" usemap="#adomain_8card_8_abstract_card_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">leyenda</a>]</span></center></div>
-<div class="dynheader">
-Diagrama de colaboración de domain.card.AbstractCard:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1card_1_1_abstract_card__coll__graph.png" border="0" usemap="#adomain_8card_8_abstract_card_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">leyenda</a>]</span></center></div>
+ <div class="center">
+  <img src="classdomain_1_1card_1_1_abstract_card.png" usemap="#domain.card.AbstractCard_map" alt=""/>
+  <map id="domain.card.AbstractCard_map" name="domain.card.AbstractCard_map">
+<area href="interfacedomain_1_1card_1_1_card.html" alt="domain.card.Card" shape="rect" coords="171,56,332,80"/>
+<area href="classdomain_1_1card_1_1_action_card.html" alt="domain.card.ActionCard" shape="rect" coords="0,168,161,192"/>
+<area href="classdomain_1_1card_1_1_number_card.html" alt="domain.card.NumberCard" shape="rect" coords="171,168,332,192"/>
+<area href="classdomain_1_1card_1_1_wild_card.html" alt="domain.card.WildCard" shape="rect" coords="342,168,503,192"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
@@ -128,7 +130,7 @@ Métodos protegidos</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Clase abstracta que implementa la interfaz <a class="el" href="interfacedomain_1_1card_1_1_card.html">Card</a>. Define los métodos getType y getColor. Implementa los métodos equals, hashCode y toString. </p>
 
-<p class="definition">Definición en la línea <a class="el" href="_abstract_card_8java_source.html#l00008">8</a> del archivo <a class="el" href="_abstract_card_8java_source.html">AbstractCard.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_abstract_card_8java_source.html#l00007">7</a> del archivo <a class="el" href="_abstract_card_8java_source.html">AbstractCard.java</a>.</p>
 </div><h2 class="groupheader">Documentación de constructores y destructores</h2>
 <a id="a095b0cf504f5f68d8755f9605b9b030c" name="a095b0cf504f5f68d8755f9605b9b030c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a095b0cf504f5f68d8755f9605b9b030c">&#9670;&#160;</a></span>AbstractCard()</h2>
@@ -156,8 +158,15 @@ Métodos protegidos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Constructor protegido que inicializa una carta con su tipo y color. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>tipo de la carta. </td></tr>
+    <tr><td class="paramname">color</td><td>color de la carta. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_abstract_card_8java_source.html#l00012">12</a> del archivo <a class="el" href="_abstract_card_8java_source.html">AbstractCard.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_abstract_card_8java_source.html#l00024">24</a> del archivo <a class="el" href="_abstract_card_8java_source.html">AbstractCard.java</a>.</p>
 
 </div>
 </div>
@@ -184,7 +193,7 @@ Métodos protegidos</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Comprueba si dos cartas son iguales. </p><dl class="params"><dt>Parámetros</dt><dd>
+<p>Comprueba si dos cartas son iguales. La comparación se basa en el tipo y el color de la carta. </p><dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">o</td><td>objeto a comparar. </td></tr>
   </table>
@@ -214,12 +223,7 @@ Métodos protegidos</h2></td></tr>
 
 <p>Implementa <a class="el" href="interfacedomain_1_1card_1_1_card.html#a14ff76d95a998d9d6d4e9c5f3a72ffc0">domain.card.Card</a>.</p>
 
-<p class="definition">Definición en la línea <a class="el" href="_abstract_card_8java_source.html#l00032">32</a> del archivo <a class="el" href="_abstract_card_8java_source.html">AbstractCard.java</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1card_1_1_abstract_card_aba5333502be39184365292c98b7da318_icgraph.png" border="0" usemap="#aclassdomain_1_1card_1_1_abstract_card_aba5333502be39184365292c98b7da318_icgraph" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="_abstract_card_8java_source.html#l00045">45</a> del archivo <a class="el" href="_abstract_card_8java_source.html">AbstractCard.java</a>.</p>
 
 </div>
 </div>
@@ -241,12 +245,7 @@ Gráfico de llamadas a esta función:</div>
 
 <p>Implementa <a class="el" href="interfacedomain_1_1card_1_1_card.html#a13fbe446e7b4a468de148cab2c4939f7">domain.card.Card</a>.</p>
 
-<p class="definition">Definición en la línea <a class="el" href="_abstract_card_8java_source.html#l00023">23</a> del archivo <a class="el" href="_abstract_card_8java_source.html">AbstractCard.java</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas a esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1card_1_1_abstract_card_a03f0808dc490a2cf0e5c3c51f642fb0f_icgraph.png" border="0" usemap="#aclassdomain_1_1card_1_1_abstract_card_a03f0808dc490a2cf0e5c3c51f642fb0f_icgraph" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="_abstract_card_8java_source.html#l00036">36</a> del archivo <a class="el" href="_abstract_card_8java_source.html">AbstractCard.java</a>.</p>
 
 </div>
 </div>
@@ -272,7 +271,7 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Devuelve el hash code de la carta. </p><dl class="section return"><dt>Devuelve</dt><dd>hash code de la carta. </dd></dl>
+<p>Devuelve el hash code de la carta. El valor del hash se basa en el tipo y el color de la carta. </p><dl class="section return"><dt>Devuelve</dt><dd>hash code de la carta. </dd></dl>
 
 <p>Reimplementado en <a class="el" href="classdomain_1_1card_1_1_action_card.html#a44bbb19ccdf782a75c931e0bfdac7d9b">domain.card.ActionCard</a>, <a class="el" href="classdomain_1_1card_1_1_number_card.html#aab49ee3a2f00e0549f65e892b99445e7">domain.card.NumberCard</a> y <a class="el" href="classdomain_1_1card_1_1_wild_card.html#af3c0f8bb82b840bda732444575367955">domain.card.WildCard</a>.</p>
 
@@ -300,7 +299,7 @@ Gráfico de llamadas a esta función:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Devuelve la representación en cadena de la carta. </p><dl class="section return"><dt>Devuelve</dt><dd>representación en cadena de la carta. </dd></dl>
+<p>Devuelve la representación en cadena de la carta. La cadena incluye información sobre el tipo y el color de la carta. </p><dl class="section return"><dt>Devuelve</dt><dd>representación en cadena de la carta. </dd></dl>
 
 <p>Reimplementado en <a class="el" href="classdomain_1_1card_1_1_action_card.html#a5d5c564cd89e51fa3096c814ee4e0212">domain.card.ActionCard</a>, <a class="el" href="classdomain_1_1card_1_1_number_card.html#af9ab2a106a8e3466eadeaccdafc4d3bd">domain.card.NumberCard</a> y <a class="el" href="classdomain_1_1card_1_1_wild_card.html#a453350bfe9d9e9763d2fd48e4f477332">domain.card.WildCard</a>.</p>
 

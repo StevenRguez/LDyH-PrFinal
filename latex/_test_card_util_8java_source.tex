@@ -1,36 +1,58 @@
 \doxysection{Test\+Card\+Util.\+java}
-\label{_test_card_util_8java_source}\index{src/test/java/domain/card/TestCardUtil.java@{src/test/java/domain/card/TestCardUtil.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_test_card_util_8java_source}{}\label{_test_card_util_8java_source}\index{src/test/java/domain/card/TestCardUtil.java@{src/test/java/domain/card/TestCardUtil.java}}
+\mbox{\hyperlink{_test_card_util_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.card;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.testhelper.CardTestFactory;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertFalse;}
-\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertTrue;}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }TestCardUtil\ \{}
-\DoxyCodeLine{00010\ \ \ \ \ @Test}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenWildColorCard\_ShouldBeWildCard()\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ var\ result\ =\ CardUtil.isWildCard(CardTestFactory.createWildColorCard());}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ assertTrue(result);}
-\DoxyCodeLine{00015\ \ \ \ \ \}}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ @Test}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenWildDrawFourCard\_ShouldBeWildCard()\ \{}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ var\ result\ =\ CardUtil.isWildCard(CardTestFactory.createWildDrawFourCard());}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ assertTrue(result);}
-\DoxyCodeLine{00022\ \ \ \ \ \}}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ @Test}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ GivenNumberCard\_ShouldNotBeWildCard()\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ var\ result\ =\ CardUtil.isWildCard(CardTestFactory.createNumberCard());}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ assertFalse(result);}
-\DoxyCodeLine{00029\ \ \ \ \ \}}
-\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.card;}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1testhelper}{testhelper}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}};}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00004}00004\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00006}00006\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertFalse;}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00007}00007\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertTrue;}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00012}\mbox{\hyperlink{classdomain_1_1card_1_1_test_card_util}{00012}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdomain_1_1card_1_1_test_card_util}{TestCardUtil}}\ \{}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00017}00017\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnaCartaColorComodin\_DebeSerCartaComodin()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00019}00019\ \ \ \ \ \ \ \ \ var\ resultado\ =\ \mbox{\hyperlink{classdomain_1_1card_1_1_card_util}{CardUtil}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_util_a523b6bc0a4a6477326d78f348d8b8e35}{isWildCard}}(\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_ab2bd2abb6d49b95fd6a7dbbf34eb7671}{createWildColorCard}}());}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ assertTrue(resultado);}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00027}00027\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnaCartaRobarCuatro\_DebeSerCartaComodin()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ var\ resultado\ =\ \mbox{\hyperlink{classdomain_1_1card_1_1_card_util}{CardUtil}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_util_a523b6bc0a4a6477326d78f348d8b8e35}{isWildCard}}(\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_ad65c2a427b7aed880333c359d9a86c0b}{createWildDrawFourCard}}());}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ assertTrue(resultado);}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00037}00037\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnaCartaNumerica\_NoDebeSerCartaComodin()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ var\ resultado\ =\ \mbox{\hyperlink{classdomain_1_1card_1_1_card_util}{CardUtil}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_util_a523b6bc0a4a6477326d78f348d8b8e35}{isWildCard}}(\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9}{createNumberCard}}());}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ assertFalse(resultado);}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00047}00047\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnaCartaSaltarTurno\_NoDebeSerCartaComodin()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ var\ resultado\ =\ \mbox{\hyperlink{classdomain_1_1card_1_1_card_util}{CardUtil}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_util_a523b6bc0a4a6477326d78f348d8b8e35}{isWildCard}}(\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_a63a0debfb183d48e6c3558ae20592a4c}{createSkipCard}}(\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a8eb02103d54940d12cf95fee5edd7c67}{RED}}));}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ assertFalse(resultado);}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00057}00057\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnaCartaReversa\_NoDebeSerCartaComodin()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ var\ resultado\ =\ \mbox{\hyperlink{classdomain_1_1card_1_1_card_util}{CardUtil}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_util_a523b6bc0a4a6477326d78f348d8b8e35}{isWildCard}}(\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_a06f0bd059b5487e5b6e8c9f23d04bf94}{createReverseCard}}(\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a4953b3c8a29604397dc4de12749a531f}{BLUE}}));}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ assertFalse(resultado);}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00067}00067\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ dadoUnaCartaTomaDos\_NoDebeSerCartaComodin()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ var\ resultado\ =\ \mbox{\hyperlink{classdomain_1_1card_1_1_card_util}{CardUtil}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_util_a523b6bc0a4a6477326d78f348d8b8e35}{isWildCard}}(\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_a57eae6779845faeabc430e236103b274}{createDrawTwoCard}}(\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a38d119f2a79114a1db9db20c13c98e85}{GREEN}}));}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ assertFalse(resultado);}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_card_util_8java_source_l00073}00073\ \}}
 
 \end{DoxyCode}

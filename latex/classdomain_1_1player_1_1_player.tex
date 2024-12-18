@@ -1,43 +1,41 @@
 \doxysection{Referencia de la clase domain.\+player.\+Player}
-\label{classdomain_1_1player_1_1_player}\index{domain.player.Player@{domain.player.Player}}
-
-
-Diagrama de herencia de domain.\+player.\+Player
-% FIG 0
-
-
-Diagrama de colaboración de domain.\+player.\+Player\+:
-% FIG 1
+\hypertarget{classdomain_1_1player_1_1_player}{}\label{classdomain_1_1player_1_1_player}\index{domain.player.Player@{domain.player.Player}}
+Diagrama de herencia de domain.\+player.\+Player\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdomain_1_1player_1_1_player}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Player} (String name, \textbf{ Hand\+Card\+List} hand\+Cards)
+\mbox{\hyperlink{classdomain_1_1player_1_1_player_a174688cf76f65da2a711f6653e5ea43b}{Player}} (String name, \mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{Hand\+Card\+List}} hand\+Cards)
 \item 
-String \textbf{ get\+Name} ()
+String \mbox{\hyperlink{classdomain_1_1player_1_1_player_a2c102b9c325615ef82546dde979d712f}{get\+Name}} ()
 \item 
-Stream$<$ \textbf{ Card} $>$ \textbf{ get\+Hand\+Cards} ()
+Stream$<$ \mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}} $>$ \mbox{\hyperlink{classdomain_1_1player_1_1_player_a541dcd07f326c98a7f3f635e193fc892}{get\+Hand\+Cards}} ()
 \item 
-void \textbf{ add\+To\+Hand\+Cards} (\textbf{ Card} card)
+void \mbox{\hyperlink{classdomain_1_1player_1_1_player_af7ded916cdfb9b92cd87170cc22da205}{add\+To\+Hand\+Cards}} (\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}} card)
 \item 
-void \textbf{ remove\+Played\+Card} (\textbf{ Card} card)
+void \mbox{\hyperlink{classdomain_1_1player_1_1_player_a0c89d44cf2b75b4be01f9d26b0465e1d}{remove\+Played\+Card}} (\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}} card)
 \item 
-boolean \textbf{ has\+Hand\+Card} (\textbf{ Card} card)
+boolean \mbox{\hyperlink{classdomain_1_1player_1_1_player_a99209271043f5332e645e37af40fce51}{has\+Hand\+Card}} (\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}} card)
 \item 
-\textbf{ Immutable\+Player} \textbf{ to\+Immutable} ()
+\mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player}{Immutable\+Player}} \mbox{\hyperlink{classdomain_1_1player_1_1_player_a13c6660993e83ed3109f1fa7e618f3ba}{to\+Immutable}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Métodos públicos heredados de \textbf{ domain.\+common.\+Entity}}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{classdomain_1_1common_1_1_entity}{domain.\+common.\+Entity}}}
 \begin{DoxyCompactItemize}
 \item 
-UUID \textbf{ get\+Id} ()
-\begin{DoxyCompactList}\small\item\em Obtiene el identificador único de la entidad. \end{DoxyCompactList}\end{DoxyCompactItemize}
+UUID \mbox{\hyperlink{classdomain_1_1common_1_1_entity_a1ef91685cfea92710db0e9acdd57312f}{get\+Id}} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Otros miembros heredados}
-\doxysubsection*{Métodos protegidos heredados de \textbf{ domain.\+common.\+Entity}}
+\doxysubsection*{Métodos protegidos heredados de \mbox{\hyperlink{classdomain_1_1common_1_1_entity}{domain.\+common.\+Entity}}}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Entity} ()
-\begin{DoxyCompactList}\small\item\em Constructor protegido que inicializa la entidad con un UUID aleatorio. \end{DoxyCompactList}\item 
-\textbf{ Entity} (UUID id)
-\begin{DoxyCompactList}\small\item\em Constructor protegido que permite asignar un UUID específico a la entidad. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{classdomain_1_1common_1_1_entity_a5684a20bd8a7067ea2579343f81498b4}{Entity}} ()
+\item 
+\mbox{\hyperlink{classdomain_1_1common_1_1_entity_aa1161e0d40dd7a04a8ef428ef7fa1b2f}{Entity}} (UUID id)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descripción detallada}
@@ -46,18 +44,18 @@ Clase que representa un jugador. Un jugador tiene un nombre y una lista de carta
 \end{DoxyVersion}
 
 
-Definición en la línea \textbf{ 13} del archivo \textbf{ Player.\+java}.
+Definición en la línea \mbox{\hyperlink{_player_8java_source_l00013}{13}} del archivo \mbox{\hyperlink{_player_8java_source}{Player.\+java}}.
 
 
 
 \doxysubsection{Documentación de constructores y destructores}
-\index{domain.player.Player@{domain.player.Player}!Player@{Player}}
+\Hypertarget{classdomain_1_1player_1_1_player_a174688cf76f65da2a711f6653e5ea43b}\index{domain.player.Player@{domain.player.Player}!Player@{Player}}
 \index{Player@{Player}!domain.player.Player@{domain.player.Player}}
-\doxysubsubsection{Player()}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
 {\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_a174688cf76f65da2a711f6653e5ea43b} 
-domain.\+player.\+Player.\+Player (\begin{DoxyParamCaption}\item[{String}]{name}{, }\item[{\textbf{ Hand\+Card\+List}}]{hand\+Cards}{}\end{DoxyParamCaption})}
+domain.\+player.\+Player.\+Player (\begin{DoxyParamCaption}\item[{String}]{name}{, }\item[{\mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{Hand\+Card\+List}}}]{hand\+Cards}{}\end{DoxyParamCaption})}
 
-Constructor de la clase \doxyref{Player}{pág.}{classdomain_1_1player_1_1_player} dado el nombre y un listado de cartas en la mano. 
+Constructor de la clase \doxylink{classdomain_1_1player_1_1_player}{Player} dado el nombre y un listado de cartas en la mano. 
 \begin{DoxyParams}{Parámetros}
 {\em name} & Nombre del jugador. \\
 \hline
@@ -66,16 +64,16 @@ Constructor de la clase \doxyref{Player}{pág.}{classdomain_1_1player_1_1_player
 \end{DoxyParams}
 
 
-Definición en la línea \textbf{ 24} del archivo \textbf{ Player.\+java}.
+Definición en la línea \mbox{\hyperlink{_player_8java_source_l00028}{28}} del archivo \mbox{\hyperlink{_player_8java_source}{Player.\+java}}.
 
 
 
 \doxysubsection{Documentación de funciones miembro}
-\index{domain.player.Player@{domain.player.Player}!addToHandCards@{addToHandCards}}
+\Hypertarget{classdomain_1_1player_1_1_player_af7ded916cdfb9b92cd87170cc22da205}\index{domain.player.Player@{domain.player.Player}!addToHandCards@{addToHandCards}}
 \index{addToHandCards@{addToHandCards}!domain.player.Player@{domain.player.Player}}
-\doxysubsubsection{addToHandCards()}
+\doxysubsubsection{\texorpdfstring{addToHandCards()}{addToHandCards()}}
 {\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_af7ded916cdfb9b92cd87170cc22da205} 
-void domain.\+player.\+Player.\+add\+To\+Hand\+Cards (\begin{DoxyParamCaption}\item[{\textbf{ Card}}]{card}{}\end{DoxyParamCaption})}
+void domain.\+player.\+Player.\+add\+To\+Hand\+Cards (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}}]{card}{}\end{DoxyParamCaption})}
 
 Añade una carta a la mano del jugador. 
 \begin{DoxyParams}{Parámetros}
@@ -84,30 +82,24 @@ Añade una carta a la mano del jugador.
 \end{DoxyParams}
 
 
-Definición en la línea \textbf{ 50} del archivo \textbf{ Player.\+java}.
+Definición en la línea \mbox{\hyperlink{_player_8java_source_l00054}{54}} del archivo \mbox{\hyperlink{_player_8java_source}{Player.\+java}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 2
-\index{domain.player.Player@{domain.player.Player}!getHandCards@{getHandCards}}
+\Hypertarget{classdomain_1_1player_1_1_player_a541dcd07f326c98a7f3f635e193fc892}\index{domain.player.Player@{domain.player.Player}!getHandCards@{getHandCards}}
 \index{getHandCards@{getHandCards}!domain.player.Player@{domain.player.Player}}
-\doxysubsubsection{getHandCards()}
+\doxysubsubsection{\texorpdfstring{getHandCards()}{getHandCards()}}
 {\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_a541dcd07f326c98a7f3f635e193fc892} 
-Stream$<$ \textbf{ Card} $>$ domain.\+player.\+Player.\+get\+Hand\+Cards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+Stream$<$ \mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}} $>$ domain.\+player.\+Player.\+get\+Hand\+Cards (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 Devuelve el número de cartas en la mano del jugador. \begin{DoxyReturn}{Devuelve}
 Número de cartas en la mano del jugador. 
 \end{DoxyReturn}
 
 
-Definición en la línea \textbf{ 42} del archivo \textbf{ Player.\+java}.
+Definición en la línea \mbox{\hyperlink{_player_8java_source_l00046}{46}} del archivo \mbox{\hyperlink{_player_8java_source}{Player.\+java}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 3
-Gráfico de llamadas a esta función\+:
-% FIG 4
-\index{domain.player.Player@{domain.player.Player}!getName@{getName}}
+\Hypertarget{classdomain_1_1player_1_1_player_a2c102b9c325615ef82546dde979d712f}\index{domain.player.Player@{domain.player.Player}!getName@{getName}}
 \index{getName@{getName}!domain.player.Player@{domain.player.Player}}
-\doxysubsubsection{getName()}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
 {\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_a2c102b9c325615ef82546dde979d712f} 
 String domain.\+player.\+Player.\+get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
@@ -116,30 +108,26 @@ Nombre del jugador.
 \end{DoxyReturn}
 
 
-Definición en la línea \textbf{ 34} del archivo \textbf{ Player.\+java}.
+Definición en la línea \mbox{\hyperlink{_player_8java_source_l00038}{38}} del archivo \mbox{\hyperlink{_player_8java_source}{Player.\+java}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 5
-\index{domain.player.Player@{domain.player.Player}!hasHandCard@{hasHandCard}}
+\Hypertarget{classdomain_1_1player_1_1_player_a99209271043f5332e645e37af40fce51}\index{domain.player.Player@{domain.player.Player}!hasHandCard@{hasHandCard}}
 \index{hasHandCard@{hasHandCard}!domain.player.Player@{domain.player.Player}}
-\doxysubsubsection{hasHandCard()}
+\doxysubsubsection{\texorpdfstring{hasHandCard()}{hasHandCard()}}
 {\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_a99209271043f5332e645e37af40fce51} 
-boolean domain.\+player.\+Player.\+has\+Hand\+Card (\begin{DoxyParamCaption}\item[{\textbf{ Card}}]{card}{}\end{DoxyParamCaption})}
+boolean domain.\+player.\+Player.\+has\+Hand\+Card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}}]{card}{}\end{DoxyParamCaption})}
 
 Devuelve si tiene o no una carta en la mano. \begin{DoxyReturn}{Devuelve}
 si tiene la carta en la mano. 
 \end{DoxyReturn}
 
 
-Definición en la línea \textbf{ 67} del archivo \textbf{ Player.\+java}.
+Definición en la línea \mbox{\hyperlink{_player_8java_source_l00071}{71}} del archivo \mbox{\hyperlink{_player_8java_source}{Player.\+java}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 6
-\index{domain.player.Player@{domain.player.Player}!removePlayedCard@{removePlayedCard}}
+\Hypertarget{classdomain_1_1player_1_1_player_a0c89d44cf2b75b4be01f9d26b0465e1d}\index{domain.player.Player@{domain.player.Player}!removePlayedCard@{removePlayedCard}}
 \index{removePlayedCard@{removePlayedCard}!domain.player.Player@{domain.player.Player}}
-\doxysubsubsection{removePlayedCard()}
+\doxysubsubsection{\texorpdfstring{removePlayedCard()}{removePlayedCard()}}
 {\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_a0c89d44cf2b75b4be01f9d26b0465e1d} 
-void domain.\+player.\+Player.\+remove\+Played\+Card (\begin{DoxyParamCaption}\item[{\textbf{ Card}}]{card}{}\end{DoxyParamCaption})}
+void domain.\+player.\+Player.\+remove\+Played\+Card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}}]{card}{}\end{DoxyParamCaption})}
 
 Elimina una carta de la mano del jugador.
 
@@ -150,27 +138,23 @@ Elimina una carta de la mano del jugador.
 \end{DoxyParams}
 
 
-Definición en la línea \textbf{ 59} del archivo \textbf{ Player.\+java}.
+Definición en la línea \mbox{\hyperlink{_player_8java_source_l00063}{63}} del archivo \mbox{\hyperlink{_player_8java_source}{Player.\+java}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 7
-\index{domain.player.Player@{domain.player.Player}!toImmutable@{toImmutable}}
+\Hypertarget{classdomain_1_1player_1_1_player_a13c6660993e83ed3109f1fa7e618f3ba}\index{domain.player.Player@{domain.player.Player}!toImmutable@{toImmutable}}
 \index{toImmutable@{toImmutable}!domain.player.Player@{domain.player.Player}}
-\doxysubsubsection{toImmutable()}
+\doxysubsubsection{\texorpdfstring{toImmutable()}{toImmutable()}}
 {\footnotesize\ttfamily \label{classdomain_1_1player_1_1_player_a13c6660993e83ed3109f1fa7e618f3ba} 
-\textbf{ Immutable\+Player} domain.\+player.\+Player.\+to\+Immutable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+\mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player}{Immutable\+Player}} domain.\+player.\+Player.\+to\+Immutable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 Devuelve un jugador inmutable. \begin{DoxyReturn}{Devuelve}
 Jugador inmutable. 
 \end{DoxyReturn}
 
 
-Definición en la línea \textbf{ 75} del archivo \textbf{ Player.\+java}.
+Definición en la línea \mbox{\hyperlink{_player_8java_source_l00079}{79}} del archivo \mbox{\hyperlink{_player_8java_source}{Player.\+java}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 8
 
 
 La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
 \item 
-src/main/java/domain/player/\textbf{ Player.\+java}\end{DoxyCompactItemize}
+src/main/java/domain/player/\mbox{\hyperlink{_player_8java}{Player.\+java}}\end{DoxyCompactItemize}

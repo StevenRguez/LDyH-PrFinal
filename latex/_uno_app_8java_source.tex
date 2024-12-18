@@ -1,26 +1,27 @@
 \doxysection{Uno\+App.\+java}
-\label{_uno_app_8java_source}\index{src/main/java/UnoApp.java@{src/main/java/UnoApp.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_uno_app_8java_source}{}\label{_uno_app_8java_source}\index{src/main/java/UnoApp.java@{src/main/java/UnoApp.java}}
+\mbox{\hyperlink{_uno_app_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{import}\ application.GameAppService;}
-\DoxyCodeLine{00002\ \textcolor{keyword}{import}\ org.apache.logging.log4j.LogManager;}
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ org.apache.logging.log4j.Logger;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ ui.AppFrame;}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ javax.swing.*;}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }UnoApp\ \{}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Usamos\ la\ clase\ actual\ para\ nombrar\ el\ logger}}
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Logger\ logger\ =\ LogManager.getLogger(UnoApp.class);}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ main(String[]\ args)\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ var\ appService\ =\ \textcolor{keyword}{new}\ GameAppService();}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ SwingUtilities.invokeLater(()\ -\/>\ \{}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ AppFrame(appService);}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ logger.info(\textcolor{stringliteral}{"{}UNO\ app\ is\ launched"{}});}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00019\ \ \ \ \ \}}
-\DoxyCodeLine{00020\ \}}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00001}00001\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceapplication}{application}}.\mbox{\hyperlink{classapplication_1_1_game_app_service}{GameAppService}};}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00002}00002\ \textcolor{keyword}{import}\ org.apache.logging.log4j.LogManager;}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00003}00003\ \textcolor{keyword}{import}\ org.apache.logging.log4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceui}{ui}}.\mbox{\hyperlink{classui_1_1_app_frame}{AppFrame}};}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00006}00006\ \textcolor{keyword}{import}\ javax.swing.*;}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00008}00008\ \textcolor{comment}{//\ mvn\ exec:java\ -\/Dexec.mainClass="{}UnoApp"{}}}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00013}\mbox{\hyperlink{class_uno_app}{00013}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_uno_app}{UnoApp}}\ \{}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Logger\ logger\ =\ LogManager.getLogger(\mbox{\hyperlink{class_uno_app}{UnoApp}}.class);}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00023}\mbox{\hyperlink{class_uno_app_ab157eaacd06ab49e4b3b37beeb49f86c}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_uno_app_ab157eaacd06ab49e4b3b37beeb49f86c}{main}}(String[]\ args)\ \{}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ var\ appService\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapplication_1_1_game_app_service}{GameAppService}}();}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ SwingUtilities.invokeLater(()\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classui_1_1_app_frame}{AppFrame}}(appService);}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ logger.info(\textcolor{stringliteral}{"{}UNO\ app\ is\ launched"{}});}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_uno_app_8java_source_l00031}00031\ \}}
 
 \end{DoxyCode}

@@ -1,79 +1,66 @@
 \doxysection{Referencia de la clase domain.\+common.\+Domain\+Event\+Publisher}
-\label{classdomain_1_1common_1_1_domain_event_publisher}\index{domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}}
-
-
-Publicador de eventos de dominio que gestiona suscriptores y la publicación de eventos de manera segura en un contexto de subprocesos.  
-
-
+\hypertarget{classdomain_1_1common_1_1_domain_event_publisher}{}\label{classdomain_1_1common_1_1_domain_event_publisher}\index{domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}}
 \doxysubsubsection*{Métodos públicos estáticos}
 \begin{DoxyCompactItemize}
 \item 
-static void \textbf{ subscribe} (\textbf{ Domain\+Event\+Subscriber} subscriber)
-\begin{DoxyCompactList}\small\item\em Registra un suscriptor para recibir eventos de dominio. \end{DoxyCompactList}\item 
-static void \textbf{ unsubscribe} (\textbf{ Domain\+Event\+Subscriber} subscriber)
-\begin{DoxyCompactList}\small\item\em Cancela la suscripción de un suscriptor, evitando que reciba futuros eventos de dominio. \end{DoxyCompactList}\item 
-static void \textbf{ publish} (final \textbf{ Domain\+Event} event)
-\begin{DoxyCompactList}\small\item\em Publica un evento de dominio, notificando a todos los suscriptores registrados. \end{DoxyCompactList}\item 
-static void \textbf{ reset} ()
-\begin{DoxyCompactList}\small\item\em Restablece el estado del publicador de eventos, eliminando suscriptores y el estado de publicación del hilo actual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static void \mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher_a46375ebe23f967a56b9c66a9b0b7586e}{subscribe}} (\mbox{\hyperlink{interfacedomain_1_1common_1_1_domain_event_subscriber}{Domain\+Event\+Subscriber}} subscriber)
+\item 
+static void \mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher_aea83fe7bd2a9129e55c2a7c6b8fe20ce}{unsubscribe}} (\mbox{\hyperlink{interfacedomain_1_1common_1_1_domain_event_subscriber}{Domain\+Event\+Subscriber}} subscriber)
+\item 
+static void \mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher_ab38e0a8b41a75193be70a52a97a4f982}{publish}} (final \mbox{\hyperlink{classdomain_1_1common_1_1_domain_event}{Domain\+Event}} event)
+\item 
+static void \mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher_a16cc815b63854eb6d9240ed9cae06d45}{reset}} ()
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Descripción detallada}
-Publicador de eventos de dominio que gestiona suscriptores y la publicación de eventos de manera segura en un contexto de subprocesos. 
+\doxylink{classdomain_1_1common_1_1_domain_event_publisher}{Domain\+Event\+Publisher} Publicador de eventos de dominio que gestiona suscriptores y la publicación de eventos de manera segura en un contexto de subprocesos.
 
 Esta clase permite registrar suscriptores que escucharán eventos de dominio específicos, publicar eventos a todos los suscriptores registrados, y manejar la suscripción y cancelación de suscriptores. 
 
-Definición en la línea \textbf{ 13} del archivo \textbf{ Domain\+Event\+Publisher.\+java}.
+Definición en la línea \mbox{\hyperlink{_domain_event_publisher_8java_source_l00013}{13}} del archivo \mbox{\hyperlink{_domain_event_publisher_8java_source}{Domain\+Event\+Publisher.\+java}}.
 
 
 
 \doxysubsection{Documentación de funciones miembro}
-\index{domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}!publish@{publish}}
+\Hypertarget{classdomain_1_1common_1_1_domain_event_publisher_ab38e0a8b41a75193be70a52a97a4f982}\index{domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}!publish@{publish}}
 \index{publish@{publish}!domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}}
-\doxysubsubsection{publish()}
+\doxysubsubsection{\texorpdfstring{publish()}{publish()}}
 {\footnotesize\ttfamily \label{classdomain_1_1common_1_1_domain_event_publisher_ab38e0a8b41a75193be70a52a97a4f982} 
-static void domain.\+common.\+Domain\+Event\+Publisher.\+publish (\begin{DoxyParamCaption}\item[{final \textbf{ Domain\+Event}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+static void domain.\+common.\+Domain\+Event\+Publisher.\+publish (\begin{DoxyParamCaption}\item[{final \mbox{\hyperlink{classdomain_1_1common_1_1_domain_event}{Domain\+Event}}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Publica un evento de dominio, notificando a todos los suscriptores registrados.
 
-
-Publica un evento de dominio, notificando a todos los suscriptores registrados. 
-
-Este método marca el estado de publicación como activo mientras el evento se distribuye a los suscriptores, y luego lo restablece. Los suscriptores reciben el evento a través de su método {\ttfamily handle\+Event}.
+Este metodo marca el estado de publicación como activo mientras el evento se distribuye a los suscriptores, y luego lo restablece. Los suscriptores reciben el evento a través de su método {\ttfamily handle\+Event}.
 
 
 \begin{DoxyParams}{Parámetros}
-{\em event} & Objeto \doxyref{Domain\+Event}{pág.}{classdomain_1_1common_1_1_domain_event} que representa el evento a publicar. \\
+{\em event} & Objeto \doxylink{classdomain_1_1common_1_1_domain_event}{Domain\+Event} que representa el evento a publicar. \\
 \hline
 \end{DoxyParams}
 
 
-Definición en la línea \textbf{ 69} del archivo \textbf{ Domain\+Event\+Publisher.\+java}.
+Definición en la línea \mbox{\hyperlink{_domain_event_publisher_8java_source_l00069}{69}} del archivo \mbox{\hyperlink{_domain_event_publisher_8java_source}{Domain\+Event\+Publisher.\+java}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 0
-\index{domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}!reset@{reset}}
+\Hypertarget{classdomain_1_1common_1_1_domain_event_publisher_a16cc815b63854eb6d9240ed9cae06d45}\index{domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}!reset@{reset}}
 \index{reset@{reset}!domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}}
-\doxysubsubsection{reset()}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
 {\footnotesize\ttfamily \label{classdomain_1_1common_1_1_domain_event_publisher_a16cc815b63854eb6d9240ed9cae06d45} 
 static void domain.\+common.\+Domain\+Event\+Publisher.\+reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Restablece el estado del publicador de eventos, eliminando suscriptores y el estado de publicación del hilo actual.
 
+Este metodo es útil para limpiar el contexto de eventos en casos de pruebas o reinicios. 
 
-Restablece el estado del publicador de eventos, eliminando suscriptores y el estado de publicación del hilo actual. 
+Definición en la línea \mbox{\hyperlink{_domain_event_publisher_8java_source_l00092}{92}} del archivo \mbox{\hyperlink{_domain_event_publisher_8java_source}{Domain\+Event\+Publisher.\+java}}.
 
-Este método es útil para limpiar el contexto de eventos en casos de pruebas o reinicios. 
-
-Definición en la línea \textbf{ 92} del archivo \textbf{ Domain\+Event\+Publisher.\+java}.
-
-\index{domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}!subscribe@{subscribe}}
+\Hypertarget{classdomain_1_1common_1_1_domain_event_publisher_a46375ebe23f967a56b9c66a9b0b7586e}\index{domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}!subscribe@{subscribe}}
 \index{subscribe@{subscribe}!domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}}
-\doxysubsubsection{subscribe()}
+\doxysubsubsection{\texorpdfstring{subscribe()}{subscribe()}}
 {\footnotesize\ttfamily \label{classdomain_1_1common_1_1_domain_event_publisher_a46375ebe23f967a56b9c66a9b0b7586e} 
-static void domain.\+common.\+Domain\+Event\+Publisher.\+subscribe (\begin{DoxyParamCaption}\item[{\textbf{ Domain\+Event\+Subscriber}}]{subscriber}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+static void domain.\+common.\+Domain\+Event\+Publisher.\+subscribe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacedomain_1_1common_1_1_domain_event_subscriber}{Domain\+Event\+Subscriber}}}]{subscriber}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-
-
-Registra un suscriptor para recibir eventos de dominio. 
+Registra un suscriptor para recibir eventos de dominio.
 
 Si la publicación de eventos está en curso, el suscriptor no será añadido hasta que esta finalice.
 
@@ -84,19 +71,15 @@ Si la publicación de eventos está en curso, el suscriptor no será añadido ha
 \end{DoxyParams}
 
 
-Definición en la línea \textbf{ 37} del archivo \textbf{ Domain\+Event\+Publisher.\+java}.
+Definición en la línea \mbox{\hyperlink{_domain_event_publisher_8java_source_l00037}{37}} del archivo \mbox{\hyperlink{_domain_event_publisher_8java_source}{Domain\+Event\+Publisher.\+java}}.
 
-Gráfico de llamadas a esta función\+:
-% FIG 1
-\index{domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}!unsubscribe@{unsubscribe}}
+\Hypertarget{classdomain_1_1common_1_1_domain_event_publisher_aea83fe7bd2a9129e55c2a7c6b8fe20ce}\index{domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}!unsubscribe@{unsubscribe}}
 \index{unsubscribe@{unsubscribe}!domain.common.DomainEventPublisher@{domain.common.DomainEventPublisher}}
-\doxysubsubsection{unsubscribe()}
+\doxysubsubsection{\texorpdfstring{unsubscribe()}{unsubscribe()}}
 {\footnotesize\ttfamily \label{classdomain_1_1common_1_1_domain_event_publisher_aea83fe7bd2a9129e55c2a7c6b8fe20ce} 
-static void domain.\+common.\+Domain\+Event\+Publisher.\+unsubscribe (\begin{DoxyParamCaption}\item[{\textbf{ Domain\+Event\+Subscriber}}]{subscriber}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+static void domain.\+common.\+Domain\+Event\+Publisher.\+unsubscribe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacedomain_1_1common_1_1_domain_event_subscriber}{Domain\+Event\+Subscriber}}}]{subscriber}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-
-
-Cancela la suscripción de un suscriptor, evitando que reciba futuros eventos de dominio. 
+Cancela la suscripción de un suscriptor, evitando que reciba futuros eventos de dominio.
 
 Si la publicación de eventos está en curso, el suscriptor no será eliminado hasta que esta finalice.
 
@@ -107,10 +90,10 @@ Si la publicación de eventos está en curso, el suscriptor no será eliminado h
 \end{DoxyParams}
 
 
-Definición en la línea \textbf{ 53} del archivo \textbf{ Domain\+Event\+Publisher.\+java}.
+Definición en la línea \mbox{\hyperlink{_domain_event_publisher_8java_source_l00053}{53}} del archivo \mbox{\hyperlink{_domain_event_publisher_8java_source}{Domain\+Event\+Publisher.\+java}}.
 
 
 
 La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
 \item 
-src/main/java/domain/common/\textbf{ Domain\+Event\+Publisher.\+java}\end{DoxyCompactItemize}
+src/main/java/domain/common/\mbox{\hyperlink{_domain_event_publisher_8java}{Domain\+Event\+Publisher.\+java}}\end{DoxyCompactItemize}

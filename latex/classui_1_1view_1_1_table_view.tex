@@ -1,36 +1,34 @@
 \doxysection{Referencia de la clase ui.\+view.\+Table\+View}
-\label{classui_1_1view_1_1_table_view}\index{ui.view.TableView@{ui.view.TableView}}
-
-
-Diagrama de herencia de ui.\+view.\+Table\+View
-% FIG 0
-
-
-Diagrama de colaboración de ui.\+view.\+Table\+View\+:
-% FIG 1
+\hypertarget{classui_1_1view_1_1_table_view}{}\label{classui_1_1view_1_1_table_view}\index{ui.view.TableView@{ui.view.TableView}}
+Diagrama de herencia de ui.\+view.\+Table\+View\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classui_1_1view_1_1_table_view}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Table\+View} (\textbf{ IGame\+App\+Service} app\+Service)
+\mbox{\hyperlink{classui_1_1view_1_1_table_view_a1ae9c2f9b4b34137034bcfd962a220d0}{Table\+View}} (\mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service}{IGame\+App\+Service}} app\+Service)
 \item 
-void \textbf{ handle\+Event} (\textbf{ Domain\+Event} event)
-\begin{DoxyCompactList}\small\item\em Maneja un evento de dominio específico. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Métodos públicos heredados de \textbf{ domain.\+common.\+Domain\+Event\+Subscriber}}
+void \mbox{\hyperlink{classui_1_1view_1_1_table_view_a6ef7fa6e4057646fa9e406180f07cc71}{handle\+Event}} (\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event}{Domain\+Event}} event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{interfacedomain_1_1common_1_1_domain_event_subscriber}{domain.\+common.\+Domain\+Event\+Subscriber}}}
 
 
 \doxysubsection{Descripción detallada}
-Representa la vista de la mesa de juego en la interfaz de usuario. Esta clase se encarga de mostrar la carta superior de la pila de descarte y proporciona información sobre el estado actual del juego. {\bfseries{Diseño\+:}} La clase utiliza un {\ttfamily Grid\+Bag\+Layout} para organizar los componentes de la vista. El panel {\ttfamily table} contiene la carta superior, mientras que {\ttfamily \doxyref{Game\+Status\+View}{pág.}{classui_1_1view_1_1_game_status_view}} muestra información adicional sobre el juego. {\bfseries{Interacciones\+:}} La clase se suscribe a eventos de tipo {\ttfamily Card\+Played} para actualizar la vista cada vez que se juega una carta. 
+Representa la vista de la mesa de juego en la interfaz de usuario. Esta clase se encarga de mostrar la carta superior de la pila de descarte y proporciona información sobre el estado actual del juego. {\bfseries{Diseño\+:}} La clase utiliza un {\ttfamily Grid\+Bag\+Layout} para organizar los componentes de la vista. El panel {\ttfamily table} contiene la carta superior, mientras que {\ttfamily \doxylink{classui_1_1view_1_1_game_status_view}{Game\+Status\+View}} muestra información adicional sobre el juego. {\bfseries{Interacciones\+:}} La clase se suscribe a eventos de tipo {\ttfamily Card\+Played} para actualizar la vista cada vez que se juega una carta. 
 
-Definición en la línea \textbf{ 26} del archivo \textbf{ Table\+View.\+java}.
+Definición en la línea \mbox{\hyperlink{_table_view_8java_source_l00026}{26}} del archivo \mbox{\hyperlink{_table_view_8java_source}{Table\+View.\+java}}.
 
 
 
 \doxysubsection{Documentación de constructores y destructores}
-\index{ui.view.TableView@{ui.view.TableView}!TableView@{TableView}}
+\Hypertarget{classui_1_1view_1_1_table_view_a1ae9c2f9b4b34137034bcfd962a220d0}\index{ui.view.TableView@{ui.view.TableView}!TableView@{TableView}}
 \index{TableView@{TableView}!ui.view.TableView@{ui.view.TableView}}
-\doxysubsubsection{TableView()}
+\doxysubsubsection{\texorpdfstring{TableView()}{TableView()}}
 {\footnotesize\ttfamily \label{classui_1_1view_1_1_table_view_a1ae9c2f9b4b34137034bcfd962a220d0} 
-ui.\+view.\+Table\+View.\+Table\+View (\begin{DoxyParamCaption}\item[{\textbf{ IGame\+App\+Service}}]{app\+Service}{}\end{DoxyParamCaption})}
+ui.\+view.\+Table\+View.\+Table\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service}{IGame\+App\+Service}}}]{app\+Service}{}\end{DoxyParamCaption})}
 
 Constructor de la clase 
 \begin{DoxyParams}{Parámetros}
@@ -39,40 +37,32 @@ Constructor de la clase
 \end{DoxyParams}
 
 
-Definición en la línea \textbf{ 36} del archivo \textbf{ Table\+View.\+java}.
+Definición en la línea \mbox{\hyperlink{_table_view_8java_source_l00040}{40}} del archivo \mbox{\hyperlink{_table_view_8java_source}{Table\+View.\+java}}.
 
-Gráfico de llamadas de esta función\+:
-% FIG 2
 
 
 \doxysubsection{Documentación de funciones miembro}
-\index{ui.view.TableView@{ui.view.TableView}!handleEvent@{handleEvent}}
+\Hypertarget{classui_1_1view_1_1_table_view_a6ef7fa6e4057646fa9e406180f07cc71}\index{ui.view.TableView@{ui.view.TableView}!handleEvent@{handleEvent}}
 \index{handleEvent@{handleEvent}!ui.view.TableView@{ui.view.TableView}}
-\doxysubsubsection{handleEvent()}
+\doxysubsubsection{\texorpdfstring{handleEvent()}{handleEvent()}}
 {\footnotesize\ttfamily \label{classui_1_1view_1_1_table_view_a6ef7fa6e4057646fa9e406180f07cc71} 
-void ui.\+view.\+Table\+View.\+handle\+Event (\begin{DoxyParamCaption}\item[{\textbf{ Domain\+Event}}]{event}{}\end{DoxyParamCaption})}
+void ui.\+view.\+Table\+View.\+handle\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event}{Domain\+Event}}}]{event}{}\end{DoxyParamCaption})}
 
-
-
-Maneja un evento de dominio específico. 
-
-Este método es invocado cuando un evento de dominio es publicado y debe ser implementado por la clase suscriptora para definir cómo responder al evento.
-
-
+Metodo handle\+Event 
 \begin{DoxyParams}{Parámetros}
 {\em event} & Objeto Domain\+Event que representa el evento de dominio recibido. \\
 \hline
 \end{DoxyParams}
 
 
-Implementa \textbf{ domain.\+common.\+Domain\+Event\+Subscriber} \doxyref{}{pág.}{interfacedomain_1_1common_1_1_domain_event_subscriber_aeb0ff351727baa38e3830e89ab21acb7}.
+Implementa \mbox{\hyperlink{interfacedomain_1_1common_1_1_domain_event_subscriber_aeb0ff351727baa38e3830e89ab21acb7}{domain.\+common.\+Domain\+Event\+Subscriber}}.
 
 
 
-Definición en la línea \textbf{ 95} del archivo \textbf{ Table\+View.\+java}.
+Definición en la línea \mbox{\hyperlink{_table_view_8java_source_l00107}{107}} del archivo \mbox{\hyperlink{_table_view_8java_source}{Table\+View.\+java}}.
 
 
 
 La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
 \item 
-src/main/java/ui/view/\textbf{ Table\+View.\+java}\end{DoxyCompactItemize}
+src/main/java/ui/view/\mbox{\hyperlink{_table_view_8java}{Table\+View.\+java}}\end{DoxyCompactItemize}

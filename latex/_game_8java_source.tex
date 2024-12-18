@@ -1,273 +1,268 @@
 \doxysection{Game.\+java}
-\label{_game_8java_source}\index{src/main/java/domain/game/Game.java@{src/main/java/domain/game/Game.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_game_8java_source}{}\label{_game_8java_source}\index{src/main/java/domain/game/Game.java@{src/main/java/domain/game/Game.java}}
+\mbox{\hyperlink{_game_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.game;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.*;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.common.DomainEventPublisher;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.common.Entity;}
-\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.game.events.CardDrawn;}
-\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ domain.game.events.CardPlayed;}
-\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ domain.game.events.GameOver;}
-\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ domain.player.ImmutablePlayer;}
-\DoxyCodeLine{00010\ \textcolor{keyword}{import}\ domain.player.Player;}
-\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ domain.player.PlayerRoundIterator;}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{import}\ java.time.Duration;}
-\DoxyCodeLine{00014\ \textcolor{keyword}{import}\ java.time.Instant;}
-\DoxyCodeLine{00015\ \textcolor{keyword}{import}\ java.util.*;}
-\DoxyCodeLine{00016\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00022\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }Game\ \textcolor{keyword}{extends}\ Entity\ \{}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ PlayerRoundIterator\ players;}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}\ DrawPile\ drawPile;}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Stack<Card>\ discardPile\ =\ \textcolor{keyword}{new}\ Stack<>();}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{private}\ ImmutablePlayer\ winner\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ moveCount;}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{private}\ Instant\ startTime;}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{private}\ Instant\ endTime;}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{private}\ Map<UUID,\ Integer>\ playerMoves\ =\ \textcolor{keyword}{new}\ HashMap<>();}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{public}\ Game(DrawPile\ drawPile,\ PlayerRoundIterator\ players)\ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ super();}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ this.drawPile\ =\ drawPile;}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ this.players\ =\ players;}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ this.moveCount\ =\ 0;}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ this.startTime\ =\ Instant.now();}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ startDiscardPile();}
-\DoxyCodeLine{00077\ \ \ \ \ \}}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{public}\ Stream<ImmutablePlayer>\ getPlayers()\ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players.stream().map(Player::toImmutable);}
-\DoxyCodeLine{00085\ \ \ \ \ \}}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{public}\ ImmutablePlayer\ getCurrentPlayer()\ \{}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players.getCurrentPlayer().toImmutable();}
-\DoxyCodeLine{00093\ \ \ \ \ \}}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Card>\ getHandCards(UUID\ playerId)\ \{}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players.getPlayerById(playerId).getHandCards();}
-\DoxyCodeLine{00103\ \ \ \ \ \}}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{public}\ Card\ peekTopCard()\ \{}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ discardPile.peek();}
-\DoxyCodeLine{00111\ \ \ \ \ \}}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ getMoveCount()\ \{}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ moveCount;}
-\DoxyCodeLine{00119\ \ \ \ \ \}}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{public}\ Instant\ getStartTime()\ \{}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ startTime;}
-\DoxyCodeLine{00127\ \ \ \ \ \}}
-\DoxyCodeLine{00128\ }
-\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{public}\ String\ getGameDuration()\ \{}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (endTime\ ==\ \textcolor{keyword}{null})\ \{}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}La\ partida\ no\ ha\ terminado."{}};}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ Duration\ duration\ =\ Duration.between(startTime,\ endTime);}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ minutes\ =\ duration.toMinutes();}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ seconds\ =\ duration.getSeconds()\ \%\ 60;}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String.format(\textcolor{stringliteral}{"{}\%d\ minutos\ y\ \%d\ segundos"{}},\ minutes,\ seconds);}
-\DoxyCodeLine{00141\ \ \ \ \ \}}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ startDiscardPile()\ \{}
-\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ var\ card\ =\ drawPile.drawCard();}
-\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (card.getType())\ \{}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ NUMBER,\ WILD\_COLOR\ -\/>\ discard(card);}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SKIP\ -\/>\ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ discard(card);}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.next();}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ REVERSE\ -\/>\ \{}
-\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ discard(card);}
-\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reverse();}
-\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ DRAW\_TWO\ -\/>\ \{}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ discard(card);}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ drawTwoCards(players.getCurrentPlayer());}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.next();}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ WILD\_DRAW\_FOUR\ -\/>\ \{}
-\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ recreateDrawPile(card);}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startDiscardPile();}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}\ -\/>\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ UnsupportedOperationException(\textcolor{stringliteral}{"{}Unsupported\ card\ type\ "{}}\ +\ card.getType());}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00169\ \ \ \ \ \}}
-\DoxyCodeLine{00170\ }
-\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ playCard(UUID\ playerId,\ Card\ playedCard)\ \{}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ playCard(playerId,\ playedCard,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00179\ \ \ \ \ \}}
-\DoxyCodeLine{00180\ }
-\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ playCard(UUID\ playerId,\ Card\ playedCard,\ \textcolor{keywordtype}{boolean}\ hasSaidUno)\ \{}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isOver())\ \{}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalStateException(\textcolor{stringliteral}{"{}Game\ is\ over"{}});}
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ moveCount++;}
-\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ validatePlayedCard(playerId,\ playedCard);}
-\DoxyCodeLine{00194\ }
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ playerMoves.put(playerId,\ playerMoves.getOrDefault(playerId,\ 0)\ +\ 1);}
-\DoxyCodeLine{00196\ }
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lógica\ para\ diferentes\ tipos\ de\ cartas}}
-\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (playedCard.getType())\ \{}
-\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ NUMBER\ -\/>\ \{\ \textcolor{comment}{/*\ Lógica\ para\ cartas\ numéricas\ */}\ \}}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SKIP\ -\/>\ \{\ \textcolor{comment}{/*\ Lógica\ para\ cartas\ de\ "{}saltar"{}\ */}\ \}}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ REVERSE\ -\/>\ \{\ \textcolor{comment}{/*\ Lógica\ para\ cartas\ de\ "{}reversa"{}\ */}\ \}}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ DRAW\_TWO\ -\/>\ \{\ \textcolor{comment}{/*\ Lógica\ para\ cartas\ de\ "{}robar\ dos"{}\ */}\ \}}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ WILD\_COLOR,\ WILD\_DRAW\_FOUR\ -\/>\ \{\ \textcolor{comment}{/*\ Lógica\ para\ cartas\ comodín\ */}\ \}}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}\ -\/>\ rejectPlayedCard(playedCard);}
-\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00206\ }
-\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardPlayed(playerId,\ playedCard));}
-\DoxyCodeLine{00208\ }
-\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isOver())\ \{}
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ endTime\ =\ Instant.now();}
-\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ GameOver(winner));}
-\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00213\ \ \ \ \ \}}
-\DoxyCodeLine{00214\ }
-\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ drawCard(UUID\ playerId)\ \{}
-\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (getCurrentPlayer().getId().equals(playerId))\ \{}
-\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ moveCount++;\ \textcolor{comment}{//\ Incrementa\ el\ contador\ de\ movimientos}}
-\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ var\ drawnCards\ =\ drawCards(players.getCurrentPlayer(),\ 1);}
-\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ tryToPlayDrawnCard(playerId,\ drawnCards.get(0));}
-\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00226\ \ \ \ \ \}}
-\DoxyCodeLine{00227\ }
-\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ isOver()\ \{}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ winner\ !=\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00235\ \ \ \ \ \}}
-\DoxyCodeLine{00236\ }
-\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keyword}{public}\ ImmutablePlayer\ getWinner()\ \{}
-\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ winner;}
-\DoxyCodeLine{00244\ \ \ \ \ \}}
-\DoxyCodeLine{00245\ }
-\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ tryToPlayDrawnCard(UUID\ playerId,\ Card\ drawnCard)\ \{}
-\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ var\ cardToPlay\ =\ CardUtil.isWildCard(drawnCard)}
-\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{new}\ WildCard(drawnCard.getType(),\ peekTopCard().getColor())}
-\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ drawnCard;}
-\DoxyCodeLine{00257\ }
-\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ playCard(playerId,\ cardToPlay);}
-\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ ex)\ \{}
-\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ no\ se\ puede\ jugar\ la\ carta,\ pasa\ el\ turno}}
-\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ players.next();}
-\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardDrawn(playerId));}
-\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00264\ \ \ \ \ \}}
-\DoxyCodeLine{00265\ }
-\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ validatePlayedCard(UUID\ playerId,\ Card\ card)\ \{}
-\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ var\ currentPlayer\ =\ players.getCurrentPlayer();}
-\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!currentPlayer.getId().equals(playerId))\ \{}
-\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(String.format(\textcolor{stringliteral}{"{}No\ es\ el\ turno\ del\ jugador\ con\ ID\ \%s"{}},\ playerId));}
-\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00277\ }
-\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!currentPlayer.hasHandCard(card))\ \{}
-\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(String.format(\textcolor{stringliteral}{"{}La\ carta\ \%s\ no\ está\ en\ la\ mano\ del\ jugador"{}},\ card));}
-\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00281\ \ \ \ \ \}}
-\DoxyCodeLine{00282\ }
-\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ checkNumberCardRule(Card\ playedCard)\ \{}
-\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ var\ topCard\ =\ peekTopCard();}
-\DoxyCodeLine{00290\ }
-\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isFirstDiscardAWildCard()\ ||\ CardRules.isValidNumberCard(topCard,\ (NumberCard)\ playedCard))\ \{}
-\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00294\ }
-\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ rejectPlayedCard(playedCard);}
-\DoxyCodeLine{00296\ \ \ \ \ \}}
-\DoxyCodeLine{00297\ }
-\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ checkActionCardRule(Card\ playedCard)\ \{}
-\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ var\ topCard\ =\ peekTopCard();}
-\DoxyCodeLine{00305\ }
-\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isFirstDiscardAWildCard()\ ||\ CardRules.isValidActionCard(topCard,\ (ActionCard)\ playedCard))\ \{}
-\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00309\ }
-\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ rejectPlayedCard(playedCard);}
-\DoxyCodeLine{00311\ \ \ \ \ \}}
-\DoxyCodeLine{00312\ }
-\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ checkWildCardRule(Card\ playedCard)\ \{}
-\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!CardRules.isValidWildCard((WildCard)\ playedCard))\ \{}
-\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ rejectPlayedCard(playedCard);}
-\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00322\ \ \ \ \ \}}
-\DoxyCodeLine{00323\ }
-\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ isFirstDiscardAWildCard()\ \{}
-\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ discardPile.size()\ ==\ 1\ \&\&\ peekTopCard().getType()\ ==\ CardType.WILD\_COLOR;}
-\DoxyCodeLine{00331\ \ \ \ \ \}}
-\DoxyCodeLine{00332\ }
-\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ recreateDrawPile(Card\ card)\ \{}
-\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (drawPile.getSize()\ ==\ 0)\ \{}
-\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalStateException(\textcolor{stringliteral}{"{}No\ hay\ suficientes\ cartas\ para\ reorganizar\ el\ mazo"{}});}
-\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00342\ }
-\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ drawPile\ =\ DealerService.shuffle(drawPile,\ card);}
-\DoxyCodeLine{00344\ \ \ \ \ \}}
-\DoxyCodeLine{00345\ }
-\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ acceptPlayedCard(Card\ card,\ \textcolor{keywordtype}{boolean}\ hasSaidUno)\ \{}
-\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ players.getCurrentPlayer().removePlayedCard(card);}
-\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ discard(card);}
-\DoxyCodeLine{00355\ }
-\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ var\ remainingTotalCards\ =\ getCurrentPlayer().getTotalCards();}
-\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ checkSaidUno(remainingTotalCards,\ hasSaidUno);}
-\DoxyCodeLine{00358\ }
-\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingTotalCards\ ==\ 0)\ \{}
-\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ winner\ =\ getCurrentPlayer();}
-\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00362\ \ \ \ \ \}}
-\DoxyCodeLine{00363\ }
-\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ checkSaidUno(\textcolor{keywordtype}{int}\ remainingTotalCards,\ \textcolor{keywordtype}{boolean}\ hasSaidUno)\ \{}
-\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingTotalCards\ ==\ 1\ \&\&\ !hasSaidUno)\ \{}
-\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ drawCards(players.getCurrentPlayer(),\ 2);}
-\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00374\ \ \ \ \ \}}
-\DoxyCodeLine{00375\ }
-\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ discard(Card\ card)\ \{}
-\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ discardPile.add(card);}
-\DoxyCodeLine{00383\ \ \ \ \ \}}
-\DoxyCodeLine{00384\ }
-\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ reverse()\ \{}
-\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ players.reverseDirection();}
-\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ players.next();}
-\DoxyCodeLine{00391\ \ \ \ \ \}}
-\DoxyCodeLine{00392\ }
-\DoxyCodeLine{00398\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ drawTwoCards(Player\ player)\ \{}
-\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ drawCards(player,\ 2);}
-\DoxyCodeLine{00400\ \ \ \ \ \}}
-\DoxyCodeLine{00401\ }
-\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ drawFourCards(Player\ player)\ \{}
-\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ drawCards(player,\ 4);}
-\DoxyCodeLine{00409\ \ \ \ \ \}}
-\DoxyCodeLine{00410\ }
-\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keyword}{private}\ List<Card>\ drawCards(Player\ player,\ \textcolor{keywordtype}{int}\ total)\ \{}
-\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ min\ =\ Math.min(total,\ drawPile.getSize());}
-\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ var\ drawnCards\ =\ \textcolor{keyword}{new}\ ArrayList<Card>();}
-\DoxyCodeLine{00421\ }
-\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ min;\ i++)\ \{}
-\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ var\ drawnCard\ =\ drawPile.drawCard();}
-\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ drawnCards.add(drawnCard);}
-\DoxyCodeLine{00425\ }
-\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \ \ \ \ player.addToHandCards(drawnCard);}
-\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00428\ }
-\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ drawnCards;}
-\DoxyCodeLine{00430\ \ \ \ \ \}}
-\DoxyCodeLine{00431\ }
-\DoxyCodeLine{00438\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ rejectPlayedCard(Card\ playedCard)\ \{}
-\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(}
-\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String.format(\textcolor{stringliteral}{"{}La\ carta\ jugada\ \%s\ no\ es\ válida\ para\ \%s"{}},\ playedCard,\ peekTopCard()));}
-\DoxyCodeLine{00441\ \ \ \ \ \}}
-\DoxyCodeLine{00442\ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.game;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00002}00002\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.*;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1common}{common}}.\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher}{DomainEventPublisher}};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1common}{common}}.\mbox{\hyperlink{classdomain_1_1common_1_1_entity}{Entity}};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1game}{game}}.\mbox{\hyperlink{namespacedomain_1_1game_1_1events}{events}}.\mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_card_drawn}{CardDrawn}};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00006}00006\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1game}{game}}.\mbox{\hyperlink{namespacedomain_1_1game_1_1events}{events}}.\mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_card_played}{CardPlayed}};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00007}00007\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1game}{game}}.\mbox{\hyperlink{namespacedomain_1_1game_1_1events}{events}}.\mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_game_over}{GameOver}};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00008}00008\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1player}{player}}.\mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player}{ImmutablePlayer}};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00009}00009\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1player}{player}}.\mbox{\hyperlink{classdomain_1_1player_1_1_player}{Player}};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00010}00010\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1player}{player}}.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator}{PlayerRoundIterator}};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.time.Duration;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00012}00012\ \textcolor{keyword}{import}\ java.time.Instant;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00013}00013\ \textcolor{keyword}{import}\ java.util.*;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00014}00014\ \textcolor{keyword}{import}\ java.util.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a37c7beac4dbbdc90d6fadaabb9274aea}{stream}}.Stream;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00015}00015\ \textcolor{keyword}{import}\ java.util.logging.Logger;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00018}\mbox{\hyperlink{classdomain_1_1game_1_1_game}{00018}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdomain_1_1game_1_1_game}{Game}}\ \textcolor{keyword}{extends}\ \mbox{\hyperlink{classdomain_1_1common_1_1_entity}{Entity}}\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i}{GameUI}}\ gameUI;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Logger\ logger\ =\ Logger.getLogger(\mbox{\hyperlink{classdomain_1_1game_1_1_game}{Game}}.class.getName());}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator}{PlayerRoundIterator}}\ players;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classdomain_1_1game_1_1_draw_pile}{DrawPile}}\ drawPile;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ Stack<Card>\ discardPile\ =\ \textcolor{keyword}{new}\ Stack<>();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player}{ImmutablePlayer}}\ winner\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ moveCount;\ \textcolor{comment}{//\ Contador\ de\ movimientos}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ Instant\ startTime;\ \textcolor{comment}{//\ Tiempo\ de\ inicio}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{private}\ Instant\ endTime;\ \textcolor{comment}{//\ Tiempo\ de\ finalización}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{private}\ Map<UUID,\ Integer>\ playerMoves\ =\ \textcolor{keyword}{new}\ HashMap<>();\ \textcolor{comment}{//\ Mapa\ de\ movimientos\ por\ jugador}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00029}\mbox{\hyperlink{classdomain_1_1game_1_1_game_aa5f4e3eab0d1d555bba091218537c4f5}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_aa5f4e3eab0d1d555bba091218537c4f5}{Game}}(\mbox{\hyperlink{classdomain_1_1game_1_1_draw_pile}{DrawPile}}\ drawPile,\ \mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator}{PlayerRoundIterator}}\ players)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ super();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ this.drawPile\ =\ drawPile;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ this.players\ =\ players;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ this.moveCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ this.startTime\ =\ Instant.now();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ this.gameUI\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i}{GameUI}}(\textcolor{keyword}{this});\ \textcolor{comment}{//\ Inicializar\ interfaz\ gráfica}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ startDiscardPile();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00039}\mbox{\hyperlink{classdomain_1_1game_1_1_game_a8ef02b63db5e4ce1c13302458327de07}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ Stream<ImmutablePlayer>\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a8ef02b63db5e4ce1c13302458327de07}{getPlayers}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a37c7beac4dbbdc90d6fadaabb9274aea}{stream}}().map(\mbox{\hyperlink{classdomain_1_1player_1_1_player_a13c6660993e83ed3109f1fa7e618f3ba}{Player::toImmutable}});}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00042}\mbox{\hyperlink{classdomain_1_1game_1_1_game_a2e746d8b75db101e2d634cc64b3aac95}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player}{ImmutablePlayer}}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a2e746d8b75db101e2d634cc64b3aac95}{getCurrentPlayer}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_aa943e5e96c10ec3b2d5eccd968fad21c}{getCurrentPlayer}}().\mbox{\hyperlink{classdomain_1_1player_1_1_player_a13c6660993e83ed3109f1fa7e618f3ba}{toImmutable}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00045}\mbox{\hyperlink{classdomain_1_1game_1_1_game_a74d046132b8bd2c266644eb1e1b09a44}{00045}}\ \ \ \ \ \textcolor{keyword}{public}\ Stream<Card>\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a74d046132b8bd2c266644eb1e1b09a44}{getHandCards}}(UUID\ playerId)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a65afe00de60f22bea5d03a72319c219e}{getPlayerById}}(playerId).\mbox{\hyperlink{classdomain_1_1player_1_1_player_a541dcd07f326c98a7f3f635e193fc892}{getHandCards}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00048}\mbox{\hyperlink{classdomain_1_1game_1_1_game_aeb2092f6ec706480301ed20c1dff9912}{00048}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_aeb2092f6ec706480301ed20c1dff9912}{peekTopCard}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ discardPile.peek();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00051}\mbox{\hyperlink{classdomain_1_1game_1_1_game_a54f2cb3d3f55f2a4ad33330c2ce81d60}{00051}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a54f2cb3d3f55f2a4ad33330c2ce81d60}{getMoveCount}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ moveCount;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00054}\mbox{\hyperlink{classdomain_1_1game_1_1_game_a18e9adf4336e42565542963a35feb8b4}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ Instant\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a18e9adf4336e42565542963a35feb8b4}{getStartTime}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ startTime;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00057}\mbox{\hyperlink{classdomain_1_1game_1_1_game_aa14a169032a1312f213685edb747877b}{00057}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_aa14a169032a1312f213685edb747877b}{getGameDuration}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (endTime\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}La\ partida\ no\ ha\ terminado."{}};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ Duration\ duration\ =\ Duration.between(startTime,\ endTime);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ minutes\ =\ duration.toMinutes();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ seconds\ =\ duration.getSeconds()\ \%\ 60;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ String.format(\textcolor{stringliteral}{"{}\%d\ minutos\ y\ \%d\ segundos"{}},\ minutes,\ seconds);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ startDiscardPile()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ var\ card\ =\ drawPile.\mbox{\hyperlink{classdomain_1_1game_1_1_draw_pile_a340d45ea4a567dea82561ec7e61438ce}{drawCard}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (card.getType())\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ NUMBER,\ WILD\_COLOR\ -\/>\ discard(card);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SKIP\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ discard(card);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ REVERSE\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ discard(card);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reverse();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ DRAW\_TWO\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ discard(card);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ drawTwoCards(players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_aa943e5e96c10ec3b2d5eccd968fad21c}{getCurrentPlayer}}());}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ WILD\_DRAW\_FOUR\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ recreateDrawPile(card);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startDiscardPile();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}\ -\/>\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ UnsupportedOperationException(\textcolor{stringliteral}{"{}Unsupported\ card\ type\ "{}}\ +\ card.getType());}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00090}\mbox{\hyperlink{classdomain_1_1game_1_1_game_a3782e391b270083eddad87bceaaa1578}{00090}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a3782e391b270083eddad87bceaaa1578}{playCard}}(UUID\ playerId,\ \mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ playedCard)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a3782e391b270083eddad87bceaaa1578}{playCard}}(playerId,\ playedCard,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00093}\mbox{\hyperlink{classdomain_1_1game_1_1_game_a8c9262b9c67e2f308b323de12d843a28}{00093}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a8c9262b9c67e2f308b323de12d843a28}{playCard}}(UUID\ playerId,\ \mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ playedCard,\ \textcolor{keywordtype}{boolean}\ hasSaidUno)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classdomain_1_1game_1_1_game_ae54bdd128c692df9cb96f5a390a601f5}{isOver}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalStateException(\textcolor{stringliteral}{"{}Game\ is\ over"{}});}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ moveCount++;\ \textcolor{comment}{//\ Incrementamos\ el\ contador\ de\ movimientos}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Incrementamos\ el\ contador\ de\ movimientos}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ gameUI.\mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i_ad9ca8ab2fd7b990d74de55d875a9f48c}{updatePlayerMoves}}();\ \textcolor{comment}{//\ Actualizar\ movimientos\ por\ jugador}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Contamos\ los\ movimientos\ por\ jugador}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ playerMoves.put(playerId,\ playerMoves.getOrDefault(playerId,\ 0)\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ logger.info(\textcolor{stringliteral}{"{}Jugador\ "{}}\ +\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a2e746d8b75db101e2d634cc64b3aac95}{getCurrentPlayer}}().getName()\ +\ \textcolor{stringliteral}{"{}\ ha\ realizado\ "{}}\ +\ playerMoves.get(playerId)\ +\ \textcolor{stringliteral}{"{}\ movimientos."{}});}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (playedCard.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card_a13fbe446e7b4a468de148cab2c4939f7}{getType}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ NUMBER\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ checkNumberCardRule(playedCard);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acceptPlayedCard(playedCard,\ hasSaidUno);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SKIP\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ checkActionCardRule(playedCard);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acceptPlayedCard(playedCard,\ hasSaidUno);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ REVERSE\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ checkActionCardRule(playedCard);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acceptPlayedCard(playedCard,\ hasSaidUno);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ reverse();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ DRAW\_TWO\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ checkActionCardRule(playedCard);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acceptPlayedCard(playedCard,\ hasSaidUno);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ drawTwoCards(players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_aa943e5e96c10ec3b2d5eccd968fad21c}{getCurrentPlayer}}());}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ WILD\_COLOR\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ checkWildCardRule(playedCard);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acceptPlayedCard(playedCard,\ hasSaidUno);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ WILD\_DRAW\_FOUR\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ checkWildCardRule(playedCard);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acceptPlayedCard(playedCard,\ hasSaidUno);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ drawFourCards(players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_aa943e5e96c10ec3b2d5eccd968fad21c}{getCurrentPlayer}}());}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}\ -\/>\ rejectPlayedCard(playedCard);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00142}00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher}{DomainEventPublisher}}.\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher_ab38e0a8b41a75193be70a52a97a4f982}{publish}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_card_played}{CardPlayed}}(playerId,\ playedCard));}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classdomain_1_1game_1_1_game_ae54bdd128c692df9cb96f5a390a601f5}{isOver}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ endTime\ =\ Instant.now();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ gameUI.\mbox{\hyperlink{classdomain_1_1game_1_1_game_u_i_ac7321fd2148b4b1e8d886d26b9f49c8a}{updateGameDuration}}();\ \textcolor{comment}{//\ Actualizar\ duración\ en\ la\ interfaz\ gráfica}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}La\ partida\ ha\ terminado."{}});}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Ganador:\ "{}}\ +\ winner.\mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player_af440c7b383c89a60c4934ef2836fa3c2}{getName}}());}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Duración\ de\ la\ partida:\ "{}}\ +\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_aa14a169032a1312f213685edb747877b}{getGameDuration}}());}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher}{DomainEventPublisher}}.\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher_ab38e0a8b41a75193be70a52a97a4f982}{publish}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_game_over}{GameOver}}(winner));}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00152}00152\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00153}\mbox{\hyperlink{classdomain_1_1game_1_1_game_a0b9311b6306912fb96812183262531da}{00153}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a0b9311b6306912fb96812183262531da}{drawCard}}(UUID\ playerId)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classdomain_1_1game_1_1_game_a2e746d8b75db101e2d634cc64b3aac95}{getCurrentPlayer}}().\mbox{\hyperlink{classdomain_1_1common_1_1_entity_a1ef91685cfea92710db0e9acdd57312f}{getId}}().equals(playerId))\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ moveCount++;\ \textcolor{comment}{//\ Incrementamos\ el\ contador\ de\ movimientos}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ var\ drawnCards\ =\ drawCards(players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_aa943e5e96c10ec3b2d5eccd968fad21c}{getCurrentPlayer}}(),\ 1);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ tryToPlayDrawnCard(playerId,\ drawnCards.get(0));}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00158}00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00159}00159\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00160}\mbox{\hyperlink{classdomain_1_1game_1_1_game_ae54bdd128c692df9cb96f5a390a601f5}{00160}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_ae54bdd128c692df9cb96f5a390a601f5}{isOver}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ winner\ !=\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00162}00162\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00163}\mbox{\hyperlink{classdomain_1_1game_1_1_game_a569f3fcef7c8dd9a2026dc970a705fef}{00163}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player}{ImmutablePlayer}}\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a569f3fcef7c8dd9a2026dc970a705fef}{getWinner}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ winner;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00165}00165\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00166}00166\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ tryToPlayDrawnCard(UUID\ playerId,\ \mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ drawnCard)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ var\ cardToPlay\ =\ \mbox{\hyperlink{classdomain_1_1card_1_1_card_util}{CardUtil}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_util_a523b6bc0a4a6477326d78f348d8b8e35}{isWildCard}}(drawnCard)}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_wild_card}{WildCard}}(drawnCard.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card_a13fbe446e7b4a468de148cab2c4939f7}{getType}}(),\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_aeb2092f6ec706480301ed20c1dff9912}{peekTopCard}}().getColor())}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ drawnCard;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a3782e391b270083eddad87bceaaa1578}{playCard}}(playerId,\ cardToPlay);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Drawn\ couldn't\ be\ played,\ so\ just\ switch\ turn}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ DomainEventPublisher.publish(\textcolor{keyword}{new}\ CardDrawn(playerId));}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00176}00176\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00177}00177\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00178}00178\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ validatePlayedCard(UUID\ playerId,\ \mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ card)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00179}00179\ \ \ \ \ \ \ \ \ var\ currentPlayer\ =\ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_aa943e5e96c10ec3b2d5eccd968fad21c}{getCurrentPlayer}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00180}00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!currentPlayer.getId().equals(playerId))\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(String.format(\textcolor{stringliteral}{"{}Not\ the\ turn\ of\ Player\ ID\ \%s"{}},\ playerId));}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00182}00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00183}00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!currentPlayer.hasHandCard(card))\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(String.format(\textcolor{stringliteral}{"{}Card\ \%s\ does\ not\ exist\ in\ player's\ hand\ cards"{}},\ card));}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00185}00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00186}00186\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00187}00187\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ checkNumberCardRule(\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ playedCard)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00188}00188\ \ \ \ \ \ \ \ \ var\ topCard\ =\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_aeb2092f6ec706480301ed20c1dff9912}{peekTopCard}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isFirstDiscardAWildCard()\ ||\ CardRules.isValidNumberCard(topCard,\ (\mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}})\ playedCard))\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00191}00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00192}00192\ \ \ \ \ \ \ \ \ rejectPlayedCard(playedCard);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00193}00193\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00194}00194\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ checkActionCardRule(\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ playedCard)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00195}00195\ \ \ \ \ \ \ \ \ var\ topCard\ =\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_aeb2092f6ec706480301ed20c1dff9912}{peekTopCard}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isFirstDiscardAWildCard()\ ||\ CardRules.isValidActionCard(topCard,\ (\mbox{\hyperlink{classdomain_1_1card_1_1_action_card}{ActionCard}})\ playedCard))\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00198}00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00199}00199\ \ \ \ \ \ \ \ \ rejectPlayedCard(playedCard);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00200}00200\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00201}00201\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ checkWildCardRule(\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ playedCard)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!CardRules.isValidWildCard((\mbox{\hyperlink{classdomain_1_1card_1_1_wild_card}{WildCard}})\ playedCard))\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ rejectPlayedCard(playedCard);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00205}00205\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00206}00206\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ isFirstDiscardAWildCard()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00207}00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ discardPile.size()\ ==\ 1\ \&\&\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_aeb2092f6ec706480301ed20c1dff9912}{peekTopCard}}().\mbox{\hyperlink{interfacedomain_1_1card_1_1_card_a13fbe446e7b4a468de148cab2c4939f7}{getType}}()\ ==\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_type}{CardType}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_type_ae8d3038f9df83ecc00df550d721f8127}{WILD\_COLOR}};}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00208}00208\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00209}00209\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ recreateDrawPile(\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ card)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00210}00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (drawPile.\mbox{\hyperlink{classdomain_1_1game_1_1_draw_pile_afe8bbaf7fdec25053a61c2229a4e9b18}{getSize}}()\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalStateException(\textcolor{stringliteral}{"{}Not\ enough\ cards\ to\ recreate\ draw\ pile"{}});}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00212}00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00213}00213\ \ \ \ \ \ \ \ \ drawPile\ =\ DealerService.shuffle(drawPile,\ card);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00214}00214\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00215}00215\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ acceptPlayedCard(\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ card,\ \textcolor{keywordtype}{boolean}\ hasSaidUno)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00216}00216\ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_aa943e5e96c10ec3b2d5eccd968fad21c}{getCurrentPlayer}}().\mbox{\hyperlink{classdomain_1_1player_1_1_player_a0c89d44cf2b75b4be01f9d26b0465e1d}{removePlayedCard}}(card);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00217}00217\ \ \ \ \ \ \ \ \ discard(card);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00218}00218\ \ \ \ \ \ \ \ \ var\ remainingTotalCards\ =\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a2e746d8b75db101e2d634cc64b3aac95}{getCurrentPlayer}}().\mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player_a5479e6ac16014343281f0bf14f5bfddd}{getTotalCards}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00219}00219\ \ \ \ \ \ \ \ \ checkSaidUno(remainingTotalCards,\ hasSaidUno);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingTotalCards\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ winner\ =\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_a2e746d8b75db101e2d634cc64b3aac95}{getCurrentPlayer}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00222}00222\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00223}00223\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00224}00224\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ checkSaidUno(\textcolor{keywordtype}{int}\ remainingTotalCards,\ \textcolor{keywordtype}{boolean}\ hasSaidUno)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (remainingTotalCards\ ==\ 1\ \&\&\ !hasSaidUno)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ drawCards(players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_aa943e5e96c10ec3b2d5eccd968fad21c}{getCurrentPlayer}}(),\ 2);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00227}00227\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00228}00228\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00229}00229\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ discard(\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ card)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00230}00230\ \ \ \ \ \ \ \ \ discardPile.add(card);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00231}00231\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00232}00232\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ reverse()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00233}00233\ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a29bb55edeaf80a2e860916840d07f848}{reverseDirection}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00234}00234\ \ \ \ \ \ \ \ \ players.\mbox{\hyperlink{classdomain_1_1player_1_1_player_round_iterator_a582f25358e356038dcabedbfaaba9e64}{next}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00235}00235\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00236}00236\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ drawTwoCards(Player\ player)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00237}00237\ \ \ \ \ \ \ \ \ drawCards(player,\ 2);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00238}00238\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00239}00239\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ drawFourCards(Player\ player)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00240}00240\ \ \ \ \ \ \ \ \ drawCards(player,\ 4);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00241}00241\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00242}00242\ \ \ \ \ \textcolor{keyword}{private}\ List<Card>\ drawCards(Player\ player,\ \textcolor{keywordtype}{int}\ total)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ min\ =\ Math.min(total,\ drawPile.\mbox{\hyperlink{classdomain_1_1game_1_1_draw_pile_afe8bbaf7fdec25053a61c2229a4e9b18}{getSize}}());}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00244}00244\ \ \ \ \ \ \ \ \ var\ drawnCards\ =\ \textcolor{keyword}{new}\ ArrayList<Card>();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00245}00245\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ min;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ var\ drawnCard\ =\ drawPile.\mbox{\hyperlink{classdomain_1_1game_1_1_draw_pile_a340d45ea4a567dea82561ec7e61438ce}{drawCard}}();}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ drawnCards.add(drawnCard);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ player.addToHandCards(drawnCard);}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00249}00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00250}00250\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ drawnCards;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00251}00251\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00252}00252\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ rejectPlayedCard(\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ playedCard)\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00253}00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String.format(\textcolor{stringliteral}{"{}Played\ card\ \%s\ is\ not\ valid\ for\ \%s"{}},\ playedCard,\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_aeb2092f6ec706480301ed20c1dff9912}{peekTopCard}}()));}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00255}00255\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00257}\mbox{\hyperlink{classdomain_1_1game_1_1_game_accc54292fc876f90bec53c8dc33af436}{00257}}\ \ \ \ \ \textcolor{keyword}{public}\ Map<UUID,\ Integer>\ \mbox{\hyperlink{classdomain_1_1game_1_1_game_accc54292fc876f90bec53c8dc33af436}{getPlayerMoves}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00258}00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ playerMoves;}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00259}00259\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{_game_8java_source_l00262}00262\ \}}
 
 \end{DoxyCode}

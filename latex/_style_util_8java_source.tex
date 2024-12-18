@@ -1,77 +1,78 @@
 \doxysection{Style\+Util.\+java}
-\label{_style_util_8java_source}\index{src/main/java/ui/common/StyleUtil.java@{src/main/java/ui/common/StyleUtil.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_style_util_8java_source}{}\label{_style_util_8java_source}\index{src/main/java/ui/common/StyleUtil.java@{src/main/java/ui/common/StyleUtil.java}}
+\mbox{\hyperlink{_style_util_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }ui.common;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.Card;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.card.CardColor;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.card.NumberCard;}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ java.awt.*;}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }StyleUtil\ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{private}\ StyleUtil()\ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \}}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Color\ redColor\ =\ \textcolor{keyword}{new}\ Color(192,\ 80,\ 77);}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Color\ blueColor\ =\ \textcolor{keyword}{new}\ Color(31,\ 73,\ 125);}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Color\ greenColor\ =\ \textcolor{keyword}{new}\ Color(0,\ 153,\ 0);}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Color\ yellowColor\ =\ \textcolor{keyword}{new}\ Color(255,\ 204,\ 0);}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Color\ blackColor\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 0);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ String\ DEFAULT\_FONT\ =\ \textcolor{stringliteral}{"{}Helvetica"{}};}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Character\ REVERSE\_CHAR\ =\ (char)\ 8634;}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Character\ SKIP\_CHAR\ =\ (char)\ Integer.parseInt(\textcolor{stringliteral}{"{}2718"{}},\ 16);}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ convertCardColor(CardColor\ color)\ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color\ ==\ \textcolor{keyword}{null})\ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ blackColor;}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (color)\ \{}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ RED\ -\/>\ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ redColor;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ GREEN\ -\/>\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ greenColor;}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ BLUE\ -\/>\ \{}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ blueColor;}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ YELLOW\ -\/>\ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ yellowColor;}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}\ -\/>\ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(\textcolor{stringliteral}{"{}Unsupported\ card\ color\ "{}}\ +\ color);}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00064\ \ \ \ \ \}}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ getValueToDisplay(Card\ card)\ \{}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (card.getType())\ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ NUMBER\ -\/>\ \{}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Integer.toString(((NumberCard)\ card).getValue());}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SKIP\ -\/>\ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SKIP\_CHAR.toString();}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ REVERSE\ -\/>\ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ REVERSE\_CHAR.toString();}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ DRAW\_TWO\ -\/>\ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}2+"{}};}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ WILD\_COLOR\ -\/>\ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}W"{}};}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ WILD\_DRAW\_FOUR\ -\/>\ \{}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}4+"{}};}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}\ -\/>\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(\textcolor{stringliteral}{"{}Unsupported\ card\ type\ "{}}\ +\ card.getType());}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00093\ \ \ \ \ \}}
-\DoxyCodeLine{00094\ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00001}\mbox{\hyperlink{namespaceui_1_1common}{00001}}\ \textcolor{keyword}{package\ }ui.common;}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}};}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}};}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}};}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.awt.*;}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00016}\mbox{\hyperlink{classui_1_1common_1_1_style_util}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00027}\mbox{\hyperlink{classui_1_1common_1_1_style_util_a1e0a1552bcd07a5402bf508cb795751e}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Color\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_a1e0a1552bcd07a5402bf508cb795751e}{redColor}}\ =\ \textcolor{keyword}{new}\ Color(192,\ 80,\ 77);}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00031}\mbox{\hyperlink{classui_1_1common_1_1_style_util_a4e963d9296d625db24eff83e52dac4c8}{00031}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Color\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_a4e963d9296d625db24eff83e52dac4c8}{blueColor}}\ =\ \textcolor{keyword}{new}\ Color(31,\ 73,\ 125);}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00035}\mbox{\hyperlink{classui_1_1common_1_1_style_util_a8c853abb1ed72f28bd14addaf5c5794b}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Color\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_a8c853abb1ed72f28bd14addaf5c5794b}{greenColor}}\ =\ \textcolor{keyword}{new}\ Color(0,\ 153,\ 0);}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00039}\mbox{\hyperlink{classui_1_1common_1_1_style_util_a8146706a68a92f3bc78b3262cb911d16}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Color\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_a8146706a68a92f3bc78b3262cb911d16}{yellowColor}}\ =\ \textcolor{keyword}{new}\ Color(255,\ 204,\ 0);}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00043}\mbox{\hyperlink{classui_1_1common_1_1_style_util_a0074a20cf86e7d9a9b0b61088197af31}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Color\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_a0074a20cf86e7d9a9b0b61088197af31}{blackColor}}\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00048}\mbox{\hyperlink{classui_1_1common_1_1_style_util_a4533dcb7b4d11d4f18e3b86dc7d8c0f7}{00048}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ String\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_a4533dcb7b4d11d4f18e3b86dc7d8c0f7}{DEFAULT\_FONT}}\ =\ \textcolor{stringliteral}{"{}Helvetica"{}};}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Character\ REVERSE\_CHAR\ =\ (char)\ 8634;}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Character\ SKIP\_CHAR\ =\ (char)\ Integer.parseInt(\textcolor{stringliteral}{"{}2718"{}},\ 16);}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00064}\mbox{\hyperlink{classui_1_1common_1_1_style_util_ae711765c84849568fe851a8668a3aabd}{00064}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_ae711765c84849568fe851a8668a3aabd}{convertCardColor}}(\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}\ color)\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (color\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_a0074a20cf86e7d9a9b0b61088197af31}{blackColor}};}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (color)\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ RED\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_a1e0a1552bcd07a5402bf508cb795751e}{redColor}};}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ GREEN\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_a8c853abb1ed72f28bd14addaf5c5794b}{greenColor}};}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ BLUE\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_a4e963d9296d625db24eff83e52dac4c8}{blueColor}};}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ YELLOW\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_a8146706a68a92f3bc78b3262cb911d16}{yellowColor}};}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(\textcolor{stringliteral}{"{}Unsupported\ card\ color\ "{}}\ +\ color);}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00093}\mbox{\hyperlink{classui_1_1common_1_1_style_util_a46d0bf44cfee2ad91dd89e2679ec39b4}{00093}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classui_1_1common_1_1_style_util_a46d0bf44cfee2ad91dd89e2679ec39b4}{getValueToDisplay}}(\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ card)\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (card.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card_a13fbe446e7b4a468de148cab2c4939f7}{getType}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ NUMBER\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Integer.toString(((\mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}})\ card).getValue());}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SKIP\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SKIP\_CHAR.toString();}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ REVERSE\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ REVERSE\_CHAR.toString();}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ DRAW\_TWO\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}2+"{}};}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ WILD\_COLOR\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}W"{}};}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ WILD\_DRAW\_FOUR\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}4+"{}};}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}\ -\/>\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(\textcolor{stringliteral}{"{}Unsupported\ card\ type\ "{}}\ +\ card.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card_a13fbe446e7b4a468de148cab2c4939f7}{getType}}());}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_style_util_8java_source_l00116}00116\ \}}
 
 \end{DoxyCode}

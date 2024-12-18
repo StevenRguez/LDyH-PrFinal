@@ -1,0 +1,39 @@
+\doxysection{Test\+Inmutable\+Player.\+java}
+\hypertarget{_test_inmutable_player_8java_source}{}\label{_test_inmutable_player_8java_source}\index{src/test/java/domain/player/TestInmutablePlayer.java@{src/test/java/domain/player/TestInmutablePlayer.java}}
+\mbox{\hyperlink{_test_inmutable_player_8java}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.player;}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}};}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}};}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_type}{CardType}};}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00006}00006\ \textcolor{keyword}{import}\ org.junit.jupiter.api.BeforeEach;}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00013}00013\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00018}00018\ \textcolor{keyword}{class\ }TestInmutablePlayer\ \{}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00022}00022\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ testGetId()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Creamos\ un\ jugador\ con\ un\ identificador\ aleatorio.}}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ var\ player\ =\ \textcolor{keyword}{new}\ Player(\textcolor{stringliteral}{"{}TestPlayer"{}},\ \textcolor{keyword}{new}\ HandCardList());}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ var\ immutablePlayer\ =\ \textcolor{keyword}{new}\ ImmutablePlayer(player);}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Comprobamos\ que\ el\ identificador\ del\ jugador\ es\ el\ mismo\ que\ el\ del\ jugador\ inmutable.}}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ assertEquals(player.getId(),\ immutablePlayer.getId());}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00034}00034\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ testGetName()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Creamos\ un\ jugador\ con\ un\ nombre.}}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ var\ player\ =\ \textcolor{keyword}{new}\ Player(\textcolor{stringliteral}{"{}TestPlayer"{}},\ \textcolor{keyword}{new}\ HandCardList());}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ var\ immutablePlayer\ =\ \textcolor{keyword}{new}\ ImmutablePlayer(player);}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Comprobamos\ que\ el\ nombre\ del\ jugador\ es\ el\ mismo\ que\ el\ del\ jugador\ inmutable.}}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ assertEquals(player.getName(),\ immutablePlayer.getName());}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_inmutable_player_8java_source_l00042}00042\ \}}
+
+\end{DoxyCode}

@@ -1,39 +1,43 @@
 \doxysection{Test\+Game\+Builder.\+java}
-\label{_test_game_builder_8java_source}\index{src/test/java/domain/game/TestGameBuilder.java@{src/test/java/domain/game/TestGameBuilder.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_test_game_builder_8java_source}{}\label{_test_game_builder_8java_source}\index{src/test/java/domain/game/TestGameBuilder.java@{src/test/java/domain/game/TestGameBuilder.java}}
+\mbox{\hyperlink{_test_game_builder_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.game;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.player.ImmutablePlayer;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.player.Player;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertEquals;}
-\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertThrows;}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }TestGameBuilder\ \{}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \ \ \ \ @Test}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenCreatedWithOnePlayer\_ShouldThrowError()\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ var\ gameBuilder\ =\ \textcolor{keyword}{new}\ GameBuilder()}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Player\ 1"{}});}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ assertThrows(IllegalStateException.class,\ gameBuilder::build);}
-\DoxyCodeLine{00018\ \ \ \ \ \}}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ @Test}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenHavingThreePlayers\_ShouldBuildGame()\{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ var\ game\ =\ \textcolor{keyword}{new}\ GameBuilder()}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Player\ 1"{}})}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Player\ 2"{}})}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Player\ 3"{}})}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ .build();}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ var\ players\ =\ game.getPlayers().toArray(ImmutablePlayer[]::new);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ assertEquals(3,\ players.length);}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Player\ 1"{}},\ players[0].getName());}
-\DoxyCodeLine{00032\ \ \ \ \ \}}
-\DoxyCodeLine{00033\ \}}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.game;}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1player}{player}}.\mbox{\hyperlink{classdomain_1_1player_1_1_immutable_player}{ImmutablePlayer}};}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1player}{player}}.\mbox{\hyperlink{classdomain_1_1player_1_1_player}{Player}};}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00005}00005\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00007}00007\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertEquals;}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00008}00008\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertThrows;}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00013}00013\ \textcolor{keyword}{class\ }TestGameBuilder\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00018}00018\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ cuandoEsCreadoConUnJugador\_DebeLanzarError()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Configuración}}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ var\ constructorJuego\ =\ \textcolor{keyword}{new}\ GameBuilder()}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Jugador\ 1"{}});}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificación}}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ assertThrows(IllegalStateException.class,\ constructorJuego::build);}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00031}00031\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{void}\ cuandoTieneTresJugadores\_DebeConstruirJuego()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Acción}}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ var\ juego\ =\ \textcolor{keyword}{new}\ GameBuilder()}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Jugador\ 1"{}})}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Jugador\ 2"{}})}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ .withPlayer(\textcolor{stringliteral}{"{}Jugador\ 3"{}})}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ .build();}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificación}}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ var\ jugadores\ =\ juego.getPlayers().toArray(ImmutablePlayer[]::new);}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ assertEquals(3,\ jugadores.length);}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Jugador\ 1"{}},\ jugadores[0].getName());}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_game_builder_8java_source_l00046}00046\ \}}
 
 \end{DoxyCode}

@@ -1,110 +1,113 @@
 \doxysection{Test\+Dealer\+Service.\+java}
-\label{_test_dealer_service_8java_source}\index{src/test/java/domain/game/TestDealerService.java@{src/test/java/domain/game/TestDealerService.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_test_dealer_service_8java_source}{}\label{_test_dealer_service_8java_source}\index{src/test/java/domain/game/TestDealerService.java@{src/test/java/domain/game/TestDealerService.java}}
+\mbox{\hyperlink{_test_dealer_service_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain.game;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.*;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.player.HandCardList;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ java.util.ArrayList;}
-\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ java.util.List;}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
-\DoxyCodeLine{00011\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }TestDealerService\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ @Test}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenShuffled\_ShouldHaveDifferentOrder()\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ var\ originalList\ =\ \textcolor{keyword}{new}\ CardDeck().getImmutableCards();}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ var\ shuffledList\ =\ DealerService.shuffle(originalList);}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalEquals\ =\ 0;}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ originalList.size();\ i++)\ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (originalList.get(i).equals(shuffledList.get(i)))\ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalEquals++;}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ assertNotEquals(originalList.size(),\ totalEquals);}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ assertTrue(totalEquals\ <\ (originalList.size()\ *\ 0.2),\ \textcolor{stringliteral}{"{}Shuffled\ cards\ should\ have\ less\ than\ 20\%\ equal\ order\ (heuristically)"{}});}
-\DoxyCodeLine{00030\ \ \ \ \ \}}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ @Test}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenShuffled\_ShouldHaveAllNumberCards()\ \{}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ var\ shuffledList\ =\ getShuffledCards();}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertNumberCards(shuffledList);}
-\DoxyCodeLine{00037\ \ \ \ \ \}}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ @Test}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenShuffled\_ShouldHaveAllSkipCards()\ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ var\ shuffledList\ =\ getShuffledCards();}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertSkipCards(shuffledList);}
-\DoxyCodeLine{00044\ \ \ \ \ \}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ @Test}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenShuffled\_ShouldHaveAllReverseCards()\ \{}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ var\ shuffledList\ =\ getShuffledCards();}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertReverseCards(shuffledList);}
-\DoxyCodeLine{00051\ \ \ \ \ \}}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \ \ @Test}
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenShuffled\_ShouldHaveAllDrawTwoCards()\ \{}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ var\ shuffledList\ =\ getShuffledCards();}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertDrawTwoCards(shuffledList);}
-\DoxyCodeLine{00058\ \ \ \ \ \}}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ @Test}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenShuffled\_ShouldHaveAllWildCards()\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ var\ shuffledList\ =\ getShuffledCards();}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ CardCounterAssertionHelper.assertWildCards(shuffledList);}
-\DoxyCodeLine{00065\ \ \ \ \ \}}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{private}\ List<Card>\ getShuffledCards()\ \{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ var\ originalList\ =\ \textcolor{keyword}{new}\ CardDeck().getImmutableCards();}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DealerService.shuffle(originalList);}
-\DoxyCodeLine{00070\ \ \ \ \ \}}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \ \ \ \ @Test}
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ WhenDealt\_ShouldHave7CardsPerEachPlayer()\ \{}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ var\ fixedCards\ =\ \textcolor{keyword}{new}\ ArrayList<Card>();}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 7;\ i++)\ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ fixedCards.add(\textcolor{keyword}{new}\ NumberCard(1,\ CardColor.RED));}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ fixedCards.add(\textcolor{keyword}{new}\ NumberCard(2,\ CardColor.GREEN));}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ fixedCards.add(\textcolor{keyword}{new}\ NumberCard(3,\ CardColor.BLUE));}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ var\ drawPile\ =\ \textcolor{keyword}{new}\ DrawPile(fixedCards);}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ var\ handCardLists\ =\ DealerService.dealInitialHandCards(drawPile,\ 3);}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ assertTrue(hasAllSameValues(handCardLists[0],\ 3,\ CardColor.BLUE));}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ assertTrue(hasAllSameValues(handCardLists[1],\ 2,\ CardColor.GREEN));}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ assertTrue(hasAllSameValues(handCardLists[2],\ 1,\ CardColor.RED));}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ assertEquals(0,\ drawPile.getSize());}
-\DoxyCodeLine{00092\ \ \ \ \ \}}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ hasAllSameValues(HandCardList\ handCardList,\ \textcolor{keywordtype}{int}\ number,\ CardColor\ color)\ \{}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (handCardList.size()\ !=\ 7)\ \{}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ handCardList}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ .getCardStream()}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ .map(c\ -\/>\ (NumberCard)\ c)}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ .allMatch(c\ -\/>\ c.getValue()\ ==\ number\ \&\&\ c.getColor()\ ==\ color);}
-\DoxyCodeLine{00103\ \ \ \ \ \}}
-\DoxyCodeLine{00104\ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.game;}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.*;}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1player}{player}}.\mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{HandCardList}};}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00005}00005\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00010}00010\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00015}00015\ \textcolor{keyword}{class\ }TestDealerService\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00020}00020\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ cuandoEsBarajado\_DebeTenerOrdenDiferente()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Configuración}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ var\ listaOriginal\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_card_deck}{CardDeck}}().\mbox{\hyperlink{classdomain_1_1card_1_1_card_deck_a76f06e93c7ec5b87101feba191d40072}{getImmutableCards}}();}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Acción}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ var\ listaBarajada\ =\ DealerService.shuffle(listaOriginal);}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificación}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalIguales\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ listaOriginal.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (listaOriginal.get(i).equals(listaBarajada.get(i)))\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalIguales++;}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ assertNotEquals(listaOriginal.size(),\ totalIguales);}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ assertTrue(totalIguales\ <\ (listaOriginal.size()\ *\ 0.2),}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Las\ cartas\ barajadas\ deberían\ tener\ menos\ del\ 20\%\ de\ orden\ igual\ (heurísticamente)"{}});}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00043}00043\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ cuandoEsBarajado\_DebeIncluirTodasLasCartasNumericas()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ var\ listaBarajada\ =\ obtenerCartasBarajadas();}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1card_1_1_card_counter_assertion_helper}{CardCounterAssertionHelper}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_counter_assertion_helper_af822688ec72645f3f69a002df6f81d65}{assertNumberCards}}(listaBarajada);}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00053}00053\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ cuandoEsBarajado\_DebeIncluirTodasLasCartasDeSaltar()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ var\ listaBarajada\ =\ obtenerCartasBarajadas();}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1card_1_1_card_counter_assertion_helper}{CardCounterAssertionHelper}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_counter_assertion_helper_a3773a105b80e7d07d3b96cfb66a4f6b2}{assertSkipCards}}(listaBarajada);}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00063}00063\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{void}\ cuandoEsBarajado\_DebeIncluirTodasLasCartasDeReversa()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ var\ listaBarajada\ =\ obtenerCartasBarajadas();}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1card_1_1_card_counter_assertion_helper}{CardCounterAssertionHelper}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_counter_assertion_helper_aee858f82c2d1f2c5698c24fd80bfc860}{assertReverseCards}}(listaBarajada);}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00073}00073\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{void}\ cuandoEsBarajado\_DebeIncluirTodasLasCartasDeRobaDos()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ var\ listaBarajada\ =\ obtenerCartasBarajadas();}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1card_1_1_card_counter_assertion_helper}{CardCounterAssertionHelper}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_counter_assertion_helper_ab0f29111713bd3ededaaf249a083a182}{assertDrawTwoCards}}(listaBarajada);}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00083}00083\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00084}00084\ \ \ \ \ \textcolor{keywordtype}{void}\ cuandoEsBarajado\_DebeIncluirTodasLasCartasComodin()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ var\ listaBarajada\ =\ obtenerCartasBarajadas();}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1card_1_1_card_counter_assertion_helper}{CardCounterAssertionHelper}}.\mbox{\hyperlink{classdomain_1_1card_1_1_card_counter_assertion_helper_aaf791bdd356bbb10af1d787660f7495a}{assertWildCards}}(listaBarajada);}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00095}00095\ \ \ \ \ \textcolor{keyword}{private}\ List<Card>\ obtenerCartasBarajadas()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ var\ listaOriginal\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_card_deck}{CardDeck}}().\mbox{\hyperlink{classdomain_1_1card_1_1_card_deck_a76f06e93c7ec5b87101feba191d40072}{getImmutableCards}}();}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DealerService.shuffle(listaOriginal);}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00103}00103\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{void}\ cuandoEsRepartido\_DebeTener7CartasPorJugador()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Configuración}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ var\ cartasFijas\ =\ \textcolor{keyword}{new}\ ArrayList<Card>();}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 7;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ cartasFijas.add(\textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(1,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a8eb02103d54940d12cf95fee5edd7c67}{RED}}));}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ cartasFijas.add(\textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(2,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a38d119f2a79114a1db9db20c13c98e85}{GREEN}}));}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ cartasFijas.add(\textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}}(3,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a4953b3c8a29604397dc4de12749a531f}{BLUE}}));}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ var\ pilaDeRobo\ =\ \textcolor{keyword}{new}\ DrawPile(cartasFijas);}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Acción}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ var\ listasDeCartasMano\ =\ DealerService.dealInitialHandCards(pilaDeRobo,\ 3);}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificación}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ assertTrue(verificarMismoValor(listasDeCartasMano[0],\ 3,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a4953b3c8a29604397dc4de12749a531f}{BLUE}}));}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ assertTrue(verificarMismoValor(listasDeCartasMano[1],\ 2,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a38d119f2a79114a1db9db20c13c98e85}{GREEN}}));}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ assertTrue(verificarMismoValor(listasDeCartasMano[2],\ 1,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a8eb02103d54940d12cf95fee5edd7c67}{RED}}));}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ assertEquals(0,\ pilaDeRobo.getSize());}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00123}00123\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00133}00133\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ verificarMismoValor(HandCardList\ listaCartasMano,\ \textcolor{keywordtype}{int}\ numero,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}\ color)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (listaCartasMano.size()\ !=\ 7)\ \{}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ listaCartasMano}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ .getCardStream()}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ .map(c\ -\/>\ (\mbox{\hyperlink{classdomain_1_1card_1_1_number_card}{NumberCard}})\ c)}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ .allMatch(c\ -\/>\ c.\mbox{\hyperlink{classdomain_1_1card_1_1_number_card_a2c15b8828fcf3240877e76d7c75a9cf4}{getValue}}()\ ==\ numero\ \&\&\ c.\mbox{\hyperlink{classdomain_1_1card_1_1_abstract_card_aba5333502be39184365292c98b7da318}{getColor}}()\ ==\ color);}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00142}00142\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00143}00143\ \}}
+\DoxyCodeLine{\Hypertarget{_test_dealer_service_8java_source_l00144}00144\ }
 
 \end{DoxyCode}

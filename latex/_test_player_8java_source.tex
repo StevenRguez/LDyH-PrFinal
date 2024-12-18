@@ -1,0 +1,52 @@
+\doxysection{Test\+Player.\+java}
+\hypertarget{_test_player_8java_source}{}\label{_test_player_8java_source}\index{src/test/java/domain/player/TestPlayer.java@{src/test/java/domain/player/TestPlayer.java}}
+\mbox{\hyperlink{_test_player_8java}{Ir a la documentación de este archivo.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain.player;}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceapplication}{application}}.\mbox{\hyperlink{namespaceapplication_1_1dto}{dto}}.\mbox{\hyperlink{classapplication_1_1dto_1_1_player_info_d_t_o}{PlayerInfoDTO}};}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}};}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_type}{CardType}};}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00006}00006\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1player}{player}}.\mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{HandCardList}};}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.junit.jupiter.api.BeforeEach;}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00008}00008\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00012}00012\ \textcolor{keyword}{import}\ java.util.UUID;}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00013}00013\ \textcolor{keyword}{import}\ java.util.stream.Stream;}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00015}00015\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00020}00020\ \textcolor{keyword}{class\ }TestPlayer\ \{}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00024}00024\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ testPlayer()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ var\ handCardList\ =\ \textcolor{keyword}{new}\ HandCardList();}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ var\ player\ =\ \textcolor{keyword}{new}\ Player(\textcolor{stringliteral}{"{}TestPlayer"{}},\ handCardList);}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ assertNotNull(player);}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00034}00034\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ testGetName()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ var\ handCardList\ =\ \textcolor{keyword}{new}\ HandCardList();}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ var\ player\ =\ \textcolor{keyword}{new}\ Player(\textcolor{stringliteral}{"{}TestPlayer"{}},\ handCardList);}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}TestPlayer"{}},\ player.getName());}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00044}00044\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{void}\ testGetHandCards()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ var\ handCardList\ =\ \textcolor{keyword}{new}\ HandCardList();}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ var\ player\ =\ \textcolor{keyword}{new}\ Player(\textcolor{stringliteral}{"{}TestPlayer"{}},\ handCardList);}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ assertNotNull(player.getHandCards());}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00054}00054\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ givenDifferentIdOrName\_shouldNotBeEqual()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ var\ player1\ =\ \textcolor{keyword}{new}\ PlayerInfoDTO(UUID.fromString(\textcolor{stringliteral}{"{}123e4567-\/e89b-\/12d3-\/a456-\/426614174000"{}}),\ \textcolor{stringliteral}{"{}Alice"{}});}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ var\ player2\ =\ \textcolor{keyword}{new}\ PlayerInfoDTO(UUID.fromString(\textcolor{stringliteral}{"{}223e4567-\/e89b-\/12d3-\/a456-\/426614174000"{}}),\ \textcolor{stringliteral}{"{}Bob"{}});}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ assertNotEquals(player1,\ player2);}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_player_8java_source_l00061}00061\ \}}
+
+\end{DoxyCode}

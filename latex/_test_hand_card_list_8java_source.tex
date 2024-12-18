@@ -1,43 +1,138 @@
 \doxysection{Test\+Hand\+Card\+List.\+java}
-\label{_test_hand_card_list_8java_source}\index{src/test/java/domain/TestHandCardList.java@{src/test/java/domain/TestHandCardList.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_test_hand_card_list_8java_source}{}\label{_test_hand_card_list_8java_source}\index{src/test/java/domain/TestHandCardList.java@{src/test/java/domain/TestHandCardList.java}}
+\mbox{\hyperlink{_test_hand_card_list_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }domain;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ domain.card.CardColor;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.player.HandCardList;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.testhelper.CardTestFactory;}
-\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertFalse;}
-\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.assertTrue;}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }TestHandCardList\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ @Test}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ GivenSameNumberCard\_ShouldExist()\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ var\ numberCard\ =\ CardTestFactory.createNumberCard(1,\ CardColor.YELLOW);}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ var\ sameNumberCard\ =\ CardTestFactory.createNumberCard(1,\ CardColor.YELLOW);}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard);}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.hasCard(sameNumberCard);}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ assertTrue(result);}
-\DoxyCodeLine{00023\ \ \ \ \ \}}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ @Test}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ GivenDifferentNumberCard\_ShouldNotExist()\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ var\ numberCard\ =\ CardTestFactory.createNumberCard(1,\ CardColor.YELLOW);}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ var\ anotherNumberCard\ =\ CardTestFactory.createNumberCard(2,\ CardColor.YELLOW);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ HandCardList();}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard);}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.hasCard(anotherNumberCard);}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ assertFalse(result);}
-\DoxyCodeLine{00036\ \ \ \ \ \}}
-\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain;}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceapplication}{application}}.\mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service}{IGameAppService}};}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}};}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1player}{player}}.\mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{HandCardList}};}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00006}00006\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1testhelper}{testhelper}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}};}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00008}00008\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceui}{ui}}.\mbox{\hyperlink{namespaceui_1_1common}{common}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}};}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00010}00010\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00016}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdomain_1_1_test_hand_card_list}{TestHandCardList}}\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00021}00021\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00022}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_ae75b42434a017153c77adfbc9db8213d}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_ae75b42434a017153c77adfbc9db8213d}{GivenSameNumberCard\_ShouldExist}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ var\ numberCard\ =\ \mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9}{createNumberCard}}(1,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_aeafa2c5ebed7d387c3e85311602d35fb}{YELLOW}});}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ var\ sameNumberCard\ =\ \mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9}{createNumberCard}}(1,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_aeafa2c5ebed7d387c3e85311602d35fb}{YELLOW}});}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{HandCardList}}();}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.hasCard(sameNumberCard);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ assertTrue(result);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00037}00037\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00038}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a792e3fdf59b20e28a45686c8ae2d9662}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a792e3fdf59b20e28a45686c8ae2d9662}{GivenDifferentNumberCard\_ShouldNotExist}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ var\ numberCard\ =\ \mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9}{createNumberCard}}(1,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_aeafa2c5ebed7d387c3e85311602d35fb}{YELLOW}});}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ var\ anotherNumberCard\ =\ \mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9}{createNumberCard}}(2,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_aeafa2c5ebed7d387c3e85311602d35fb}{YELLOW}});}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{HandCardList}}();}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.hasCard(anotherNumberCard);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ assertFalse(result);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00053}00053\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00054}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a63122f5cebc26bd4a445a41cfbebf73e}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a63122f5cebc26bd4a445a41cfbebf73e}{GivenCardWithDifferentColor\_ShouldNotExist}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ var\ numberCard\ =\ \mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9}{createNumberCard}}(1,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_aeafa2c5ebed7d387c3e85311602d35fb}{YELLOW}});}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ var\ sameNumberDifferentColor\ =\ \mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9}{createNumberCard}}(1,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a8eb02103d54940d12cf95fee5edd7c67}{RED}});}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{HandCardList}}();}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ handCards.addCard(numberCard);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.hasCard(sameNumberDifferentColor);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ assertFalse(result);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00069}00069\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00070}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a2c829b70f23153e5037f5bb9ca388d60}{00070}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a2c829b70f23153e5037f5bb9ca388d60}{GivenSameCardInstance\_ShouldExist}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ var\ card\ =\ \mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9}{createNumberCard}}(3,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a4953b3c8a29604397dc4de12749a531f}{BLUE}});}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{HandCardList}}();}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ handCards.addCard(card);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.hasCard(card);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ assertTrue(result);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00084}00084\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00085}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_acb21e04d95e7a41df696e1c23f359dd6}{00085}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_acb21e04d95e7a41df696e1c23f359dd6}{GivenCardNotAdded\_ShouldNotExist}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ var\ card\ =\ \mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9}{createNumberCard}}(7,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a38d119f2a79114a1db9db20c13c98e85}{GREEN}});}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{HandCardList}}();}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.hasCard(card);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ assertFalse(result);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00098}00098\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00099}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a3b6b678c60749bc1a62c4f518cbaa38d}{00099}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a3b6b678c60749bc1a62c4f518cbaa38d}{AfterRemovingCard\_ShouldNotExist}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ var\ card\ =\ \mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9}{createNumberCard}}(4,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a8eb02103d54940d12cf95fee5edd7c67}{RED}});}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{HandCardList}}();}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ handCards.addCard(card);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ handCards.removeCard(card);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.hasCard(card);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ assertFalse(result);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00114}00114\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00115}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a285f6f089ea18e26b4c64e0ff7e7a39b}{00115}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a285f6f089ea18e26b4c64e0ff7e7a39b}{AddingDuplicateCards\_ShouldStillExistOnce}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ var\ card\ =\ \mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9}{createNumberCard}}(5,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_aeafa2c5ebed7d387c3e85311602d35fb}{YELLOW}});}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ var\ handCards\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1player_1_1_hand_card_list}{HandCardList}}();}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ handCards.addCard(card);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ handCards.addCard(card);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ var\ result\ =\ handCards.hasCard(card);}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ assertTrue(result);\ \textcolor{comment}{//\ La\ carta\ debe\ existir\ aunque\ se\ haya\ añadido\ varias\ veces.}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00130}00130\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00131}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a5865a46ae863e434b207638b407fa641}{00131}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a5865a46ae863e434b207638b407fa641}{givenRedCardColor\_shouldConvertToRedColor}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ assertEquals(\mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util_a1e0a1552bcd07a5402bf508cb795751e}{redColor}},\ \mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util_ae711765c84849568fe851a8668a3aabd}{convertCardColor}}(\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a8eb02103d54940d12cf95fee5edd7c67}{RED}}));}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00138}00138\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00139}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a2596c101b9ee8ac9329bd4641618adbb}{00139}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a2596c101b9ee8ac9329bd4641618adbb}{givenBlueCardColor\_shouldConvertToRedColor}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ assertEquals(\mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util_a4e963d9296d625db24eff83e52dac4c8}{blueColor}},\ \mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util_ae711765c84849568fe851a8668a3aabd}{convertCardColor}}(\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a4953b3c8a29604397dc4de12749a531f}{BLUE}}));}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00146}00146\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00147}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a3942815e6579b6b8ba4c51e91d59a988}{00147}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a3942815e6579b6b8ba4c51e91d59a988}{givenGreenCardColor\_shouldConvertToRedColor}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00148}00148\ \ \ \ \ \ \ \ \ assertEquals(\mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util_a8c853abb1ed72f28bd14addaf5c5794b}{greenColor}},\ \mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util_ae711765c84849568fe851a8668a3aabd}{convertCardColor}}(\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_a38d119f2a79114a1db9db20c13c98e85}{GREEN}}));}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00149}00149\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00154}00154\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00155}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a20dcf8ad1807ca9d1e3464b59dc39fea}{00155}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a20dcf8ad1807ca9d1e3464b59dc39fea}{givenYellowCardColor\_shouldConvertToRedColor}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ assertEquals(\mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util_a8146706a68a92f3bc78b3262cb911d16}{yellowColor}},\ \mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util_ae711765c84849568fe851a8668a3aabd}{convertCardColor}}(\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_aeafa2c5ebed7d387c3e85311602d35fb}{YELLOW}}));}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00162}00162\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00163}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a3c58a7e75a0600138b06d7e3726657f4}{00163}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a3c58a7e75a0600138b06d7e3726657f4}{givenNullCardColor\_shouldConvertToBlackColor}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ assertEquals(\mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util_a0074a20cf86e7d9a9b0b61088197af31}{blackColor}},\ \mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util_ae711765c84849568fe851a8668a3aabd}{convertCardColor}}(\textcolor{keyword}{null}));}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00165}00165\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00170}00170\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00171}\mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a593e90c40c26ff50e2a3973140038029}{00171}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_test_hand_card_list_a593e90c40c26ff50e2a3973140038029}{givenNumberCard\_shouldReturnNumber}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ var\ card\ =\ \mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory}{CardTestFactory}}.\mbox{\hyperlink{classdomain_1_1testhelper_1_1_card_test_factory_af51a52d35492b77a976a6b6a4bd19ca9}{createNumberCard}}(5,\ \mbox{\hyperlink{enumdomain_1_1card_1_1_card_color}{CardColor}}.\mbox{\hyperlink{enumdomain_1_1card_1_1_card_color_aeafa2c5ebed7d387c3e85311602d35fb}{YELLOW}});}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}5"{}},\ \mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util_a46d0bf44cfee2ad91dd89e2679ec39b4}{getValueToDisplay}}(card));}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00174}00174\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_hand_card_list_8java_source_l00175}00175\ \}}
 
 \end{DoxyCode}

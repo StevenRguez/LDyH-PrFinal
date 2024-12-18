@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TizonTools: Referencia de la clase domain.card.CardCounter</title>
+<title>LabGrupal: Referencia de la clase domain.card.CardCounter</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TizonTools
+   <div id="projectname">LabGrupal
    </div>
   </td>
  </tr>
@@ -113,8 +113,9 @@ Métodos públicos</h2></td></tr>
 <tr class="separator:a40f21f1178824d1b9be4959fba58185b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock">
-<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00006">6</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
+<div class="textblock"><p>Clase que cuenta y clasifica cartas según su tipo y color en un mazo dado. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00009">9</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
 </div><h2 class="groupheader">Documentación de constructores y destructores</h2>
 <a id="af6b9e86091a991be30cdbc9a6ac1b8ea" name="af6b9e86091a991be30cdbc9a6ac1b8ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af6b9e86091a991be30cdbc9a6ac1b8ea">&#9670;&#160;</a></span>CardCounter()</h2>
@@ -130,8 +131,15 @@ Métodos públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constructor que inicializa el contador con una lista de cartas.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cards</td><td>la lista de cartas a analizar. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00009">9</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00020">20</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
 
 </div>
 </div>
@@ -150,13 +158,10 @@ Métodos públicos</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Obtiene la cantidad de cartas de tipo "Draw Two" (robar dos) clasificadas por color.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>un arreglo donde el índice representa el color (ordinal del enum) y el valor es la cantidad de cartas de ese color. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00059">59</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1card_1_1_card_counter_a00ced1459b8f30c306ef1fcd08f59d8b_cgraph.png" border="0" usemap="#aclassdomain_1_1card_1_1_card_counter_a00ced1459b8f30c306ef1fcd08f59d8b_cgraph" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00089">89</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
 
 </div>
 </div>
@@ -174,8 +179,10 @@ Gráfico de llamadas de esta función:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Obtiene la cantidad de cartas numéricas clasificadas por color.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>un arreglo donde el índice representa el color (ordinal del enum) y el valor es la cantidad de cartas de ese color. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00022">22</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00043">43</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
 
 </div>
 </div>
@@ -193,8 +200,10 @@ Gráfico de llamadas de esta función:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Obtiene la cantidad de cartas numéricas por valor (0-9).</p>
+<dl class="section return"><dt>Devuelve</dt><dd>un arreglo donde el índice representa el valor de la carta (0-9) y el valor es la cantidad de cartas con ese número. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00013">13</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00029">29</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
 
 </div>
 </div>
@@ -212,13 +221,10 @@ Gráfico de llamadas de esta función:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Obtiene la cantidad de cartas de tipo "Reverse" (cambio de dirección) clasificadas por color.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>un arreglo donde el índice representa el color (ordinal del enum) y el valor es la cantidad de cartas de ese color. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00048">48</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1card_1_1_card_counter_a9fa0a21f724d0a0553139246b65fba4a_cgraph.png" border="0" usemap="#aclassdomain_1_1card_1_1_card_counter_a9fa0a21f724d0a0553139246b65fba4a_cgraph" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00073">73</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
 
 </div>
 </div>
@@ -236,13 +242,10 @@ Gráfico de llamadas de esta función:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Obtiene la cantidad de cartas de tipo "Skip" (saltar turno) clasificadas por color.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>un arreglo donde el índice representa el color (ordinal del enum) y el valor es la cantidad de cartas de ese color. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00037">37</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
-<div class="dynheader">
-Gráfico de llamadas de esta función:</div>
-<div class="dyncontent">
-<div class="center"><img src="classdomain_1_1card_1_1_card_counter_a24c398c0be8da623d0c88e8b8617c1b0_cgraph.png" border="0" usemap="#aclassdomain_1_1card_1_1_card_counter_a24c398c0be8da623d0c88e8b8617c1b0_cgraph" alt=""/></div>
-</div>
+<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00057">57</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
 
 </div>
 </div>
@@ -260,8 +263,16 @@ Gráfico de llamadas de esta función:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Obtiene la cantidad de cartas de tipo comodín, como "Wild" o "Wild Draw Four".</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>el tipo de carta comodín a contar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>la cantidad de cartas de ese tipo. </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00070">70</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="_card_counter_8java_source.html#l00106">106</a> del archivo <a class="el" href="_card_counter_8java_source.html">CardCounter.java</a>.</p>
 
 </div>
 </div>

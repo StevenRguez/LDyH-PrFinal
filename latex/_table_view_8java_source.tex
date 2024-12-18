@@ -1,82 +1,83 @@
 \doxysection{Table\+View.\+java}
-\label{_table_view_8java_source}\index{src/main/java/ui/view/TableView.java@{src/main/java/ui/view/TableView.java}}
-\textbf{ Ir a la documentación de este archivo.}
+\hypertarget{_table_view_8java_source}{}\label{_table_view_8java_source}\index{src/main/java/ui/view/TableView.java@{src/main/java/ui/view/TableView.java}}
+\mbox{\hyperlink{_table_view_8java}{Ir a la documentación de este archivo.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{keyword}{package\ }ui.view;}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{keyword}{import}\ application.IGameAppService;}
-\DoxyCodeLine{00004\ \textcolor{keyword}{import}\ domain.card.Card;}
-\DoxyCodeLine{00005\ \textcolor{keyword}{import}\ domain.common.DomainEvent;}
-\DoxyCodeLine{00006\ \textcolor{keyword}{import}\ domain.common.DomainEventPublisher;}
-\DoxyCodeLine{00007\ \textcolor{keyword}{import}\ domain.common.DomainEventSubscriber;}
-\DoxyCodeLine{00008\ \textcolor{keyword}{import}\ domain.game.events.CardPlayed;}
-\DoxyCodeLine{00009\ \textcolor{keyword}{import}\ ui.common.StyleUtil;}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{import}\ javax.swing.*;}
-\DoxyCodeLine{00012\ \textcolor{keyword}{import}\ java.awt.*;}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00026\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }TableView\ \textcolor{keyword}{extends}\ JPanel\ implements\ DomainEventSubscriber\ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ JPanel\ table;}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ IGameAppService\ appService;}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{public}\ TableView(IGameAppService\ appService)\{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ this.appService\ =\ appService;}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ setOpaque(\textcolor{keyword}{false});}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ setLayout(\textcolor{keyword}{new}\ GridBagLayout());}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ table\ =\ \textcolor{keyword}{new}\ JPanel();}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ table.setBackground(\textcolor{keyword}{new}\ Color(64,64,64));}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ initTable();}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ initInfoView();}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ DomainEventPublisher.subscribe(\textcolor{keyword}{this});}
-\DoxyCodeLine{00048\ \ \ \ \ \}}
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initTable()\{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ table.removeAll();}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ table.setPreferredSize(\textcolor{keyword}{new}\ Dimension(500,200));}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ table.setLayout(\textcolor{keyword}{new}\ GridBagLayout());}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ GridBagConstraints\ c\ =\ \textcolor{keyword}{new}\ GridBagConstraints();}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ c.fill\ =\ GridBagConstraints.HORIZONTAL;}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ c.gridx\ =\ 0;}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ c.gridy\ =\ 0;}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Card\ topCard\ =\ appService.peekTopCard();}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ Color\ background\ =\ StyleUtil.convertCardColor(topCard.getColor());}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ var\ cardView\ =\ \textcolor{keyword}{new}\ CardView(topCard);}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ table.add(cardView,\ c);}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ table.setBackground(background);}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ table.revalidate();}
-\DoxyCodeLine{00074\ \ \ \ \ \}}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initInfoView()\ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ GridBagConstraints\ c\ =\ \textcolor{keyword}{new}\ GridBagConstraints();}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ c.fill\ =\ GridBagConstraints.HORIZONTAL;}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ c.gridx\ =\ 0;}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ c.gridy\ =\ 0;}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ c.insets\ =\ \textcolor{keyword}{new}\ Insets(0,\ 130,\ 0,\ 45);}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ add(table,c);}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ c.fill\ =\ GridBagConstraints.HORIZONTAL;}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ c.anchor\ =\ GridBagConstraints.LINE\_END;}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ c.gridwidth\ =\ GridBagConstraints.REMAINDER;}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ c.gridx\ =\ 1;}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ c.gridy\ =\ 0;}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ c.insets\ =\ \textcolor{keyword}{new}\ Insets(0,\ 1,\ 0,\ 1);}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ add(\textcolor{keyword}{new}\ GameStatusView(appService),\ c);}
-\DoxyCodeLine{00092\ \ \ \ \ \}}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ \ \ \ \ @Override}
-\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ handleEvent(DomainEvent\ event)\ \{}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(event\ instanceof\ CardPlayed)\ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ initTable();}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00099\ \ \ \ \ \}}
-\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00001}00001\ \textcolor{keyword}{package\ }ui.view;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceapplication}{application}}.\mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service}{IGameAppService}};}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1card}{card}}.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}};}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1common}{common}}.\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event}{DomainEvent}};}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00006}00006\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1common}{common}}.\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher}{DomainEventPublisher}};}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00007}00007\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1common}{common}}.\mbox{\hyperlink{interfacedomain_1_1common_1_1_domain_event_subscriber}{DomainEventSubscriber}};}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00008}00008\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{namespacedomain_1_1game}{game}}.\mbox{\hyperlink{namespacedomain_1_1game_1_1events}{events}}.\mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_card_played}{CardPlayed}};}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00009}00009\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceui}{ui}}.\mbox{\hyperlink{namespaceui_1_1common}{common}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}};}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00011}00011\ \textcolor{keyword}{import}\ javax.swing.*;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00012}00012\ \textcolor{keyword}{import}\ java.awt.*;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00026}\mbox{\hyperlink{classui_1_1view_1_1_table_view}{00026}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classui_1_1view_1_1_table_view}{TableView}}\ \textcolor{keyword}{extends}\ JPanel\ implements\ \mbox{\hyperlink{interfacedomain_1_1common_1_1_domain_event_subscriber}{DomainEventSubscriber}}\ \{}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ JPanel\ table;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service}{IGameAppService}}\ appService;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00040}\mbox{\hyperlink{classui_1_1view_1_1_table_view_a1ae9c2f9b4b34137034bcfd962a220d0}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classui_1_1view_1_1_table_view_a1ae9c2f9b4b34137034bcfd962a220d0}{TableView}}(\mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service}{IGameAppService}}\ appService)\{}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ this.appService\ =\ appService;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ setOpaque(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ setLayout(\textcolor{keyword}{new}\ GridBagLayout());}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ table\ =\ \textcolor{keyword}{new}\ JPanel();}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ table.setBackground(\textcolor{keyword}{new}\ Color(64,64,64));}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ initTable();}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ initInfoView();}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher}{DomainEventPublisher}}.\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event_publisher_a46375ebe23f967a56b9c66a9b0b7586e}{subscribe}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initTable()\ \{}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ table.removeAll();}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ table.setPreferredSize(\textcolor{keyword}{new}\ Dimension(500,200));}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ table.setLayout(\textcolor{keyword}{new}\ GridBagLayout());}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ GridBagConstraints\ c\ =\ \textcolor{keyword}{new}\ GridBagConstraints();}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ c.fill\ =\ GridBagConstraints.HORIZONTAL;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ c.gridx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ c.gridy\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interfacedomain_1_1card_1_1_card}{Card}}\ topCard\ =\ appService.\mbox{\hyperlink{interfaceapplication_1_1_i_game_app_service_a7b82fbccec479da182416d35ca7fce44}{peekTopCard}}();}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ Color\ background\ =\ \mbox{\hyperlink{classui_1_1common_1_1_style_util}{StyleUtil}}.\mbox{\hyperlink{classui_1_1common_1_1_style_util_ae711765c84849568fe851a8668a3aabd}{convertCardColor}}(topCard.\mbox{\hyperlink{interfacedomain_1_1card_1_1_card_a14ff76d95a998d9d6d4e9c5f3a72ffc0}{getColor}}());}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ var\ cardView\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classui_1_1view_1_1_card_view}{CardView}}(topCard);}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ table.add(cardView,\ c);}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ table.setBackground(background);}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ table.revalidate();}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ initInfoView()\ \{}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ GridBagConstraints\ c\ =\ \textcolor{keyword}{new}\ GridBagConstraints();}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ c.fill\ =\ GridBagConstraints.HORIZONTAL;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ c.gridx\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ c.gridy\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ c.insets\ =\ \textcolor{keyword}{new}\ Insets(0,\ 130,\ 0,\ 45);}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ add(table,c);}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ c.fill\ =\ GridBagConstraints.HORIZONTAL;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ c.anchor\ =\ GridBagConstraints.LINE\_END;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ c.gridwidth\ =\ GridBagConstraints.REMAINDER;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ c.gridx\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ c.gridy\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ c.insets\ =\ \textcolor{keyword}{new}\ Insets(0,\ 1,\ 0,\ 1);}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ add(\textcolor{keyword}{new}\ GameStatusView(appService),\ c);}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00106}00106\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00107}\mbox{\hyperlink{classui_1_1view_1_1_table_view_a6ef7fa6e4057646fa9e406180f07cc71}{00107}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classui_1_1view_1_1_table_view_a6ef7fa6e4057646fa9e406180f07cc71}{handleEvent}}(\mbox{\hyperlink{classdomain_1_1common_1_1_domain_event}{DomainEvent}}\ event)\ \{}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(event\ instanceof\ \mbox{\hyperlink{classdomain_1_1game_1_1events_1_1_card_played}{CardPlayed}})\ \{}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ initTable();}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_table_view_8java_source_l00112}00112\ \}}
 
 \end{DoxyCode}

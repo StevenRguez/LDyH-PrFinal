@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TizonTools: Archivo de código fuente src/main/java/domain/game/GameBuilder.java</title>
+<title>LabGrupal: Archivo de código fuente src/main/java/domain/game/GameBuilder.java</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TizonTools
+   <div id="projectname">LabGrupal
    </div>
   </td>
  </tr>
@@ -103,59 +103,59 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classdomain_1_1game_1_1_game_builder.html">   14</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classdomain_1_1game_1_1_game_builder.html">GameBuilder</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">private</span> List&lt;String&gt; playerNames = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classdomain_1_1game_1_1_game_builder.html#a0c6c1b220751be687495911f668b2956">   23</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classdomain_1_1game_1_1_game_builder.html">GameBuilder</a> <a class="code hl_function" href="classdomain_1_1game_1_1_game_builder.html#a0c6c1b220751be687495911f668b2956">withPlayer</a>(String name) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        playerNames.add(name);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">private</span> List&lt;String&gt; playerNames = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classdomain_1_1game_1_1_game_builder.html#a0c6c1b220751be687495911f668b2956">   26</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classdomain_1_1game_1_1_game_builder.html">GameBuilder</a> <a class="code hl_function" href="classdomain_1_1game_1_1_game_builder.html#a0c6c1b220751be687495911f668b2956">withPlayer</a>(String name) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        playerNames.add(name);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classdomain_1_1game_1_1_game_builder.html#aefa110217a8656c9d805614ff4ed6f33">   33</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classdomain_1_1game_1_1_game.html">Game</a> <a class="code hl_function" href="classdomain_1_1game_1_1_game_builder.html#aefa110217a8656c9d805614ff4ed6f33">build</a>() {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        var cards = <span class="keyword">new</span> <a class="code hl_class" href="classdomain_1_1card_1_1_card_deck.html">CardDeck</a>().<a class="code hl_function" href="classdomain_1_1card_1_1_card_deck.html#a76f06e93c7ec5b87101feba191d40072">getImmutableCards</a>(); <span class="comment">// Obtiene un mazo de cartas inmutable.</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        var drawPile = buildDrawPile(cards); <span class="comment">// Construye el mazo de robar.</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        var players = buildPlayers(drawPile); <span class="comment">// Configura los jugadores.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classdomain_1_1game_1_1_game_builder.html#aefa110217a8656c9d805614ff4ed6f33">   36</a></span>    <span class="keyword">public</span> <a class="code hl_class" href="classdomain_1_1game_1_1_game.html">Game</a> <a class="code hl_function" href="classdomain_1_1game_1_1_game_builder.html#aefa110217a8656c9d805614ff4ed6f33">build</a>() {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        var cards = <span class="keyword">new</span> <a class="code hl_class" href="classdomain_1_1card_1_1_card_deck.html">CardDeck</a>().<a class="code hl_function" href="classdomain_1_1card_1_1_card_deck.html#a76f06e93c7ec5b87101feba191d40072">getImmutableCards</a>(); <span class="comment">// Obtiene un mazo de cartas inmutable.</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classdomain_1_1game_1_1_game.html">Game</a>(drawPile, players);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
-</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        var drawPile = buildDrawPile(cards); <span class="comment">// Construye el mazo de robar.</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        var players = buildPlayers(drawPile); <span class="comment">// Configura los jugadores.</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">private</span> <a class="code hl_class" href="classdomain_1_1game_1_1_draw_pile.html">DrawPile</a> buildDrawPile(List&lt;Card&gt; cards) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        var shuffledCards = <a class="code hl_class" href="classdomain_1_1game_1_1_dealer_service.html">DealerService</a>.<a class="code hl_function" href="classdomain_1_1game_1_1_dealer_service.html#a3ec18e43620ad481f6005e7c0cebef77">shuffle</a>(cards); <span class="comment">// Baraja las cartas.</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classdomain_1_1game_1_1_draw_pile.html">DrawPile</a>(shuffledCards); <span class="comment">// Crea el mazo de robar.</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">private</span> PlayerRoundIterator buildPlayers(DrawPile drawPile) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span> (playerNames.size() &lt; 2 || playerNames.size() &gt; 10) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="stringliteral">&quot;Se requieren entre 2 y 10 jugadores para crear un juego&quot;</span>);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="comment">// Reparte las cartas iniciales a los jugadores.</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        var handCardLists = DealerService.dealInitialHandCards(drawPile, playerNames.size());</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        var players = <span class="keyword">new</span> Player[playerNames.size()];</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="comment">// Crea los jugadores con sus nombres y manos iniciales.</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; playerNames.size(); i++) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            players[i] = <span class="keyword">new</span> Player(playerNames.get(i), handCardLists[i]);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="comment">// Devuelve el iterador circular de jugadores.</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> PlayerRoundIterator(players);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classdomain_1_1game_1_1_game.html">Game</a>(drawPile, players);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">private</span> <a class="code hl_class" href="classdomain_1_1game_1_1_draw_pile.html">DrawPile</a> buildDrawPile(List&lt;Card&gt; cards) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        var shuffledCards = <a class="code hl_class" href="classdomain_1_1game_1_1_dealer_service.html">DealerService</a>.<a class="code hl_function" href="classdomain_1_1game_1_1_dealer_service.html#a3ec18e43620ad481f6005e7c0cebef77">shuffle</a>(cards); <span class="comment">// Baraja las cartas.</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classdomain_1_1game_1_1_draw_pile.html">DrawPile</a>(shuffledCards); <span class="comment">// Crea el mazo de robar.</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">private</span> PlayerRoundIterator buildPlayers(DrawPile drawPile) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">if</span> (playerNames.size() &lt; 2 || playerNames.size() &gt; 10) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="stringliteral">&quot;Se requieren entre 2 y 10 jugadores para crear un juego&quot;</span>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="comment">// Reparte las cartas iniciales a los jugadores.</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        var handCardLists = DealerService.dealInitialHandCards(drawPile, playerNames.size());</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        var players = <span class="keyword">new</span> Player[playerNames.size()];</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="comment">// Crea los jugadores con sus nombres y manos iniciales.</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; playerNames.size(); i++) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            players[i] = <span class="keyword">new</span> Player(playerNames.get(i), handCardLists[i]);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="comment">// Devuelve el iterador circular de jugadores.</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> PlayerRoundIterator(players);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
 </div>
 <div class="ttc" id="aclassdomain_1_1card_1_1_card_deck_html"><div class="ttname"><a href="classdomain_1_1card_1_1_card_deck.html">domain.card.CardDeck</a></div><div class="ttdef"><b>Definition</b> <a href="_card_deck_8java_source.html#l00010">CardDeck.java:10</a></div></div>
-<div class="ttc" id="aclassdomain_1_1card_1_1_card_deck_html_a76f06e93c7ec5b87101feba191d40072"><div class="ttname"><a href="classdomain_1_1card_1_1_card_deck.html#a76f06e93c7ec5b87101feba191d40072">domain.card.CardDeck.getImmutableCards</a></div><div class="ttdeci">List&lt; Card &gt; getImmutableCards()</div><div class="ttdef"><b>Definition</b> <a href="_card_deck_8java_source.html#l00024">CardDeck.java:24</a></div></div>
-<div class="ttc" id="aclassdomain_1_1game_1_1_dealer_service_html"><div class="ttname"><a href="classdomain_1_1game_1_1_dealer_service.html">domain.game.DealerService</a></div><div class="ttdoc">Clase de utilidad que proporciona servicios relacionados con la baraja y distribución de cartas.</div><div class="ttdef"><b>Definition</b> <a href="_dealer_service_8java_source.html#l00014">DealerService.java:14</a></div></div>
-<div class="ttc" id="aclassdomain_1_1game_1_1_dealer_service_html_a3ec18e43620ad481f6005e7c0cebef77"><div class="ttname"><a href="classdomain_1_1game_1_1_dealer_service.html#a3ec18e43620ad481f6005e7c0cebef77">domain.game.DealerService.shuffle</a></div><div class="ttdeci">static List&lt; Card &gt; shuffle(List&lt; Card &gt; cards)</div><div class="ttdoc">Baraja una lista de cartas utilizando el algoritmo moderno de Fisher-Yates.</div><div class="ttdef"><b>Definition</b> <a href="_dealer_service_8java_source.html#l00037">DealerService.java:37</a></div></div>
-<div class="ttc" id="aclassdomain_1_1game_1_1_draw_pile_html"><div class="ttname"><a href="classdomain_1_1game_1_1_draw_pile.html">domain.game.DrawPile</a></div><div class="ttdoc">Representa el mazo de robar en el juego, donde los jugadores toman cartas.</div><div class="ttdef"><b>Definition</b> <a href="_draw_pile_8java_source.html#l00012">DrawPile.java:12</a></div></div>
-<div class="ttc" id="aclassdomain_1_1game_1_1_game_builder_html"><div class="ttname"><a href="classdomain_1_1game_1_1_game_builder.html">domain.game.GameBuilder</a></div><div class="ttdoc">Clase utilizada para construir una instancia de un juego configurado con jugadores y un mazo de carta...</div><div class="ttdef"><b>Definition</b> <a href="#l00014">GameBuilder.java:14</a></div></div>
-<div class="ttc" id="aclassdomain_1_1game_1_1_game_builder_html_a0c6c1b220751be687495911f668b2956"><div class="ttname"><a href="classdomain_1_1game_1_1_game_builder.html#a0c6c1b220751be687495911f668b2956">domain.game.GameBuilder.withPlayer</a></div><div class="ttdeci">GameBuilder withPlayer(String name)</div><div class="ttdoc">Añade un jugador al juego en construcción.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">GameBuilder.java:23</a></div></div>
-<div class="ttc" id="aclassdomain_1_1game_1_1_game_builder_html_aefa110217a8656c9d805614ff4ed6f33"><div class="ttname"><a href="classdomain_1_1game_1_1_game_builder.html#aefa110217a8656c9d805614ff4ed6f33">domain.game.GameBuilder.build</a></div><div class="ttdeci">Game build()</div><div class="ttdoc">Construye una instancia del juego con los jugadores y mazo configurados.</div><div class="ttdef"><b>Definition</b> <a href="#l00033">GameBuilder.java:33</a></div></div>
-<div class="ttc" id="aclassdomain_1_1game_1_1_game_html"><div class="ttname"><a href="classdomain_1_1game_1_1_game.html">domain.game.Game</a></div><div class="ttdoc">Representa una partida del juego, gestionando jugadores, cartas y reglas.</div><div class="ttdef"><b>Definition</b> <a href="_game_8java_source.html#l00022">Game.java:22</a></div></div>
+<div class="ttc" id="aclassdomain_1_1card_1_1_card_deck_html_a76f06e93c7ec5b87101feba191d40072"><div class="ttname"><a href="classdomain_1_1card_1_1_card_deck.html#a76f06e93c7ec5b87101feba191d40072">domain.card.CardDeck.getImmutableCards</a></div><div class="ttdeci">List&lt; Card &gt; getImmutableCards()</div><div class="ttdef"><b>Definition</b> <a href="_card_deck_8java_source.html#l00027">CardDeck.java:27</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_dealer_service_html"><div class="ttname"><a href="classdomain_1_1game_1_1_dealer_service.html">domain.game.DealerService</a></div><div class="ttdef"><b>Definition</b> <a href="_dealer_service_8java_source.html#l00014">DealerService.java:14</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_dealer_service_html_a3ec18e43620ad481f6005e7c0cebef77"><div class="ttname"><a href="classdomain_1_1game_1_1_dealer_service.html#a3ec18e43620ad481f6005e7c0cebef77">domain.game.DealerService.shuffle</a></div><div class="ttdeci">static List&lt; Card &gt; shuffle(List&lt; Card &gt; cards)</div><div class="ttdef"><b>Definition</b> <a href="_dealer_service_8java_source.html#l00037">DealerService.java:37</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_draw_pile_html"><div class="ttname"><a href="classdomain_1_1game_1_1_draw_pile.html">domain.game.DrawPile</a></div><div class="ttdef"><b>Definition</b> <a href="_draw_pile_8java_source.html#l00012">DrawPile.java:12</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_builder_html"><div class="ttname"><a href="classdomain_1_1game_1_1_game_builder.html">domain.game.GameBuilder</a></div><div class="ttdef"><b>Definition</b> <a href="#l00014">GameBuilder.java:14</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_builder_html_a0c6c1b220751be687495911f668b2956"><div class="ttname"><a href="classdomain_1_1game_1_1_game_builder.html#a0c6c1b220751be687495911f668b2956">domain.game.GameBuilder.withPlayer</a></div><div class="ttdeci">GameBuilder withPlayer(String name)</div><div class="ttdef"><b>Definition</b> <a href="#l00026">GameBuilder.java:26</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_builder_html_aefa110217a8656c9d805614ff4ed6f33"><div class="ttname"><a href="classdomain_1_1game_1_1_game_builder.html#aefa110217a8656c9d805614ff4ed6f33">domain.game.GameBuilder.build</a></div><div class="ttdeci">Game build()</div><div class="ttdef"><b>Definition</b> <a href="#l00036">GameBuilder.java:36</a></div></div>
+<div class="ttc" id="aclassdomain_1_1game_1_1_game_html"><div class="ttname"><a href="classdomain_1_1game_1_1_game.html">domain.game.Game</a></div><div class="ttdef"><b>Definition</b> <a href="_game_8java_source.html#l00018">Game.java:18</a></div></div>
 <div class="ttc" id="aclassdomain_1_1player_1_1_player_html"><div class="ttname"><a href="classdomain_1_1player_1_1_player.html">domain.player.Player</a></div><div class="ttdef"><b>Definition</b> <a href="_player_8java_source.html#l00013">Player.java:13</a></div></div>
 <div class="ttc" id="aclassdomain_1_1player_1_1_player_round_iterator_html"><div class="ttname"><a href="classdomain_1_1player_1_1_player_round_iterator.html">domain.player.PlayerRoundIterator</a></div><div class="ttdef"><b>Definition</b> <a href="_player_round_iterator_8java_source.html#l00014">PlayerRoundIterator.java:14</a></div></div>
 <div class="ttc" id="ainterfacedomain_1_1card_1_1_card_html"><div class="ttname"><a href="interfacedomain_1_1card_1_1_card.html">domain.card.Card</a></div><div class="ttdef"><b>Definition</b> <a href="_card_8java_source.html#l00008">Card.java:8</a></div></div>

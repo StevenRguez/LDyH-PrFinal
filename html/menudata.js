@@ -24,13 +24,12 @@
 */
 var menudata={children:[
 {text:"Página principal",url:"index.html"},
-{text:"Páginas relacionadas",url:"pages.html"},
 {text:"Paquetes",url:"namespaces.html",children:[
 {text:"Lista de paquetes",url:"namespaces.html"}]},
 {text:"Clases",url:"annotated.html",children:[
 {text:"Lista de clases",url:"annotated.html"},
 {text:"Índice de clases",url:"classes.html"},
-{text:"Jerarquía de clases",url:"inherits.html"},
+{text:"Jerarquía de clases",url:"hierarchy.html"},
 {text:"Miembros de clases",url:"functions.html",children:[
 {text:"Todos",url:"functions.html",children:[
 {text:"a",url:"functions.html#index_a"},
