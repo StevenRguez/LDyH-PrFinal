@@ -5,6 +5,8 @@ import ui.AppFrame;
 
 import javax.swing.*;
 
+// mvn exec:java -Dexec.mainClass="UnoApp"
+
 /**
  * Clase main del programa
  */
