@@ -1,3 +1,5 @@
-domain.player.Player#getName()Ljava/lang/String;
+domain.player.Player#<init>(Ljava/lang/String;Ldomain/player/HandCardList;)V
 false
-d94999ec6fb2fbee6cc6f000fa05f278
+b45c009056f023fd130ed823a48ba9fd
+==
+<init> domain.common.Entity#<init>()V

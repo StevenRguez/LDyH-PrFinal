@@ -1,6 +1,6 @@
 ui.view.PlayerView#initView()V
 false
-685203beb1c60f5a294023874e1e170b
+ce026303bc327aa90d341ee0bc111efd
 javax.swing.Box#createHorizontalBox()Ljavax/swing/Box;
 javax.swing.Box#createHorizontalStrut(I)Ljava/awt/Component;
 ui.view.PlayerView#initControlPanel()V

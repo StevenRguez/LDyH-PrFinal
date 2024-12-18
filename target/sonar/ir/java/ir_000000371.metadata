@@ -1,3 +1,5 @@
-domain.card.Card#instance-init#
+domain.card.CardUtil#isWildCard(Ldomain/card/Card;)Z
 false
-86097113646d44d268768b644092b9ec
+4a44d95339f1061ee5b2fdc472b36b2e
+==
+getType domain.card.Card#getType()Ldomain/card/CardType;

@@ -1,5 +1,5 @@
-domain.card.CardUtil#validateActionType(Ldomain/card/CardType;)V
+domain.card.CardUtil#validateNumber(I)V
 false
-47b24f3e823857be7e40a975bcc71103
+95186bb4213cb58b866be0f02b0faa57
 java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)V
 java.lang.IllegalArgumentException#instance-init#

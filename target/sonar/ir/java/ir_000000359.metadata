@@ -1,4 +1,3 @@
-domain.player.PlayerRoundIterator#stream()Ljava/util/stream/Stream;
+domain.player.PlayerRoundIterator#<init>([Ldomain/player/Player;)V
 false
-cb1f7b5019821f24e5baeb9a52914f4a
-java.util.Arrays#stream([Ljava/lang/Object;)Ljava/util/stream/Stream;
+350f7935bb13c0c207060a07d8559543

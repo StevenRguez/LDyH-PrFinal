@@ -1,5 +1,5 @@
-domain.player.Player#addToHandCards(Ldomain/card/Card;)V
+domain.player.Player#getHandCards()Ljava/util/stream/Stream;
 false
-9e54574b7e19d2370f475c8d31ed9c1d
+434cff324829e9fad0c963eeeb9e63b7
 ==
-addCard domain.player.HandCardList#addCard(Ldomain/card/Card;)V
+getCardStream domain.player.HandCardList#getCardStream()Ljava/util/stream/Stream;

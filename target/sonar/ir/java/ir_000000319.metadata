@@ -1,6 +1,6 @@
 ui.view.TableView#<init>(Lapplication/IGameAppService;)V
 false
-4e9fec093928224efeaf855a53145154
+e2d7f7fbbd0a933af946393134f554de
 domain.common.DomainEventPublisher#subscribe(Ldomain/common/DomainEventSubscriber;)V
 java.awt.Color#<init>(III)V
 java.awt.Color#instance-init#

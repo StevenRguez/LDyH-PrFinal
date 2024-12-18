@@ -20,6 +20,7 @@ domain/TestHandCardList.class
 domain/game/TestDrawPile.class
 domain/card/CardCounter.class
 domain/game/TestGameBuilder.class
+application/TestGameUI.class
 domain/game/TestDealerService.class
 domain/game/TestGameStart.class
 domain/common/TestDomainEventPublisher$TestSubscriber.class

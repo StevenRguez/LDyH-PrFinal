@@ -1,3 +1,5 @@
-domain.common.DomainEventPublisher#instance-init#
+domain.player.HandCardList#size()I
 false
-c974a6b9974989146750c428fd3cfc22
+3e55c74ea552eeda32de018bacfbdaec
+==
+size java.util.List#size()I

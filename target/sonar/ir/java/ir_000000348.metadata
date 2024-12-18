@@ -1,3 +1,3 @@
-domain.game.events.GameOver#<init>(Ldomain/player/ImmutablePlayer;)V
+domain.game.events.GameOver#instance-init#
 false
-a96221f2a4d84a2c432c3f647909c720
+f0e09276dbece5d811b00e6e4ff52437

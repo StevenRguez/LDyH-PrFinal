@@ -1,3 +1,3 @@
-application.dto.PlayerInfoDTO#getName()Ljava/lang/String;
+application.dto.PlayerInfoDTO#getId()Ljava/util/UUID;
 false
-971466c5eb45b75e3f79a86313327da8
+490dda4055414c44a395efd4de01c12b

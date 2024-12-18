@@ -1,6 +1,4 @@
-domain.card.CardDeck#createCards()V
+domain.card.CardDeck#getImmutableCards()Ljava/util/List;
 false
-4dace9d504938cbb07ac50482159aaba
-domain.card.CardDeck#createActionCards()V
-domain.card.CardDeck#createNumberCards()V
-domain.card.CardDeck#createWildCards()V
+c6e188890c24f3600e45781edc94f1fb
+java.util.Collections#unmodifiableList(Ljava/util/List;)Ljava/util/List;

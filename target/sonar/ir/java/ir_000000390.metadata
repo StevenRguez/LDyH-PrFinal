@@ -1,7 +1,7 @@
-domain.common.DomainEventPublisher#unsubscribe(Ldomain/common/DomainEventSubscriber;)V
+domain.common.DomainEventPublisher#subscribe(Ldomain/common/DomainEventSubscriber;)V
 false
-8285eec9432963af9b8286e7681b7b70
+1b72cc93d7b53929562208491e9d9ba5
 java.lang.Boolean#equals(Ljava/lang/Object;)Z
 ==
+add java.util.List#add(Ljava/lang/Object;)Z
 get java.lang.ThreadLocal#get()Ljava/lang/Object;
-remove java.util.List#remove(Ljava/lang/Object;)Z

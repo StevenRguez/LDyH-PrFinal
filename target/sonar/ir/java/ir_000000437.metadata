@@ -1,3 +1,4 @@
-domain.common.DomainEvent#getOccurredDate()Ljava/time/LocalDate;
+domain.common.DomainEvent#<init>()V
 false
-052a51e4569f258941a4ec8d58178ead
+54c66f92d29521c670be4e4d95ec9152
+java.time.LocalDate#now()Ljava/time/LocalDate;

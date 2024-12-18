@@ -1,26 +1,25 @@
 
-Jdomain.player.PlayerRoundIterator#getCurrentPlayer()Ldomain/player/Player;•
-ö/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin tiÃÅtulo/LDyH-PrFinal/src/main/java/domain/player/PlayerRoundIterator.java0 0(""1*“
-11 1(Ä
+Cdomain.player.PlayerRoundIterator#stream()Ljava/util/stream/Stream;•
+ö/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin tiÃÅtulo/LDyH-PrFinal/src/main/java/domain/player/PlayerRoundIterator.java( (( "1*°
+1) )(Ä
 ~
-1 1(
+) )($
 %0domain.player.Player[]"__id*N
 
 __unknown_file (2*0#
 !domain.player.PlayerRoundIterator"	
-playersï
-í
-1 1(
-%1domain.player.Player"
-__arrayGet*:
+players·
+ﬁ
+) )(%
+%1java.util.stream.Stream"Ejava.util.Arrays#stream([Ljava/lang/Object;)Ljava/util/stream/Stream;*0
+
+__unknown_file ("
+java.util.Arrays*:
 
 __unknown_file (
 
-%0domain.player.Player[]*"
-
-__unknown_file (
-"""(
-1 1( 
-
-%1domain.player.PlayerB%#
+%0domain.player.Player[]"+
+) )(&
+
+%1java.util.stream.StreamB%#
 !domain.player.PlayerRoundIteratorH

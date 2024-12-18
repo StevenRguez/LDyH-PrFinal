@@ -1,5 +1,21 @@
-domain.card.CardDeck#instance-init#
+ui.AppFrame#setupLayout()V
 false
-5fe6283864683d5217ccb7d8274e173d
-java.util.ArrayList#<init>(I)V
-java.util.ArrayList#instance-init#
+4f7adff9c37a969c1e17ff7dd1922dc4
+java.awt.BorderLayout#<init>()V
+java.awt.BorderLayout#instance-init#
+java.awt.Color#<init>(III)V
+java.awt.Color#instance-init#
+java.awt.Dimension#<init>(II)V
+java.awt.Dimension#instance-init#
+ui.view.PlayerView#<init>(Lapplication/dto/PlayerInfoDTO;Lapplication/IGameAppService;)V
+ui.view.PlayerView#instance-init#
+ui.view.TableView#<init>(Lapplication/IGameAppService;)V
+ui.view.TableView#instance-init#
+==
+add java.awt.Container#add(Ljava/awt/Component;)Ljava/awt/Component;
+add java.awt.Container#add(Ljava/awt/Component;Ljava/lang/Object;)V
+get java.util.List#get(I)Ljava/lang/Object;
+getPlayerInfos application.IGameAppService#getPlayerInfos()Ljava/util/List;
+setBackground javax.swing.JComponent#setBackground(Ljava/awt/Color;)V
+setLayout java.awt.Container#setLayout(Ljava/awt/LayoutManager;)V
+setPreferredSize javax.swing.JComponent#setPreferredSize(Ljava/awt/Dimension;)V

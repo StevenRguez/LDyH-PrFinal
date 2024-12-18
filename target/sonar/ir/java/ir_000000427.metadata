@@ -1,4 +1,5 @@
-domain.card.CardDeck#<init>()V
+domain.card.CardDeck#instance-init#
 false
-6203566ccd1a6f79c9e5f09ef7f73953
-domain.card.CardDeck#createCards()V
+5fe6283864683d5217ccb7d8274e173d
+java.util.ArrayList#<init>(I)V
+java.util.ArrayList#instance-init#

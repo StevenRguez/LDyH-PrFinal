@@ -1,15 +1,15 @@
 
-9application.dto.PlayerInfoDTO#getName()Ljava/lang/String;°
-ñ/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin tiÃÅtulo/LDyH-PrFinal/src/main/java/application/dto/PlayerInfoDTO.java3 3("1*®
-14 4(s
-q
-4 4(
-%0java.lang.String"__id*G
+5application.dto.PlayerInfoDTO#getId()Ljava/util/UUID;°
+ñ/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin tiÃÅtulo/LDyH-PrFinal/src/main/java/application/dto/PlayerInfoDTO.java* *("1*¢
+1+ +(o
+m
++ +(
+%0java.util.UUID"__id*E
 
-__unknown_file (+*)
-application.dto.PlayerInfoDTO"
-name"$
-4 4(
-
-%0java.lang.StringB!
+__unknown_file ()*'
+application.dto.PlayerInfoDTO"
+id""
++ +(
+
+%0java.util.UUIDB!
 application.dto.PlayerInfoDTOH

@@ -1,6 +1,6 @@
 ui.view.PlayerView#renderHandCardsView()V
 false
-957a62f8cbe2b455c432ee1df14c7cc5
+a33893a760688499856c367b6973a7a1
 java.util.stream.Collectors#toList()Ljava/util/stream/Collector;
 ui.view.CardView#<init>(Ldomain/card/Card;Ljava/util/function/Consumer;)V
 ui.view.CardView#instance-init#

@@ -1,3 +1,6 @@
-application.dto.PlayerInfoDTO#instance-init#
+UnoApp#main([Ljava/lang/String;)V
 false
-1d46871cee758b1d7a18f50d03fb5948
+de46e4c06de011960d8ef0e64eb1581a
+application.GameAppService#<init>()V
+application.GameAppService#instance-init#
+javax.swing.SwingUtilities#invokeLater(Ljava/lang/Runnable;)V

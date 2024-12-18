@@ -55,8 +55,8 @@ public class Game extends Entity {
 <span class="nc" id="L55">        return startTime;</span>
     }
     public String getGameDuration() {
-<span class="nc bnc" id="L58" title="All 2 branches missed.">        if (endTime == null) {</span>
-<span class="nc" id="L59">            return &quot;La partida no ha terminado.&quot;;</span>
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if (endTime == null) {</span>
+<span class="fc" id="L59">            return &quot;La partida no ha terminado.&quot;;</span>
         }
 <span class="nc" id="L61">        Duration duration = Duration.between(startTime, endTime);</span>
 <span class="nc" id="L62">        long minutes = duration.toMinutes();</span>
@@ -114,10 +114,10 @@ public class Game extends Entity {
 <span class="nc" id="L114">                players.next();</span>
 <span class="nc" id="L115">            }</span>
             case REVERSE -&gt; {
-<span class="fc" id="L117">                checkActionCardRule(playedCard);</span>
-<span class="fc" id="L118">                acceptPlayedCard(playedCard, hasSaidUno);</span>
-<span class="fc" id="L119">                reverse();</span>
-<span class="fc" id="L120">            }</span>
+<span class="nc" id="L117">                checkActionCardRule(playedCard);</span>
+<span class="nc" id="L118">                acceptPlayedCard(playedCard, hasSaidUno);</span>
+<span class="nc" id="L119">                reverse();</span>
+<span class="nc" id="L120">            }</span>
             case DRAW_TWO -&gt; {
 <span class="nc" id="L122">                checkActionCardRule(playedCard);</span>
 <span class="nc" id="L123">                acceptPlayedCard(playedCard, hasSaidUno);</span>
@@ -126,10 +126,10 @@ public class Game extends Entity {
 <span class="nc" id="L126">                players.next();</span>
 <span class="nc" id="L127">            }</span>
             case WILD_COLOR -&gt; {
-<span class="nc" id="L129">                checkWildCardRule(playedCard);</span>
-<span class="nc" id="L130">                acceptPlayedCard(playedCard, hasSaidUno);</span>
-<span class="nc" id="L131">                players.next();</span>
-<span class="nc" id="L132">            }</span>
+<span class="fc" id="L129">                checkWildCardRule(playedCard);</span>
+<span class="fc" id="L130">                acceptPlayedCard(playedCard, hasSaidUno);</span>
+<span class="fc" id="L131">                players.next();</span>
+<span class="fc" id="L132">            }</span>
             case WILD_DRAW_FOUR -&gt; {
 <span class="nc" id="L134">                checkWildCardRule(playedCard);</span>
 <span class="nc" id="L135">                acceptPlayedCard(playedCard, hasSaidUno);</span>
@@ -165,8 +165,8 @@ public class Game extends Entity {
     }
     private void tryToPlayDrawnCard(UUID playerId, Card drawnCard) {
         try {
-<span class="pc bpc" id="L168" title="1 of 2 branches missed.">            var cardToPlay = CardUtil.isWildCard(drawnCard)</span>
-<span class="nc" id="L169">                    ? new WildCard(drawnCard.getType(), peekTopCard().getColor())</span>
+<span class="fc bfc" id="L168" title="All 2 branches covered.">            var cardToPlay = CardUtil.isWildCard(drawnCard)</span>
+<span class="fc" id="L169">                    ? new WildCard(drawnCard.getType(), peekTopCard().getColor())</span>
 <span class="fc" id="L170">                    : drawnCard;</span>
 <span class="fc" id="L171">            playCard(playerId, cardToPlay);</span>
 <span class="fc" id="L172">        } catch (Exception ex) {</span>
@@ -192,17 +192,17 @@ public class Game extends Entity {
 <span class="nc" id="L192">        rejectPlayedCard(playedCard);</span>
 <span class="nc" id="L193">    }</span>
     private void checkActionCardRule(Card playedCard) {
-<span class="fc" id="L195">        var topCard = peekTopCard();</span>
-<span class="pc bpc" id="L196" title="2 of 4 branches missed.">        if (isFirstDiscardAWildCard() || CardRules.isValidActionCard(topCard, (ActionCard) playedCard)) {</span>
-<span class="fc" id="L197">            return;</span>
+<span class="nc" id="L195">        var topCard = peekTopCard();</span>
+<span class="nc bnc" id="L196" title="All 4 branches missed.">        if (isFirstDiscardAWildCard() || CardRules.isValidActionCard(topCard, (ActionCard) playedCard)) {</span>
+<span class="nc" id="L197">            return;</span>
         }
 <span class="nc" id="L199">        rejectPlayedCard(playedCard);</span>
 <span class="nc" id="L200">    }</span>
     private void checkWildCardRule(Card playedCard) {
-<span class="nc bnc" id="L202" title="All 2 branches missed.">        if (!CardRules.isValidWildCard((WildCard) playedCard)) {</span>
+<span class="pc bpc" id="L202" title="1 of 2 branches missed.">        if (!CardRules.isValidWildCard((WildCard) playedCard)) {</span>
 <span class="nc" id="L203">            rejectPlayedCard(playedCard);</span>
         }
-<span class="nc" id="L205">    }</span>
+<span class="fc" id="L205">    }</span>
     private boolean isFirstDiscardAWildCard() {
 <span class="pc bpc" id="L207" title="2 of 4 branches missed.">        return discardPile.size() == 1 &amp;&amp; peekTopCard().getType() == CardType.WILD_COLOR;</span>
     }

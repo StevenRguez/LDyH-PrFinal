@@ -1,5 +1,6 @@
-domain.player.HandCardList#instance-init#
+domain.player.ImmutablePlayer#getTotalCards()I
 false
-206dd0d19f28d81b87f31eea7a612c28
-java.util.ArrayList#<init>()V
-java.util.ArrayList#instance-init#
+312c5c692932aa035fa906a1eb9018f2
+==
+count java.util.stream.Stream#count()J
+getHandCards domain.player.ImmutablePlayer#getHandCards()Ljava/util/stream/Stream;

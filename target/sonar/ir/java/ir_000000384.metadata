@@ -1,5 +1,5 @@
-domain.player.HandCardList#getCardStream()Ljava/util/stream/Stream;
+domain.player.HandCardList#findCardOfType(Ldomain/card/CardType;)Ldomain/card/Card;
 false
-bbf445a6c1fe0fb6b557bf8abfe2c9d0
+88e95b827f73eb5638a26721d9cf696f
 ==
-stream java.util.Collection#stream()Ljava/util/stream/Stream;
+getType domain.card.Card#getType()Ldomain/card/CardType;

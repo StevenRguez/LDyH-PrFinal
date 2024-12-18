@@ -1,3 +1,11 @@
-ui.view.GameStatusView#setError(Ljava/lang/String;)V
+ui.view.GameStatusView#updateStatus()V
 false
-631d58688eff877ee795791629572415
+bd4351b48279794d3229bcc1f230905c
+java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+==
+getCurrentPlayer application.IGameAppService#getCurrentPlayer()Lapplication/dto/PlayerInfoDTO;
+getName application.dto.PlayerInfoDTO#getName()Ljava/lang/String;
+getName domain.player.ImmutablePlayer#getName()Ljava/lang/String;
+getWinner application.IGameAppService#getWinner()Ldomain/player/ImmutablePlayer;
+isGameOver application.IGameAppService#isGameOver()Z
+repaint java.awt.Component#repaint()V

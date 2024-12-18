@@ -1,4 +1,3 @@
-ui.view.GameStatusView#handleEvent(Ldomain/common/DomainEvent;)V
+ui.view.GameStatusView#setError(Ljava/lang/String;)V
 false
-d915be7a2ba7d14aaee3d282f9215239
-ui.view.GameStatusView#updateStatus()V
+631d58688eff877ee795791629572415

@@ -1,20 +1,111 @@
 
-"domain.player.HandCardList#size()Iû
-ì/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin tiÃÅtulo/LDyH-PrFinal/src/main/java/domain/player/HandCardList.javaM M("1*É
-1N N(s
-q
-N N(
-%0java.util.List"__id*I
+7domain.player.HandCardList#hasCard(Ldomain/card/Card;)Zû
+ì/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin tiÃÅtulo/LDyH-PrFinal/src/main/java/domain/player/HandCardList.javaC C("4*Ô
+2F F(æª
+F F(
+%9java.util.stream.Stream"Cdomain.player.HandCardList#getCardStream()Ljava/util/stream/Stream;*:
 
-__unknown_file (-*+
-domain.player.HandCardList"
-	handCardski
-N N(	
-%1int"java.util.List#size()I*2
+__unknown_file (
+domain.player.HandCardList2getCardStream()í
+è
+F' F(:#
+%10java.util.function.Predicate"__declareFunction*K
 
-__unknown_file (
-
-%0java.util.List2size()"
-N N( 
-""B
+__unknown_file (/-
++__sonar_lambda_9$domain.player.HandCardListä
+á
+
+__unknown_file (-
+#
+%10java.util.function.Predicate"
+card"__id*6
+
+__unknown_file (
+
+carddomain.card.Cardõ
+ò
+
+__unknown_file (:
+#
+%10java.util.function.Predicate"
+HandCardList.this"__id*:
+
+__unknown_file (
+domain.player.HandCardListâÜ
+F F(;
+%3boolean"Ajava.util.stream.Stream#anyMatch(Ljava/util/function/Predicate;)Z*;
+
+__unknown_file (
+
+%9java.util.stream.Stream*A
+
+__unknown_file (%
+#
+%10java.util.function.Predicate2(anyMatch(Ljava/util/function/Predicate;)N
+L
+F F(;
+%1boolean"__id*+
+
+__unknown_file (
+
+%3boolean*
+1*Œ
+3E E(æª
+E E(
+%4java.util.stream.Stream"Cdomain.player.HandCardList#getCardStream()Ljava/util/stream/Stream;*:
+
+__unknown_file (
+domain.player.HandCardList2getCardStream()ë
+é
+E' E(I"
+%5java.util.function.Predicate"__declareFunction*K
+
+__unknown_file (/-
++__sonar_lambda_8$domain.player.HandCardListâ
+Ü
+
+__unknown_file (,
+"
+%5java.util.function.Predicate"
+card"__id*6
+
+__unknown_file (
+
+carddomain.card.CardàÖ
+E E(J
+%2boolean"Ajava.util.stream.Stream#anyMatch(Ljava/util/function/Predicate;)Z*;
+
+__unknown_file (
+
+%4java.util.stream.Stream*@
+
+__unknown_file ($
+"
+%5java.util.function.Predicate2(anyMatch(Ljava/util/function/Predicate;)N
+L
+E E(J
+%1boolean"__id*+
+
+__unknown_file (
+
+%2boolean*
+1*ÿ
+4D D(¿
+Ω
+D D((
+%0boolean"4domain.card.CardUtil#isWildCard(Ldomain/card/Card;)Z*4
+
+__unknown_file ("
+domain.card.CardUtil*6
+
+__unknown_file (
+
+carddomain.card.Card*
+2
+3*!
+1D F(<"
+D F(<
+"":$
+C C($
+carddomain.card.CardB
 domain.player.HandCardListHX

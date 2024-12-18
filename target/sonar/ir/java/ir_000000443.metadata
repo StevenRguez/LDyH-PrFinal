@@ -1,3 +1,3 @@
-domain.game.events.CardPlayed#getPlayedCard()Ldomain/card/Card;
+domain.game.events.CardPlayed#getPlayerId()Ljava/util/UUID;
 false
-db3faa88f5952a3c772df7059c914a3c
+36d55c962006418eec1719ad5c3e3377

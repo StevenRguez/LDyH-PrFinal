@@ -1,5 +1,3 @@
-domain.card.WildCard#<init>(Ldomain/card/CardType;)V
+domain.card.WildCard#instance-init#
 false
-e49b3aa52dcc32f27c32cbe63ee5284e
-==
-<init> domain.card.AbstractCard#<init>(Ldomain/card/CardType;Ldomain/card/CardColor;)V
+a54354f66acacd17670e9811448af1e9

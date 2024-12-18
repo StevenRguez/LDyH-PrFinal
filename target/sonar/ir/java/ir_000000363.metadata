@@ -1,6 +1,3 @@
-domain.player.PlayerRoundIterator#next()Ldomain/player/Player;
+domain.player.PlayerRoundIterator#reverseDirection()V
 false
-12e01fc2f7f2c6eb6fd07fbc65971b72
-domain.player.PlayerRoundIterator#getNextIndex()I
-==
-getCurrentPlayer domain.player.PlayerRoundIterator#getCurrentPlayer()Ldomain/player/Player;
+5b73aec8ed3da086d6599f41fad04f4c

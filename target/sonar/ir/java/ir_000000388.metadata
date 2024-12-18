@@ -1,3 +1,3 @@
-domain.common.DomainEventPublisher#<init>()V
+domain.common.DomainEventPublisher#instance-init#
 false
-0447f20f37ce0c8ab503341fd9b2fab9
+c974a6b9974989146750c428fd3cfc22

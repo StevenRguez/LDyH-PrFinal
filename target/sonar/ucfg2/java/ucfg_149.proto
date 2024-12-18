@@ -1,111 +1,38 @@
 
-7domain.player.HandCardList#hasCard(Ldomain/card/Card;)Zû
-ì/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin tiÃÅtulo/LDyH-PrFinal/src/main/java/domain/player/HandCardList.javaC C("4*Ô
-2F F(æª
-F F(
-%9java.util.stream.Stream"Cdomain.player.HandCardList#getCardStream()Ljava/util/stream/Stream;*:
++__sonar_lambda_9$domain.player.HandCardListû
+ì/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin tiÃÅtulo/LDyH-PrFinal/src/main/java/domain/player/HandCardList.javaF' F(:"startingBlock*Œ
+startingBlockF' F(:É
+Ä
 
-__unknown_file (
-domain.player.HandCardList2getCardStream()í
-è
-F' F(:#
-%10java.util.function.Predicate"__declareFunction*K
+__unknown_file (
+carddomain.card.Card"__id*D
 
-__unknown_file (/-
-+__sonar_lambda_9$domain.player.HandCardListä
-á
+__unknown_file ((*&
+domain.player.HandCardList"
+cardß
+§
 
-__unknown_file (-
-#
-%10java.util.function.Predicate"
-card"__id*6
+__unknown_file (/
+HandCardList.thisdomain.player.HandCardList"__id*Q
 
-__unknown_file (
+__unknown_file (5*3
+domain.player.HandCardList"
+HandCardList.this*
+1*Ç
+1F, F(-‘—
+F, F(:
+%11boolean",java.lang.Object#equals(Ljava/lang/Object;)Z*3
 
-carddomain.card.Cardõ
-ò
-
-__unknown_file (:
-#
-%10java.util.function.Predicate"
-HandCardList.this"__id*:
-
-__unknown_file (
-domain.player.HandCardListâÜ
-F F(;
-%3boolean"Ajava.util.stream.Stream#anyMatch(Ljava/util/function/Predicate;)Z*;
-
-__unknown_file (
-
-%9java.util.stream.Stream*A
-
-__unknown_file (%
-#
-%10java.util.function.Predicate2(anyMatch(Ljava/util/function/Predicate;)N
-L
-F F(;
-%1boolean"__id*+
-
-__unknown_file (
-
-%3boolean*
-1*Œ
-3E E(æª
-E E(
-%4java.util.stream.Stream"Cdomain.player.HandCardList#getCardStream()Ljava/util/stream/Stream;*:
-
-__unknown_file (
-domain.player.HandCardList2getCardStream()ë
-é
-E' E(I"
-%5java.util.function.Predicate"__declareFunction*K
-
-__unknown_file (/-
-+__sonar_lambda_8$domain.player.HandCardListâ
-Ü
-
-__unknown_file (,
-"
-%5java.util.function.Predicate"
-card"__id*6
+__unknown_file (
+
+cdomain.card.Card*6
 
 __unknown_file (
 
-carddomain.card.CardàÖ
-E E(J
-%2boolean"Ajava.util.stream.Stream#anyMatch(Ljava/util/function/Predicate;)Z*;
-
-__unknown_file (
-
-%4java.util.stream.Stream*@
-
-__unknown_file ($
-"
-%5java.util.function.Predicate2(anyMatch(Ljava/util/function/Predicate;)N
-L
-E E(J
-%1boolean"__id*+
-
-__unknown_file (
-
-%2boolean*
-1*ÿ
-4D D(¿
-Ω
-D D((
-%0boolean"4domain.card.CardUtil#isWildCard(Ldomain/card/Card;)Z*4
-
-__unknown_file ("
-domain.card.CardUtil*6
-
-__unknown_file (
-
-carddomain.card.Card*
-2
-3*!
-1D F(<"
-D F(<
-"":$
-C C($
-carddomain.card.CardB
-domain.player.HandCardListHX
+carddomain.card.Card2equals(Ljava/lang/Object;)"
+F, F(:
+
+%11boolean:!
+F' F((
+cdomain.card.CardB 
+java.util.function.Predicate

@@ -1,3 +1,5 @@
-domain.player.HandCardList#<init>()V
+domain.player.HandCardList#instance-init#
 false
-5ad4152ec0ee3e4e1bed937feb0eb61e
+206dd0d19f28d81b87f31eea7a612c28
+java.util.ArrayList#<init>()V
+java.util.ArrayList#instance-init#

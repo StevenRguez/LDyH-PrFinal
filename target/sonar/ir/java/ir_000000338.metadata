@@ -1,3 +1,5 @@
-domain.game.DealerService#instance-init#
+domain.game.GameUI#getgameDurationLabel()Ljava/lang/String;
 false
-46722b0869c02118802f13556c7e619e
+de1b3127b08877022c0a79f533f40476
+==
+getText javax.swing.JLabel#getText()Ljava/lang/String;

@@ -1,6 +1,6 @@
 domain.game.Game#isFirstDiscardAWildCard()Z
 false
-7b4bfe5b0fc3f7323f7a02611464ff1a
+5286d8b526097a5f891ad6520d4eff40
 ==
 getType domain.card.Card#getType()Ldomain/card/CardType;
 peekTopCard domain.game.Game#peekTopCard()Ldomain/card/Card;

@@ -1448,9 +1448,10 @@ Euntil(Ljava/time/temporal/Temporal;Ljava/time/temporal/TemporalUnit;)Xjava.tim
 +with(Ljava/time/temporal/TemporalAdjuster;)Pjava.time.Instant#with(Ljava/time/temporal/TemporalAdjuster;)Ljava/time/Instant;{
 )with(Ljava/time/temporal/TemporalField;J)Njava.time.Instant#with(Ljava/time/temporal/TemporalField;J)Ljava/time/Instant;]
 #writeExternal(Ljava/io/DataOutput;)6java.time.Instant#writeExternal(Ljava/io/DataOutput;)VD
-writeReplace()2java.time.Instant#writeReplace()Ljava/lang/Object;ö
+writeReplace()2java.time.Instant#writeReplace()Ljava/lang/Object;Í
 domain.game.GameUIjava.lang.ObjectL
-<init>(Ldomain/game/Game;).domain.game.GameUI#<init>(Ldomain/game/Game;)V@
+<init>(Ldomain/game/Game;).domain.game.GameUI#<init>(Ldomain/game/Game;)VU
+getgameDurationLabel();domain.game.GameUI#getgameDurationLabel()Ljava/lang/String;@
 updateGameDuration()(domain.game.GameUI#updateGameDuration()V>
 updatePlayerMoves()'domain.game.GameUI#updatePlayerMoves()V§
 !domain.player.PlayerRoundIteratorjava.lang.Objecte

@@ -1,52 +1,32 @@
 
-1domain.card.WildCard#toString()Ljava/lang/String;ò
-ç/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin tiÃÅtulo/LDyH-PrFinal/src/main/java/domain/card/WildCard.java7 7("1*Œ
-18 8(§°
-9 9(
+ domain.card.WildCard#hashCode()Iò
+ç/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin tiÃÅtulo/LDyH-PrFinal/src/main/java/domain/card/WildCard.java. .("1*‰
+1/ /(§°
+/ /(%
 %0domain.card.CardType"8domain.card.AbstractCard#getType()Ldomain/card/CardType;*4
 
 __unknown_file (
-domain.card.WildCard2	getType()s
-q
-8 9(
-%1java.lang.String"__concat*
-8 8(
-	WildCard{*(
-9 9(
-
-%0domain.card.CardTypeh
-f
-8 9(
-%2java.lang.String"__concat*$
-8 9(
-
-%1java.lang.String*
-9 9(
-, ®•
-9 9()
-%3domain.card.CardColor":domain.card.AbstractCard#getColor()Ldomain/card/CardColor;*4
+domain.card.WildCard2	getType()®•
+/' /(1
+%1domain.card.CardColor":domain.card.AbstractCard#getColor()Ldomain/card/CardColor;*4
 
 __unknown_file (
 domain.card.WildCard2
-getColor()
-}
-8 9()
-%4java.lang.String"__concat*$
-8 9(
-
-%2java.lang.String*)
-9 9()
+getColor()Ó
+Î
+/ /(2	
+%2int",java.util.Objects#hash([Ljava/lang/Object;)I*1
+
+__unknown_file ("
+java.util.Objects*8
+
+__unknown_file (
+
+%0domain.card.CardType*9
+
+__unknown_file (
 
-%3domain.card.CardColorg
-e
-8 :(
-%5java.lang.String"__concat*$
-8 9()
-
-%4java.lang.String*
-: :(
-}"$
-8 :(
-
-%5java.lang.StringB
-domain.card.WildCardH
+%1domain.card.CardColor"
+/ /(3
+""B
+domain.card.WildCardHX

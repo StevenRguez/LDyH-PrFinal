@@ -69,7 +69,7 @@
 <td>38</td>
 <td>0</td>
 <td>0</td>
-<td>572</td></tr></table></section><section><a name="Files"></a>
+<td>574</td></tr></table></section><section><a name="Files"></a>
 <h3><a name="Files"></a>Files</h3>
 <table border="0" class="bodyTable">
 <tr class="a">
@@ -191,7 +191,7 @@
 <td><a href="#domain.2Fgame.2FGameUI.java">domain/game/GameUI.java</a></td>
 <td>0</td>
 <td>0</td>
-<td>19</td></tr>
+<td>21</td></tr>
 <tr class="a">
 <td><a href="#domain.2Fgame.2Fevents.2FCardDrawn.java">domain/game/events/CardDrawn.java</a></td>
 <td>0</td>
@@ -292,7 +292,7 @@
 <tr class="a">
 <td>design</td>
 <td><a class="externalLink" href="https://checkstyle.org/checks/design/designforextension.html">DesignForExtension</a></td>
-<td>15</td>
+<td>16</td>
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td></tr>
 <tr class="b">
 <td></td>
@@ -332,7 +332,7 @@
 <tr class="a">
 <td></td>
 <td><a class="externalLink" href="https://checkstyle.org/checks/javadoc/missingjavadocmethod.html">MissingJavadocMethod</a></td>
-<td>17</td>
+<td>18</td>
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td></tr>
 <tr class="b">
 <td>misc</td>
@@ -2539,7 +2539,19 @@
 <td>sizes</td>
 <td>LineLength</td>
 <td>Line is longer than 80 characters (found 81).</td>
-<td>58</td></tr></table></section><section><a name="domaingameeventsCardDrawn.java"></a>
+<td>58</td></tr>
+<tr class="a">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>design</td>
+<td>DesignForExtension</td>
+<td>Class 'GameUI' looks like designed for extension (can be subclassed), but the method 'getgameDurationLabel' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'GameUI' final or making the method 'getgameDurationLabel' static/final/abstract/empty, or adding allowed annotation for the method.</td>
+<td>61</td></tr>
+<tr class="b">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>javadoc</td>
+<td>MissingJavadocMethod</td>
+<td>Missing a Javadoc comment.</td>
+<td>61</td></tr></table></section><section><a name="domaingameeventsCardDrawn.java"></a>
 <h4><a name="domain.2Fgame.2Fevents.2FCardDrawn.java"></a>domain/game/events/CardDrawn.java</h4>
 <table border="0" class="bodyTable">
 <tr class="a">

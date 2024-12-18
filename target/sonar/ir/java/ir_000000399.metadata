@@ -1,11 +1,13 @@
-ui.view.GameStatusView#updateStatus()V
+ui.view.GameStatusView#printMessage(Ljava/awt/Graphics;)V
 false
-1bae91c4ab8d348860dc84b185efd2c4
-java.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+b5df5cce9e06b859907a8c04852d76a8
+java.awt.Color#<init>(III)V
+java.awt.Color#instance-init#
+java.awt.Font#<init>(Ljava/lang/String;II)V
+java.awt.Font#instance-init#
 ==
-getCurrentPlayer application.IGameAppService#getCurrentPlayer()Lapplication/dto/PlayerInfoDTO;
-getName application.dto.PlayerInfoDTO#getName()Ljava/lang/String;
-getName domain.player.ImmutablePlayer#getName()Ljava/lang/String;
-getWinner application.IGameAppService#getWinner()Ldomain/player/ImmutablePlayer;
-isGameOver application.IGameAppService#isGameOver()Z
-repaint java.awt.Component#repaint()V
+drawString java.awt.Graphics#drawString(Ljava/lang/String;II)V
+getFontMetrics javax.swing.JComponent#getFontMetrics(Ljava/awt/Font;)Ljava/awt/FontMetrics;
+setColor java.awt.Graphics#setColor(Ljava/awt/Color;)V
+setFont java.awt.Graphics#setFont(Ljava/awt/Font;)V
+stringWidth java.awt.FontMetrics#stringWidth(Ljava/lang/String;)I

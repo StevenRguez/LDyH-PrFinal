@@ -1,5 +1,5 @@
-domain.game.DrawPile#<init>(Ljava/util/List;)V
+domain.game.DrawPile#instance-init#
 false
-370b29e283fb964b4eb78d06938e0409
-==
-addAll java.util.Vector#addAll(Ljava/util/Collection;)Z
+618b7f13bab6f88727e4c13260de6e07
+java.util.Stack#<init>()V
+java.util.Stack#instance-init#

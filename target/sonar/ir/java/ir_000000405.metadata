@@ -1,5 +1,5 @@
-domain.game.DrawPile#getSize()I
+domain.game.DrawPile#drawCard()Ldomain/card/Card;
 false
-98314e2be345fef38a40d0965cae5a3d
+dc0cf9f86343e06763a81e20ac936bb9
 ==
-size java.util.Vector#size()I
+pop java.util.Stack#pop()Ljava/lang/Object;

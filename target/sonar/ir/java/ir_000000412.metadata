@@ -1,3 +1,6 @@
-domain.player.Player#instance-init#
+domain.card.WildCard#toString()Ljava/lang/String;
 false
-35442aa732d7d2a601c771ae0fab45a5
+78d95e40e9a7f9acfab70feffd9f54dd
+==
+getColor domain.card.AbstractCard#getColor()Ldomain/card/CardColor;
+getType domain.card.AbstractCard#getType()Ldomain/card/CardType;

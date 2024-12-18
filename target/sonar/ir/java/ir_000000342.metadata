@@ -1,6 +1,12 @@
-domain.game.DealerService#swapCard(Ljava/util/List;II)V
+domain.game.DealerService#shuffle(Ldomain/game/DrawPile;Ldomain/card/Card;)Ldomain/game/DrawPile;
 false
-d118fd0d71a2dda86126ed078d89c4b5
+bf97accb7ec4363b3579dd18bb598fa8
+domain.game.DealerService#shuffle(Ljava/util/List;)Ljava/util/List;
+domain.game.DrawPile#<init>(Ljava/util/List;)V
+domain.game.DrawPile#instance-init#
+java.util.ArrayList#<init>()V
+java.util.ArrayList#instance-init#
 ==
-get java.util.List#get(I)Ljava/lang/Object;
-set java.util.List#set(ILjava/lang/Object;)Ljava/lang/Object;
+add java.util.ArrayList#add(Ljava/lang/Object;)Z
+drawCard domain.game.DrawPile#drawCard()Ldomain/card/Card;
+getSize domain.game.DrawPile#getSize()I

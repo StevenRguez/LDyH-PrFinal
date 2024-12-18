@@ -53,13 +53,13 @@ public class GameUI {
 
     // Método para actualizar el tiempo de la partida
     public void updateGameDuration() {
-<span class="nc" id="L56">        SwingUtilities.invokeLater(() -&gt; {</span>
-<span class="nc" id="L57">            String durationText = game.getGameDuration();</span>
-<span class="nc" id="L58">            gameDurationLabel.setText(&quot;Duración de la partida: &quot; + durationText);</span>
-<span class="nc" id="L59">        });</span>
-<span class="nc" id="L60">    }</span>
-
-
-
+<span class="fc" id="L56">        SwingUtilities.invokeLater(() -&gt; {</span>
+<span class="fc" id="L57">            String durationText = game.getGameDuration();</span>
+<span class="fc" id="L58">            gameDurationLabel.setText(&quot;Duración de la partida: &quot; + durationText);</span>
+<span class="fc" id="L59">        });</span>
+<span class="fc" id="L60">    }</span>
+    public String getgameDurationLabel() {
+<span class="fc" id="L62">        return gameDurationLabel.getText();</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

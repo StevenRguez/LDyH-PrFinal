@@ -1,8 +1,10 @@
-ui.view.GameStatusView#paintComponent(Ljava/awt/Graphics;)V
+ui.view.GameStatusView#<init>(Lapplication/IGameAppService;)V
 false
-df6e3ffeb3c3bd55a3554280c8719725
-ui.view.GameStatusView#printError(Ljava/awt/Graphics;)V
-ui.view.GameStatusView#printMessage(Ljava/awt/Graphics;)V
+988641c60e17284335a41a0435635274
+domain.common.DomainEventPublisher#subscribe(Ldomain/common/DomainEventSubscriber;)V
+java.awt.Dimension#<init>(II)V
+java.awt.Dimension#instance-init#
+ui.view.GameStatusView#updateStatus()V
 ==
-getWidth javax.swing.JComponent#getWidth()I
-paintComponent javax.swing.JComponent#paintComponent(Ljava/awt/Graphics;)V
+setOpaque javax.swing.JComponent#setOpaque(Z)V
+setPreferredSize javax.swing.JComponent#setPreferredSize(Ljava/awt/Dimension;)V

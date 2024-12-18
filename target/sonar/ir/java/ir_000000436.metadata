@@ -1,4 +1,3 @@
-domain.common.DomainEvent#<init>()V
+domain.common.DomainEvent#instance-init#
 false
-54c66f92d29521c670be4e4d95ec9152
-java.time.LocalDate#now()Ljava/time/LocalDate;
+32588d1ffe9595b325ae6813f7a17dcd

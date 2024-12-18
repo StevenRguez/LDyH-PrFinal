@@ -1,5 +1,5 @@
-domain.player.ImmutablePlayer#getName()Ljava/lang/String;
+domain.player.ImmutablePlayer#getId()Ljava/util/UUID;
 false
-ed16aab9577f14a664a8f5b4919728b8
+6f4b837d8e2a0bb23e992200c46faaa6
 ==
-getName domain.player.Player#getName()Ljava/lang/String;
+getId domain.common.Entity#getId()Ljava/util/UUID;

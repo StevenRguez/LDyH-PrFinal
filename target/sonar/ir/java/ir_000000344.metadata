@@ -1,3 +1,8 @@
-domain.game.events.CardDrawn#instance-init#
+domain.game.DealerService#dealInitialHandCards(Ldomain/game/DrawPile;I)[Ldomain/player/HandCardList;
 false
-6f906ff3726f25daf45d326b33c6ac1e
+f4631b432e6a10eadebfb990f7a7bfa1
+domain.player.HandCardList#<init>()V
+domain.player.HandCardList#instance-init#
+==
+addCard domain.player.HandCardList#addCard(Ldomain/card/Card;)V
+drawCard domain.game.DrawPile#drawCard()Ldomain/card/Card;

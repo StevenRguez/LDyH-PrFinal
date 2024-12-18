@@ -1,5 +1,5 @@
-domain.player.Player#removePlayedCard(Ldomain/card/Card;)V
+domain.player.Player#addToHandCards(Ldomain/card/Card;)V
 false
-958c5faac69bd23d9563ab3d24884cd0
+9e54574b7e19d2370f475c8d31ed9c1d
 ==
-removeCard domain.player.HandCardList#removeCard(Ldomain/card/Card;)Z
+addCard domain.player.HandCardList#addCard(Ldomain/card/Card;)V

@@ -1,5 +1,5 @@
-domain.game.DrawPile#drawCard()Ldomain/card/Card;
+domain.game.DrawPile#<init>(Ljava/util/List;)V
 false
-dc0cf9f86343e06763a81e20ac936bb9
+370b29e283fb964b4eb78d06938e0409
 ==
-pop java.util.Stack#pop()Ljava/lang/Object;
+addAll java.util.Vector#addAll(Ljava/util/Collection;)Z

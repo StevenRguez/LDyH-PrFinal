@@ -1,7 +1,5 @@
-domain.player.HandCardList#hasCard(Ldomain/card/Card;)Z
+domain.player.HandCardList#getCardStream()Ljava/util/stream/Stream;
 false
-c4674e8e4e859bccf950b448a2205424
-domain.card.CardUtil#isWildCard(Ldomain/card/Card;)Z
+bbf445a6c1fe0fb6b557bf8abfe2c9d0
 ==
-anyMatch java.util.stream.Stream#anyMatch(Ljava/util/function/Predicate;)Z
-getCardStream domain.player.HandCardList#getCardStream()Ljava/util/stream/Stream;
+stream java.util.Collection#stream()Ljava/util/stream/Stream;
