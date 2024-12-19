@@ -1,6 +1,0 @@
-domain.player.ImmutablePlayer#getTotalCards()I
-false
-312c5c692932aa035fa906a1eb9018f2
-==
-count java.util.stream.Stream#count()J
-getHandCards domain.player.ImmutablePlayer#getHandCards()Ljava/util/stream/Stream;

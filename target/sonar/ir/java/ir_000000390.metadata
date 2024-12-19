@@ -1,7 +1,0 @@
-domain.common.DomainEventPublisher#subscribe(Ldomain/common/DomainEventSubscriber;)V
-false
-1b72cc93d7b53929562208491e9d9ba5
-java.lang.Boolean#equals(Ljava/lang/Object;)Z
-==
-add java.util.List#add(Ljava/lang/Object;)Z
-get java.lang.ThreadLocal#get()Ljava/lang/Object;

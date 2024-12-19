@@ -1,8 +1,0 @@
-ui.view.ColorPicker#<init>()V
-false
-07050a90709a9f27588d01a3eba76105
-java.lang.Enum#name()Ljava/lang/String;
-java.util.ArrayList#<init>()V
-java.util.ArrayList#instance-init#
-==
-add java.util.ArrayList#add(Ljava/lang/Object;)Z

@@ -1,6 +1,0 @@
-domain.game.Game#getPlayers()Ljava/util/stream/Stream;
-false
-e7c55d3888039d27ed368169ba597384
-==
-map java.util.stream.Stream#map(Ljava/util/function/Function;)Ljava/util/stream/Stream;
-stream domain.player.PlayerRoundIterator#stream()Ljava/util/stream/Stream;

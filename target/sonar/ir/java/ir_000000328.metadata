@@ -1,5 +1,0 @@
-domain.game.CardRules#isSameColor(Ldomain/card/Card;Ldomain/card/Card;)Z
-false
-b9206a30549455a9bfaec41af7a9657f
-==
-getColor domain.card.Card#getColor()Ldomain/card/CardColor;

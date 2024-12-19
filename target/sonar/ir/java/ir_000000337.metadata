@@ -1,4 +1,0 @@
-domain.game.GameUI#updateGameDuration()V
-false
-a6fbb687846edc3cf5a8ad2ed2fb8de0
-javax.swing.SwingUtilities#invokeLater(Ljava/lang/Runnable;)V

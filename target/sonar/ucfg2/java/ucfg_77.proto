@@ -1,47 +1,0 @@
-
-Rapplication.GameAppService#getHandCards(Ljava/util/UUID;)Ljava/util/stream/Stream;û
-ì/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin tiÃÅtulo/LDyH-PrFinal/src/main/java/application/GameAppService.java] ]($"startingBlock*ä
-startingBlock]$ ](3ç
-ä
-\ \(
-%2"
-__annotate*2
-
-__unknown_file (
-java.lang.Override*8
-
-__unknown_file (
-
-playerIdjava.util.UUIDZ
-X
-]* ](2
-playerIdjava.util.UUID"__annotation*"
-
-__unknown_file (
-
-%2*
-1*µ
-1^ ^(p
-n
-^ ^(
-%0domain.game.Game"__id*D
-
-__unknown_file ((*&
-application.GameAppService"
-gameÜÉ
-^ ^(*
-%1java.util.stream.Stream"Hdomain.game.Game#getHandCards(Ljava/util/UUID;)Ljava/util/stream/Stream;*4
-
-__unknown_file (
-
-%0domain.game.Game*8
-
-__unknown_file (
-
-playerIdjava.util.UUID2getHandCards(Ljava/util/UUID;)"+
-^ ^(+
-
-%1java.util.stream.Stream:&
-]% ](2
-playerIdjava.util.UUIDB
-application.GameAppServiceH

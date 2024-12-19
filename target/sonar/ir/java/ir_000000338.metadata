@@ -1,5 +1,0 @@
-domain.game.GameUI#getgameDurationLabel()Ljava/lang/String;
-false
-de1b3127b08877022c0a79f533f40476
-==
-getText javax.swing.JLabel#getText()Ljava/lang/String;

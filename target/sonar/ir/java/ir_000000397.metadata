@@ -1,8 +1,0 @@
-ui.view.GameStatusView#paintComponent(Ljava/awt/Graphics;)V
-false
-df6e3ffeb3c3bd55a3554280c8719725
-ui.view.GameStatusView#printError(Ljava/awt/Graphics;)V
-ui.view.GameStatusView#printMessage(Ljava/awt/Graphics;)V
-==
-getWidth javax.swing.JComponent#getWidth()I
-paintComponent javax.swing.JComponent#paintComponent(Ljava/awt/Graphics;)V

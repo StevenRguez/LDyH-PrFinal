@@ -1,9 +1,0 @@
-domain.game.Game#<init>(Ldomain/game/DrawPile;Ldomain/player/PlayerRoundIterator;)V
-false
-8a3848dfb10a0c0a923419f05b349d90
-domain.game.Game#startDiscardPile()V
-domain.game.GameUI#<init>(Ldomain/game/Game;)V
-domain.game.GameUI#instance-init#
-java.time.Instant#now()Ljava/time/Instant;
-==
-<init> domain.common.Entity#<init>()V

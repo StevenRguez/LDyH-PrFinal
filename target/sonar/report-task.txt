@@ -1,7 +1,0 @@
-organization=stevenrguez
-projectKey=StevenRguez_LDyH-PrFinal
-serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.58561
-dashboardUrl=https://sonarcloud.io/dashboard?id=StevenRguez_LDyH-PrFinal
-ceTaskId=AZPBp1jRwVthvWrrwnKK
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZPBp1jRwVthvWrrwnKK

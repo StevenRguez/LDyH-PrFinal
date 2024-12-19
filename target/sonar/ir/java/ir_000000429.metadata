@@ -1,4 +1,0 @@
-domain.card.CardDeck#getImmutableCards()Ljava/util/List;
-false
-c6e188890c24f3600e45781edc94f1fb
-java.util.Collections#unmodifiableList(Ljava/util/List;)Ljava/util/List;

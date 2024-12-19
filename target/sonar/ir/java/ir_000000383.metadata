@@ -1,8 +1,0 @@
-domain.player.HandCardList#removeCard(Ldomain/card/Card;)Z
-false
-b933d87fa6ed9ee83d517341cda19e7d
-domain.card.CardUtil#isWildCard(Ldomain/card/Card;)Z
-domain.player.HandCardList#findCardOfType(Ldomain/card/CardType;)Ldomain/card/Card;
-==
-getType domain.card.Card#getType()Ldomain/card/CardType;
-remove java.util.List#remove(Ljava/lang/Object;)Z

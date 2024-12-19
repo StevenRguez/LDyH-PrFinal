@@ -1,19 +1,0 @@
-
-.domain.player.ImmutablePlayer#getTotalCards()I¡
-–/Volumes/Steven 1/Cosas de clase/Cuarto/Laboratorio de herramientas/carpeta sin tiÌtulo/LDyH-PrFinal/src/main/java/domain/player/ImmutablePlayer.java9 9("1*é
-1: :(!Â¿
-: :(#
-%0java.util.stream.Stream"Edomain.player.ImmutablePlayer#getHandCards()Ljava/util/stream/Stream;*=
-
-__unknown_file (!
-domain.player.ImmutablePlayer2getHandCards()€~
-: :(+
-
-%1long" java.util.stream.Stream#count()J*;
-
-__unknown_file (
-
-%0java.util.stream.Stream2count()"
-: :(,
-""B!
-domain.player.ImmutablePlayerHX

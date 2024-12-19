@@ -1,7 +1,0 @@
-ui.view.PlayerView#refresh()V
-false
-6e8ae666ff746b9ee30266fb0dce5707
-ui.view.PlayerView#renderHandCardsView()V
-ui.view.PlayerView#toggleControlPanel()V
-==
-repaint java.awt.Component#repaint()V

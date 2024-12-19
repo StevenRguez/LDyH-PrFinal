@@ -1,5 +1,0 @@
-domain.game.DrawPile#drawCard()Ldomain/card/Card;
-false
-dc0cf9f86343e06763a81e20ac936bb9
-==
-pop java.util.Stack#pop()Ljava/lang/Object;

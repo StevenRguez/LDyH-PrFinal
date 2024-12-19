@@ -1,4 +1,0 @@
-ui.view.GameStatusView#handleEvent(Ldomain/common/DomainEvent;)V
-false
-b1e0ad4ea8e5fc0786517e12954ac625
-ui.view.GameStatusView#updateStatus()V

@@ -1,6 +1,0 @@
-domain.game.Game#getHandCards(Ljava/util/UUID;)Ljava/util/stream/Stream;
-false
-f2cdb7bd386776736d3f1081e4d69583
-==
-getHandCards domain.player.Player#getHandCards()Ljava/util/stream/Stream;
-getPlayerById domain.player.PlayerRoundIterator#getPlayerById(Ljava/util/UUID;)Ldomain/player/Player;

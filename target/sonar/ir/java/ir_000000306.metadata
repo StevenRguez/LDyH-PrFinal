@@ -1,5 +1,0 @@
-domain.game.GameBuilder#withPlayer(Ljava/lang/String;)Ldomain/game/GameBuilder;
-false
-ee0aec926ca6c7aec67989cc8a12fac4
-==
-add java.util.List#add(Ljava/lang/Object;)Z

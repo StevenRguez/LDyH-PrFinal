@@ -1,5 +1,0 @@
-domain.game.Game#playCard(Ljava/util/UUID;Ldomain/card/Card;)V
-false
-0d7492ff36ae1cb7aa06536ad1a32eb8
-==
-playCard domain.game.Game#playCard(Ljava/util/UUID;Ldomain/card/Card;Z)V

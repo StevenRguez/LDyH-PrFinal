@@ -1,5 +1,0 @@
-domain.player.HandCardList#findCardOfType(Ldomain/card/CardType;)Ldomain/card/Card;
-false
-88e95b827f73eb5638a26721d9cf696f
-==
-getType domain.card.Card#getType()Ldomain/card/CardType;
